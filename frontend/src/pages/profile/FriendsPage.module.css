@@ -1,0 +1,85 @@
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.title {
+  flex: 1;
+  font-size: var(--font-size-7xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.search {
+  width: 300px;
+}
+
+.titleWithCount {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.gridTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.friendCard {
+  padding: var(--space-3-5) var(--space-4);
+  border: var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+}
+
+.view {
+  align-self: center;
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+
+.view:hover {
+  text-decoration: underline;
+}
+
+.more,
+.cancel {
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.more {
+  display: flex;
+  color: var(--color-text-muted);
+}
+
+.more:hover:not(:disabled) {
+  color: var(--color-danger);
+}
+
+.cancel {
+  color: var(--color-danger);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.cancel:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+.subtitle {
+  margin-top: calc(var(--space-3) * -1 + var(--space-1));
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}

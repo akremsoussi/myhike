@@ -1,0 +1,53 @@
+.tabs {
+  display: flex;
+  gap: var(--space-1-5);
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--tab-padding);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-family: inherit;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  cursor: pointer;
+}
+
+.tab:hover:not(.active) {
+  color: var(--color-text);
+}
+
+.active {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.count {
+  padding: var(--space-0-5) var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.neutral {
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+}
+
+.pending {
+  background: var(--color-pending-soft);
+  color: var(--color-pending);
+}
+
+/* Onglet actif : pastille blanche, quel que soit le ton. */
+.active .count {
+  background: var(--color-surface);
+  color: var(--color-primary);
+}

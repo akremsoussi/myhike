@@ -1,0 +1,54 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Contour intérieur (tracé intérieur dans Figma) : 42 px de haut, comme un bouton. */
+.input {
+  width: 100%;
+  padding: var(--input-padding);
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 0 0 var(--border-width) var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 calc(var(--border-width) * 2) var(--color-primary);
+}
+
+.input:disabled {
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+}
+
+.invalid,
+.invalid:focus {
+  box-shadow: inset 0 0 0 var(--border-width) var(--color-danger);
+}
+
+.invalid:focus {
+  box-shadow: inset 0 0 0 calc(var(--border-width) * 2) var(--color-danger);
+}
+
+.icon {
+  position: absolute;
+  left: var(--space-3-5);
+  display: flex;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.withIcon {
+  padding-left: calc(var(--space-3-5) + var(--space-4) + var(--space-2));
+}

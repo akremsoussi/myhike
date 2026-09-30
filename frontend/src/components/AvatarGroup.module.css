@@ -1,0 +1,15 @@
+.group {
+  display: flex;
+  flex-shrink: 0;
+}
+
+/* Contour blanc de 2 px, chevauchement de 8 px. */
+.item {
+  display: flex;
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 0 calc(var(--border-width) * 2) var(--color-surface);
+}
+
+.item + .item {
+  margin-left: calc(var(--space-2) * -1);
+}

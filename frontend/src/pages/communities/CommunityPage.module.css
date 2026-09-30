@@ -1,0 +1,168 @@
+/* Même gabarit que les autres pages utilisateur (1200 px centrés), la bannière en pleine largeur. */
+.banner {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.bannerInner,
+.content {
+  box-sizing: content-box;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: var(--page-padding);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.bannerInner {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-5);
+}
+
+.bannerText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-1-5);
+  min-width: 0;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  align-self: flex-start;
+  color: var(--color-primary-soft);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.name {
+  font-size: var(--font-size-9xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.bannerMeta {
+  color: var(--color-primary-soft);
+}
+
+/* « Inscrit ✓ » : l'icône après le texte. */
+.joined {
+  flex-direction: row-reverse;
+}
+
+/* « Rejoindre » sur fond vert : bouton blanc à texte vert pour rester visible. */
+.join {
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+
+.join:hover:not(:disabled) {
+  background: var(--color-primary-soft);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: var(--column-gap);
+  align-items: start;
+}
+
+.feed,
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.composer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3-5);
+  border: var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+}
+
+/* Faux champ : ouvre l'écran 09. */
+.composerInput {
+  flex: 1;
+  padding: var(--input-padding);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.composerInput:hover {
+  color: var(--color-text);
+}
+
+.empty {
+  color: var(--color-text-muted);
+}
+
+.about {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  white-space: pre-line;
+}
+
+.members {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+}
+
+.moreMembers {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.refuges {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.refuge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+}
+
+.refuge:hover {
+  color: var(--color-primary);
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+.inlineLink {
+  color: var(--color-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}

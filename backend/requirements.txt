@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic-settings
+email-validator
+sqlalchemy>=2.0
+alembic
+pymysql
+# PyMySQL en a besoin pour l'authentification par défaut de MySQL 8 (caching_sha2_password).
+cryptography
+pwdlib[argon2]

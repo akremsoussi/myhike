@@ -1,0 +1,127 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  align-self: flex-start;
+  color: var(--color-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.title {
+  font-size: var(--font-size-7xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.columns {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--column-gap);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: var(--space-1);
+  width: var(--settings-menu-width);
+  padding: var(--space-2);
+  border: var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+}
+
+.menuItem {
+  padding: var(--space-2-5) var(--space-3-5);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+}
+
+.menuItem[aria-disabled] {
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+.menuActive {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.panel {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--space-2) var(--space-6) var(--space-5);
+  border: var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+}
+
+.panelHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3-5) 0 var(--space-1-5);
+}
+
+.panelTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Ligne de réglage : texte à gauche, contrôle à droite, séparées par une bordure. */
+.setting {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: 18px 0;
+  border-bottom: var(--border);
+}
+
+/* Dernier réglage (suivi de l'encadré) : pas de bordure. */
+.setting:not(:has(+ .setting)) {
+  margin-bottom: var(--space-1);
+  border-bottom: none;
+}
+
+.settingText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.settingTitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+.settingHelp {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.select {
+  width: 220px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding-top: var(--space-5);
+}

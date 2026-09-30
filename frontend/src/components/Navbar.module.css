@@ -1,0 +1,95 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--navbar-height);
+  padding: var(--navbar-padding);
+  border-bottom: var(--border);
+  background: var(--color-surface);
+}
+
+.tabs {
+  display: flex;
+  gap: var(--space-1-5);
+}
+
+.tab {
+  padding: var(--nav-tab-padding);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+}
+
+.tab:hover:not(.active) {
+  color: var(--color-text);
+}
+
+.active {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.end {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 260px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--space-3-5);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: var(--search-padding);
+  padding-left: calc(var(--space-3-5) + var(--space-3-5) + var(--space-1-5));
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-muted);
+}
+
+.searchInput:focus {
+  outline: var(--border-width) solid var(--color-primary);
+}
+
+.user {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  padding: var(--space-1) var(--space-3) var(--space-1) var(--space-1);
+  border-radius: var(--radius-full);
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+
+.user:hover:not(.userActive) {
+  background: var(--color-bg);
+}
+
+.userActive {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}

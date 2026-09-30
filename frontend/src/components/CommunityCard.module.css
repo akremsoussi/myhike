@@ -1,0 +1,60 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2-5);
+  padding: var(--card-padding-compact);
+  border: var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+}
+
+.image {
+  height: 110px;
+  border-radius: var(--radius-lg);
+  background: var(--color-map-bg);
+}
+
+.name {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Toute la carte est cliquable ; le bouton reste au-dessus du lien. */
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.meta {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.footer button {
+  position: relative;
+}
+
+/* « Inscrit ✓ » : l'icône après le texte, comme la maquette. */
+.joined {
+  flex-direction: row-reverse;
+  gap: var(--space-1);
+}

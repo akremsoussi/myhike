@@ -1,0 +1,70 @@
+.group {
+  display: flex;
+  gap: var(--space-2-5);
+}
+
+/* Contour intérieur : 1 px au repos, 1,5 px vert une fois choisi, sans changer la taille. */
+.card {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  gap: var(--space-2-5);
+  padding: var(--space-3);
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 0 0 var(--border-width) var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.card:hover:not(.selected) {
+  box-shadow: inset 0 0 0 var(--border-width) var(--color-primary);
+}
+
+.selected {
+  box-shadow: inset 0 0 0 var(--border-width-button) var(--color-primary);
+  background: var(--color-primary-subtle);
+}
+
+/* Bouton radio de 16 px, légèrement descendu pour s'aligner sur le libellé. */
+.radio {
+  flex-shrink: 0;
+  width: var(--space-4);
+  height: var(--space-4);
+  margin-top: 1px;
+  border-radius: var(--radius-full);
+  box-shadow: inset 0 0 0 var(--border-width-button) var(--color-border);
+  background: var(--color-surface);
+}
+
+.selected .radio {
+  box-shadow:
+    inset 0 0 0 var(--border-width-button) var(--color-primary),
+    inset 0 0 0 var(--space-1) var(--color-surface);
+  background: var(--color-primary);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-5);
+  min-width: 0;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-normal);
+}

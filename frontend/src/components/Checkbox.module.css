@@ -1,0 +1,55 @@
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  cursor: pointer;
+}
+
+/* Case native invisible mais focalisable : le clavier et les lecteurs d'écran fonctionnent. */
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+/* 20 px ; rayon de 5 px dans Figma, arrondi au token le plus proche. */
+.box {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-5);
+  height: var(--space-5);
+  border-radius: var(--radius-xs);
+  box-shadow: inset 0 0 0 var(--border-width-button) var(--color-border);
+  background: var(--color-surface);
+  color: transparent;
+}
+
+.input:checked + .box {
+  box-shadow: none;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.input:focus-visible + .box {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.input[aria-invalid] + .box {
+  box-shadow: inset 0 0 0 var(--border-width-button) var(--color-danger);
+}
+
+.label {
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+}
+
+.error {
+  margin-top: var(--space-1-5);
+  color: var(--color-danger);
+  font-size: var(--font-size-xs);
+}

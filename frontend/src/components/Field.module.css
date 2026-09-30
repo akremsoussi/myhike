@@ -1,0 +1,24 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--field-label-gap);
+}
+
+.label {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.hint,
+.error {
+  font-size: var(--font-size-xs);
+}
+
+.hint {
+  color: var(--color-text-muted);
+}
+
+.error {
+  color: var(--color-danger);
+}

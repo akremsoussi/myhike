@@ -1,0 +1,11 @@
+.page {
+  box-sizing: content-box;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: var(--page-padding);
+}
+
+.fullBleed {
+  display: flex;
+  height: calc(100vh - var(--navbar-height));
+}

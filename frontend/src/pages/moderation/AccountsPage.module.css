@@ -1,0 +1,133 @@
+.search {
+  width: 320px;
+}
+
+.columns {
+  grid-template-columns: minmax(0, 1fr) 360px;
+}
+
+.role {
+  width: 130px;
+}
+
+.date {
+  width: 120px;
+}
+
+.more {
+  width: 72px;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.row {
+  cursor: pointer;
+}
+
+.row:hover td {
+  background: var(--color-primary-subtle);
+}
+
+.selected td,
+.selected:hover td {
+  background: var(--color-primary-soft);
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+.email {
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.moreButton {
+  display: flex;
+  padding: var(--space-1);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.moreButton:hover {
+  color: var(--color-text);
+}
+
+.panel,
+.panelEmpty {
+  border: var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--card-padding-large);
+}
+
+.panelEmpty {
+  padding: var(--card-padding-large);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  text-align: center;
+}
+
+.panelIdentity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-0-5);
+}
+
+.panelName {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.panelActions,
+.reports {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2-5);
+  width: 100%;
+}
+
+.reports {
+  padding-top: var(--space-3);
+  border-top: var(--border);
+}
+
+.reportsTitle {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+}

@@ -1,0 +1,49 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.visual {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  width: var(--auth-visual-width);
+  padding: var(--auth-visual-padding);
+  background: var(--color-primary);
+}
+
+.pitch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tagline {
+  color: var(--color-on-primary);
+  font-size: var(--font-size-display);
+  font-weight: var(--font-weight-bold);
+}
+
+.lead {
+  color: var(--color-primary-soft);
+  font-size: var(--font-size-2xl);
+}
+
+.stats {
+  color: var(--color-primary-soft);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-10) var(--space-6);
+}
+
+.form {
+  width: var(--auth-form-width);
+}

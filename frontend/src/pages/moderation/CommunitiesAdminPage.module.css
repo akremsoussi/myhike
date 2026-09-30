@@ -1,0 +1,36 @@
+.region {
+  width: 150px;
+}
+
+.members {
+  width: 110px;
+}
+
+.posts {
+  width: 90px;
+}
+
+.created {
+  width: 130px;
+}
+
+/* 300 px dans la maquette, 20 px de plus pour que « Supprimer » ne soit pas coupé. */
+.actions {
+  width: 320px;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+.thumb {
+  flex-shrink: 0;
+  width: var(--avatar-xl);
+  height: var(--avatar-xl);
+  border-radius: var(--radius-md);
+  background: var(--color-map-bg);
+}

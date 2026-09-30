@@ -1,0 +1,31 @@
+/* Posée sur la carte dans la maquette, d'où l'ombre, reprise dans les listes. */
+.stop {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  box-shadow:
+    0 0 0 calc(var(--border-width) * 2) var(--color-surface),
+    var(--shadow-map-marker);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+}
+
+.sm {
+  width: var(--avatar-xs);
+  height: var(--avatar-xs);
+}
+
+.md {
+  width: 28px;
+  height: 28px;
+}
+
+.lg {
+  width: var(--avatar-md);
+  height: var(--avatar-md);
+}

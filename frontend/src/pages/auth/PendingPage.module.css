@@ -1,0 +1,154 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+
+.envelope {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--avatar-4xl);
+  height: var(--avatar-4xl);
+  border-radius: var(--radius-full);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.dot {
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: var(--radius-full);
+  background: currentColor;
+}
+
+.title {
+  font-size: var(--font-size-8xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.text {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+}
+
+.email {
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Carte des étapes : 18 px de marge intérieure (valeur hors échelle, écran 02b). */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3-5);
+  width: 100%;
+  margin: 0;
+  padding: 18px;
+  border: var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Icônes d'étape relevées dans Figma : 24 px, anneau de 2 px pour « en cours » et « à venir ». */
+.stepIcon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-6);
+  height: var(--space-6);
+  border-radius: var(--radius-full);
+}
+
+.done .stepIcon {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.current .stepIcon {
+  box-shadow: inset 0 0 0 calc(var(--border-width) * 2) var(--color-pending);
+  background: var(--color-pending-soft);
+}
+
+.current .stepIcon::after {
+  content: '';
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: var(--radius-full);
+  background: var(--color-pending);
+}
+
+.upcoming .stepIcon {
+  box-shadow: inset 0 0 0 calc(var(--border-width) * 2) var(--color-border);
+  background: var(--color-surface);
+}
+
+.stepText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-5);
+}
+
+.stepTitle {
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+}
+
+.stepDetail {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.upcoming .stepTitle {
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2-5);
+  width: 100%;
+}
+
+.hint {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.links {
+  display: flex;
+  gap: var(--space-1);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+}
+
+.changeEmail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.changeEmailActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}

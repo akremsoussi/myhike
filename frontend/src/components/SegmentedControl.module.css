@@ -1,0 +1,46 @@
+.control {
+  display: inline-flex;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 0 0 var(--border-width) var(--color-border);
+  background: var(--color-bg);
+}
+
+.segment {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  padding: var(--segment-padding);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-family: inherit;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  cursor: pointer;
+}
+
+.segment:hover:not(.selected) {
+  color: var(--color-text);
+}
+
+.selected {
+  box-shadow: inset 0 0 0 var(--border-width) var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.fullWidth {
+  display: flex;
+}
+
+/* 8 px en hauteur dans l'écran 09 (7 px dans 05c). */
+.fullWidth .segment {
+  flex: 1;
+  justify-content: center;
+  padding-block: var(--space-2);
+}

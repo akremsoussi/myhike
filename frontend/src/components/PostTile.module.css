@@ -1,0 +1,33 @@
+.tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 120px;
+  padding: var(--space-2) var(--space-2-5);
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--color-map-bg);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+a.tile:hover {
+  background: var(--color-map-relief);
+}
+
+.badge {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+}
+
+/* 3 lignes au plus, sous le badge. */
+.text {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: var(--font-size-xs);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow-wrap: anywhere;
+}

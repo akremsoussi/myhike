@@ -1,0 +1,48 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+}
+
+.mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--avatar-md);
+  height: var(--avatar-md);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xl);
+}
+
+.default {
+  color: var(--color-text);
+}
+
+.default .mark {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.onDark {
+  color: var(--color-on-primary);
+}
+
+.onDark .mark {
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+
+.lg {
+  gap: var(--space-3);
+  font-size: var(--font-size-4xl);
+}
+
+.lg .mark {
+  width: var(--avatar-2xl);
+  height: var(--avatar-2xl);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-4xl);
+}

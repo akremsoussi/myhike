@@ -1,0 +1,145 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  align-self: flex-start;
+  color: var(--color-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 400px;
+  gap: var(--column-gap);
+  align-items: start;
+}
+
+.mapBox {
+  position: sticky;
+  top: var(--space-4);
+  height: 560px;
+  border-radius: var(--radius-lg);
+  background: var(--color-map-bg);
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3-5);
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.title {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2-5);
+  margin: 0;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  font-size: var(--font-size-md);
+}
+
+.infoRow dt {
+  color: var(--color-text-muted);
+}
+
+.infoRow dd {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+  text-align: right;
+}
+
+.stops {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stop {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+}
+
+.stopText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.stopName {
+  color: var(--color-text);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+
+a.stopName:hover {
+  color: var(--color-primary);
+}
+
+.stopMeta {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.count {
+  color: var(--color-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+.names {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.names a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.names a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2-5);
+}
+
+.grow {
+  flex: 1;
+}

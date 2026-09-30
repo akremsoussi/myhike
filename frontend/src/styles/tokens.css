@@ -1,0 +1,158 @@
+/*
+ * Refuges — design tokens
+ * Valeurs relevées dans la maquette Figma (fichier KrPHETSktcZgtTbB9uxVyB, page « Web (desktop) »).
+ * Généré depuis la même source que tokens.ts : modifier les deux ensemble.
+ */
+
+:root {
+
+  /* ---------- Marque ---------- */
+  --color-primary: #21664a; /* boutons primaires, liens, textes d'accent, onglet actif, panneau vert des pages de connexion, bannière communauté */
+  --color-primary-soft: #deede3; /* fond de l'onglet actif, avatars, statut « Ouverte », texte clair sur le panneau vert de connexion */
+  --color-primary-subtle: #f1f7f3; /* option sélectionnée (visibilité du post), encadré d'information */
+  --color-on-primary: #ffffff; /* texte et icônes sur fond vert */
+
+  /* ---------- Barre latérale de modération ---------- */
+  --color-sidebar-bg: #174a36; /* fond de la barre latérale (écrans 13 à 16) ; l'élément actif utilise --color-primary */
+  --color-sidebar-text: #c7ded1; /* liens inactifs et texte secondaire de la barre latérale */
+  --color-sidebar-icon: #8cb29e; /* pastilles d'icône 16 × 16 des liens de la barre latérale */
+
+  /* ---------- Neutres ---------- */
+  --color-bg: #f6f6f2; /* fond de page, champ de recherche de la barre de navigation, en-tête de tableau */
+  --color-surface: #ffffff; /* cartes, barre de navigation, champs, boutons secondaires */
+  --color-border: #dee0db; /* bordures de cartes, champs, chips, séparateurs */
+  --color-neutral-badge: #dee0db; /* fond des badges neutres (« Non gardé », « Suspendu ») */
+  --color-text: #1a1f1c; /* texte principal, titres */
+  --color-text-muted: #707873; /* texte secondaire, libellés de champ, placeholders, onglets inactifs */
+
+  /* ---------- Danger ---------- */
+  --color-danger: #c2302b; /* « Se déconnecter », « Quitter », « Supprimer », compteur de signalements */
+  --color-danger-soft: #fce8e5; /* fond des boutons de danger, badge « Signalé », carte « Comptes signalés » */
+  --color-danger-border: #edb8b2; /* bordure de la carte « Zone de danger » (écran 15) */
+
+  /* ---------- Accent orange (chemins et statuts) ---------- */
+  --color-accent: #d9731f; /* tracé de chemin, texte des chips « Chemin », « Complète », « ADMIN » */
+  --color-accent-soft: #fceddb; /* fond des chips « Chemin », « Complète », « ADMIN » */
+
+  /* ---------- En attente (amis, confirmation du compte) ---------- */
+  --color-pending: #b5530f; /* « En attente de confirmation », « 2 demandes d'ami en attente » */
+  --color-pending-soft: #fbe9d8; /* fond des mêmes éléments */
+
+  /* ---------- Carte et placeholders d'images ---------- */
+  --color-map-bg: #d4e3cc; /* fond de carte et placeholders « Photo » */
+  --color-map-relief: #bfd9b8; /* formes de relief sur la carte */
+  --color-map-water: #b2d4eb; /* lacs sur la carte */
+  --color-placeholder-path: #f2e0cc; /* vignettes « Chemin » dans les grilles de publications */
+
+  /* ---------- Superposition ---------- */
+  --color-overlay: rgba(26, 31, 28, 0.72); /* badges « Public » / « Amis » posés sur une image (#1a1f1c à 72 %) */
+
+  /* ---------- Typographie ---------- */
+  /* Seule police de la maquette : Inter (400, 500, 600, 700). */
+  --font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-3xs: 10px; /* badge « ADMIN » (Bold) */
+  --font-size-2xs: 11px; /* badges sur image, initiales des petits avatars (30 px) */
+  --font-size-xs: 12px; /* aides sous les champs, initiales des avatars 32 px, compteurs */
+  --font-size-sm: 13px; /* libellés de champ (Medium), métadonnées, chips, petits boutons */
+  --font-size-md: 14px; /* liens, texte courant compact */
+  --font-size-base: 15px; /* texte courant, champs, boutons, onglets de navigation */
+  --font-size-lg: 16px; /* titres de carte (Bold) */
+  --font-size-xl: 17px; /* titres des cartes de sortie, « R » du logo de la barre de navigation (Bold) */
+  --font-size-2xl: 18px; /* titres de section, nom « Refuges » de la barre de navigation (Bold) */
+  --font-size-3xl: 20px; /* nom dans le panneau de détail d'un compte (écran 16) */
+  --font-size-4xl: 22px; /* logo des pages de connexion / inscription */
+  --font-size-5xl: 24px; /* chiffres des statistiques de profil, titre de la liste des refuges */
+  --font-size-6xl: 28px; /* nom sur un profil, titres des écrans de modération */
+  --font-size-7xl: 30px; /* titre de page (Communautés, Mes amis, Paramètres, Nouveau post) */
+  --font-size-8xl: 32px; /* titre des pages de connexion / inscription / confirmation, gros chiffres du tableau de bord */
+  --font-size-9xl: 34px; /* nom de la communauté dans la bannière */
+  --font-size-display: 46px; /* accroche du panneau vert des pages de connexion */
+  /* Figma utilise la hauteur de ligne « auto » d'Inter (≈ 1,21) partout, sauf les paragraphes
+     sur plusieurs lignes des écrans 02b et 05c (140–145 %). */
+  --line-height-normal: normal;
+  --line-height-relaxed: 1.45;
+
+  /* ---------- Espacements ---------- */
+  /* Échelle principale des paddings et gaps de la maquette. Valeurs ponctuelles hors échelle :
+     3, 5, 7, 9 px (badges, filtres, recherche, cf. Composants), 18 px (écran 02b), 36 px (entre statistiques de profil). */
+  --space-0-5: 2px;
+  --space-1: 4px;
+  --space-1-5: 6px;
+  --space-2: 8px;
+  --space-2-5: 10px;
+  --space-3: 12px;
+  --space-3-5: 14px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* ---------- Rayons ---------- */
+  --radius-xs: 4px; /* pastilles d'icône de la barre latérale (la case à cocher de l'inscription est à 5 px) */
+  --radius-sm: 8px; /* onglets de navigation, logo 32 px, segments */
+  --radius-md: 10px; /* boutons, champs, logo 40 px des pages de connexion */
+  --radius-lg: 12px; /* images et vignettes */
+  --radius-xl: 14px; /* cartes, popup de la carte */
+  --radius-full: 999px; /* chips, badges, statuts, avatars */
+
+  /* ---------- Bordures ---------- */
+  --border-width: 1px; /* cartes, champs, chips, séparateurs */
+  --border-width-button: 1.5px; /* boutons secondaires (contour vert, tracé intérieur) */
+  --border: var(--border-width) solid var(--color-border);
+
+  /* ---------- Ombres (uniquement sur les éléments posés sur la carte) ---------- */
+  --shadow-map-pin: 0 4px 14px rgba(0, 0, 0, 0.16); /* étiquettes de refuge, écran 03 */
+  --shadow-map-marker: 0 3px 10px rgba(0, 0, 0, 0.16); /* points de stop et étiquettes, écrans 11 et 12 */
+
+  /* ---------- Avatars (ronds, initiales sur --color-primary-soft) ---------- */
+  --avatar-xs: 24px;
+  --avatar-sm: 30px;
+  --avatar-md: 32px;
+  --avatar-lg: 34px;
+  --avatar-xl: 36px;
+  --avatar-2xl: 40px;
+  --avatar-3xl: 44px;
+  --avatar-4xl: 64px;
+  --avatar-5xl: 72px;
+  --avatar-6xl: 96px;
+
+  /* ---------- Mise en page (maquettes en 1440 × 900) ---------- */
+  --navbar-height: 69px; /* 14 + 40 + 14 + bordure basse de 1 px */
+  --navbar-padding: 14px 40px;
+  --page-max-width: 1200px; /* pages utilisateur : 1440 − 2 × 120 */
+  --page-padding: 28px 120px;
+  --page-narrow-max-width: 1040px; /* formulaire « Nouveau post » : 1440 − 2 × 200 */
+  --column-gap: 24px; /* entre colonne principale et colonne latérale */
+  --auth-visual-width: 800px; /* panneau vert des pages de connexion */
+  --auth-visual-padding: 64px 80px;
+  --auth-form-width: 420px;
+  --sidebar-width: 260px; /* barre latérale de modération */
+  --sidebar-padding: 24px 16px;
+  --admin-page-padding: 32px 40px;
+  --settings-menu-width: 260px; /* menu des paramètres, écran 05c */
+
+  /* ---------- Composants ---------- */
+  --button-padding: 12px 20px; /* 15 px Semi Bold */
+  --button-padding-sm: 8px 14px; /* 13 px Semi Bold */
+  --input-padding: 12px 14px; /* champs de formulaire, 15 px Regular */
+  --search-padding: 9px 14px; /* recherche de la barre de navigation, hauteur 38 px */
+  --nav-tab-padding: 8px 16px; /* onglets Carte / Communautés / Sorties */
+  --tab-padding: 8px 14px; /* onglets de page (Mes amis) */
+  --segment-padding: 7px 12px; /* options d'un choix segmenté (Public / Amis uniquement, écran 05c), 14 px */
+  --select-padding-sm: 10px 14px; /* liste déroulante compacte des réglages (écran 05c), 14 px Medium */
+  --chip-padding: 6px 12px; /* filtres et chips, 13 px */
+  --chip-padding-sm: 5px 10px; /* filtres des écrans de modération */
+  --badge-padding: 3px 8px 3px 6px; /* badge sur image, 11 px */
+  --card-padding: 20px; /* cartes de la colonne latérale */
+  --card-padding-compact: 16px; /* cartes de liste (sorties, communautés) */
+  --card-padding-large: 24px; /* en-tête de profil, formulaires de modération */
+  --field-label-gap: 6px; /* entre libellé et champ */
+}

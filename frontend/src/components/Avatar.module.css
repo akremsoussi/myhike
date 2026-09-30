@@ -1,0 +1,26 @@
+.avatar {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  object-fit: cover;
+  user-select: none;
+}
+
+/* Taille des initiales relevée dans la maquette (24, 64 et 72 px : extrapolées).
+   96 px : 35 px dans Figma, arrondi au token le plus proche (34 px). */
+.size-xs { width: var(--avatar-xs); height: var(--avatar-xs); font-size: var(--font-size-3xs); }
+.size-sm { width: var(--avatar-sm); height: var(--avatar-sm); font-size: var(--font-size-2xs); }
+.size-md { width: var(--avatar-md); height: var(--avatar-md); font-size: var(--font-size-xs); }
+.size-lg { width: var(--avatar-lg); height: var(--avatar-lg); font-size: var(--font-size-xs); }
+.size-xl { width: var(--avatar-xl); height: var(--avatar-xl); font-size: var(--font-size-sm); }
+.size-2xl { width: var(--avatar-2xl); height: var(--avatar-2xl); font-size: var(--font-size-base); }
+.size-3xl { width: var(--avatar-3xl); height: var(--avatar-3xl); font-size: var(--font-size-base); }
+.size-4xl { width: var(--avatar-4xl); height: var(--avatar-4xl); font-size: var(--font-size-5xl); }
+.size-5xl { width: var(--avatar-5xl); height: var(--avatar-5xl); font-size: var(--font-size-6xl); }
+.size-6xl { width: var(--avatar-6xl); height: var(--avatar-6xl); font-size: var(--font-size-9xl); }
