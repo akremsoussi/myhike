@@ -4,6 +4,14 @@
   color: var(--color-on-primary);
 }
 
+/* Bannière choisie à l'écran 15 : assombrie en bas pour garder le texte lisible. */
+.withImage {
+  background:
+    linear-gradient(to top, var(--color-overlay), transparent),
+    var(--banner-image) center / cover,
+    var(--color-primary);
+}
+
 .bannerInner,
 .content {
   box-sizing: content-box;
@@ -45,6 +53,13 @@
 
 .back:hover {
   text-decoration: underline;
+}
+
+.icon {
+  width: var(--avatar-5xl);
+  height: var(--avatar-5xl);
+  border-radius: var(--radius-lg);
+  object-fit: cover;
 }
 
 .name {
@@ -107,10 +122,6 @@
 
 .composerInput:hover {
   color: var(--color-text);
-}
-
-.empty {
-  color: var(--color-text-muted);
 }
 
 .about {

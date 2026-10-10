@@ -1,5 +1,6 @@
 import { Search } from 'lucide-react'
-import { NavLink, useLocation } from 'react-router'
+import { useState, type FormEvent } from 'react'
+import { NavLink, useLocation, useNavigate, useSearchParams } from 'react-router'
 import { cx } from '../lib/cx'
 import { shortName } from '../lib/format'
 import { Avatar } from './Avatar'
@@ -20,6 +21,20 @@ type NavbarProps = {
 /** Barre de navigation des pages utilisateur (69 px) : logo, onglets centrés, recherche et pastille du profil. */
 export function Navbar({ user }: NavbarProps) {
   const { pathname } = useLocation()
+  const navigate = useNavigate()
+  const [params] = useSearchParams()
+  // Sur la page de résultats, le champ garde la recherche en cours.
+  const current = pathname === '/recherche' ? (params.get('q') ?? '') : ''
+  const [draft, setDraft] = useState<{ for: string; value: string } | null>(null)
+  const value = draft && draft.for === current ? draft.value : current
+
+  function submit(event: FormEvent) {
+    event.preventDefault()
+    const q = value.trim()
+    if (!q) return
+    setDraft(null)
+    navigate(`/recherche?q=${encodeURIComponent(q)}`)
+  }
   return (
     <header className={styles.navbar}>
       <Logo />
@@ -37,9 +52,17 @@ export function Navbar({ user }: NavbarProps) {
         ))}
       </nav>
       <div className={styles.end}>
-        <form className={styles.search} role="search" onSubmit={(event) => event.preventDefault()}>
+        <form className={styles.search} role="search" onSubmit={submit}>
           <Search aria-hidden size={14} className={styles.searchIcon} />
-          <input type="search" className={styles.searchInput} placeholder="Rechercher…" aria-label="Rechercher" />
+          <input
+            type="search"
+            name="q"
+            className={styles.searchInput}
+            placeholder="Rechercher…"
+            aria-label="Rechercher des refuges, communautés, randonneurs…"
+            value={value}
+            onChange={(event) => setDraft({ for: current, value: event.target.value })}
+          />
         </form>
         {/* Pastille sur fond vert quand on est dans son profil ou ses paramètres (écrans 05, 05b, 05c). */}
         <NavLink

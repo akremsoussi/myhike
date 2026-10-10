@@ -21,6 +21,12 @@ def _normalize_email(value: str) -> str:
     return value.strip().lower()
 
 
+def _check_password(value: str) -> str:
+    if not PASSWORD_MIN_LENGTH <= len(value) <= PASSWORD_MAX_LENGTH:
+        raise ValueError(f"{PASSWORD_MIN_LENGTH} caractères min.")
+    return value
+
+
 class RegisterIn(BaseModel):
     username: str
     email: EmailStr
@@ -43,9 +49,7 @@ class RegisterIn(BaseModel):
     @field_validator("password")
     @classmethod
     def check_password(cls, value: str) -> str:
-        if not PASSWORD_MIN_LENGTH <= len(value) <= PASSWORD_MAX_LENGTH:
-            raise ValueError(f"{PASSWORD_MIN_LENGTH} caractères min.")
-        return value
+        return _check_password(value)
 
     @field_validator("accept_terms")
     @classmethod
@@ -76,6 +80,25 @@ class ChangeEmailIn(BaseModel):
     @classmethod
     def normalize_email(cls, value: str) -> str:
         return _normalize_email(value)
+
+
+class PasswordResetRequestIn(BaseModel):
+    email: str
+
+    @field_validator("email")
+    @classmethod
+    def normalize_email(cls, value: str) -> str:
+        return _normalize_email(value)
+
+
+class PasswordResetIn(BaseModel):
+    token: str
+    password: str
+
+    @field_validator("password")
+    @classmethod
+    def check_password(cls, value: str) -> str:
+        return _check_password(value)
 
 
 class UserOut(BaseModel):

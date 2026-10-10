@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, field_validator
 
 from app.models import Audience, RequestPolicy, Visibility
 from app.schemas.auth import UtcDatetime
@@ -10,6 +10,7 @@ class ProfileOut(BaseModel):
     """Écrans 05 (soi-même) et 06 / 06b (quelqu'un d'autre)."""
 
     user: AuthorOut
+    bio: str
     member_since: UtcDatetime
     relation: Relation
     # Date où l'amitié a été acceptée (« Ami depuis mars 2026 »).
@@ -69,3 +70,35 @@ class PrivacySettings(BaseModel):
     outings_audience: Audience
     friend_requests_from: RequestPolicy
     show_in_suggestions: bool
+
+
+DISPLAY_NAME_MAX_LENGTH = 60
+BIO_MAX_LENGTH = 300
+
+
+class ProfileIn(BaseModel):
+    """« Modifier le profil » (écran 05)."""
+
+    display_name: str
+    bio: str = ""
+
+    @field_validator("display_name")
+    @classmethod
+    def check_display_name(cls, value: str) -> str:
+        value = " ".join(value.split())
+        if not 2 <= len(value) <= DISPLAY_NAME_MAX_LENGTH:
+            raise ValueError(f"2 à {DISPLAY_NAME_MAX_LENGTH} caractères.")
+        return value
+
+    @field_validator("bio")
+    @classmethod
+    def check_bio(cls, value: str) -> str:
+        value = value.strip()
+        if len(value) > BIO_MAX_LENGTH:
+            raise ValueError(f"{BIO_MAX_LENGTH} caractères max.")
+        return value
+
+
+class EditableProfile(BaseModel):
+    display_name: str
+    bio: str

@@ -8,3 +8,6 @@ pymysql
 # PyMySQL en a besoin pour l'authentification par défaut de MySQL 8 (caching_sha2_password).
 cryptography
 pwdlib[argon2]
+# Envoi de fichiers (multipart) et traitement des images envoyées.
+python-multipart
+pillow

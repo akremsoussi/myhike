@@ -76,7 +76,44 @@
 
 .photos {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-2-5);
+}
+
+.photo {
+  position: relative;
+  width: 96px;
+  height: 96px;
+}
+
+.photoImage {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+/* Envoi en cours : aperçu estompé. */
+.sending {
+  opacity: 0.5;
+}
+
+.removePhoto {
+  position: absolute;
+  top: var(--space-1);
+  right: var(--space-1);
+  display: flex;
+  padding: var(--space-1);
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--color-overlay);
+  color: var(--color-on-primary);
+  cursor: pointer;
+}
+
+.error {
+  color: var(--color-danger);
+  font-size: var(--font-size-xs);
 }
 
 .addPhoto {
@@ -95,29 +132,9 @@
   font-weight: var(--font-weight-medium);
 }
 
-.addPhoto:disabled {
-  cursor: not-allowed;
-}
-
-.map {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 300px;
-  padding: var(--space-4);
-  border-radius: var(--radius-lg);
-  background: var(--color-map-bg);
-  color: var(--color-text-muted);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  text-align: center;
-}
-
-.pathButtons {
-  display: flex;
-  gap: var(--space-2-5);
-  margin-top: var(--space-1-5);
-  margin-bottom: var(--space-1);
+.addPhoto:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .actions {

@@ -22,7 +22,7 @@ from app.models import (
 )
 from app.schemas.communities import AuthorOut, CommunityRef, PostPage
 from app.schemas.outings import UserOutings
-from app.schemas.users import PrivacySettings, ProfileOut
+from app.schemas.users import EditableProfile, PrivacySettings, ProfileIn, ProfileOut
 from app.services import friends, outings, posts
 from app.services.friends import Relation
 from app.services.visibility import friend_ids, post_visible_to
@@ -71,6 +71,7 @@ def get_profile(username: str, db: DbSession, viewer: ActiveUser) -> ProfileOut:
 
     profile = ProfileOut(
         user=AuthorOut.model_validate(owner),
+        bio=owner.bio,
         member_since=owner.created_at,
         relation=relation,
         friends_since=(
@@ -146,6 +147,20 @@ def user_outings(username: str, db: DbSession, viewer: ActiveUser) -> UserOuting
         )
     ).all()
     return UserOutings(items=[outings.summary(o, viewer) for o in rows], hidden=False)
+
+
+@router.get("/me/profile")
+def get_my_profile(viewer: ActiveUser) -> EditableProfile:
+    return EditableProfile.model_validate(viewer, from_attributes=True)
+
+
+@router.put("/me/profile")
+def update_my_profile(data: ProfileIn, db: DbSession, viewer: ActiveUser) -> EditableProfile:
+    """« Modifier le profil » : nom affiché et présentation. Le pseudo ne change pas."""
+    viewer.display_name = data.display_name
+    viewer.bio = data.bio
+    db.commit()
+    return EditableProfile.model_validate(viewer, from_attributes=True)
 
 
 @router.get("/me/privacy")

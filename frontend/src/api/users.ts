@@ -10,6 +10,8 @@ export type CommunityRef = { slug: string; name: string }
 /** Écrans 05 (soi-même) et 06 / 06b (quelqu'un d'autre). */
 export type Profile = {
   user: Author
+  /** Présentation sous le nom, vide si pas encore écrite. */
+  bio: string
   member_since: string
   relation: Relation
   /** Date où l'amitié a été acceptée (« Ami depuis mars 2026 »). */
@@ -51,6 +53,9 @@ export type PrivacySettings = {
   show_in_suggestions: boolean
 }
 
+/** « Modifier le profil ». Le pseudo ne change pas. */
+export type EditableProfile = { display_name: string; bio: string }
+
 type RelationResult = { relation: Relation }
 
 const user = (username: string) => encodeURIComponent(username)
@@ -62,6 +67,8 @@ export const usersApi = {
   /** Sorties à venir ; `hidden` : masquées par le réglage « Qui peut voir mes sorties à venir ». */
   outings: (username: string) =>
     api<{ items: OutingSummary[]; hidden: boolean }>(`/users/${user(username)}/outings`),
+  myProfile: () => api<EditableProfile>('/me/profile'),
+  updateMyProfile: (profile: EditableProfile) => api<EditableProfile>('/me/profile', { method: 'PUT', body: profile }),
   privacy: () => api<PrivacySettings>('/me/privacy'),
   updatePrivacy: (settings: PrivacySettings) =>
     api<PrivacySettings>('/me/privacy', { method: 'PUT', body: settings }),

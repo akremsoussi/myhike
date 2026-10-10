@@ -12,7 +12,8 @@ from typing import Any
 
 from app.models import RefugeKind
 
-API_URL = "https://www.refuges.info/api"
+SITE_URL = "https://www.refuges.info"
+API_URL = f"{SITE_URL}/api"
 USER_AGENT = "Refuges-projet-scolaire/0.1 (import ponctuel)"
 
 # Types de points refuges.info importés (identifiants de l'API).
@@ -41,6 +42,49 @@ def fetch_massifs(bbox: str = DEFAULT_BBOX) -> list[dict[str, Any]]:
         {"external_id": int(feature["properties"]["id"]), "name": feature["properties"]["nom"]}
         for feature in data["features"]
     ]
+
+
+def fetch_photos(point_external_id: int) -> list[dict[str, Any]]:
+    """Photos des commentaires d'un point, de la plus récente à la plus ancienne.
+
+    [{"external_id", "url", "author", "caption", "taken_at"}] ; les commentaires sans
+    photo sont ignorés.
+    """
+    data = _get("commentaires", id_point=point_external_id, format_texte="texte")
+    photos = []
+    for key, comment in data.items():
+        if not key.isdigit() or not isinstance(comment, dict):
+            continue  # « copyright »
+        path = comment.get("photo-reduite") or comment.get("photo-originale")
+        if not isinstance(path, str) or not path.startswith("/photos_points/"):
+            continue
+        photos.append(
+            {
+                "external_id": int(comment["id_commentaire"]),
+                "url": SITE_URL + _fix_photo_path(path),
+                "author": (comment.get("auteur_commentaire") or "").strip()[:120],
+                "caption": " ".join((comment.get("texte_commentaire") or "").split())[:300],
+                "taken_at": _date(comment.get("date_commentaire")),
+            }
+        )
+    photos.sort(key=lambda photo: photo["taken_at"] or datetime.min, reverse=True)
+    return photos
+
+
+def _fix_photo_path(path: str) -> str:
+    """L'API colle l'empreinte au nom (« 51684-reduite.jpegmd=f9dd0f ») : il manque le « ? »."""
+    name, separator, digest = path.partition("md=")
+    return f"{name}?md={digest}" if separator and not name.endswith("?") else path
+
+
+def fetch_image(url: str, max_bytes: int) -> bytes:
+    """Contenu d'une image de refuges.info ; ValueError si elle dépasse `max_bytes`."""
+    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(request, timeout=60) as response:
+        data = response.read(max_bytes + 1)
+    if len(data) > max_bytes:
+        raise ValueError("image trop lourde")
+    return data
 
 
 def fetch_massif_points(massif_external_id: int) -> list[dict[str, Any]]:

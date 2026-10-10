@@ -75,6 +75,14 @@ def db(database: None) -> Iterator[Session]:
         connection.execute(text("SET FOREIGN_KEY_CHECKS = 1"))
 
 
+@pytest.fixture(autouse=True)
+def media_dir(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
+    """Images envoyées pendant le test : dans un dossier temporaire, jamais backend/uploads."""
+    directory = tmp_path / "uploads"
+    monkeypatch.setattr(settings, "media_dir", directory)
+    return directory
+
+
 @pytest.fixture
 def outbox(monkeypatch: pytest.MonkeyPatch) -> list[dict[str, str]]:
     """Emails de confirmation « envoyés » pendant le test."""

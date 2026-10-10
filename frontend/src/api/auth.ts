@@ -43,4 +43,9 @@ export const authApi = {
     api<{ status: AccountStatus }>('/auth/verify-email', { method: 'POST', body: { token } }),
   resendVerification: () => api<Me>('/auth/resend-verification', { method: 'POST' }),
   changePendingEmail: (email: string) => api<Me>('/auth/pending-email', { method: 'PATCH', body: { email } }),
+  /** « Mot de passe oublié » : même réponse que l'adresse ait un compte ou non. */
+  requestPasswordReset: (email: string) => api<void>('/auth/password-reset', { method: 'POST', body: { email } }),
+  /** Ferme toutes les sessions, y compris celle de ce navigateur. */
+  resetPassword: (token: string, password: string) =>
+    api<void>('/auth/password-reset/confirm', { method: 'POST', body: { token, password } }),
 }

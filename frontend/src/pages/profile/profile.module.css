@@ -55,6 +55,13 @@
   color: var(--color-text-muted);
 }
 
+.bio {
+  margin-top: var(--space-1);
+  font-size: var(--font-size-md);
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
 .stats {
   display: flex;
   gap: 36px;

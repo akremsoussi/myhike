@@ -5,6 +5,7 @@ from pydantic import BaseModel, field_validator
 from app.models import AccountStatus, ReportReason, Role, Visibility
 from app.schemas.auth import UtcDatetime
 from app.schemas.communities import AuthorOut, CommunityRef
+from app.schemas.media import PhotoOut, UploadOut
 from app.schemas.refuges import MassifOut, RefugeSummary
 
 COMMENT_MAX_LENGTH = 500
@@ -32,6 +33,7 @@ class ReportedPost(BaseModel):
 
     id: int
     body: str
+    photos: list[PhotoOut]
     visibility: Visibility
     community: CommunityRef | None
 
@@ -110,6 +112,8 @@ class ModCommunityDetail(ModCommunityRow):
 
     description: str
     refuges: list[RefugeSummary]
+    banner: UploadOut | None
+    icon: UploadOut | None
 
 
 class CommunityIn(BaseModel):
@@ -118,6 +122,9 @@ class CommunityIn(BaseModel):
     region: str
     massif_id: int | None = None
     refuge_ids: list[int] = []
+    # Images envoyées avec kind=banner / icon ; null : pas de visuel.
+    banner_id: int | None = None
+    icon_id: int | None = None
 
     @field_validator("name")
     @classmethod

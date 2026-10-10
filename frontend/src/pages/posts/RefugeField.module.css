@@ -1,0 +1,92 @@
+.picker {
+  position: relative;
+}
+
+.results {
+  position: absolute;
+  top: calc(100% + var(--space-1));
+  right: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  max-height: 240px;
+  margin: 0;
+  padding: var(--space-1);
+  overflow-y: auto;
+  border: var(--border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  list-style: none;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: var(--space-2);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: var(--font-size-md);
+  text-align: left;
+  cursor: pointer;
+}
+
+.result:hover {
+  background: var(--color-primary-subtle);
+}
+
+.meta {
+  padding: var(--space-1) var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.result .meta {
+  padding: 0;
+}
+
+/* Refuge choisi : même gabarit qu'un champ (42 px). */
+.chosen {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--input-padding);
+  line-height: var(--line-height-normal);
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 0 0 var(--border-width) var(--color-primary);
+  background: var(--color-primary-subtle);
+}
+
+.pin {
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+.name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clear {
+  display: flex;
+  padding: var(--space-1);
+  border: none;
+  border-radius: var(--radius-full);
+  background: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.clear:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}

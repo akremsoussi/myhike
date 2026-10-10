@@ -6,11 +6,13 @@ from app.routers import (
     communities,
     friends,
     health,
+    media,
     moderation,
     outings,
     posts,
     refuges,
     reports,
+    search,
     users,
 )
 
@@ -27,8 +29,10 @@ app.include_router(auth.router, prefix="/api")
 app.include_router(refuges.router, prefix="/api")
 app.include_router(communities.router, prefix="/api")
 app.include_router(posts.router, prefix="/api")
+app.include_router(media.router, prefix="/api")
 app.include_router(users.router, prefix="/api")
 app.include_router(friends.router, prefix="/api")
 app.include_router(outings.router, prefix="/api")
 app.include_router(reports.router, prefix="/api")
 app.include_router(moderation.router, prefix="/api")
+app.include_router(search.router, prefix="/api")

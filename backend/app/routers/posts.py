@@ -5,9 +5,9 @@ from sqlalchemy.orm import Session
 from app.db import DbSession
 from app.deps import ActiveUser
 from app.errors import ApiError
-from app.models import Community, CommunityMember, Post, PostLike, Role, User
+from app.models import Community, CommunityMember, Post, PostLike, Refuge, Role, User
 from app.schemas.communities import LikeOut, PostIn, PostOut
-from app.services import moderation, posts
+from app.services import media, moderation, posts
 from app.services.visibility import post_visible_to
 
 router = APIRouter(prefix="/posts", tags=["posts"])
@@ -24,6 +24,24 @@ def _visible_post(db: Session, viewer: User, post_id: int) -> Post:
 @router.post("", status_code=status.HTTP_201_CREATED)
 def create_post(data: PostIn, db: DbSession, viewer: ActiveUser) -> PostOut:
     """Écran 09. Dans une communauté, il faut en être membre."""
+    # Une photo ou un chemin seul suffit (« Partager une photo ou un chemin… »).
+    if not data.body and not data.photo_ids and not data.path:
+        raise ApiError(
+            422,
+            "validation_error",
+            "Certains champs sont invalides.",
+            fields={"body": "Écrivez quelques mots, ajoutez une photo ou un chemin."},
+        )
+    refuge = None
+    if data.refuge_id is not None:
+        refuge = db.get(Refuge, data.refuge_id)
+        if refuge is None:
+            raise ApiError(
+                422,
+                "validation_error",
+                "Certains champs sont invalides.",
+                fields={"refuge_id": "Ce refuge n'existe pas."},
+            )
     community = None
     if data.community_slug is not None:
         community = db.scalar(select(Community).where(Community.slug == data.community_slug))
@@ -34,9 +52,14 @@ def create_post(data: PostIn, db: DbSession, viewer: ActiveUser) -> PostOut:
     post = Post(
         author=viewer,
         community=community,
+        refuge=refuge,
         body=data.body,
         visibility=data.visibility,
     )
+    posts.set_path(post, data.path)
+    for position, photo in enumerate(media.claim(db, viewer, data.photo_ids, "photo_ids")):
+        photo.position = position
+        post.photos.append(photo)
     db.add(post)
     db.commit()
     return posts.to_out(db, viewer, [post])[0]

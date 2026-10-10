@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import { REPORT_REASONS, type Report } from '../../api/moderation'
-import { Button, VisibilityBadge } from '../../components'
+import { Button, PhotoGrid, VisibilityBadge } from '../../components'
 import { formatRelative, shortName } from '../../lib/format'
 import styles from './ReportItem.module.css'
 
@@ -34,7 +34,8 @@ export function ReportItem({ report, compact = false, onDeletePost }: ReportItem
             <VisibilityBadge visibility={report.post.visibility} variant="meta" />
             {report.post.community && <span> · {report.post.community.name}</span>}
           </p>
-          <p className={styles.postBody}>{report.post.body}</p>
+          {report.post.body && <p className={styles.postBody}>{report.post.body}</p>}
+          <PhotoGrid photos={report.post.photos} alt={`Photo de ${report.target.display_name}`} />
           {onDeletePost && (
             <Button size="sm" variant="danger" onClick={onDeletePost}>
               Supprimer le post

@@ -57,6 +57,8 @@ class User(Base):
     email: Mapped[str] = mapped_column(String(255), unique=True)
     password_hash: Mapped[str] = mapped_column(String(255))
     display_name: Mapped[str] = mapped_column(String(60))
+    # Présentation affichée sous le nom (écran 05, « Modifier le profil »).
+    bio: Mapped[str] = mapped_column(String(300), default="", server_default="")
     role: Mapped[Role] = mapped_column(
         Enum(Role, values_callable=_values, name="role"), default=Role.USER
     )
@@ -97,7 +99,7 @@ class User(Base):
 
 
 class EmailToken(Base):
-    """Lien envoyé par email (confirmation d'adresse, plus tard mot de passe oublié).
+    """Lien envoyé par email : confirmation d'adresse ou mot de passe oublié.
 
     Seule l'empreinte SHA-256 du jeton est stockée : une fuite de la base ne permet pas
     de confirmer un compte.

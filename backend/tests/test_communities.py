@@ -216,7 +216,8 @@ def test_empty_post_is_rejected(active_client, world):
     response = active_client.post("/api/posts", json={"body": "   ", "visibility": "public"})
 
     assert response.status_code == 422
-    assert response.json()["detail"]["fields"]["body"] == "Écrivez quelques mots."
+    message = response.json()["detail"]["fields"]["body"]
+    assert message == "Écrivez quelques mots, ajoutez une photo ou un chemin."
 
 
 def test_like_and_unlike(active_client, world):

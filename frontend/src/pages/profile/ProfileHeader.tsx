@@ -11,7 +11,7 @@ type ProfileHeaderProps = {
   actions: ReactNode
 }
 
-/** En-tête des écrans 05 et 06 : avatar, identité, statistiques et actions. */
+/** En-tête des écrans 05 et 06 : avatar, identité, présentation, statistiques et actions. */
 export function ProfileHeader({ profile, meta, actions }: ProfileHeaderProps) {
   return (
     <section className={styles.header}>
@@ -21,6 +21,7 @@ export function ProfileHeader({ profile, meta, actions }: ProfileHeaderProps) {
         <p className={styles.meta}>
           @{profile.user.username} · {meta}
         </p>
+        {profile.bio && <p className={styles.bio}>{profile.bio}</p>}
       </div>
       <div className={styles.stats}>
         {profile.outing_count !== null && <StatBlock value={profile.outing_count} label="Sorties" />}

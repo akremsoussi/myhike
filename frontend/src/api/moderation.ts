@@ -1,6 +1,7 @@
 import type { Visibility } from '../components'
 import { api } from '../lib/api'
 import type { Author } from './communities'
+import type { Photo, UploadedImage } from './media'
 import type { Massif, RefugeSummary } from './refuges'
 import type { CommunityRef } from './users'
 
@@ -18,7 +19,7 @@ export type Report = {
   reporter: Author
   target: Author
   /** Post signalé, visible par les modérateurs même s'il est « Amis uniquement ». */
-  post: { id: number; body: string; visibility: Visibility; community: CommunityRef | null } | null
+  post: { id: number; body: string; photos: Photo[]; visibility: Visibility; community: CommunityRef | null } | null
   reason: ReportReason
   comment: string
   created_at: string
@@ -53,7 +54,12 @@ export type ModCommunity = {
   created_at: string
 }
 
-export type ModCommunityDetail = ModCommunity & { description: string; refuges: RefugeSummary[] }
+export type ModCommunityDetail = ModCommunity & {
+  description: string
+  refuges: RefugeSummary[]
+  banner: UploadedImage | null
+  icon: UploadedImage | null
+}
 
 export type CommunityInput = {
   name: string
@@ -61,6 +67,9 @@ export type CommunityInput = {
   region: string
   massif_id: number | null
   refuge_ids: number[]
+  /** Images envoyées avec le type banner / icon ; null : pas de visuel. */
+  banner_id: number | null
+  icon_id: number | null
 }
 
 export type Role = 'user' | 'moderator'

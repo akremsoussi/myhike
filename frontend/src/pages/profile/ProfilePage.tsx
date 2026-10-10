@@ -2,7 +2,7 @@ import { Lock, Plus } from 'lucide-react'
 import { Link } from 'react-router'
 import { usersApi, type Profile } from '../../api/users'
 import { useAuth } from '../../auth/context'
-import { AvatarGroup, Button, ButtonLink, Card, Notice, OutingCard, PostTile, StatusBadge, Tag } from '../../components'
+import { AvatarGroup, ButtonLink, Card, Notice, OutingCard, PostTile, StatusBadge, Tag } from '../../components'
 import { formatCount } from '../../lib/format'
 import { useApi } from '../../lib/useApi'
 import styles from './profile.module.css'
@@ -39,10 +39,9 @@ export function ProfilePage() {
         meta={`membre depuis ${new Date(data.member_since).getFullYear()}`}
         actions={
           <>
-            {/* Écran « Modifier le profil » : pas encore dessiné. */}
-            <Button variant="secondary" disabled title="Bientôt disponible">
+            <ButtonLink to="/profil/modifier" variant="secondary">
               Modifier le profil
-            </Button>
+            </ButtonLink>
             <Link to="/parametres/confidentialite" className={styles.textAction}>
               Confidentialité
             </Link>

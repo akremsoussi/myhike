@@ -1,7 +1,7 @@
 """Règles métier des comptes : inscription, confirmation d'email, sessions, connexion."""
 
 import math
-from datetime import timedelta
+from datetime import datetime, timedelta
 
 from sqlalchemy import select, update
 from sqlalchemy.orm import Session
@@ -163,6 +163,86 @@ def change_pending_email(db: Session, user: User, email: str) -> str:
     token = issue_verification(db, user)
     db.commit()
     return token
+
+
+def request_password_reset(db: Session, email: str) -> tuple[User, str] | None:
+    """Jeton « Mot de passe oublié » à envoyer, ou None s'il n'y a rien à envoyer.
+
+    None sans erreur : pas de compte (ou compte suspendu), ou un lien vient déjà d'être
+    envoyé. La réponse de l'API est la même dans tous les cas, pour ne pas révéler quelles
+    adresses ont un compte.
+    """
+    user = db.scalar(select(User).where(User.email == email))
+    if user is None or user.status == AccountStatus.SUSPENDED:
+        return None
+    now = utcnow()
+    recent = db.scalar(
+        select(EmailToken.id).where(
+            EmailToken.user_id == user.id,
+            EmailToken.purpose == TokenPurpose.RESET,
+            EmailToken.created_at > now - timedelta(seconds=settings.resend_cooldown_seconds),
+        )
+    )
+    if recent is not None:
+        return None
+    _invalidate_resets(db, user, now)
+    token, token_hash = new_token()
+    db.add(
+        EmailToken(
+            user_id=user.id,
+            purpose=TokenPurpose.RESET,
+            token_hash=token_hash,
+            email=user.email,
+            created_at=now,
+            expires_at=now + timedelta(minutes=settings.password_reset_minutes),
+        )
+    )
+    db.commit()
+    return user, token
+
+
+def _invalidate_resets(db: Session, user: User, now: datetime) -> None:
+    db.execute(
+        update(EmailToken)
+        .where(
+            EmailToken.user_id == user.id,
+            EmailToken.purpose == TokenPurpose.RESET,
+            EmailToken.used_at.is_(None),
+        )
+        .values(used_at=now)
+    )
+
+
+def reset_password(db: Session, token: str, password: str) -> User:
+    """Nouveau mot de passe depuis le lien reçu. Toutes les sessions ouvertes sont fermées."""
+    row = db.scalar(
+        select(EmailToken).where(
+            EmailToken.token_hash == hash_token(token),
+            EmailToken.purpose == TokenPurpose.RESET,
+        )
+    )
+    if row is None or row.used_at is not None or row.email != row.user.email:
+        raise ApiError(400, "invalid_token", "Ce lien n'est pas valide. Demandez-en un nouveau.")
+    if row.expires_at <= utcnow():
+        raise ApiError(410, "token_expired", "Ce lien a expiré. Demandez-en un nouveau.")
+    user = row.user
+    if user.status == AccountStatus.SUSPENDED:
+        raise ApiError(403, "account_suspended", "Ce compte est suspendu.")
+
+    now = utcnow()
+    _invalidate_resets(db, user, now)
+    user.password_hash = hash_password(password)
+    # Le lien est arrivé dans la boîte de l'adresse du compte : elle est donc confirmée.
+    if user.status == AccountStatus.PENDING_EMAIL:
+        user.status = AccountStatus.ACTIVE
+        user.email_verified_at = now
+    db.execute(
+        update(UserSession)
+        .where(UserSession.user_id == user.id, UserSession.revoked_at.is_(None))
+        .values(revoked_at=now)
+    )
+    db.commit()
+    return user
 
 
 def authenticate(db: Session, email: str, password: str) -> User:

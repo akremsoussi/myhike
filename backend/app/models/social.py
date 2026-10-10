@@ -2,12 +2,14 @@ import enum
 from datetime import datetime
 
 from sqlalchemy import (
+    JSON,
     BigInteger,
     Column,
     DateTime,
     Enum,
     ForeignKey,
     Index,
+    Integer,
     String,
     Table,
     Text,
@@ -16,6 +18,7 @@ from sqlalchemy import (
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.models.base import Base, utcnow
+from app.models.media import Upload
 from app.models.refuge import Massif, Refuge
 from app.models.user import User, Visibility
 
@@ -53,9 +56,20 @@ class Community(Base):
     massif_id: Mapped[int | None] = mapped_column(
         ForeignKey("massifs.id", ondelete="SET NULL"), index=True
     )
+    # Visuels de l'écran 15 (bannière des écrans 07 et 08, icône de l'écran 08).
+    # use_alter : communities → uploads → posts → communities forme un cycle, ces clés
+    # étrangères sont donc ajoutées après la création des tables.
+    banner_id: Mapped[int | None] = mapped_column(
+        ForeignKey("uploads.id", ondelete="SET NULL", use_alter=True)
+    )
+    icon_id: Mapped[int | None] = mapped_column(
+        ForeignKey("uploads.id", ondelete="SET NULL", use_alter=True)
+    )
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
 
     massif: Mapped[Massif | None] = relationship()
+    banner: Mapped[Upload | None] = relationship(foreign_keys=[banner_id])
+    icon: Mapped[Upload | None] = relationship(foreign_keys=[icon_id])
     refuges: Mapped[list[Refuge]] = relationship(
         secondary=community_refuges, order_by=Refuge.name
     )
@@ -115,10 +129,23 @@ class Post(Base):
     visibility: Mapped[Visibility] = mapped_column(
         Enum(Visibility, values_callable=_values, name="visibility")
     )
+    # Refuge dont parle le post (« Voir les posts liés » de la fiche refuge).
+    refuge_id: Mapped[int | None] = mapped_column(
+        ForeignKey("refuges.id", ondelete="SET NULL"), index=True
+    )
+    # Chemin tracé ou importé (GPX) : [latitude, longitude] ou [latitude, longitude, altitude].
+    path: Mapped[list[list[float]] | None] = mapped_column(JSON)
+    # Calculés à la publication à partir du chemin.
+    distance_m: Mapped[int | None] = mapped_column(Integer)
+    elevation_gain_m: Mapped[int | None] = mapped_column(Integer)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
 
     author: Mapped[User] = relationship()
     community: Mapped[Community | None] = relationship()
+    refuge: Mapped[Refuge | None] = relationship()
+    photos: Mapped[list[Upload]] = relationship(
+        order_by=Upload.position, foreign_keys=[Upload.post_id], passive_deletes=True
+    )
 
 
 class PostLike(Base):

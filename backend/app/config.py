@@ -1,10 +1,12 @@
 from pathlib import Path
 from typing import Literal
 
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 # backend/.env, quel que soit le dossier depuis lequel on lance l'API.
-ENV_FILE = Path(__file__).resolve().parent.parent / ".env"
+BACKEND_DIR = Path(__file__).resolve().parent.parent
+ENV_FILE = BACKEND_DIR / ".env"
 
 
 class Settings(BaseSettings):
@@ -34,7 +36,19 @@ class Settings(BaseSettings):
     session_days: int = 30
 
     verification_hours: int = 24
+    # Lien « Mot de passe oublié » : court, il permet de prendre la main sur le compte.
+    password_reset_minutes: int = 60
     resend_cooldown_seconds: int = 60
+
+    # Images envoyées (photos des posts, bannières et icônes des communautés).
+    # Par défaut backend/uploads, ignoré par git. Un chemin relatif part de backend/.
+    media_dir: Path = BACKEND_DIR / "uploads"
+    upload_max_mb: int = 10
+
+    @field_validator("media_dir")
+    @classmethod
+    def resolve_media_dir(cls, value: Path) -> Path:
+        return value if value.is_absolute() else BACKEND_DIR / value
 
 
 settings = Settings()

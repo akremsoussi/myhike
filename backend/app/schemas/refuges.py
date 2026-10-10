@@ -2,6 +2,7 @@ from pydantic import BaseModel, ConfigDict
 
 from app.models import RefugeKind
 from app.schemas.auth import UtcDatetime
+from app.schemas.media import PhotoOut
 
 
 class MassifOut(BaseModel):
@@ -28,6 +29,14 @@ class RefugeSummary(BaseModel):
     massif: MassifOut | None
 
 
+class RefugePhotoOut(PhotoOut):
+    """Photo d'un commentaire refuges.info : l'auteur est à citer (CC BY-SA 2.0)."""
+
+    author: str
+    caption: str
+    taken_at: UtcDatetime | None
+
+
 class RefugeDetail(RefugeSummary):
     """Fiche refuge (écran 04). Textes issus de refuges.info (CC BY-SA 2.0)."""
 
@@ -38,6 +47,8 @@ class RefugeDetail(RefugeSummary):
     phone: str | None
     source_url: str | None
     source_updated_at: UtcDatetime | None
+    # La plus récente d'abord ; vide si aucune photo n'a été importée.
+    photos: list[RefugePhotoOut]
 
 
 class RefugeList(BaseModel):

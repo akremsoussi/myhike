@@ -29,6 +29,7 @@ python3 -m venv .venv
 .venv/bin/pip install -r requirements-dev.txt
 .venv/bin/alembic upgrade head   # crée ou met à jour les tables de la base refuges
 .venv/bin/python -m app.scripts.import_refuges   # importe les refuges depuis refuges.info (~3 min)
+.venv/bin/python -m app.scripts.import_refuge_photos  # copie leurs photos (long : --massif 18 pour les Écrins seuls)
 .venv/bin/python -m app.scripts.seed_communities # crée les communautés de départ (en attendant l'écran 15)
 cd ../frontend
 npm install
@@ -54,6 +55,7 @@ Vérifications : `cd backend && .venv/bin/pytest && .venv/bin/ruff check .` ; `c
 
 Emails en développement : avec `EMAIL_BACKEND=console` (par défaut), le lien de confirmation est écrit dans les logs de l'API (ligne `…/inscription/confirmer?token=…`). Pour une vraie boîte de réception locale, lancer Mailpit et mettre `EMAIL_BACKEND=smtp` dans `.env`.
 Les tests backend utilisent la base `refuges_test` (vidée à chaque test) et ne touchent jamais `refuges`.
+Images envoyées : fichiers dans `backend/uploads/` (non versionné, `MEDIA_DIR` dans `.env`). Pour effacer les images jamais publiées (plus de 24 h) : `.venv/bin/python -m app.scripts.clean_uploads`.
 
 ## Maquettes Figma
 
@@ -68,15 +70,21 @@ Les routes sont des **propositions** (rien dans la maquette ne les fixe).
 | 02 · Inscription | 10:34 | `/inscription` | public |
 | 02b · Compte en attente de validation | 49:2 | `/inscription/confirmation` | compte non confirmé |
 | (pas d'écran) Lien reçu par email | — | `/inscription/confirmer?token=…` | public |
+| (pas d'écran) Mot de passe oublié | — | `/mot-de-passe-oublie`, lien reçu : `/mot-de-passe/nouveau?token=…` | public |
+| (pas d'écran) Conditions d'utilisation | — | `/conditions` | public |
 | 03 · Carte des refuges | 11:2 | `/carte` | connecté |
 | 04 · Fiche refuge | 11:117 | `/refuges/:id` | connecté |
+| (pas d'écran) Posts liés à un refuge | — | `/refuges/:id/posts` | connecté |
 | 05 · Mon profil | 13:2 | `/profil` | connecté |
+| (pas d'écran) Modifier le profil | — | `/profil/modifier` | connecté |
 | 05b · Mes amis | 49:40 | `/profil/amis` | connecté |
 | 05c · Paramètres de confidentialité | 49:148 | `/parametres/confidentialite` | connecté |
 | 06 · Profil d'un utilisateur (non ami) | 13:110 | `/u/:username` | connecté |
 | 06b · Profil d'un utilisateur (ami) | 49:256 | `/u/:username` (même page, état ami) | connecté |
 | 07 · Communautés | 14:2 | `/communautes` | connecté |
 | 08 · Page communauté | 14:98 | `/communautes/:slug` | connecté |
+| (pas d'écran) Tous les membres | — | `/communautes/:slug/membres` | connecté |
+| (pas d'écran) Résultats de recherche | — | `/recherche?q=…` | connecté |
 | 09 · Nouveau post | 14:212 | `/posts/nouveau` | connecté |
 | 10 · Sorties | 15:2 | `/sorties` | connecté |
 | 11 · Détail sortie | 15:166 | `/sorties/:id` | connecté |
@@ -112,7 +120,9 @@ Les routes sont des **propositions** (rien dans la maquette ne les fixe).
 
 ### Écrans référencés mais non dessinés
 
-À concevoir avant de coder ces parcours : mot de passe oublié (lien de 01), conditions d'utilisation (02), modifier le profil (05), sections Profil / Compte & sécurité / Notifications des paramètres (05c), contenu des onglets « Demandes reçues » et « Demandes envoyées » (05b), états « demande envoyée » et « demande reçue » du profil d'un autre (06), commentaires d'un post (08), liste complète des membres (« Tout voir », 08), posts liés à un refuge (04), résultats de la recherche globale (barre de navigation), page Signalements (menu de modération).
+Restent à concevoir : sections Profil / Compte & sécurité / Notifications des paramètres (05c) et commentaires d'un post (08).
+
+Implémentés sans maquette, dans le style des écrans voisins : mot de passe oublié, conditions d'utilisation (page autonome, ouverte dans un nouvel onglet depuis 02), modifier le profil, onglets de 05b, états « demande envoyée » / « demande reçue » de 06, liste complète des membres, posts liés à un refuge, résultats de recherche, page Signalements.
 
 ## Rôles
 
@@ -129,7 +139,7 @@ La maquette mélange encore les termes : « Admin », « ADMIN », « Administra
 - Page `/moderation/signalements` (pas dessinée) : liste des signalements ouverts, « Classer », « Supprimer le post », « Examiner le compte » (écran 16 avec `?compte=pseudo`).
 - Journal `moderation_log` : alimente l'« Activité récente » (création / modification / suppression de communauté, post supprimé par un modérateur, rôle, suspension, suppression, signalements classés, export CSV).
 - Un modérateur ne peut ni se suspendre, ni changer son propre rôle, ni supprimer son compte (409 `self_action`). Suspendre révoque aussi les sessions.
-- L'identifiant (slug) d'une communauté est tiré du nom à la création et ne change plus. « Inscription » n'a qu'une valeur, « Ouverte à tous » ; bannière et icône ne sont pas encore enregistrables (pas de stockage d'images).
+- L'identifiant (slug) d'une communauté est tiré du nom à la création et ne change plus. « Inscription » n'a qu'une valeur, « Ouverte à tous ». Bannière et icône : images envoyées par le modérateur (voir « Images »).
 
 ## Règles métier
 
@@ -142,6 +152,8 @@ La maquette mélange encore les termes : « Admin », « ADMIN », « Administra
   - Renvoi limité à un toutes les 60 s (429 `resend_too_soon` avec `retry_after`).
   - Un compte `suspended` ne peut plus se connecter, et ses sessions en cours sont refusées (403). Il reste suspendu même s'il confirme son adresse.
   - Sessions : cookie httpOnly `refuges_session` (SameSite=Lax), jeton en base (table `sessions`), révocable.
+  - Mot de passe oublié : `POST /api/auth/password-reset` répond 202 que l'adresse ait un compte ou non (rien n'est envoyé à un compte suspendu, ni plus d'un lien par minute). Lien valable 1 h (`PASSWORD_RESET_MINUTES`), à usage unique, un nouveau lien invalide les précédents. Changer le mot de passe ferme toutes les sessions et confirme l'adresse d'un compte `pending_email`.
+  - Modifier le profil (`PUT /api/me/profile`) : nom affiché (2 à 60 caractères) et présentation (`bio`, 300 max.) ; le pseudo ne change pas.
 - **À trancher** : si la validation doit aussi passer par un modérateur, ajouter un statut `pending_review` et un filtre « En attente » dans 16.
 
 ### Amitié
@@ -156,7 +168,10 @@ La maquette mélange encore les termes : « Admin », « ADMIN », « Administra
 - **Le filtrage se fait dans l'API FastAPI, jamais seulement dans le front.** Le front ne reçoit jamais le contenu d'un post qu'il n'a pas le droit de voir.
 - Sur le profil d'un non-ami, l'API renvoie les posts publics et un **compteur** des posts réservés aux amis (bloc « 9 publications réservées aux amis »).
 - **Implémenté** : `post_visible_to(viewer)` (`backend/app/services/visibility.py`) est ajouté à toute requête qui renvoie des posts ; seule une amitié `accepted` compte, dans les deux sens. Un post invisible répond 404 (j'aime, suppression). Publier dans une communauté exige d'en être membre (403 `not_member`). L'auteur ou un modérateur peut supprimer un post.
-- **Pas encore implémenté** : photos, chemins et commentaires des posts (zones « Bientôt » dans 09).
+- **Pas encore implémenté** : commentaires des posts. Les photos sont implémentées (voir « Images »).
+- **Chemins** (implémenté) : tracé à la main sur la carte ou import d'un GPX (lu dans le navigateur, simplifié à 2 000 points). L'API calcule la distance et, si chaque point a une altitude (GPX), le dénivelé positif (variations de moins de 5 m ignorées, `app/services/geo.py`) ; elle renvoie un aperçu de 300 points au plus. Un post peut n'avoir qu'un chemin.
+- **Refuge lié** (implémenté) : un post peut citer un refuge (`refuge_id`, champ « Refuge (optionnel) » de 09). « Voir les posts liés » de 04 liste ces posts, avec la règle de lecture habituelle.
+- **Recherche globale** (implémenté, `GET /api/search?q=`, 2 caractères min.) : refuges, communautés, randonneurs actifs, sorties à venir visibles et posts visibles, 8 par catégorie.
 - **Implémenté** (proposition retenue) : un modérateur voit un post « Amis uniquement » **seulement depuis la modération**, quand il est signalé ; les fils et profils lui appliquent la règle normale.
 
 ### Paramètres de confidentialité (écran 05c, maquette)
@@ -168,12 +183,22 @@ La maquette mélange encore les termes : « Admin », « ADMIN », « Administra
 - Apparaître dans les suggestions d'amis : oui | non.
 - **Implémenté** : options Tout le monde / Mes amis / Moi uniquement, et pour les demandes Tout le monde / Membres de mes communautés (colonnes de `users`, `GET/PUT /api/me/privacy`). L'API applique la liste d'amis (compteur `null`), les demandes (403 `requests_restricted`), les suggestions et la visibilité par défaut (écran 09). « Qui peut voir mes sorties » est enregistré mais ne s'appliquera qu'avec les sorties.
 
+### Images (implémenté, `backend/app/services/media.py`)
+
+- Stockage **local** : un fichier par image dans `MEDIA_DIR` (par défaut `backend/uploads/`), table `uploads`. Rien n'est envoyé à un service extérieur.
+- Envoi en deux temps : `POST /api/uploads` (multipart, `kind` = `photo` | `banner` | `icon`, 10 Mo max, JPEG / PNG / WebP) renvoie un `id` ; le formulaire le passe ensuite (`photo_ids` d'un post, 4 au plus ; `banner_id` / `icon_id` d'une communauté). Une image ne sert qu'une fois, et seulement à celui qui l'a envoyée.
+- Chaque image est décodée puis **réencodée en WebP** (redressée, 2048 px max, icône recadrée en 512 × 512) : les métadonnées EXIF, dont la **position GPS**, ne sont jamais conservées.
+- `GET /api/media/{clé}.webp` applique la même règle que le contenu : photo d'un post si le post est visible (`post_visible_to`), ou pour un modérateur s'il est signalé ; bannière et icône pour tout compte actif ; image pas encore publiée pour son auteur seulement. Sinon 404. Jamais de dossier statique public.
+- Un post peut n'avoir que des photos (texte vide).
+- Images jamais rattachées : 30 en attente au plus par compte (429 `too_many_uploads`), effacées après 24 h par `app.scripts.clean_uploads`.
+
 ### Données des refuges (implémenté)
 
 - Source : **API publique refuges.info**, licence **CC BY-SA 2.0** : l'attribution est obligatoire (elle figure dans l'attribution de la carte, et devra figurer sur la fiche refuge).
 - Import dans MySQL par `app.scripts.import_refuges` (relançable : mise à jour par `external_id`), jamais d'appel à refuges.info depuis le navigateur ni à chaque requête. Types importés : cabane non gardée (7), gîte d'étape (9), refuge gardé (10) ; les bâtiments « détruits » sont ignorés. Tables `massifs` et `refuges`.
 - « Gardé » = refuge gardé ou gîte d'étape ; « Fermé » quand l'état refuges.info commence par « Ferm ».
-- Pas encore de photos (zone réservée en `--color-map-bg`). Le téléphone (`phone`) est le premier numéro trouvé dans le texte brut « Propriétaires » (`owner_info`).
+- **Photos** : celles des commentaires refuges.info (`GET /api/commentaires`), copiées par `app.scripts.import_refuge_photos` (3 par refuge au plus, les plus récentes ; relançable : seuls les refuges jamais vérifiés sont lus, `--again` pour tout revérifier et retirer les photos supprimées là-bas). Table `refuge_photos` (auteur, légende, date) liée à `uploads` : réencodées en WebP comme les images envoyées, servies par `/api/media/` à tout compte actif. La fiche refuge cite l'auteur et la licence sous chaque photo. Sans photo : zone réservée en `--color-map-bg`. L'API renvoie les chemins de photo sans le « ? » (`…jpegmd=…`), corrigé à l'import.
+- Le téléphone (`phone`) est le premier numéro trouvé dans le texte brut « Propriétaires » (`owner_info`).
 
 ### Sorties
 
@@ -199,4 +224,4 @@ La maquette mélange encore les termes : « Admin », « ADMIN », « Administra
 - **Composants à factoriser** : `Navbar`, `ModerationSidebar`, `Button`, `Chip`, `StatusBadge`, `VisibilityBadge` (globe = Public, cadenas = Amis), `Avatar` (initiales), `Card`, `Input`, `Select`, `SegmentedControl`, `Toggle`, `Tabs`, `PostCard`, `OutingCard`, `CommunityCard`, `UserRow`, `StatBlock`.
 - **Composants de base** : dans `frontend/src/components/` (un fichier `.tsx` et un `.module.css` par composant, exportés par `index.ts`). Catalogue visuel sur la route `/demo` : y ajouter chaque nouveau composant.
 - **Icônes** : la maquette utilise des caractères (⌕, ▾, ›, ✓, ♡, ⋯) et quelques SVG (cadenas, globe, enveloppe). Dans le code, utiliser une bibliothèque gratuite (proposition : lucide-react).
-- Les zones « Photo », « Chemin » et la carte sont des **placeholders** (couleurs `--color-map-*` et `--color-placeholder-path`). Carte réelle : **Leaflet + react-leaflet**, tuiles **OpenStreetMap** (attribution obligatoire), étiquettes regroupées avec **leaflet.markercluster** ; la page carte est chargée à la demande (`lazy`) pour ne pas alourdir le reste du site.
+- La zone « Photo » d'un refuge sans photo et les aperçus de chemin (`PathPreview`, SVG sans tuiles) utilisent les couleurs `--color-map-*` et `--color-placeholder-path`. Carte réelle : **Leaflet + react-leaflet**, tuiles **OpenStreetMap** (attribution obligatoire), étiquettes regroupées avec **leaflet.markercluster** ; la page carte est chargée à la demande (`lazy`) pour ne pas alourdir le reste du site.

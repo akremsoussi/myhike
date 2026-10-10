@@ -16,6 +16,27 @@ a.tile:hover {
   background: var(--color-map-relief);
 }
 
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Chemin sans photo : le tracé occupe toute la vignette. */
+.path {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  border-radius: 0;
+}
+
+a.withPhoto:hover .photo,
+a.withPhoto:hover .path {
+  opacity: 0.85;
+}
+
 .badge {
   position: absolute;
   top: var(--space-2);

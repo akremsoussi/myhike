@@ -1,9 +1,13 @@
-import { Flag, Heart, MoreHorizontal, Trash2 } from 'lucide-react'
+import { Flag, Heart, MapPin, MoreHorizontal, Route, Trash2 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import { cx } from '../lib/cx'
-import { formatNumber, formatRelative } from '../lib/format'
+import { formatAltitude, formatDistance, formatNumber, formatRelative } from '../lib/format'
+import type { Photo } from '../api/media'
 import { Avatar } from './Avatar'
+import { PathPreview } from './PathPreview'
+import { PhotoGrid } from './PhotoGrid'
+import { StatusBadge } from './StatusBadge'
 import styles from './PostCard.module.css'
 import { VisibilityBadge, type Visibility } from './VisibilityBadge'
 
@@ -12,7 +16,14 @@ type PostCardProps = {
     author: { username: string; display_name: string }
     /** Affichée sous l'auteur, hors du fil de cette communauté (profil). */
     community?: { slug: string; name: string } | null
+    /** Refuge dont parle le post, affiché sous l'auteur (masqué dans les posts liés au refuge). */
+    refuge?: { id: number; name: string } | null
     body: string
+    photos?: Photo[]
+    /** Chemin simplifié [latitude, longitude], avec sa distance et son dénivelé. */
+    path?: [number, number][] | null
+    distance_m?: number | null
+    elevation_gain_m?: number | null
     visibility: Visibility
     created_at: string
     like_count: number
@@ -27,7 +38,7 @@ type PostCardProps = {
   busy?: boolean
 }
 
-/** Post d'un fil (écran 08) : auteur, date, visibilité, texte et actions. */
+/** Post d'un fil (écran 08) : auteur, date, visibilité, texte, photos, chemin et actions. */
 export function PostCard({ post, onToggleLike, onDelete, onReport, busy = false }: PostCardProps) {
   const [menuOpen, setMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
@@ -63,6 +74,15 @@ export function PostCard({ post, onToggleLike, onDelete, onReport, busy = false 
                 <span aria-hidden>·</span>
                 <Link to={`/communautes/${post.community.slug}`} className={styles.community}>
                   {post.community.name}
+                </Link>
+              </>
+            )}
+            {post.refuge && (
+              <>
+                <span aria-hidden>·</span>
+                <Link to={`/refuges/${post.refuge.id}`} className={styles.community}>
+                  <MapPin aria-hidden size={13} />
+                  {post.refuge.name}
                 </Link>
               </>
             )}
@@ -117,7 +137,22 @@ export function PostCard({ post, onToggleLike, onDelete, onReport, busy = false 
         )}
       </header>
 
-      <p className={styles.body}>{post.body}</p>
+      {post.body && <p className={styles.body}>{post.body}</p>}
+      {post.photos && <PhotoGrid photos={post.photos} alt={`Photo de ${post.author.display_name}`} />}
+      {post.path && (
+        <div className={styles.path}>
+          <PathPreview points={post.path} className={styles.pathPreview} />
+          <p className={styles.pathStats}>
+            <StatusBadge tone="accent" icon={<Route aria-hidden size={13} />}>
+              Chemin
+            </StatusBadge>
+            {post.distance_m !== null && post.distance_m !== undefined && <span>{formatDistance(post.distance_m)}</span>}
+            {post.elevation_gain_m !== null && post.elevation_gain_m !== undefined && (
+              <span title="Dénivelé positif">D+ {formatAltitude(post.elevation_gain_m)}</span>
+            )}
+          </p>
+        </div>
+      )}
 
       <footer className={styles.actions}>
         <button

@@ -24,11 +24,13 @@ from app.models import (
     Refuge,
     Report,
     Role,
+    Upload,
     User,
     UserSession,
     utcnow,
 )
 from app.schemas.communities import AuthorOut, CommunityRef
+from app.schemas.media import UploadOut
 from app.schemas.moderation import (
     AccountDetail,
     AccountFilter,
@@ -46,7 +48,7 @@ from app.schemas.moderation import (
     SummaryOut,
 )
 from app.schemas.refuges import MassifOut, RefugeSummary
-from app.services import moderation
+from app.services import media, moderation
 
 router = APIRouter(prefix="/moderation", tags=["moderation"])
 
@@ -180,6 +182,7 @@ def list_reports(db: DbSession, _: ModeratorUser) -> list[ReportOut]:
             joinedload(Report.reporter),
             joinedload(Report.target),
             joinedload(Report.post).joinedload(Post.community),
+            joinedload(Report.post).selectinload(Post.photos),
         )
         .order_by(Report.created_at.desc(), Report.id.desc())
     ).all()
@@ -255,10 +258,23 @@ def _detail(db: Session, slug: str) -> ModCommunityDetail:
         **_row(community, members, posts),
         description=community.description,
         refuges=[RefugeSummary.model_validate(refuge) for refuge in refuges],
+        banner=UploadOut.model_validate(community.banner) if community.banner else None,
+        icon=UploadOut.model_validate(community.icon) if community.icon else None,
     )
 
 
-def _apply(db: Session, community: Community, data: CommunityIn) -> None:
+def _visual(
+    db: Session, moderator: User, current: Upload | None, upload_id: int | None, field: str
+) -> Upload | None:
+    """Bannière ou icône : l'actuelle, ou une image tout juste envoyée par ce modérateur."""
+    if upload_id is None:
+        return None
+    if current is not None and current.id == upload_id:
+        return current
+    return media.claim(db, moderator, [upload_id], field)[0]
+
+
+def _apply(db: Session, moderator: User, community: Community, data: CommunityIn) -> None:
     if data.massif_id is not None and db.get(Massif, data.massif_id) is None:
         raise ApiError(422, "unknown_massif", "Ce massif n'existe pas.")
     refuges = list(db.scalars(select(Refuge).where(Refuge.id.in_(data.refuge_ids))))
@@ -269,6 +285,13 @@ def _apply(db: Session, community: Community, data: CommunityIn) -> None:
     community.region = data.region
     community.massif_id = data.massif_id
     community.refuges = sorted(refuges, key=lambda refuge: refuge.name)
+    if data.banner_id is not None and data.banner_id == data.icon_id:
+        raise ApiError(
+            422, "validation_error", "Certains champs sont invalides.",
+            fields={"icon_id": "Choisissez une autre image que la bannière."},
+        )  # fmt: skip
+    community.banner = _visual(db, moderator, community.banner, data.banner_id, "banner_id")
+    community.icon = _visual(db, moderator, community.icon, data.icon_id, "icon_id")
 
 
 @router.get("/communities")
@@ -286,7 +309,7 @@ def create_community(
     data: CommunityIn, db: DbSession, moderator: ModeratorUser
 ) -> ModCommunityDetail:
     community = Community(slug=moderation.unique_slug(db, data.name))
-    _apply(db, community, data)
+    _apply(db, moderator, community, data)
     db.add(community)
     moderation.log(db, moderator, f"Communauté « {community.name} » créée")
     db.commit()
@@ -301,7 +324,7 @@ def update_community(
     community = db.scalar(select(Community).where(Community.slug == slug))
     if community is None:
         raise ApiError(404, "not_found", "Cette communauté n'existe pas.")
-    _apply(db, community, data)
+    _apply(db, moderator, community, data)
     moderation.log(db, moderator, f"Communauté « {community.name} » modifiée")
     db.commit()
     return _detail(db, slug)

@@ -1,7 +1,5 @@
 """Sorties : qui les voit, qui peut les rejoindre, et leurs chiffres (distance, dénivelé)."""
 
-import math
-from collections.abc import Sequence
 
 from sqlalchemy import ColumnElement, exists, or_, select
 from sqlalchemy.orm import Session
@@ -20,9 +18,9 @@ from app.models import (
 )
 from app.schemas.communities import AuthorOut
 from app.schemas.outings import OutingDetail, OutingIn, OutingSummary, StopOut
+from app.services import geo
 
 PREVIEW_PARTICIPANTS = 3
-EARTH_RADIUS_M = 6_371_000
 
 
 def is_participant_clause(user_id: int) -> ColumnElement[bool]:
@@ -55,14 +53,6 @@ def get_visible(db: Session, viewer: User, outing_id: int) -> Outing:
     return outing
 
 
-def haversine_m(a: Sequence[float], b: Sequence[float]) -> float:
-    lat1, lng1, lat2, lng2 = map(math.radians, (a[0], a[1], b[0], b[1]))
-    h = math.sin((lat2 - lat1) / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin(
-        (lng2 - lng1) / 2
-    ) ** 2
-    return 2 * EARTH_RADIUS_M * math.asin(math.sqrt(h))
-
-
 def _stop_points(outing: Outing) -> list[list[float]]:
     return [[float(stop.latitude), float(stop.longitude)] for stop in outing.stops]
 
@@ -70,7 +60,7 @@ def _stop_points(outing: Outing) -> list[list[float]]:
 def distance_m(outing: Outing) -> int:
     """Longueur du chemin tracé, ou à défaut distance à vol d'oiseau entre les points de stop."""
     points = outing.path if len(outing.path) >= 2 else _stop_points(outing)
-    return round(sum(haversine_m(a, b) for a, b in zip(points, points[1:], strict=False)))
+    return geo.length_m(points)
 
 
 def elevation_gain_m(outing: Outing) -> int | None:

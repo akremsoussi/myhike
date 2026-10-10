@@ -36,3 +36,15 @@ def send_verification_email(to: str, display_name: str, token: str) -> None:
         f"Il expire dans {settings.verification_hours} h. "
         "Si vous n'avez pas créé de compte, ignorez cet email.\n",
     )
+
+
+def send_password_reset_email(to: str, display_name: str, token: str) -> None:
+    link = f"{settings.frontend_url}/mot-de-passe/nouveau?token={token}"
+    send_email(
+        to,
+        "Choisissez un nouveau mot de passe",
+        f"Bonjour {display_name},\n\n"
+        f"Pour choisir un nouveau mot de passe Refuges, ouvrez ce lien :\n{link}\n\n"
+        f"Il expire dans {settings.password_reset_minutes} min et ne sert qu'une fois. "
+        "Si vous n'avez rien demandé, ignorez cet email : votre mot de passe ne change pas.\n",
+    )

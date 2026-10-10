@@ -1,4 +1,6 @@
 import { api } from '../lib/api'
+import type { PostPage } from './communities'
+import type { Photo } from './media'
 
 export type RefugeKind = 'unguarded_hut' | 'gite' | 'guarded_hut'
 
@@ -27,7 +29,11 @@ export type RefugeDetail = RefugeSummary & {
   phone: string | null
   source_url: string | null
   source_updated_at: string | null
+  /** Photos des commentaires refuges.info, la plus récente d'abord ; l'auteur est à citer. */
+  photos: RefugePhoto[]
 }
+
+export type RefugePhoto = Photo & { author: string; caption: string; taken_at: string | null }
 
 export type RefugeList = { total: number; items: RefugeSummary[] }
 
@@ -55,4 +61,6 @@ export const refugesApi = {
   list: (query: RefugeQuery, signal?: AbortSignal) =>
     api<RefugeList>(`/refuges?${toSearchParams(query)}`, { signal }),
   get: (id: number) => api<RefugeDetail>(`/refuges/${id}`),
+  /** « Voir les posts liés » : seulement ceux que l'on a le droit de lire. */
+  posts: (id: number, before?: number) => api<PostPage>(`/refuges/${id}/posts${before ? `?before=${before}` : ''}`),
 }

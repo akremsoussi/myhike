@@ -1,6 +1,7 @@
 """Modèles SQLAlchemy. Tous importés ici pour qu'Alembic les voie."""
 
 from app.models.base import Base, utcnow
+from app.models.media import Upload
 from app.models.moderation import ModerationLog, Report, ReportReason
 from app.models.outing import (
     Outing,
@@ -9,7 +10,7 @@ from app.models.outing import (
     OutingStop,
     OutingVisibility,
 )
-from app.models.refuge import GUARDED_KINDS, Massif, Refuge, RefugeKind
+from app.models.refuge import GUARDED_KINDS, Massif, Refuge, RefugeKind, RefugePhoto
 from app.models.social import (
     Community,
     CommunityMember,
@@ -52,6 +53,7 @@ __all__ = [
     "PostLike",
     "Refuge",
     "RefugeKind",
+    "RefugePhoto",
     "Report",
     "ReportReason",
     "RequestPolicy",
@@ -59,6 +61,7 @@ __all__ = [
     "Visibility",
     "community_refuges",
     "TokenPurpose",
+    "Upload",
     "User",
     "UserSession",
     "utcnow",

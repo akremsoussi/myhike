@@ -9,10 +9,12 @@ import {
   ChoiceCards,
   Chip,
   CommunityCard,
+  FileDrop,
   Input,
   ModerationSidebar,
   Notice,
   OutingCard,
+  PhotoGrid,
   PostCard,
   PostTile,
   ReportDialog,
@@ -50,6 +52,22 @@ const DEMO_OUTING = {
   preview: [[44.918, 6.421], [44.929, 6.41], [44.934, 6.4005], [44.945, 6.379]] as [number, number][],
 }
 const TWO_HOURS_AGO = new Date(Date.now() - 2 * 3_600_000).toISOString()
+
+/** Fausses photos (dégradés SVG aux couleurs des tokens), pour ne dépendre d'aucun envoi. */
+function demoPhoto(from: string, to: string) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500"><defs><linearGradient id="g" x2="0" y2="1"><stop offset="0" stop-color="${from}"/><stop offset="1" stop-color="${to}"/></linearGradient></defs><rect width="800" height="500" fill="url(#g)"/></svg>`
+  return { url: `data:image/svg+xml,${encodeURIComponent(svg)}`, width: 800, height: 500 }
+}
+// Montée au Glacier Blanc (approximative), pour l'aperçu du chemin d'un post.
+const DEMO_PATH: [number, number][] = [
+  [44.9105, 6.4405],
+  [44.9165, 6.4352],
+  [44.9221, 6.4251],
+  [44.9268, 6.4143],
+  [44.934, 6.4005],
+]
+
+const DEMO_PHOTOS = [demoPhoto(colors.accentSoft, colors.accent), demoPhoto(colors.mapWater, colors.primary)]
 const REGION_FILTERS = ['Toutes', 'Alpes', 'Pyrénées', 'Préalpes']
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
@@ -83,6 +101,7 @@ export function DemoPage() {
   const [joined, setJoined] = useState(true)
   const [liked, setLiked] = useState(false)
   const [reporting, setReporting] = useState(false)
+  const [dropped, setDropped] = useState<string[]>([])
 
   return (
     <div className={styles.page}>
@@ -404,6 +423,10 @@ export function DemoPage() {
           post={{
             author: { username: 'lucas', display_name: 'Lucas Durand' },
             body: 'Montée au Glacier Blanc ce matin, conditions parfaites. Je partage le tracé pour ceux qui y vont ce week-end.',
+            refuge: { id: 1, name: 'Refuge du Glacier Blanc' },
+            path: DEMO_PATH,
+            distance_m: 4200,
+            elevation_gain_m: 870,
             visibility: 'friends',
             created_at: TWO_HOURS_AGO,
             like_count: liked ? 25 : 24,
@@ -414,12 +437,33 @@ export function DemoPage() {
           onDelete={() => undefined}
           onReport={() => setReporting(true)}
         />
+        <PostCard
+          post={{
+            author: { username: 'sarah', display_name: 'Sarah B.' },
+            body: 'Coucher de soleil depuis la terrasse du refuge des Écrins.',
+            photos: DEMO_PHOTOS,
+            visibility: 'public',
+            created_at: TWO_HOURS_AGO,
+            like_count: 12,
+            liked: false,
+            can_delete: false,
+          }}
+        />
+        <Card title="Photo seule (PhotoGrid) et choix d’images (FileDrop)">
+          <div className={styles.communityCards}>
+            <PhotoGrid photos={DEMO_PHOTOS.slice(0, 1)} alt="Photo de démonstration" />
+            <FileDrop multiple onFiles={(files) => setDropped(files.map((file) => file.name))} className={styles.dropZone}>
+              {dropped.length > 0 ? dropped.join(', ') : 'Glisser une image ou parcourir (rien n’est envoyé)'}
+            </FileDrop>
+          </div>
+        </Card>
         {/* Envoie un vrai signalement si on valide : à utiliser avec un compte de test. */}
         {reporting && <ReportDialog target={{ username: 'demo' }} label="ce post (démo)" onClose={() => setReporting(false)} />}
         <Card title="Vignettes de publications (PostTile)">
           <div className={styles.communityCards}>
             <PostTile post={{ body: 'Montée au Glacier Blanc ce matin, conditions parfaites.', visibility: 'public', community: null }} />
             <PostTile post={{ body: 'Qui est partant pour le Dôme des Écrins ?', visibility: 'friends', community: null }} />
+            <PostTile post={{ body: 'Tracé du Glacier Blanc', path: DEMO_PATH, visibility: 'public', community: null }} />
             <PostTile showBadge={false} post={{ body: 'Coucher de soleil depuis la terrasse.', visibility: 'public', community: null }} />
           </div>
         </Card>

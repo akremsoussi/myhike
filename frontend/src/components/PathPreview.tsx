@@ -1,3 +1,4 @@
+import { cx } from '../lib/cx'
 import styles from './PathPreview.module.css'
 
 const WIDTH = 340
@@ -7,13 +8,16 @@ const PADDING = 14
 type PathPreviewProps = {
   /** [latitude, longitude] dans l'ordre du chemin. */
   points: [number, number][]
+  /** Pour changer la hauteur (110 px par défaut). */
+  className?: string
 }
 
 /**
- * Vignette d'une sortie (écran 10) : le tracé en orange sur le fond de carte, sans tuiles.
+ * Vignette d'une sortie (écran 10) ou du chemin d'un post (écran 08) : le tracé en orange
+ * sur le fond de carte, sans tuiles.
  * Projection équirectangulaire corrigée par la latitude, suffisante à cette échelle.
  */
-export function PathPreview({ points }: PathPreviewProps) {
+export function PathPreview({ points, className }: PathPreviewProps) {
   let content = null
   if (points.length > 0) {
     const cos = Math.cos((points[0][0] * Math.PI) / 180)
@@ -36,7 +40,7 @@ export function PathPreview({ points }: PathPreviewProps) {
       )
   }
   return (
-    <svg className={styles.preview} viewBox={`0 0 ${WIDTH} ${HEIGHT}`} preserveAspectRatio="xMidYMid meet" aria-hidden>
+    <svg className={cx(styles.preview, className)} viewBox={`0 0 ${WIDTH} ${HEIGHT}`} preserveAspectRatio="xMidYMid meet" aria-hidden>
       {content}
     </svg>
   )

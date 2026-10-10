@@ -31,14 +31,16 @@ type ApiOptions = { method?: string; body?: unknown; signal?: AbortSignal }
 
 export async function api<T>(path: string, options: ApiOptions = {}): Promise<T> {
   const { method = 'GET', body, signal } = options
+  // FormData (envoi de fichier) : le navigateur pose lui-même l'en-tête multipart.
+  const json = body !== undefined && !(body instanceof FormData)
   let response: Response
   try {
     response = await fetch(`/api${path}`, {
       method,
       signal,
       credentials: 'same-origin',
-      headers: body === undefined ? undefined : { 'Content-Type': 'application/json' },
-      body: body === undefined ? undefined : JSON.stringify(body),
+      headers: json ? { 'Content-Type': 'application/json' } : undefined,
+      body: json ? JSON.stringify(body) : (body as FormData | undefined),
     })
   } catch (error) {
     // Requête annulée volontairement (la carte a bougé) : on laisse passer l'AbortError.

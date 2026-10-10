@@ -1,9 +1,10 @@
 import { ArrowLeft, Plus, Search, X } from 'lucide-react'
-import { useEffect, useState, type FormEvent } from 'react'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { Link, useNavigate, useParams } from 'react-router'
+import { ACCEPTED_IMAGE_TYPES, mediaApi, type UploadedImage, type UploadKind } from '../../api/media'
 import { moderationApi, type ModCommunityDetail } from '../../api/moderation'
 import { refugesApi, type Massif, type RefugeSummary } from '../../api/refuges'
-import { Button, Card, Input, Notice, Select, Textarea } from '../../components'
+import { Button, Card, FileDrop, Input, Notice, Select, Textarea } from '../../components'
 import { api, ApiError } from '../../lib/api'
 import { formatNumber } from '../../lib/format'
 import styles from './CommunityFormPage.module.css'
@@ -28,6 +29,10 @@ function CommunityForm({ slug }: { slug: string | null }) {
   const [region, setRegion] = useState('')
   const [massifId, setMassifId] = useState('')
   const [refuges, setRefuges] = useState<RefugeSummary[]>([])
+  const [banner, setBanner] = useState<UploadedImage | null>(null)
+  const [icon, setIcon] = useState<UploadedImage | null>(null)
+  const [sending, setSending] = useState<UploadKind | null>(null)
+  const iconInput = useRef<HTMLInputElement>(null)
   const [massifs, setMassifs] = useState<Massif[]>([])
   const [regions, setRegions] = useState(DEFAULT_REGIONS)
   const [adding, setAdding] = useState(false)
@@ -54,6 +59,8 @@ function CommunityForm({ slug }: { slug: string | null }) {
         setRegion(community.region)
         setMassifId(community.massif ? String(community.massif.id) : '')
         setRefuges(community.refuges)
+        setBanner(community.banner)
+        setIcon(community.icon)
       })
       .catch((err: unknown) => setFormError(err instanceof ApiError ? err.message : 'La communauté n’a pas pu être chargée.'))
   }, [slug])
@@ -66,6 +73,8 @@ function CommunityForm({ slug }: { slug: string | null }) {
       region,
       massif_id: massifId ? Number(massifId) : null,
       refuge_ids: refuges.map((refuge) => refuge.id),
+      banner_id: banner?.id ?? null,
+      icon_id: icon?.id ?? null,
     }
     setSaving(true)
     setErrors({})
@@ -83,6 +92,22 @@ function CommunityForm({ slug }: { slug: string | null }) {
       }
     } finally {
       setSaving(false)
+    }
+  }
+
+  /** Envoie l'image tout de suite ; elle n'est rattachée qu'à l'enregistrement. */
+  async function sendVisual(file: File, kind: 'banner' | 'icon') {
+    setSending(kind)
+    setErrors((current) => ({ ...current, [`${kind}_id`]: '' }))
+    try {
+      const uploaded = await mediaApi.upload(file, kind)
+      if (kind === 'banner') setBanner(uploaded)
+      else setIcon(uploaded)
+    } catch (err) {
+      const message = err instanceof ApiError ? err.message : 'L’image n’a pas pu être envoyée.'
+      setErrors((current) => ({ ...current, [`${kind}_id`]: message }))
+    } finally {
+      setSending(null)
     }
   }
 
@@ -115,7 +140,7 @@ function CommunityForm({ slug }: { slug: string | null }) {
           <Button variant="secondary" onClick={() => navigate('/moderation/communautes')}>
             Annuler
           </Button>
-          <Button type="submit" form={FORM_ID} disabled={saving || !ready}>
+          <Button type="submit" form={FORM_ID} disabled={saving || !ready || sending !== null}>
             {saving ? 'Enregistrement…' : loaded ? 'Enregistrer' : 'Créer la communauté'}
           </Button>
         </div>
@@ -197,16 +222,49 @@ function CommunityForm({ slug }: { slug: string | null }) {
 
         <div className={common.aside}>
           <Card padding="large" title={<span className={common.sectionTitle}>Visuels</span>}>
-            {/* Pas encore de stockage d'images gratuit : zones réservées, comme dans la maquette. */}
             <span className={styles.label}>Bannière</span>
-            <div className={styles.banner}>Bientôt : glisser une image ou parcourir</div>
+            <FileDrop
+              onFiles={([file]) => void sendVisual(file, 'banner')}
+              disabled={!ready || sending !== null}
+              aria-label={banner ? 'Remplacer la bannière' : 'Choisir une bannière'}
+              className={styles.banner}
+            >
+              {banner && <img src={banner.url} alt="" className={styles.bannerImage} />}
+              <span className={banner ? styles.bannerHint : undefined}>
+                {sending === 'banner' ? 'Envoi…' : banner ? 'Remplacer l’image' : 'Glisser une image ou parcourir'}
+              </span>
+            </FileDrop>
+            {banner && (
+              <button type="button" className={styles.removeVisual} onClick={() => setBanner(null)}>
+                Retirer la bannière
+              </button>
+            )}
+            {errors.banner_id && <p className={styles.error}>{errors.banner_id}</p>}
+
             <span className={styles.label}>Icône</span>
             <div className={styles.iconRow}>
-              <span className={styles.icon} aria-hidden />
-              <Button size="sm" variant="secondary" disabled title="Bientôt disponible">
-                Changer
+              {icon ? <img src={icon.url} alt="Icône actuelle" className={styles.icon} /> : <span className={styles.icon} aria-hidden />}
+              <input
+                ref={iconInput}
+                type="file"
+                hidden
+                accept={ACCEPTED_IMAGE_TYPES.join(',')}
+                onChange={(event) => {
+                  const file = event.target.files?.[0]
+                  event.target.value = ''
+                  if (file) void sendVisual(file, 'icon')
+                }}
+              />
+              <Button size="sm" variant="secondary" disabled={!ready || sending !== null} onClick={() => iconInput.current?.click()}>
+                {sending === 'icon' ? 'Envoi…' : 'Changer'}
               </Button>
+              {icon && (
+                <button type="button" className={styles.removeVisual} onClick={() => setIcon(null)}>
+                  Retirer
+                </button>
+              )}
             </div>
+            {errors.icon_id && <p className={styles.error}>{errors.icon_id}</p>}
           </Card>
 
           {loaded && (

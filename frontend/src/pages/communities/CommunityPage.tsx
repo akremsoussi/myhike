@@ -1,60 +1,16 @@
 import { ArrowLeft, Check, ChevronRight } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useState, type CSSProperties } from 'react'
 import { Link, useParams } from 'react-router'
-import { communitiesApi, postsApi, type Community, type Post } from '../../api/communities'
+import { communitiesApi, type Community } from '../../api/communities'
 import { useAuth } from '../../auth/context'
-import { Avatar, AvatarGroup, Button, ButtonLink, Card, Notice, PostCard, ReportDialog } from '../../components'
+import { Avatar, AvatarGroup, Button, ButtonLink, Card, Notice } from '../../components'
 import { ApiError } from '../../lib/api'
 import { formatCount, formatNumber } from '../../lib/format'
 import { useApi } from '../../lib/useApi'
+import { PostFeed } from '../posts/PostFeed'
 import styles from './CommunityPage.module.css'
 
 const MEMBERS_SHOWN = 6
-
-function errorMessage(err: unknown, fallback: string): string {
-  return err instanceof ApiError ? err.message : fallback
-}
-
-/** Fil de la communauté, page par page (« Voir plus »). */
-function useFeed(slug: string) {
-  const [posts, setPosts] = useState<Post[]>([])
-  const [nextBefore, setNextBefore] = useState<number | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-
-  useEffect(() => {
-    let cancelled = false
-    communitiesApi
-      .posts(slug)
-      .then((page) => {
-        if (cancelled) return
-        setPosts(page.items)
-        setNextBefore(page.next_before)
-        setError(null)
-      })
-      .catch((err: unknown) => !cancelled && setError(errorMessage(err, 'Les posts n’ont pas pu être chargés.')))
-      .finally(() => !cancelled && setLoading(false))
-    return () => {
-      cancelled = true
-    }
-  }, [slug])
-
-  async function loadMore() {
-    if (nextBefore === null) return
-    setLoading(true)
-    try {
-      const page = await communitiesApi.posts(slug, nextBefore)
-      setPosts((current) => [...current, ...page.items])
-      setNextBefore(page.next_before)
-    } catch (err) {
-      setError(errorMessage(err, 'Les posts n’ont pas pu être chargés.'))
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  return { posts, setPosts, hasMore: nextBefore !== null, loading, error, setError, loadMore }
-}
 
 /** Écran 08 · Page communauté. Remontée à chaque changement de communauté (état remis à zéro). */
 export function CommunityPage() {
@@ -65,9 +21,8 @@ export function CommunityPage() {
 function CommunityView({ slug }: { slug: string }) {
   const { me } = useAuth()
   const detail = useApi(`community:${slug}`, () => communitiesApi.get(slug), 'La communauté n’a pas pu être chargée.')
-  const feed = useFeed(slug)
-  const [busy, setBusy] = useState<string | null>(null)
-  const [reporting, setReporting] = useState<Post | null>(null)
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const community = detail.data
 
@@ -85,53 +40,17 @@ function CommunityView({ slug }: { slug: string }) {
     return <div className={styles.content}>{detail.error && <Notice tone="danger">{detail.error}</Notice>}</div>
   }
 
-  async function run(key: string, action: () => Promise<void>, fallback: string) {
-    setBusy(key)
-    feed.setError(null)
+  async function toggleMembership() {
+    setBusy(true)
+    setError(null)
     try {
-      await action()
+      const updated: Community = isMember ? await communitiesApi.leave(slug) : await communitiesApi.join(slug)
+      detail.setData((current) => current && { ...current, ...updated })
     } catch (err) {
-      feed.setError(errorMessage(err, fallback))
+      setError(err instanceof ApiError ? err.message : 'L’action n’a pas pu aboutir.')
     } finally {
-      setBusy(null)
+      setBusy(false)
     }
-  }
-
-  function toggleMembership() {
-    void run(
-      'membership',
-      async () => {
-        const updated: Community = isMember
-          ? await communitiesApi.leave(slug)
-          : await communitiesApi.join(slug)
-        detail.setData((current) => current && { ...current, ...updated })
-      },
-      'L’action n’a pas pu aboutir.',
-    )
-  }
-
-  function toggleLike(post: Post) {
-    void run(
-      `post:${post.id}`,
-      async () => {
-        const likes = post.liked ? await postsApi.unlike(post.id) : await postsApi.like(post.id)
-        feed.setPosts((posts) => posts.map((item) => (item.id === post.id ? { ...item, ...likes } : item)))
-      },
-      'Le j’aime n’a pas pu être enregistré.',
-    )
-  }
-
-  function remove(post: Post) {
-    if (!window.confirm('Supprimer ce post ? Cette action est définitive.')) return
-    void run(
-      `post:${post.id}`,
-      async () => {
-        await postsApi.remove(post.id)
-        feed.setPosts((posts) => posts.filter((item) => item.id !== post.id))
-        detail.setData((current) => current && { ...current, post_count: current.post_count - 1 })
-      },
-      'Le post n’a pas pu être supprimé.',
-    )
   }
 
   const isMember = community.is_member
@@ -140,8 +59,12 @@ function CommunityView({ slug }: { slug: string }) {
 
   return (
     <>
-      <section className={styles.banner}>
+      <section
+        className={community.banner ? `${styles.banner} ${styles.withImage}` : styles.banner}
+        style={community.banner ? ({ '--banner-image': `url(${community.banner.url})` } as CSSProperties) : undefined}
+      >
         <div className={styles.bannerInner}>
+          {community.icon && <img src={community.icon.url} alt="" className={styles.icon} />}
           <div className={styles.bannerText}>
             <Link to="/communautes" className={styles.back}>
               <ArrowLeft aria-hidden size={14} />
@@ -158,14 +81,14 @@ function CommunityView({ slug }: { slug: string }) {
               variant="secondary"
               className={styles.joined}
               icon={<Check aria-hidden size={16} />}
-              disabled={busy === 'membership'}
-              onClick={toggleMembership}
+              disabled={busy}
+              onClick={() => void toggleMembership()}
               title="Quitter la communauté"
             >
               Inscrit
             </Button>
           ) : (
-            <Button className={styles.join} disabled={busy === 'membership'} onClick={toggleMembership}>
+            <Button className={styles.join} disabled={busy} onClick={() => void toggleMembership()}>
               Rejoindre
             </Button>
           )}
@@ -187,34 +110,14 @@ function CommunityView({ slug }: { slug: string }) {
               <Notice>Rejoignez la communauté pour y publier.</Notice>
             )}
 
-            {feed.error && <Notice tone="danger">{feed.error}</Notice>}
+            {error && <Notice tone="danger">{error}</Notice>}
 
-            {feed.posts.map((post) => (
-              <PostCard
-                key={post.id}
-                post={{ ...post, community: null }}
-                busy={busy === `post:${post.id}`}
-                onToggleLike={() => toggleLike(post)}
-                onDelete={() => remove(post)}
-                onReport={post.author.username === me.user.username ? undefined : () => setReporting(post)}
-              />
-            ))}
-
-            {reporting && (
-              <ReportDialog
-                target={{ post_id: reporting.id }}
-                label={`le post de ${reporting.author.display_name}`}
-                onClose={() => setReporting(null)}
-              />
-            )}
-            {!feed.loading && feed.posts.length === 0 && !feed.error && (
-              <p className={styles.empty}>Aucun post pour l’instant.</p>
-            )}
-            {feed.hasMore && (
-              <Button variant="secondary" disabled={feed.loading} onClick={() => void feed.loadMore()}>
-                {feed.loading ? 'Chargement…' : 'Voir plus'}
-              </Button>
-            )}
+            <PostFeed
+              load={(before) => communitiesApi.posts(slug, before)}
+              hideCommunity
+              empty="Aucun post pour l’instant."
+              onDeleted={() => detail.setData((current) => current && { ...current, post_count: current.post_count - 1 })}
+            />
           </div>
 
           <aside className={styles.aside}>
@@ -222,7 +125,14 @@ function CommunityView({ slug }: { slug: string }) {
               <p className={styles.about}>{community.description || 'Pas encore de description.'}</p>
             </Card>
 
-            <Card title="Membres">
+            <Card
+              title="Membres"
+              action={
+                <Link to={`/communautes/${encodeURIComponent(slug)}/membres`} className={styles.inlineLink}>
+                  Tout voir
+                </Link>
+              }
+            >
               {community.members.length > 0 ? (
                 <div className={styles.members}>
                   <AvatarGroup
@@ -253,7 +163,7 @@ function CommunityView({ slug }: { slug: string }) {
             )}
 
             {community.is_member && (
-              <Button variant="danger" fullWidth disabled={busy === 'membership'} onClick={toggleMembership}>
+              <Button variant="danger" fullWidth disabled={busy} onClick={() => void toggleMembership()}>
                 Quitter la communauté
               </Button>
             )}

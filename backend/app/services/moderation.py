@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session
 
 from app.models import Community, ModerationLog, Post, Report, User, utcnow
 from app.schemas.communities import AuthorOut, CommunityRef
+from app.schemas.media import PhotoOut
 from app.schemas.moderation import ReportedPost, ReportOut
 
 
@@ -57,6 +58,7 @@ def report_out(report: Report) -> ReportOut:
             ReportedPost(
                 id=post.id,
                 body=post.body,
+                photos=[PhotoOut.model_validate(photo) for photo in post.photos],
                 visibility=post.visibility,
                 community=CommunityRef.model_validate(post.community) if post.community else None,
             )

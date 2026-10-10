@@ -111,7 +111,8 @@ export function RegisterPage() {
         error={errors.accept_terms}
       >
         J'accepte les{' '}
-        <Link to="/conditions" className={styles.inlineLink}>
+        {/* Nouvel onglet : le formulaire déjà rempli reste là. */}
+        <Link to="/conditions" target="_blank" rel="noopener" className={styles.inlineLink}>
           conditions d'utilisation
         </Link>
       </Checkbox>

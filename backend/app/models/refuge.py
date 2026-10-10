@@ -61,8 +61,16 @@ class Refuge(Base):
     source_url: Mapped[str | None] = mapped_column(String(255))
     source_updated_at: Mapped[datetime | None] = mapped_column(DateTime)
     imported_at: Mapped[datetime] = mapped_column(DateTime, default=utcnow)
+    # Dernière lecture des photos sur refuges.info (`app.scripts.import_refuge_photos`).
+    photos_checked_at: Mapped[datetime | None] = mapped_column(DateTime)
 
     massif: Mapped[Massif | None] = relationship(back_populates="refuges")
+    photos: Mapped[list["RefugePhoto"]] = relationship(
+        back_populates="refuge",
+        order_by="RefugePhoto.position",
+        cascade="all, delete-orphan",
+        passive_deletes=True,
+    )
 
     @property
     def is_guarded(self) -> bool:
@@ -77,3 +85,43 @@ class Refuge(Base):
         digits = re.sub(r"\D", "", match.group(0))
         digits = "0" + digits[2:] if digits.startswith("33") else digits
         return " ".join(digits[i : i + 2] for i in range(0, 10, 2))
+
+
+class RefugePhoto(Base):
+    """Photo d'un commentaire refuges.info (CC BY-SA 2.0 : auteur et source à citer).
+
+    Copiée une fois dans `MEDIA_DIR` (table `uploads`) : le navigateur ne charge jamais
+    d'image depuis refuges.info.
+    """
+
+    __tablename__ = "refuge_photos"
+
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
+    refuge_id: Mapped[int] = mapped_column(ForeignKey("refuges.id", ondelete="CASCADE"), index=True)
+    upload_id: Mapped[int] = mapped_column(
+        ForeignKey("uploads.id", ondelete="CASCADE"), unique=True
+    )
+    # Identifiant du commentaire sur refuges.info : une photo n'est copiée qu'une fois.
+    external_id: Mapped[int] = mapped_column(Integer, unique=True)
+    # Vide quand le commentaire est anonyme.
+    author: Mapped[str] = mapped_column(String(120), default="")
+    caption: Mapped[str] = mapped_column(String(300), default="")
+    taken_at: Mapped[datetime | None] = mapped_column(DateTime)
+    # Ordre d'affichage : la plus récente d'abord.
+    position: Mapped[int] = mapped_column(Integer, default=0)
+
+    refuge: Mapped[Refuge] = relationship(back_populates="photos")
+    upload: Mapped["Upload"] = relationship()  # noqa: F821
+
+    # Pour l'API (même forme que les autres images).
+    @property
+    def url(self) -> str:
+        return self.upload.url
+
+    @property
+    def width(self) -> int:
+        return self.upload.width
+
+    @property
+    def height(self) -> int:
+        return self.upload.height

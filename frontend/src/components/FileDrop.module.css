@@ -1,0 +1,28 @@
+.zone {
+  position: relative;
+  cursor: pointer;
+}
+
+.zone:focus-within {
+  outline: var(--border-width-button) solid var(--color-primary);
+  outline-offset: var(--space-0-5);
+}
+
+.over {
+  outline: var(--border-width-button) dashed var(--color-primary);
+  outline-offset: var(--space-0-5);
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+/* Masqué visuellement, mais toujours focalisable et lu par les lecteurs d'écran. */
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

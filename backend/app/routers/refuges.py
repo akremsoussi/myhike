@@ -1,14 +1,21 @@
 from typing import Annotated
 
 from fastapi import APIRouter, Query
-from sqlalchemy import Select, exists, func, or_, select
-from sqlalchemy.orm import joinedload
+from sqlalchemy import Select, exists, func, select
+from sqlalchemy.orm import joinedload, selectinload
 
 from app.db import DbSession
 from app.deps import ActiveUser
 from app.errors import ApiError
-from app.models import GUARDED_KINDS, Massif, Outing, OutingStop, Refuge, utcnow
-from app.schemas.refuges import MassifOut, RefugeDetail, RefugeList, RefugeSummary
+from app.models import GUARDED_KINDS, Massif, Outing, OutingStop, Post, Refuge, RefugePhoto, utcnow
+from app.schemas.communities import PostPage
+from app.schemas.refuges import (
+    MassifOut,
+    RefugeDetail,
+    RefugeList,
+    RefugeSummary,
+)
+from app.services import posts, search
 from app.services.outings import outing_visible_to
 
 router = APIRouter(tags=["refuges"])
@@ -25,10 +32,6 @@ def _parse_bbox(bbox: str) -> tuple[float, float, float, float]:
     if not (-180 <= west <= east <= 180 and -90 <= south <= north <= 90):
         raise ApiError(422, "invalid_bbox", "bbox hors limites.")
     return west, south, east, north
-
-
-def _escape_like(text: str) -> str:
-    return text.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")
 
 
 @router.get("/refuges")
@@ -56,8 +59,7 @@ def list_refuges(
         query = query.where(Refuge.kind.not_in(GUARDED_KINDS))
     if with_outing:
         query = query.where(
-            exists()
-            .where(
+            exists().where(
                 OutingStop.refuge_id == Refuge.id,
                 OutingStop.outing_id == Outing.id,
                 Outing.starts_at >= utcnow(),
@@ -65,9 +67,7 @@ def list_refuges(
             )
         )
     if q:
-        # Collation MySQL utf8mb4_0900_ai_ci : insensible à la casse et aux accents.
-        pattern = f"%{_escape_like(q.strip())}%"
-        query = query.where(or_(Refuge.name.like(pattern), Massif.name.like(pattern)))
+        query = query.where(search.matches(q, Refuge.name, Massif.name))
 
     total = db.scalar(select(func.count()).select_from(query.subquery())) or 0
     rows = db.scalars(
@@ -78,10 +78,31 @@ def list_refuges(
 
 @router.get("/refuges/{refuge_id}")
 def get_refuge(refuge_id: int, db: DbSession, _: ActiveUser) -> RefugeDetail:
-    refuge = db.get(Refuge, refuge_id, options=[joinedload(Refuge.massif)])
+    refuge = db.get(
+        Refuge,
+        refuge_id,
+        options=[
+            joinedload(Refuge.massif),
+            selectinload(Refuge.photos).joinedload(RefugePhoto.upload),
+        ],
+    )
     if refuge is None:
         raise ApiError(404, "not_found", "Ce refuge n'existe pas.")
     return RefugeDetail.model_validate(refuge)
+
+
+@router.get("/refuges/{refuge_id}/posts")
+def refuge_posts(
+    refuge_id: int,
+    db: DbSession,
+    viewer: ActiveUser,
+    before: Annotated[int | None, Query(ge=1)] = None,
+    limit: Annotated[int, Query(ge=1, le=50)] = posts.PAGE_SIZE,
+) -> PostPage:
+    """« Voir les posts liés » : posts rattachés au refuge et lisibles par `viewer`."""
+    if db.get(Refuge, refuge_id) is None:
+        raise ApiError(404, "not_found", "Ce refuge n'existe pas.")
+    return posts.page(db, viewer, select(Post).where(Post.refuge_id == refuge_id), before, limit)
 
 
 @router.get("/massifs")

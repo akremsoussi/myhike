@@ -209,3 +209,15 @@
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
 }
+
+.dropZone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  border: var(--border-width-button) dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  text-align: center;
+}

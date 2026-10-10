@@ -1,5 +1,6 @@
 import { Check } from 'lucide-react'
 import { Link } from 'react-router'
+import type { Photo } from '../api/media'
 import { formatCount } from '../lib/format'
 import { Button } from './Button'
 import styles from './CommunityCard.module.css'
@@ -13,6 +14,7 @@ type CommunityCardProps = {
     member_count: number
     post_count: number
     is_member: boolean
+    banner?: Photo | null
   }
   /** Rejoindre ou quitter ; absent : pas de bouton. */
   onToggleMembership?: () => void
@@ -24,8 +26,10 @@ type CommunityCardProps = {
 export function CommunityCard({ community, onToggleMembership, busy = false }: CommunityCardProps) {
   return (
     <article className={styles.card}>
-      {/* Pas encore de bannière : zone réservée, comme dans la maquette. */}
-      <div className={styles.image} aria-hidden />
+      {/* Sans bannière : zone réservée, comme dans la maquette. */}
+      <div className={styles.image} aria-hidden>
+        {community.banner && <img src={community.banner.url} alt="" loading="lazy" className={styles.banner} />}
+      </div>
       <h2 className={styles.name}>
         <Link to={`/communautes/${community.slug}`} className={styles.link}>
           {community.name}

@@ -8,13 +8,15 @@ from app.schemas.auth import (
     ChangeEmailIn,
     LoginIn,
     MeOut,
+    PasswordResetIn,
+    PasswordResetRequestIn,
     RegisterIn,
     UserOut,
     VerifyEmailIn,
     VerifyEmailOut,
 )
 from app.services import accounts
-from app.services.email import send_verification_email
+from app.services.email import send_password_reset_email, send_verification_email
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
@@ -90,3 +92,21 @@ def change_pending_email(
     token = accounts.change_pending_email(db, user, data.email)
     _send_verification(tasks, user, token)
     return _me(db, user)
+
+
+@router.post("/password-reset", status_code=status.HTTP_202_ACCEPTED)
+def request_password_reset(
+    data: PasswordResetRequestIn, db: DbSession, tasks: BackgroundTasks
+) -> None:
+    """« Mot de passe oublié ». Même réponse que l'adresse ait un compte ou non."""
+    issued = accounts.request_password_reset(db, data.email)
+    if issued is not None:
+        user, token = issued
+        tasks.add_task(send_password_reset_email, user.email, user.display_name, token)
+
+
+@router.post("/password-reset/confirm", status_code=status.HTTP_204_NO_CONTENT)
+def reset_password(data: PasswordResetIn, db: DbSession, response: Response) -> None:
+    """Nouveau mot de passe. Déconnecte partout, y compris ce navigateur."""
+    accounts.reset_password(db, data.token, data.password)
+    response.delete_cookie(SESSION_COOKIE, path="/")

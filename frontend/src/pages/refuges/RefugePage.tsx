@@ -1,9 +1,10 @@
 import { ArrowLeft, ChevronRight } from 'lucide-react'
-import { lazy, Suspense, type ReactNode } from 'react'
+import { lazy, Suspense, useState, type ReactNode } from 'react'
 import { Link, useParams } from 'react-router'
 import { outingsApi } from '../../api/outings'
 import { refugesApi, type RefugeDetail, type RefugeKind } from '../../api/refuges'
-import { Button, ButtonLink, Card, Notice, Tag } from '../../components'
+import { ButtonLink, Card, Notice, Tag } from '../../components'
+import { cx } from '../../lib/cx'
 import { formatAltitude, formatNumber, formatOutingDate } from '../../lib/format'
 import { useApi } from '../../lib/useApi'
 import { guardLabel, isClosed } from '../map/refugeText'
@@ -75,8 +76,7 @@ export function RefugePage() {
 
       <div className={styles.columns}>
         <div className={styles.main}>
-          {/* Pas encore de photos : zone réservée, comme dans la maquette. */}
-          <div className={styles.photo}>Photo du refuge</div>
+          <RefugePhotos key={refuge.id} refuge={refuge} />
 
           <Card title="Description">
             <p className={styles.text}>{refuge.remarks ?? 'Pas encore de description.'}</p>
@@ -115,10 +115,9 @@ export function RefugePage() {
             <ButtonLink to={`/sorties/nouvelle?refuge=${refuge.id}`} fullWidth>
               Créer une sortie ici
             </ButtonLink>
-            {/* Écran des posts liés à un refuge : pas encore dessiné. */}
-            <Button variant="secondary" fullWidth disabled title="Bientôt disponible">
+            <ButtonLink to={`/refuges/${refuge.id}/posts`} variant="secondary" fullWidth>
               Voir les posts liés
-            </Button>
+            </ButtonLink>
           </Card>
 
           <Card title="Sorties prévues ici">
@@ -139,6 +138,55 @@ export function RefugePage() {
         </aside>
       </div>
     </div>
+  )
+}
+
+/** Photos copiées depuis refuges.info, avec leur auteur (CC BY-SA 2.0). Sans photo : zone réservée. */
+function RefugePhotos({ refuge }: { refuge: RefugeDetail }) {
+  const [index, setIndex] = useState(0)
+  const photo = refuge.photos[index]
+  if (!photo) return <div className={styles.photo}>Pas encore de photo</div>
+  const credit = [photo.author || 'Anonyme', photo.taken_at && dateFormat.format(new Date(photo.taken_at))]
+    .filter(Boolean)
+    .join(', ')
+  return (
+    <figure className={styles.gallery}>
+      <img src={photo.url} alt={photo.caption || `Photo de ${refuge.name}`} className={styles.photoImage} />
+      {refuge.photos.length > 1 && (
+        <div className={styles.thumbs}>
+          {refuge.photos.map((item, i) => (
+            <button
+              key={item.url}
+              type="button"
+              className={cx(styles.thumb, i === index && styles.thumbActive)}
+              aria-label={`Photo ${i + 1}`}
+              aria-pressed={i === index}
+              onClick={() => setIndex(i)}
+            >
+              <img src={item.url} alt="" className={styles.thumbImage} />
+            </button>
+          ))}
+        </div>
+      )}
+      <figcaption className={styles.credit}>
+        {photo.caption && <span className={styles.caption}>{photo.caption}</span>}
+        <span>
+          Photo : {credit} ·{' '}
+          {refuge.source_url ? (
+            <a href={refuge.source_url} target="_blank" rel="noreferrer">
+              refuges.info
+            </a>
+          ) : (
+            'refuges.info'
+          )}{' '}
+          (
+          <a href="https://creativecommons.org/licenses/by-sa/2.0/deed.fr" target="_blank" rel="noreferrer">
+            CC BY-SA 2.0
+          </a>
+          )
+        </span>
+      </figcaption>
+    </figure>
   )
 }
 
