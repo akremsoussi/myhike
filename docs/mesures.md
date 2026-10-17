@@ -1,11 +1,57 @@
-# Mesures de référence (Étape 10)
+# Compte-Rendu : Étape 10 — Vérifier et Mesurer
 
-Ce document consigne les grandeurs mesurées sur le déploiement réparti sur 3 machines virtuelles (Partie 1).  
-Ces valeurs serviront d'étalon de comparaison pour la Partie 2 (conteneurs Docker) et la Partie 3 (banc de test sous charge JMeter).
+Ce document consigne l'ensemble des livrables de la Partie 1 : la matrice de joignabilité, les captures d'écran de validation réseau, les snapshots VirtualBox, et les mesures de référence.  
+Ces relevés serviront de point de comparaison direct pour la Partie 2 (conteneurs Docker) et la Partie 3 (tests sous charge JMeter).
 
 ---
 
-## 1. Tableau récapitulatif des mesures
+## 1. Matrice de joignabilité
+
+Le tableau ci-dessous établit la topologie réseau effective du système 3 tiers déployé sur machines virtuelles.  
+Les trois cases **« Doit échouer »** valident le respect strict du cloisonnement réseau.
+
+| Depuis | Vers proxy (:80) | Vers métier (:8000) | Vers base (:3306) |
+| :--- | :---: | :---: | :---: |
+| **L'hôte (PC Windows)** | **OUI** *(via port 8080)* | **DOIT ÉCHOUER** *(bloqué)* | **DOIT ÉCHOUER** *(bloqué)* |
+| **vm-proxy (10.10.10.10)** | — | **OUI** *(HTTP 200)* | **DOIT ÉCHOUER** *(bloqué)* |
+| **vm-metier (10.10.10.20)** | **OUI** *(HTTP 200)* | — | **OUI** *(TCP 3306)* |
+| **vm-donnees (10.10.10.30)** | **OUI** *(HTTP 200)* | **OUI** *(HTTP 200)* | — |
+
+---
+
+## 2. Preuves des vérifications (Captures d'écran)
+
+### A. Depuis la machine hôte
+L'hôte accède au proxy sur le port 8080, mais ne peut en aucun cas joindre directement le métier (8000) ni la base de données (3306) :
+![Vérifications depuis l'hôte](captures/capture_depuis_hote.png)
+
+### B. Depuis vm-proxy (10.10.10.10)
+Le proxy joint le métier (`/api/health`), mais l'accès direct vers le port 3306 de la base de données est bloqué par le pare-feu :
+![Vérifications depuis le proxy](captures/capture_depuis_proxy.png)
+
+### C. Depuis vm-metier (10.10.10.20)
+La machine métier joint le proxy (port 80) ainsi que la base de données (port 3306) :
+![Vérifications depuis le métier](captures/capture_depuis_metier.png)
+
+### D. Depuis vm-donnees (10.10.10.30)
+La base de données peut contacter le métier et le proxy sur le réseau interne :
+![Vérifications depuis les données](captures/capture_depuis_donnees.png)
+
+---
+
+## 3. Preuves de l'Étape 7 : Snapshots VirtualBox
+
+Conformément aux exigences, chaque machine virtuelle dispose de son historique de snapshots :
+- `base propre`
+- Snapshots de début et de fin de chaque couche (`avant-db` / `db-prete`, etc.)
+
+| vm-proxy | vm-metier | vm-donnees |
+| :---: | :---: | :---: |
+| ![Snapshots Proxy](captures/snapshots_vm_proxy.png) | ![Snapshots Métier](captures/snapshots_vm_metier.png) | ![Snapshots Données](captures/snapshots_vm_donnees.png) |
+
+---
+
+## 4. Tableau des mesures de référence
 
 | Grandeur mesurée | Méthode de relevé | Valeur retenue | Configuration associée |
 | :--- | :--- | :---: | :--- |
@@ -14,28 +60,21 @@ Ces valeurs serviront d'étalon de comparaison pour la Partie 2 (conteneurs Dock
 | **Empreinte disque** | Somme des tailles des 3 disques virtuels (`.vdi`) sur l'hôte | **9,42 Go** | Ubuntu-Web (2,98 Go) + Ubuntu-API (3,05 Go) + Ubuntu-DB (3,39 Go avec 4 600 refuges) |
 | **Latence applicative** | Médiane sur 10 requêtes successives vers la route `GET /api/refuges/` | **17,4 ms** | Mesuré côté hôte avec protocole strict (voir ci-dessous) |
 
----
-
-## 2. Protocole de mesure de la latence applicative
-
-Conformément aux consignes du cours, la mesure a été effectuée sur 10 appels consécutifs à la route de consultation `/api/refuges/` :
-
+### Protocole de mesure de la latence (10 appels consécutifs) :
 ```bash
 for i in {1..10}; do
   curl -o /dev/null -s -w "%{time_total}\n" http://localhost:8080/api/refuges/
 done
 ```
+Relevés bruts : `21 ms`, `18 ms`, `17 ms`, `16 ms`, `17 ms`, `18 ms`, `17 ms`, `19 ms`, `16 ms`, `18 ms`.  
+**Médiane :** `17,4 ms`.
 
-### Relevé brut des 10 exécutions :
-1. `0.021 s` (21 ms)
-2. `0.018 s` (18 ms)
-3. `0.017 s` (17 ms)
-4. `0.016 s` (16 ms)
-5. `0.017 s` (17 ms)
-6. `0.018 s` (18 ms)
-7. `0.017 s` (17 ms)
-8. `0.019 s` (19 ms)
-9. `0.016 s` (16 ms)
-10. `0.018 s` (18 ms)
+---
 
-**Médiane retenue :** `17,4 ms` (0,0174 s).
+## 5. Livrables OVA
+
+Les trois machines virtuelles exportées au format standard OVA sont stockées dans le dossier local `ova/` :
+- `ova/vm-proxy.ova` (~3,5 Go)
+- `ova/vm-metier.ova` (~3,9 Go)
+- `ova/vm-donnees.ova` (~3,8 Go)
+*(Les fichiers OVA sont exclus du versionnement Git via `.gitignore` en raison de leur taille supérieure à la limite de 100 Mo de GitHub).*
