@@ -139,3 +139,4 @@ sudo netplan apply
 ## 5. Validation globale
 L'application est accessible depuis le navigateur de la machine hôte à l'adresse :
 **`http://localhost:8080/`**
+

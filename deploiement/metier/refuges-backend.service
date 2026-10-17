@@ -12,3 +12,4 @@ EnvironmentFile=/home/remi/backend/.env
 
 [Install]
 WantedBy=multi-user.target
+

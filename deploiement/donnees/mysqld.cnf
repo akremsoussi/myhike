@@ -9,3 +9,4 @@ mysqlx-bind-address = 10.10.10.30
 port            = 3306
 datadir         = /var/lib/mysql
 socket          = /var/run/mysqld/mysqld.sock
+
