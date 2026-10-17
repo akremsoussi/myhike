@@ -1,0 +1,14 @@
+[Unit]
+Description=Refuges FastAPI Application Backend
+After=network.target
+
+[Service]
+User=remi
+WorkingDirectory=/home/remi/backend
+ExecStart=/home/remi/backend/.venv/bin/uvicorn app.main:app --host 10.10.10.20 --port 8000
+Restart=always
+RestartSec=5
+EnvironmentFile=/home/remi/backend/.env
+
+[Install]
+WantedBy=multi-user.target
