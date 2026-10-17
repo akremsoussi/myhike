@@ -55,10 +55,10 @@ Conformément aux exigences, chaque machine virtuelle dispose de son historique 
 
 | Grandeur mesurée | Méthode de relevé | Valeur retenue | Configuration associée |
 | :--- | :--- | :---: | :--- |
-| **Temps de démarrage** | Chronométrage depuis l'état « Éteint » des 3 VMs jusqu'à la première réponse HTTP 200 sur `http://localhost:8080/` | **34 s** | 3 machines virtuelles VirtualBox lancées simultanément |
-| **Mémoire consommée** | Gestionnaire des tâches Windows (Hôte), cumul de la mémoire vive au repos des 3 processus `VirtualBoxVM.exe` | **3,18 Go** | Web (1 Go alloué) + API (1 Go alloué) + DB (2 Go alloués) |
-| **Empreinte disque** | Somme des tailles des 3 disques virtuels (`.vdi`) sur l'hôte | **9,42 Go** | Ubuntu-Web (2,98 Go) + Ubuntu-API (3,05 Go) + Ubuntu-DB (3,39 Go avec 4 600 refuges) |
-| **Latence applicative** | Médiane sur 10 requêtes successives vers la route `GET /api/refuges/` | **17,4 ms** | Mesuré côté hôte avec protocole strict (voir ci-dessous) |
+| **Temps de démarrage** | Chronométrage depuis l'état « Éteint » des 3 VMs jusqu'à la première réponse HTTP 200 sur `http://localhost:8080/` | **45 s** | 3 machines virtuelles VirtualBox lancées simultanément |
+| **Mémoire consommée** | Gestionnaire des tâches Windows (Hôte), cumul de la mémoire vive au repos des 3 processus `VirtualBoxVM.exe` | **2 710 Mo** *(~2,71 Go)* | Web (1 Go alloué) + API (1 Go alloué) + DB (2 Go alloués) |
+| **Empreinte disque** | Somme des tailles des 3 disques virtuels (`.vdi`) sur l'hôte | **22,28 Go** | Taille cumulée des disques des trois machines virtuelles |
+| **Latence applicative** | Médiane sur 10 requêtes successives vers la route `GET /api/refuges/` | **8,69 ms** *(0,008685 s)* | Mesuré côté hôte avec protocole strict (voir ci-dessous) |
 
 ### Protocole de mesure de la latence (10 appels consécutifs) :
 ```bash
@@ -66,8 +66,19 @@ for i in {1..10}; do
   curl -o /dev/null -s -w "%{time_total}\n" http://localhost:8080/api/refuges/
 done
 ```
-Relevés bruts : `21 ms`, `18 ms`, `17 ms`, `16 ms`, `17 ms`, `18 ms`, `17 ms`, `19 ms`, `16 ms`, `18 ms`.  
-**Médiane :** `17,4 ms`.
+Relevés bruts :
+1. `0.013856 s` (13,86 ms)
+2. `0.009114 s` (9,11 ms)
+3. `0.007746 s` (7,75 ms)
+4. `0.008279 s` (8,28 ms)
+5. `0.008290 s` (8,29 ms)
+6. `0.007996 s` (8,00 ms)
+7. `0.008397 s` (8,40 ms)
+8. `0.009452 s` (9,45 ms)
+9. `0.008973 s` (8,97 ms)
+10. `0.010476 s` (10,48 ms)
+
+**Médiane retenue :** `8,69 ms` (`0,008685 s`).
 
 ---
 
