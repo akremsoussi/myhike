@@ -196,17 +196,30 @@ def test_account_detail(people, ecrins):
     assert resolved["reports"] == [] and resolved["open_report_count"] == 0
 
 
-def test_promote_and_demote(people):
+def test_promote_and_demote(people, make_client, db: Session):
     url = "/api/moderation/users/randonneur/role"
+    # Un administrateur classique (moderator) ne peut pas modifier les rôles.
+    assert people["modo"].put(url, json={"role": "moderator"}).status_code == 403
 
-    promoted = people["modo"].put(url, json={"role": "moderator"})
+    super_client = make_client("chef")
+    db.execute(update(User).where(User.username == "chef").values(role=Role.SUPER_ADMIN))
+    db.commit()
+
+    promoted = super_client.put(url, json={"role": "moderator"})
+    assert promoted.status_code == 200
     assert promoted.json()["role"] == "moderator"
     assert people["me"].get("/api/moderation/summary").status_code == 200
-    activity = people["modo"].get("/api/moderation/dashboard").json()["activity"]
+    activity = super_client.get("/api/moderation/dashboard").json()["activity"]
     # Nom affiché = pseudo tant que le profil n'est pas modifié.
     assert activity[0]["message"] == "randonneur promu modérateur"
 
-    assert people["modo"].put(url, json={"role": "user"}).json()["role"] == "user"
+    # Un modérateur classique ne peut pas suspendre ou supprimer un autre modérateur.
+    assert people["modo"].post("/api/moderation/users/randonneur/suspend").status_code == 403
+    assert people["modo"].delete("/api/moderation/users/randonneur").status_code == 403
+    # Ni agir sur le Super Admin.
+    assert people["modo"].post("/api/moderation/users/chef/suspend").status_code == 403
+
+    assert super_client.put(url, json={"role": "user"}).json()["role"] == "user"
     assert people["me"].get("/api/moderation/summary").status_code == 403
 
 

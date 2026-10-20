@@ -72,7 +72,7 @@ export type CommunityInput = {
   icon_id: number | null
 }
 
-export type Role = 'user' | 'moderator'
+export type Role = 'user' | 'moderator' | 'super_admin'
 export type AccountStatus = 'pending_email' | 'active' | 'suspended'
 export type AccountFilter = 'all' | 'moderators' | 'reported' | 'suspended'
 

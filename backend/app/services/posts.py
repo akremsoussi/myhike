@@ -77,7 +77,8 @@ def to_out(db: Session, viewer: User, posts: Sequence[Post]) -> list[PostOut]:
             created_at=post.created_at,
             like_count=counts.get(post.id, 0),
             liked=post.id in liked,
-            can_delete=post.author_id == viewer.id or viewer.role == Role.MODERATOR,
+            can_delete=post.author_id == viewer.id
+            or viewer.role in (Role.MODERATOR, Role.SUPER_ADMIN),
         )
         for post in posts
     ]

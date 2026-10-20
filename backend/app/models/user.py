@@ -14,6 +14,7 @@ def _values(enum_class: type[enum.Enum]) -> list[str]:
 class Role(enum.StrEnum):
     USER = "user"
     MODERATOR = "moderator"
+    SUPER_ADMIN = "super_admin"
 
 
 class AccountStatus(enum.StrEnum):

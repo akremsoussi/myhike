@@ -1,6 +1,7 @@
 import { Search } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
 import { NavLink, useLocation, useNavigate, useSearchParams } from 'react-router'
+import type { Role } from '../api/auth'
 import { cx } from '../lib/cx'
 import { shortName } from '../lib/format'
 import { Avatar } from './Avatar'
@@ -15,7 +16,7 @@ const TABS = [
 ]
 
 type NavbarProps = {
-  user: { name: string; avatarUrl?: string }
+  user: { name: string; avatarUrl?: string; role?: Role }
 }
 
 /** Barre de navigation des pages utilisateur (69 px) : logo, onglets centrés, recherche et pastille du profil. */
@@ -27,6 +28,8 @@ export function Navbar({ user }: NavbarProps) {
   const current = pathname === '/recherche' ? (params.get('q') ?? '') : ''
   const [draft, setDraft] = useState<{ for: string; value: string } | null>(null)
   const value = draft && draft.for === current ? draft.value : current
+  const isStaff = user.role === 'moderator' || user.role === 'super_admin'
+  const tabs = isStaff ? [...TABS, { to: '/moderation', label: 'Modération', also: ['/moderation'] }] : TABS
 
   function submit(event: FormEvent) {
     event.preventDefault()
@@ -39,7 +42,7 @@ export function Navbar({ user }: NavbarProps) {
     <header className={styles.navbar}>
       <Logo />
       <nav className={styles.tabs} aria-label="Navigation principale">
-        {TABS.map((tab) => (
+        {tabs.map((tab) => (
           <NavLink
             key={tab.to}
             to={tab.to}

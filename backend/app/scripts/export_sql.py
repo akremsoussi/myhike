@@ -1,5 +1,6 @@
 import pymysql
 
+
 def dump_db():
     conn = pymysql.connect(
         host="127.0.0.1",
@@ -54,7 +55,8 @@ def dump_db():
                             val_str = str(val).replace("\\", "\\\\").replace("'", "\\'")
                             formatted_row.append(f"'{val_str}'")
                     vals.append(f"({', '.join(formatted_row)})")
-                f_data.write(f"INSERT INTO `{table}` ({cols_str}) VALUES\n" + ",\n".join(vals) + ";\n")
+                joined = ",\n".join(vals)
+                f_data.write(f"INSERT INTO `{table}` ({cols_str}) VALUES\n{joined};\n")
             f_data.write("\n")
         f_data.write("SET FOREIGN_KEY_CHECKS = 1;\n")
 

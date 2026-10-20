@@ -24,6 +24,7 @@ function AccountBadge({ account }: { account: Account }) {
   if (account.status === 'suspended') return <StatusBadge tone="neutral" size="count">Suspendu</StatusBadge>
   if (account.open_report_count > 0) return <StatusBadge tone="danger" size="count">Signalé</StatusBadge>
   if (account.status === 'pending_email') return <StatusBadge tone="pending" size="count">En attente</StatusBadge>
+  if (account.role === 'super_admin') return <StatusBadge tone="accent" size="count">Super Admin</StatusBadge>
   if (account.role === 'moderator') return <StatusBadge tone="accent" size="count">Modérateur</StatusBadge>
   return <StatusBadge tone="success" size="count">Utilisateur</StatusBadge>
 }
@@ -166,7 +167,23 @@ function AccountPanel({ username, onChanged, onDeleted }: { username: string; on
   }
   const data = account.data
   const isSelf = data.username === me?.user.username
-  const selfTitle = isSelf ? 'Impossible sur votre propre compte' : undefined
+  const isSuperAdmin = me?.user.role === 'super_admin'
+  const targetIsSuperAdmin = data.role === 'super_admin'
+  const targetIsStaff = data.role === 'moderator' || data.role === 'super_admin'
+  const canChangeRole = isSuperAdmin && !isSelf && !targetIsSuperAdmin
+  const canSanction = !isSelf && !targetIsSuperAdmin && (isSuperAdmin || !targetIsStaff)
+  const roleDisabledTitle = isSelf
+    ? 'Impossible sur votre propre compte'
+    : !isSuperAdmin
+      ? 'Réservé au Super Administrateur'
+      : targetIsSuperAdmin
+        ? 'Le rôle du Super Administrateur ne peut pas être modifié'
+        : undefined
+  const sanctionDisabledTitle = isSelf
+    ? 'Impossible sur votre propre compte'
+    : !canSanction
+      ? 'Un administrateur classique ne peut pas sanctionner un autre administrateur'
+      : undefined
 
   async function act(action: () => Promise<AccountDetail | void>, confirmMessage?: string) {
     if (confirmMessage && !window.confirm(confirmMessage)) return
@@ -247,29 +264,69 @@ function AccountPanel({ username, onChanged, onDeleted }: { username: string; on
             Voir le profil public
           </ButtonLink>
         )}
-        {data.role === 'moderator' ? (
-          <Button variant="secondary" fullWidth disabled={busy || isSelf} title={selfTitle} onClick={() => void act(() => moderationApi.setRole(username, 'user'), `Retirer le rôle de modérateur à ${data.display_name} ?`)}>
-            Retirer le rôle de modérateur
-          </Button>
-        ) : (
-          <Button variant="secondary" fullWidth disabled={busy || data.status !== 'active'} onClick={() => void act(() => moderationApi.setRole(username, 'moderator'), `Promouvoir ${data.display_name} modérateur ?`)}>
-            Promouvoir modérateur
-          </Button>
-        )}
+        {!targetIsSuperAdmin &&
+          (data.role === 'moderator' ? (
+            <Button
+              variant="secondary"
+              fullWidth
+              disabled={busy || !canChangeRole}
+              title={roleDisabledTitle}
+              onClick={() =>
+                void act(
+                  () => moderationApi.setRole(username, 'user'),
+                  `Retirer le rôle de modérateur à ${data.display_name} ?`,
+                )
+              }
+            >
+              Retirer le rôle de modérateur
+            </Button>
+          ) : (
+            <Button
+              variant="secondary"
+              fullWidth
+              disabled={busy || !canChangeRole || data.status !== 'active'}
+              title={roleDisabledTitle}
+              onClick={() =>
+                void act(
+                  () => moderationApi.setRole(username, 'moderator'),
+                  `Promouvoir ${data.display_name} modérateur ?`,
+                )
+              }
+            >
+              Promouvoir modérateur
+            </Button>
+          ))}
         {data.status === 'suspended' ? (
-          <Button variant="secondary" fullWidth disabled={busy} onClick={() => void act(() => moderationApi.reactivate(username))}>
+          <Button
+            variant="secondary"
+            fullWidth
+            disabled={busy || !canSanction}
+            title={sanctionDisabledTitle}
+            onClick={() => void act(() => moderationApi.reactivate(username))}
+          >
             Réactiver le compte
           </Button>
         ) : (
-          <Button variant="danger" fullWidth disabled={busy || isSelf} title={selfTitle} onClick={() => void act(() => moderationApi.suspend(username), `Suspendre le compte de ${data.display_name} ? Il sera déconnecté.`)}>
+          <Button
+            variant="danger"
+            fullWidth
+            disabled={busy || !canSanction}
+            title={sanctionDisabledTitle}
+            onClick={() =>
+              void act(
+                () => moderationApi.suspend(username),
+                `Suspendre le compte de ${data.display_name} ? Il sera déconnecté.`,
+              )
+            }
+          >
             Suspendre le compte
           </Button>
         )}
         <Button
           variant="danger"
           fullWidth
-          disabled={busy || isSelf}
-          title={selfTitle}
+          disabled={busy || !canSanction}
+          title={sanctionDisabledTitle}
           onClick={() =>
             void act(async () => {
               await moderationApi.deleteAccount(username)

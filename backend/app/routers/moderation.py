@@ -56,7 +56,12 @@ ACTIVITY_SIZE = 8
 REPORTED_PREVIEW = 5
 ACCOUNTS_LIMIT = 100
 
-ROLE_LABELS = {Role.USER: "Utilisateur", Role.MODERATOR: "Modérateur"}
+ROLE_LABELS = {
+    Role.USER: "Utilisateur",
+    Role.MODERATOR: "Modérateur",
+    Role.SUPER_ADMIN: "Super Admin",
+}
+_MOD_ROLES = (Role.MODERATOR, Role.SUPER_ADMIN)
 STATUS_LABELS = {
     AccountStatus.PENDING_EMAIL: "En attente",
     AccountStatus.ACTIVE: "Actif",
@@ -356,7 +361,7 @@ def _account_query(q: str | None, filter_: AccountFilter) -> Select:
             )
         )
     if filter_ == "moderators":
-        query = query.where(User.role == Role.MODERATOR)
+        query = query.where(User.role.in_(_MOD_ROLES))
     elif filter_ == "suspended":
         query = query.where(User.status == AccountStatus.SUSPENDED)
     elif filter_ == "reported":
@@ -394,6 +399,15 @@ def _not_self(moderator: User, user: User, message: str) -> None:
         raise ApiError(409, "self_action", message)
 
 
+def _check_hierarchy(moderator: User, target: User, message: str) -> None:
+    if target.role == Role.SUPER_ADMIN:
+        raise ApiError(
+            403, "forbidden", "Impossible de modifier ou sanctionner un Super Administrateur."
+        )
+    if moderator.role != Role.SUPER_ADMIN and target.role in _MOD_ROLES:
+        raise ApiError(403, "forbidden", message)
+
+
 @router.get("/users")
 def list_accounts(
     db: DbSession,
@@ -405,7 +419,7 @@ def list_accounts(
     users = db.scalars(query.order_by(User.created_at, User.id).limit(ACCOUNTS_LIMIT)).all()
     return AccountList(
         total=_count(db, query),
-        moderator_count=_count(db, select(User.id).where(User.role == Role.MODERATOR)),
+        moderator_count=_count(db, select(User.id).where(User.role.in_(_MOD_ROLES))),
         items=_account_rows(db, list(users)),
     )
 
@@ -468,9 +482,17 @@ def get_account(username: str, db: DbSession, _: ModeratorUser) -> AccountDetail
 
 @router.put("/users/{username}/role")
 def set_role(username: str, data: RoleIn, db: DbSession, moderator: ModeratorUser) -> AccountDetail:
-    """« Promouvoir modérateur » / « Retirer le rôle de modérateur »."""
+    """« Promouvoir modérateur » / « Retirer le rôle de modérateur » (réservé au Super Admin)."""
     user = _get_account(db, username)
     _not_self(moderator, user, "Vous ne pouvez pas changer votre propre rôle.")
+    if moderator.role != Role.SUPER_ADMIN:
+        raise ApiError(
+            403, "forbidden", "Seul le Super Administrateur peut modifier le rôle d'un compte."
+        )
+    if user.role == Role.SUPER_ADMIN or data.role == Role.SUPER_ADMIN:
+        raise ApiError(
+            403, "forbidden", "Le rôle de Super Administrateur ne peut pas être attribué ou retiré."
+        )
     if user.role != data.role:
         user.role = data.role
         verb = "promu modérateur" if data.role == Role.MODERATOR else "n'est plus modérateur"
@@ -484,6 +506,11 @@ def suspend(username: str, db: DbSession, moderator: ModeratorUser) -> AccountDe
     """Suspendre : connexion impossible et sessions en cours refusées (voir deps)."""
     user = _get_account(db, username)
     _not_self(moderator, user, "Vous ne pouvez pas suspendre votre propre compte.")
+    _check_hierarchy(
+        moderator,
+        user,
+        "Un administrateur classique ne peut pas suspendre un autre administrateur.",
+    )
     if user.status != AccountStatus.SUSPENDED:
         user.status = AccountStatus.SUSPENDED
         user.suspended_at = utcnow()
@@ -503,6 +530,11 @@ def suspend(username: str, db: DbSession, moderator: ModeratorUser) -> AccountDe
 def reactivate(username: str, db: DbSession, moderator: ModeratorUser) -> AccountDetail:
     """Lève la suspension ; un compte jamais confirmé redevient « en attente »."""
     user = _get_account(db, username)
+    _check_hierarchy(
+        moderator,
+        user,
+        "Un administrateur classique ne peut pas réactiver un autre administrateur.",
+    )
     if user.status == AccountStatus.SUSPENDED:
         user.status = (
             AccountStatus.ACTIVE if user.email_verified_at else AccountStatus.PENDING_EMAIL
@@ -532,6 +564,11 @@ def delete_account(username: str, db: DbSession, moderator: ModeratorUser) -> No
     """Supprime le compte et tout ce qui lui appartient (posts, sorties organisées…)."""
     user = _get_account(db, username)
     _not_self(moderator, user, "Vous ne pouvez pas supprimer votre propre compte.")
+    _check_hierarchy(
+        moderator,
+        user,
+        "Un administrateur classique ne peut pas supprimer un autre administrateur.",
+    )
     moderation.log(db, moderator, f"Compte @{user.username} supprimé")
     db.delete(user)
     db.commit()

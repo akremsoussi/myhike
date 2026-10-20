@@ -16,7 +16,7 @@ export function UserLayout({ fullBleed = false, edgeToEdge = false }: UserLayout
   if (!me) return null
   return (
     <>
-      <Navbar user={{ name: me.user.display_name }} />
+      <Navbar user={{ name: me.user.display_name, role: me.user.role }} />
       <main className={fullBleed ? styles.fullBleed : edgeToEdge ? undefined : styles.page}>
         <Outlet />
       </main>

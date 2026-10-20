@@ -38,7 +38,7 @@ ActiveUser = Annotated[User, Depends(require_active)]
 
 
 def require_moderator(user: ActiveUser) -> User:
-    if user.role != Role.MODERATOR:
+    if user.role not in (Role.MODERATOR, Role.SUPER_ADMIN):
         raise ApiError(403, "forbidden", "Réservé aux modérateurs.")
     return user
 

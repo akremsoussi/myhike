@@ -68,7 +68,7 @@ def create_post(data: PostIn, db: DbSession, viewer: ActiveUser) -> PostOut:
 @router.delete("/{post_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_post(post_id: int, db: DbSession, viewer: ActiveUser) -> None:
     post = _visible_post(db, viewer, post_id)
-    if post.author_id != viewer.id and viewer.role != Role.MODERATOR:
+    if post.author_id != viewer.id and viewer.role not in (Role.MODERATOR, Role.SUPER_ADMIN):
         raise ApiError(403, "forbidden", "Seul l'auteur peut supprimer ce post.")
     if post.author_id != viewer.id:
         moderation.log(db, viewer, moderation.post_deleted_message(post))

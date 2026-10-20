@@ -78,7 +78,7 @@ CREATE TABLE `friendships` (
   KEY `ix_friendships_addressee_id` (`addressee_id`),
   CONSTRAINT `fk_friendships_addressee_id_users` FOREIGN KEY (`addressee_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_friendships_requester_id_users` FOREIGN KEY (`requester_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `massifs`;
 CREATE TABLE `massifs` (
@@ -99,7 +99,7 @@ CREATE TABLE `moderation_log` (
   KEY `fk_moderation_log_actor_id_users` (`actor_id`),
   KEY `ix_moderation_log_created_at` (`created_at`),
   CONSTRAINT `fk_moderation_log_actor_id_users` FOREIGN KEY (`actor_id`) REFERENCES `users` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `outing_invitations`;
 CREATE TABLE `outing_invitations` (
@@ -140,7 +140,7 @@ CREATE TABLE `outing_stops` (
   KEY `ix_outing_stops_refuge_id` (`refuge_id`),
   CONSTRAINT `fk_outing_stops_outing_id_outings` FOREIGN KEY (`outing_id`) REFERENCES `outings` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_outing_stops_refuge_id_refuges` FOREIGN KEY (`refuge_id`) REFERENCES `refuges` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `outings`;
 CREATE TABLE `outings` (
@@ -156,7 +156,7 @@ CREATE TABLE `outings` (
   KEY `ix_outings_organizer_id` (`organizer_id`),
   KEY `ix_outings_starts_at` (`starts_at`),
   CONSTRAINT `fk_outings_organizer_id_users` FOREIGN KEY (`organizer_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `post_likes`;
 CREATE TABLE `post_likes` (
@@ -188,7 +188,7 @@ CREATE TABLE `posts` (
   CONSTRAINT `fk_posts_author_id_users` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_posts_community_id_communities` FOREIGN KEY (`community_id`) REFERENCES `communities` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_posts_refuge_id_refuges` FOREIGN KEY (`refuge_id`) REFERENCES `refuges` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `refuge_photos`;
 CREATE TABLE `refuge_photos` (
@@ -270,7 +270,7 @@ CREATE TABLE `sessions` (
   UNIQUE KEY `uq_sessions_token_hash` (`token_hash`),
   KEY `ix_sessions_user_id` (`user_id`),
   CONSTRAINT `fk_sessions_user_id_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `uploads`;
 CREATE TABLE `uploads` (
@@ -297,7 +297,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `password_hash` varchar(255) NOT NULL,
   `display_name` varchar(60) NOT NULL,
-  `role` enum('user','moderator') NOT NULL,
+  `role` enum('user','moderator','super_admin') NOT NULL,
   `status` enum('pending_email','active','suspended') NOT NULL,
   `created_at` datetime NOT NULL,
   `email_verified_at` datetime DEFAULT NULL,
@@ -311,6 +311,6 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uq_users_email` (`email`),
   UNIQUE KEY `uq_users_username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -1,7 +1,7 @@
 import { api } from '../lib/api'
 
 export type AccountStatus = 'pending_email' | 'active' | 'suspended'
-export type Role = 'user' | 'moderator'
+export type Role = 'user' | 'moderator' | 'super_admin'
 
 export type User = {
   id: number
