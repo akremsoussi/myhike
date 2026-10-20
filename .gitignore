@@ -11,6 +11,7 @@ __pycache__/
 .ruff_cache/
 
 # Fichiers envoyés par les utilisateurs
+metier/uploads/
 backend/uploads/
 
 # Node

@@ -24,8 +24,8 @@
 ```text
 myhike/
 ├── start.sh                  # Script de lancement complet en local en UNE SEULE commande
-├── client/ (-> frontend)     # Couche Présentation : React 19, TypeScript, Leaflet, Vite
-├── metier/ (-> backend)      # Couche Métier : Python 3.12, FastAPI, SQLAlchemy 2, Argon2id
+├── client/                   # Couche Présentation : React 19, TypeScript, Leaflet, Vite
+├── metier/                   # Couche Métier : Python 3.12, FastAPI, SQLAlchemy 2, Argon2id
 ├── donnees/                  # Couche Données : schema.sql et peuplement.sql (MySQL 8)
 ├── deploiement/              # Configuration du déploiement 3 VMs (Netplan, Nginx, Systemd)
 │   ├── reseau/               # Configurations statiques Netplan des 3 machines
