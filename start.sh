@@ -10,8 +10,10 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-BACKEND_DIR="$ROOT_DIR/backend"
-FRONTEND_DIR="$ROOT_DIR/frontend"
+BACKEND_DIR="$ROOT_DIR/metier"
+[ -d "$BACKEND_DIR" ] || BACKEND_DIR="$ROOT_DIR/backend"
+FRONTEND_DIR="$ROOT_DIR/client"
+[ -d "$FRONTEND_DIR" ] || FRONTEND_DIR="$ROOT_DIR/frontend"
 
 # Chargement automatique de NVM si disponible (Node 24 LTS)
 if [ -s "${HOME}/.nvm/nvm.sh" ]; then

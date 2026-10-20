@@ -133,7 +133,7 @@ Conformément aux exigences du sujet, les règles de gestion structurelles sont 
 
 ## 5. Correspondance Complète avec la Maquette Figma (Écrans 01 à 16)
 
-La maquette Figma ([Refuges – Web App](https://www.figma.com/design/KrPHETSktcZgtTbB9uxVyB/Refuges-%E2%80%93-Web-App?node-id=10-2&t=JR58gAGYpNzeFWH1-1)) définit une charte graphique cohérente (police `Inter`, palette forêt `#1A4D2E` / `#2E6B34`, ambre `#D97706`, surface `#FAF8F5`) intégralement implémentée dans `frontend/src/styles/tokens.css` et les 20 écrans ci-dessous :
+La maquette Figma ([Refuges – Web App](https://www.figma.com/design/KrPHETSktcZgtTbB9uxVyB/Refuges-%E2%80%93-Web-App?node-id=10-2&t=JR58gAGYpNzeFWH1-1)) définit une charte graphique cohérente (police `Inter`, palette forêt `#1A4D2E` / `#2E6B34`, ambre `#D97706`, surface `#FAF8F5`) intégralement implémentée dans `client/src/styles/tokens.css` et les 20 écrans ci-dessous :
 
 | N° Figma | Nom de l'écran dans Figma | Node ID Figma | Route React (`client`) | Accès requis |
 | :---: | :--- | :---: | :--- | :--- |
