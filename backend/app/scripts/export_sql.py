@@ -62,3 +62,4 @@ def dump_db():
 
 if __name__ == "__main__":
     dump_db()
+

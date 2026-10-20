@@ -35,9 +35,9 @@ Ce document décrit l'ensemble des étapes, dans l'ordre chronologique exact, po
    sudo systemd-machine-id-setup && sudo reboot
    ```
 4. **Dimensionnement des ressources :**
-   - `Ubuntu-Web` : 1 CPU, 1024 Mo RAM.
-   - `Ubuntu-API` : 1 CPU, 1024 Mo RAM.
-   - `Ubuntu-DB` : 2 CPU, 2048 Mo RAM.
+   - `Ubuntu-Web` : 1 CPU, 2048 Mo RAM.
+   - `Ubuntu-API` : 1 CPU, 2048 Mo RAM.
+   - `Ubuntu-DB` : 1 CPU, 2048 Mo RAM.
 5. **Snapshot initial :** Prendre un instantané nommé `base propre` sur chacune des 3 machines.
 
 ---
