@@ -171,4 +171,4 @@ def apply(db: Session, outing: Outing, data: OutingIn) -> None:
 
 
 def can_manage(outing: Outing, viewer: User) -> bool:
-    return outing.organizer_id == viewer.id or viewer.role == Role.MODERATOR
+    return outing.organizer_id == viewer.id or viewer.role in (Role.MODERATOR, Role.SUPER_ADMIN)

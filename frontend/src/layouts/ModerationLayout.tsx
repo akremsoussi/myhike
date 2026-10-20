@@ -12,9 +12,10 @@ export function ModerationLayout() {
   const { pathname } = useLocation()
   const summary = useApi(`moderation-summary:${pathname}`, moderationApi.summary, '')
   if (!me) return null
+  const roleLabel = me.user.role === 'super_admin' ? 'Super Admin' : 'Modération'
   return (
     <div className={styles.layout}>
-      <ModerationSidebar openReports={summary.data?.open_reports ?? 0} user={{ name: me.user.display_name, roleLabel: 'Modération' }} />
+      <ModerationSidebar openReports={summary.data?.open_reports ?? 0} user={{ name: me.user.display_name, roleLabel }} />
       <main className={styles.content}>
         <Outlet />
       </main>

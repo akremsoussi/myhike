@@ -21,7 +21,9 @@ export function RequireActive() {
 /** Écrans de modération. À placer sous RequireActive. */
 export function RequireModerator() {
   const { me } = useAuth()
-  if (me?.user.role !== 'moderator') return <Navigate to={HOME} replace />
+  if (me?.user.role !== 'moderator' && me?.user.role !== 'super_admin') {
+    return <Navigate to={HOME} replace />
+  }
   return <Outlet />
 }
 

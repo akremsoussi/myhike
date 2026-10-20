@@ -148,7 +148,7 @@ def can_view(db: Session, viewer: User, upload: Upload) -> bool:
         if visible:
             return True
         # Un modérateur voit les photos d'un post signalé, comme son texte (page Signalements).
-        return viewer.role == Role.MODERATOR and bool(
+        return viewer.role in (Role.MODERATOR, Role.SUPER_ADMIN) and bool(
             db.scalar(
                 select(
                     exists().where(Report.post_id == upload.post_id, Report.resolved_at.is_(None))
