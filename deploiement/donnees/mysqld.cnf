@@ -1,0 +1,12 @@
+# Extrait de /etc/mysql/mysql.conf.d/mysqld.cnf sur vm-donnees
+# Configuration de l'adresse d'écoute sur le réseau interne (10.10.10.30)
+# pour ne pas rester sur la boucle locale (127.0.0.1)
+
+[mysqld]
+user            = mysql
+bind-address    = 10.10.10.30
+mysqlx-bind-address = 10.10.10.30
+port            = 3306
+datadir         = /var/lib/mysql
+socket          = /var/run/mysqld/mysqld.sock
+

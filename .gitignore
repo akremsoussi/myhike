@@ -1,6 +1,7 @@
 # Secrets
 .env
 !.env.example
+!deploiement/metier/.env
 
 # Python
 .venv/
@@ -26,3 +27,7 @@ dist/
 
 # Claude Code (réglages locaux)
 .claude/settings.local.json
+
+# Archives OVA (trop volumineuses pour GitHub)
+*.ova
+ova/

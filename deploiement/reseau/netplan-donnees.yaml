@@ -1,0 +1,10 @@
+# Configuration Netplan pour vm-donnees (Ubuntu-DB)
+# Fichier à placer dans /etc/netplan/50-cloud-init.yaml
+
+network:
+  version: 2
+  ethernets:
+    enp0s3:
+      dhcp4: false
+      addresses: [10.10.10.30/24]
+
