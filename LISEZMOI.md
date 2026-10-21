@@ -104,3 +104,19 @@ Pour le déploiement sur trois machines virtuelles isolées avec réseau interne
 - **[`docs/analyse.md`](docs/analyse.md)** — Dossier d'analyse complet et correspondance Figma
 - **[`docs/requetes.md`](docs/requetes.md)** — Exemples de requêtes HTTP (`curl`)
 - **[`docs/tests.md`](docs/tests.md)** — Cahier de recette et résultats des tests
+
+---
+
+## 6. Mesure et Injection de charge JMeter (Partie 4)
+
+L'injection de charge et la comparaison de performances entre VMs et conteneurs sont configurées dans le dossier **[`charge/`](charge/)** :
+- **[`charge/plan.jmx`](charge/plan.jmx)** — Plan de test JMeter paramétrable (`-Jutilisateurs`, `-Jmontee`, `-Jduree`, `-Jhost`, `-Jport`)
+- **[`charge/comptes.csv`](charge/comptes.csv)** — Jeu de données de 25 comptes utilisateurs de test
+- **[`charge/etalonnage.md`](charge/etalonnage.md)** — Rapport d'étalonnage de l'injecteur et vérification de reproductibilité
+- **[`docs/rapport-charge.md`](docs/rapport-charge.md)** — Rapport d'analyse comparative, tableau de synthèse et analyse technique des goulots d'étranglement
+
+### Lancement d'une campagne de test (mode CLI non graphique) :
+```bash
+# Exemple pour un palier à 10 utilisateurs sur le déploiement VMs (port 8080)
+jmeter -n -t charge/plan.jmx -l charge/resultats/vm-10.csv -Jutilisateurs=10 -Jmontee=10 -Jduree=60 -Jhost=localhost -Jport=8080
+```
