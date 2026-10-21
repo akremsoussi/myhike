@@ -1,0 +1,96 @@
+name: refuges
+services:
+  db:
+    image: mysql:8.4@sha256:24989179f58856db763f418010c1169fecc944e3ec1ea7e921572d83eb070f70
+    environment:
+      MYSQL_DATABASE: ${DB_NAME:?Renseigner DB_NAME dans .env.docker}
+      MYSQL_USER: ${DB_USER:?Renseigner DB_USER dans .env.docker}
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Renseigner DB_PASSWORD dans .env.docker}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Renseigner MYSQL_ROOT_PASSWORD dans
+        .env.docker}
+    networks:
+    - data
+    volumes:
+    - mysql_data:/var/lib/mysql
+    - type: bind
+      source: ../donnees/schema.sql
+      target: /docker-entrypoint-initdb.d/01-schema.sql
+      read_only: true
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ../donnees/peuplement.sql
+      target: /docker-entrypoint-initdb.d/02-data.sql
+      read_only: true
+      bind:
+        create_host_path: false
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - MYSQL_PWD="$${MYSQL_PASSWORD}" mysql --host=127.0.0.1 --user="$${MYSQL_USER}"
+        --database="$${MYSQL_DATABASE}" --execute="SELECT 1"
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
+  backend:
+    build:
+      context: ../metier
+      dockerfile: ../docker/metier.Dockerfile
+    environment:
+      DB_HOST: db
+      DB_PORT: '3306'
+      DB_NAME: ${DB_NAME:?Renseigner DB_NAME dans .env.docker}
+      DB_USER: ${DB_USER:?Renseigner DB_USER dans .env.docker}
+      DB_PASSWORD: ${DB_PASSWORD:?Renseigner DB_PASSWORD dans .env.docker}
+      MEDIA_DIR: /app/uploads
+      FRONTEND_URL: http://localhost:8080
+    networks:
+    - web
+    - data
+    volumes:
+    - uploads:/app/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test:
+      - CMD
+      - python
+      - -c
+      - import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health',
+        timeout=3)
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/proxy.Dockerfile
+    ports:
+    - 127.0.0.1:8080:80
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+    - web
+    healthcheck:
+      test:
+      - CMD
+      - wget
+      - -q
+      - -O
+      - /dev/null
+      - http://127.0.0.1/api/health
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+volumes:
+  mysql_data: null
+  uploads: null
+networks:
+  web: null
+  data:
+    internal: true
