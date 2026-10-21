@@ -25,16 +25,32 @@ Ce rapport a pour objectif de comparer quantitativement et techniquement deux mo
 
 ## 2. Tableau de Synthèse Comparatif (Étape 18, page 56)
 
-*Ce tableau sera rempli à partir des métriques extraites des fichiers bruts `charge/resultats/vm-*.csv` et `charge/resultats/dk-*.csv` et des relevés système (`htop` / `vmstat`).*
+*Ce tableau compare les mesures réelles obtenues lors des campagnes de charge.*
 
-| Grandeur | Trois machines virtuelles | Trois conteneurs | Écart / Observations |
+| Grandeur | Trois machines virtuelles (Relevés réels) | Trois conteneurs (Docker) | Écart / Observations |
 | :--- | :--- | :--- | :--- |
-| **Débit maximal soutenu** | *[À relever - Étape 17]* | *[À relever - Étape 17]* | |
-| **Charge au point de saturation** | *[À relever - Étape 17]* | *[À relever - Étape 17]* | |
-| **Latence au 95e centile, à charge égale** | *[À relever - Étape 17]* | *[À relever - Étape 17]* | |
-| **Goulot d'étranglement identifié** | *[À nommer]* | *[À nommer]* | |
-| **Temps de démarrage complet** | *[Relevé Étape 10]* | *[Relevé Étape 14]* | |
-| **Mémoire consommée au repos** | *[Relevé Étape 10]* | *[Relevé Étape 14]* | |
+| **Débit maximal soutenu ($D_{\max}$)** | **5,17 req/s** (palier 10, stable ~4,8 req/s à 25 et 50) | *[À relever par Akrem - Étape 17]* | |
+| **Charge au point de saturation** | **10 à 25 utilisateurs simultanés** | *[À relever par Akrem - Étape 17]* | |
+| **Latence médiane ($L_{50}$) à charge 10** | **931 ms** | *[À relever par Akrem - Étape 17]* | |
+| **Latence au 95e centile ($L_{95}$) à charge 10** | **2 585 ms** | *[À relever par Akrem - Étape 17]* | |
+| **Taux d'erreur à charge nominale ($\le 50$)**| **0,00 %** (0/521 à 10 u., 0/723 à 25 u., 0/309 à 50 u.) | *[À relever par Akrem - Étape 17]* | |
+| **Taux d'erreur en écroulement (charge 100)**| **34,12 %** (58 erreurs 500 sur 170 requêtes) | *[À relever par Akrem - Étape 17]* | |
+| **Goulots d'étranglement identifiés** | **1. CPU Argon2id (10-50 u.)**<br>**2. Pool de connexions DB / Timeout (100 u.)** | *[À nommer]* | |
+| **Temps de démarrage complet** | ~45 s | *[Relevé Étape 14]* | |
+| **Mémoire consommée au repos** | ~2 400 Mo (3 instances Ubuntu) | *[Relevé Étape 14]* | |
+
+---
+
+### Tableau détaillé de la série Machines Virtuelles (Relevés bruts `vm-*.csv`)
+
+| Palier | Utilisateurs virtuels | Échantillons | Débit réel (req/s) | Latence médiane ($L_{50}$) | Latence 95e centile ($L_{95}$) | Taux d'erreur | CPU `vm-metier` | Comportement système |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| **1** | 1 | 106 | **1,09 req/s** | 188 ms | 342 ms | 0,00 % | 2,5 % (max 3,5%) | Régime nominal sans concurrence |
+| **2** | 5 | 425 | **4,21 req/s** | 310 ms | 1 138 ms | 0,00 % | 8,0 % (max 11,5%) | Montée linéaire du débit ($\times 3,9$) |
+| **3** | 10 | 521 | **5,17 req/s** | 931 ms | 2 585 ms | 0,00 % | 10,4 % (max 16,7%) | Début d'inflexion du débit, latence s'allonge |
+| **4** | 25 | 723 | **4,87 req/s** | 3 917 ms | 6 770 ms | 0,00 % | 13,2 % (max 19,8%) | **Saturation :** débit plafonné, latence $\times 4$ |
+| **5** | 50 | 309 | **4,82 req/s** | 8 280 ms | 12 826 ms | 0,00 % | 11,2 % (max 19,1%) | **Surcharge :** débit bloqué à 4,8 req/s, zéro erreur |
+| **6** | 100 | 170 | **1,83 req/s** | 35 894 ms | 60 005 ms | **34,12 %** | Pics à 26,6% puis chutes | **Écroulement :** saturation pool DB, timeouts 60s, débit $\div 2,6$ |
 
 ---
 
