@@ -1,0 +1,50 @@
+{
+  "01 - Connexion" : {
+    "transaction" : "01 - Connexion",
+    "sampleCount" : 364,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 103.29945054945057,
+    "medianResTime" : 96.0,
+    "minResTime" : 75.0,
+    "maxResTime" : 287.0,
+    "pct1ResTime" : 132.0,
+    "pct2ResTime" : 142.75,
+    "pct3ResTime" : 173.70000000000005,
+    "throughput" : 6.088891119251937,
+    "receivedKBytesPerSec" : 2.8234893298037838,
+    "sentKBytesPerSec" : 1.5935769726167177
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 727,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 63.730398899587364,
+    "medianResTime" : 79.0,
+    "minResTime" : 16.0,
+    "maxResTime" : 287.0,
+    "pct1ResTime" : 118.0,
+    "pct2ResTime" : 132.60000000000002,
+    "pct3ResTime" : 167.72000000000003,
+    "throughput" : 12.145613712681893,
+    "receivedKBytesPerSec" : 28.670822361002056,
+    "sentKBytesPerSec" : 3.1668902029002455
+  },
+  "02 - Consultation Refuges" : {
+    "transaction" : "02 - Consultation Refuges",
+    "sampleCount" : 363,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 24.05234159779614,
+    "medianResTime" : 22.0,
+    "minResTime" : 16.0,
+    "maxResTime" : 139.0,
+    "pct1ResTime" : 29.600000000000023,
+    "pct2ResTime" : 34.0,
+    "pct3ResTime" : 106.36000000000001,
+    "throughput" : 6.064554931836407,
+    "receivedKBytesPerSec" : 25.85134988033781,
+    "sentKBytesPerSec" : 1.5753629022153166
+  }
+}

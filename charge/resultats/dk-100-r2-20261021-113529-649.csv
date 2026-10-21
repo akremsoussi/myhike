@@ -1,0 +1,571 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1792576497692,724,__measurement_origin,200,"Measurement origin, excluded from statistics",Origine de mesure 1-1,text,true,,0,0,1,1,null,0,0,0
+1792576499280,187,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-2,text,true,,474,268,10,10,http://127.0.0.1:8080/api/auth/login,187,0,51
+1792576499351,127,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-3,text,true,,474,268,10,10,http://127.0.0.1:8080/api/auth/login,127,0,2
+1792576499519,116,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,474,268,12,12,http://127.0.0.1:8080/api/auth/login,116,0,1
+1792576499519,124,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-6,text,true,,475,268,12,12,http://127.0.0.1:8080/api/auth/login,124,0,1
+1792576499674,150,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-7,text,true,,475,268,14,14,http://127.0.0.1:8080/api/auth/login,150,0,1
+1792576499689,162,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-4,text,true,,474,268,14,14,http://127.0.0.1:8080/api/auth/login,162,0,2
+1792576499708,160,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-5,text,true,,475,268,14,14,http://127.0.0.1:8080/api/auth/login,160,0,5
+1792576499888,85,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-8,text,true,,475,268,15,15,http://127.0.0.1:8080/api/auth/login,85,0,1
+1792576499994,100,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-10,text,true,,475,268,16,16,http://127.0.0.1:8080/api/auth/login,100,0,1
+1792576500209,22,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-3,text,true,,4365,266,18,18,http://127.0.0.1:8080/api/refuges?limit=20,22,0,0
+1792576500179,93,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-9,text,true,,475,268,18,18,http://127.0.0.1:8080/api/auth/login,93,0,2
+1792576500288,18,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-6,text,true,,4365,266,19,19,http://127.0.0.1:8080/api/refuges?limit=20,18,0,0
+1792576500412,32,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-7,text,true,,4365,266,20,20,http://127.0.0.1:8080/api/refuges?limit=20,32,0,0
+1792576500334,115,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-13,text,true,,475,268,20,20,http://127.0.0.1:8080/api/auth/login,115,0,1
+1792576500457,34,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-2,text,true,,4365,266,21,21,http://127.0.0.1:8080/api/refuges?limit=20,34,0,0
+1792576500428,115,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-15,text,true,,475,268,21,21,http://127.0.0.1:8080/api/auth/login,114,0,1
+1792576500458,129,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-12,text,true,,475,268,21,21,http://127.0.0.1:8080/api/auth/login,129,0,1
+1792576500475,118,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-11,text,true,,475,268,21,21,http://127.0.0.1:8080/api/auth/login,118,0,1
+1792576500595,21,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-5,text,true,,4365,266,22,22,http://127.0.0.1:8080/api/refuges?limit=20,21,0,0
+1792576500610,23,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,22,22,http://127.0.0.1:8080/api/refuges?limit=20,23,0,0
+1792576500641,19,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-10,text,true,,4365,266,22,22,http://127.0.0.1:8080/api/refuges?limit=20,19,0,0
+1792576500764,23,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-8,text,true,,4365,266,23,23,http://127.0.0.1:8080/api/refuges?limit=20,23,0,0
+1792576500825,31,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-4,text,true,,4365,266,24,24,http://127.0.0.1:8080/api/refuges?limit=20,30,0,0
+1792576500765,100,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-14,text,true,,475,268,24,24,http://127.0.0.1:8080/api/auth/login,100,0,1
+1792576500904,28,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-9,text,true,,4365,266,25,25,http://127.0.0.1:8080/api/refuges?limit=20,28,0,0
+1792576500825,114,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-3,text,true,,475,268,25,25,http://127.0.0.1:8080/api/auth/login,114,0,0
+1792576500843,110,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-6,text,true,,475,268,25,25,http://127.0.0.1:8080/api/auth/login,110,0,0
+1792576500980,33,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-13,text,true,,4365,266,26,26,http://127.0.0.1:8080/api/refuges?limit=20,32,0,0
+1792576500936,109,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-16,text,true,,475,268,26,26,http://127.0.0.1:8080/api/auth/login,109,0,2
+1792576500981,151,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-19,text,true,,475,268,27,27,http://127.0.0.1:8080/api/auth/login,151,0,1
+1792576500998,147,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-18,text,true,,475,268,27,27,http://127.0.0.1:8080/api/auth/login,147,0,2
+1792576500981,182,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-20,text,true,,475,268,27,27,http://127.0.0.1:8080/api/auth/login,181,0,1
+1792576501063,165,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-17,text,true,,475,268,28,28,http://127.0.0.1:8080/api/auth/login,165,0,2
+1792576501184,47,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-11,text,true,,4365,266,28,28,http://127.0.0.1:8080/api/refuges?limit=20,46,0,0
+1792576501137,162,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-22,text,true,,474,268,29,29,http://127.0.0.1:8080/api/auth/login,162,0,1
+1792576501277,50,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-15,text,true,,4365,266,29,29,http://127.0.0.1:8080/api/refuges?limit=20,50,0,0
+1792576501154,189,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-21,text,true,,475,268,29,29,http://127.0.0.1:8080/api/auth/login,188,0,1
+1792576501168,189,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-7,text,true,,475,268,29,29,http://127.0.0.1:8080/api/auth/login,189,0,0
+1792576501246,165,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-5,text,true,,474,268,30,30,http://127.0.0.1:8080/api/auth/login,165,0,0
+1792576501199,221,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-2,text,true,,475,268,30,30,http://127.0.0.1:8080/api/auth/login,221,0,0
+1792576501401,107,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-10,text,true,,474,268,31,31,http://127.0.0.1:8080/api/auth/login,107,0,0
+1792576501417,123,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-23,text,true,,475,268,31,31,http://127.0.0.1:8080/api/auth/login,123,0,2
+1792576501525,29,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-12,text,true,,4365,266,31,31,http://127.0.0.1:8080/api/refuges?limit=20,29,0,0
+1792576501448,125,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-8,text,true,,475,268,31,31,http://127.0.0.1:8080/api/auth/login,125,0,0
+1792576501541,237,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-26,text,true,,475,268,33,33,http://127.0.0.1:8080/api/auth/login,237,0,1
+1792576501540,245,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-13,text,true,,475,268,33,33,http://127.0.0.1:8080/api/auth/login,245,0,0
+1792576501649,140,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-3,text,true,,4365,266,34,34,http://127.0.0.1:8080/api/refuges?limit=20,140,0,0
+1792576501541,249,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-25,text,true,,475,268,34,34,http://127.0.0.1:8080/api/auth/login,249,0,1
+1792576501787,53,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-16,text,true,,4365,266,34,34,http://127.0.0.1:8080/api/refuges?limit=20,53,0,0
+1792576501711,136,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-14,text,true,,4365,266,34,34,http://127.0.0.1:8080/api/refuges?limit=20,136,0,0
+1792576501726,138,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-20,text,true,,4365,266,34,34,http://127.0.0.1:8080/api/refuges?limit=20,138,0,0
+1792576501620,255,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-24,text,true,,475,268,34,34,http://127.0.0.1:8080/api/auth/login,255,0,1
+1792576501587,297,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,474,268,34,34,http://127.0.0.1:8080/api/auth/login,297,0,0
+1792576501833,63,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-17,text,true,,4365,266,35,35,http://127.0.0.1:8080/api/refuges?limit=20,62,0,0
+1792576501619,283,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-4,text,true,,475,268,35,35,http://127.0.0.1:8080/api/auth/login,283,0,0
+1792576501726,178,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-18,text,true,,4365,266,35,35,http://127.0.0.1:8080/api/refuges?limit=20,178,0,0
+1792576501863,59,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-6,text,true,,4365,266,35,35,http://127.0.0.1:8080/api/refuges?limit=20,58,0,0
+1792576501772,170,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-9,text,true,,475,268,35,35,http://127.0.0.1:8080/api/auth/login,170,0,0
+1792576501940,27,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-22,text,true,,4365,266,35,35,http://127.0.0.1:8080/api/refuges?limit=20,27,0,0
+1792576501802,175,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-27,text,true,,475,268,35,35,http://127.0.0.1:8080/api/auth/login,175,0,2
+1792576501971,25,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-7,text,true,,4365,266,35,35,http://127.0.0.1:8080/api/refuges?limit=20,25,0,0
+1792576501880,137,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-29,text,true,,475,268,36,36,http://127.0.0.1:8080/api/auth/login,137,0,1
+1792576502017,18,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-19,text,true,,4365,266,36,36,http://127.0.0.1:8080/api/refuges?limit=20,18,0,0
+1792576502048,17,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-5,text,true,,4365,266,36,36,http://127.0.0.1:8080/api/refuges?limit=20,17,0,0
+1792576502095,19,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-2,text,true,,4365,266,37,37,http://127.0.0.1:8080/api/refuges?limit=20,19,0,0
+1792576502080,107,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-28,text,true,,475,268,37,37,http://127.0.0.1:8080/api/auth/login,107,0,1
+1792576502204,41,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-21,text,true,,4365,266,38,38,http://127.0.0.1:8080/api/refuges?limit=20,41,0,0
+1792576502127,165,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-11,text,true,,475,268,38,38,http://127.0.0.1:8080/api/auth/login,165,0,0
+1792576502127,179,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-31,text,true,,475,268,39,39,http://127.0.0.1:8080/api/auth/login,179,0,2
+1792576502143,189,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-32,text,true,,475,268,39,39,http://127.0.0.1:8080/api/auth/login,189,0,1
+1792576502281,54,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-8,text,true,,4365,266,39,39,http://127.0.0.1:8080/api/refuges?limit=20,54,0,0
+1792576502172,190,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-15,text,true,,475,268,39,39,http://127.0.0.1:8080/api/auth/login,189,0,0
+1792576502267,130,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-30,text,true,,475,268,40,40,http://127.0.0.1:8080/api/auth/login,130,0,1
+1792576502388,22,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-26,text,true,,4365,266,40,40,http://127.0.0.1:8080/api/refuges?limit=20,22,0,0
+1792576502403,28,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-23,text,true,,4365,266,40,40,http://127.0.0.1:8080/api/refuges?limit=20,28,0,0
+1792576502403,29,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-25,text,true,,4365,266,40,40,http://127.0.0.1:8080/api/refuges?limit=20,29,0,0
+1792576502419,21,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-10,text,true,,4365,266,40,40,http://127.0.0.1:8080/api/refuges?limit=20,21,0,0
+1792576502511,33,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-9,text,true,,4365,266,41,41,http://127.0.0.1:8080/api/refuges?limit=20,33,0,0
+1792576502449,103,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-18,text,true,,475,268,41,41,http://127.0.0.1:8080/api/auth/login,103,0,0
+1792576502465,115,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-12,text,true,,475,268,41,41,http://127.0.0.1:8080/api/auth/login,115,0,0
+1792576502557,31,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-4,text,true,,4365,266,41,41,http://127.0.0.1:8080/api/refuges?limit=20,31,0,0
+1792576502619,33,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-13,text,true,,4365,266,42,42,http://127.0.0.1:8080/api/refuges?limit=20,33,0,0
+1792576502511,143,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-3,text,true,,475,268,42,42,http://127.0.0.1:8080/api/auth/login,143,0,0
+1792576502666,64,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-24,text,true,,4365,266,43,43,http://127.0.0.1:8080/api/refuges?limit=20,64,0,0
+1792576502666,110,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-29,text,true,,4365,266,43,43,http://127.0.0.1:8080/api/refuges?limit=20,109,0,0
+1792576502530,257,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-33,text,true,,475,268,43,43,http://127.0.0.1:8080/api/auth/login,257,0,1
+1792576502559,245,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-36,text,true,,475,268,44,44,http://127.0.0.1:8080/api/auth/login,245,0,2
+1792576502588,309,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-16,text,true,,475,268,44,44,http://127.0.0.1:8080/api/auth/login,309,0,0
+1792576502587,357,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-17,text,true,,474,268,45,45,http://127.0.0.1:8080/api/auth/login,357,0,0
+1792576502851,125,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-28,text,true,,4365,266,45,45,http://127.0.0.1:8080/api/refuges?limit=20,125,0,0
+1792576502650,410,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-34,text,true,,475,268,46,46,http://127.0.0.1:8080/api/auth/login,410,0,1
+1792576502685,455,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-37,text,true,,475,268,47,47,http://127.0.0.1:8080/api/auth/login,455,0,2
+1792576502913,226,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-30,text,true,,4365,266,47,47,http://127.0.0.1:8080/api/refuges?limit=20,226,0,0
+1792576502884,332,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,48,48,http://127.0.0.1:8080/api/refuges?limit=20,332,0,0
+1792576502959,268,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-27,text,true,,4365,266,48,48,http://127.0.0.1:8080/api/refuges?limit=20,268,0,0
+1792576502774,473,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-19,text,true,,475,268,48,48,http://127.0.0.1:8080/api/auth/login,473,0,0
+1792576502991,272,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-15,text,true,,4365,266,48,48,http://127.0.0.1:8080/api/refuges?limit=20,272,0,0
+1792576502759,509,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-35,text,true,,474,268,48,48,http://127.0.0.1:8080/api/auth/login,509,0,2
+1792576502819,500,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-22,text,true,,475,268,49,49,http://127.0.0.1:8080/api/auth/login,500,0,0
+1792576502685,637,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-7,text,true,,475,268,49,49,http://127.0.0.1:8080/api/auth/login,637,0,0
+1792576503022,314,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-11,text,true,,4365,266,49,49,http://127.0.0.1:8080/api/refuges?limit=20,314,0,0
+1792576503131,212,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-12,text,true,,4365,266,49,49,http://127.0.0.1:8080/api/refuges?limit=20,212,0,0
+1792576503144,215,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-31,text,true,,4365,266,49,49,http://127.0.0.1:8080/api/refuges?limit=20,215,0,0
+1792576502789,570,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-5,text,true,,475,268,49,49,http://127.0.0.1:8080/api/auth/login,570,0,0
+1792576503299,93,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-18,text,true,,4365,266,50,50,http://127.0.0.1:8080/api/refuges?limit=20,93,0,0
+1792576502819,608,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-20,text,true,,474,268,50,50,http://127.0.0.1:8080/api/auth/login,607,0,0
+1792576503314,137,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-32,text,true,,4365,266,50,50,http://127.0.0.1:8080/api/refuges?limit=20,137,0,0
+1792576502851,704,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-14,text,true,,474,268,51,51,http://127.0.0.1:8080/api/auth/login,704,0,0
+1792576502974,593,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-2,text,true,,475,268,51,51,http://127.0.0.1:8080/api/auth/login,592,0,0
+1792576503052,678,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-26,text,true,,475,268,53,53,http://127.0.0.1:8080/api/auth/login,678,0,0
+1792576502929,837,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-38,text,true,,475,268,53,53,http://127.0.0.1:8080/api/auth/login,837,0,1
+1792576503068,705,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-39,text,true,,475,268,53,53,http://127.0.0.1:8080/api/auth/login,705,0,2
+1792576503655,127,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-33,text,true,,4365,266,53,53,http://127.0.0.1:8080/api/refuges?limit=20,127,0,0
+1792576503082,730,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-8,text,true,,475,268,54,54,http://127.0.0.1:8080/api/auth/login,730,0,0
+1792576503547,318,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-16,text,true,,4365,266,54,54,http://127.0.0.1:8080/api/refuges?limit=20,318,0,0
+1792576502852,1223,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-6,text,true,,475,268,56,56,http://127.0.0.1:8080/api/auth/login,1223,0,0
+1792576503132,946,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-42,text,true,,474,268,56,56,http://127.0.0.1:8080/api/auth/login,946,0,2
+1792576503299,783,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-9,text,true,,475,268,56,56,http://127.0.0.1:8080/api/auth/login,783,0,0
+1792576503577,556,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-3,text,true,,4365,266,57,57,http://127.0.0.1:8080/api/refuges?limit=20,556,0,0
+1792576503222,911,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-23,text,true,,475,268,57,57,http://127.0.0.1:8080/api/auth/login,911,0,0
+1792576503285,853,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-41,text,true,,475,268,57,57,http://127.0.0.1:8080/api/auth/login,853,0,2
+1792576503376,762,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-10,text,true,,475,268,57,57,http://127.0.0.1:8080/api/auth/login,762,0,0
+1792576503144,996,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-25,text,true,,475,268,57,57,http://127.0.0.1:8080/api/auth/login,996,0,0
+1792576503222,918,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-21,text,true,,475,268,57,57,http://127.0.0.1:8080/api/auth/login,918,0,0
+1792576503377,783,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-40,text,true,,475,268,57,57,http://127.0.0.1:8080/api/auth/login,783,0,1
+1792576503593,587,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-34,text,true,,4365,266,57,57,http://127.0.0.1:8080/api/refuges?limit=20,587,0,0
+1792576503768,413,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-19,text,true,,4365,266,57,57,http://127.0.0.1:8080/api/refuges?limit=20,413,0,0
+1792576503793,401,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-36,text,true,,4365,266,58,58,http://127.0.0.1:8080/api/refuges?limit=20,400,0,0
+1792576503422,777,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-24,text,true,,474,268,58,58,http://127.0.0.1:8080/api/auth/login,777,0,0
+1792576503826,397,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-37,text,true,,4365,266,58,58,http://127.0.0.1:8080/api/refuges?limit=20,397,0,0
+1792576503423,825,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-45,text,true,,475,268,58,58,http://127.0.0.1:8080/api/auth/login,825,0,1
+1792576503917,346,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-17,text,true,,4365,266,58,58,http://127.0.0.1:8080/api/refuges?limit=20,346,0,0
+1792576503917,363,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-35,text,true,,4365,266,58,58,http://127.0.0.1:8080/api/refuges?limit=20,363,0,0
+1792576503470,823,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-29,text,true,,475,268,58,58,http://127.0.0.1:8080/api/auth/login,823,0,0
+1792576503918,382,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-5,text,true,,4365,266,59,59,http://127.0.0.1:8080/api/refuges?limit=20,382,0,0
+1792576503932,393,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-22,text,true,,4365,266,59,59,http://127.0.0.1:8080/api/refuges?limit=20,393,0,0
+1792576503455,908,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-43,text,true,,474,268,59,59,http://127.0.0.1:8080/api/auth/login,908,0,1
+1792576503769,626,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-30,text,true,,475,268,60,60,http://127.0.0.1:8080/api/auth/login,626,0,0
+1792576503547,851,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-13,text,true,,474,268,60,60,http://127.0.0.1:8080/api/auth/login,851,0,0
+1792576504176,267,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-7,text,true,,4365,266,60,60,http://127.0.0.1:8080/api/refuges?limit=20,267,0,0
+1792576504176,321,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-14,text,true,,4365,266,60,60,http://127.0.0.1:8080/api/refuges?limit=20,321,0,0
+1792576503547,973,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-4,text,true,,475,268,61,61,http://127.0.0.1:8080/api/auth/login,973,0,0
+1792576504282,288,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-2,text,true,,4365,266,61,61,http://127.0.0.1:8080/api/refuges?limit=20,288,0,0
+1792576503852,726,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-48,text,true,,475,268,61,61,http://127.0.0.1:8080/api/auth/login,726,0,2
+1792576504315,303,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-20,text,true,,4365,266,62,62,http://127.0.0.1:8080/api/refuges?limit=20,303,0,0
+1792576503732,911,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-44,text,true,,475,268,62,62,http://127.0.0.1:8080/api/auth/login,911,0,2
+1792576503871,871,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-46,text,true,,475,268,63,63,http://127.0.0.1:8080/api/auth/login,871,0,2
+1792576503840,953,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-28,text,true,,475,268,63,63,http://127.0.0.1:8080/api/auth/login,953,0,0
+1792576503916,916,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-18,text,true,,475,268,64,64,http://127.0.0.1:8080/api/auth/login,916,0,0
+1792576503933,964,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-27,text,true,,475,268,65,65,http://127.0.0.1:8080/api/auth/login,964,0,0
+1792576504406,505,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-26,text,true,,4365,266,65,65,http://127.0.0.1:8080/api/refuges?limit=20,505,0,0
+1792576503933,1053,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-47,text,true,,475,268,65,65,http://127.0.0.1:8080/api/auth/login,1053,0,1
+1792576504439,548,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-38,text,true,,4365,266,65,65,http://127.0.0.1:8080/api/refuges?limit=20,548,0,0
+1792576504130,876,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-12,text,true,,475,268,66,66,http://127.0.0.1:8080/api/auth/login,876,0,0
+1792576504054,964,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,66,66,http://127.0.0.1:8080/api/auth/login,964,0,0
+1792576504516,510,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-8,text,true,,4365,266,66,66,http://127.0.0.1:8080/api/refuges?limit=20,510,0,0
+1792576504024,1077,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-50,text,true,,475,268,67,67,http://127.0.0.1:8080/api/auth/login,1076,0,1
+1792576504640,483,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-39,text,true,,4365,266,67,67,http://127.0.0.1:8080/api/refuges?limit=20,483,0,0
+1792576504686,514,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-6,text,true,,4365,266,68,68,http://127.0.0.1:8080/api/refuges?limit=20,514,0,0
+1792576504718,517,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-40,text,true,,4365,266,68,68,http://127.0.0.1:8080/api/refuges?limit=20,517,0,0
+1792576504130,1115,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-51,text,true,,475,268,68,68,http://127.0.0.1:8080/api/auth/login,1115,0,2
+1792576504099,1182,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-15,text,true,,475,268,68,68,http://127.0.0.1:8080/api/auth/login,1182,0,0
+1792576504146,1137,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-31,text,true,,475,268,68,68,http://127.0.0.1:8080/api/auth/login,1137,0,0
+1792576504178,1111,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-49,text,true,,475,268,68,68,http://127.0.0.1:8080/api/auth/login,1111,0,3
+1792576504640,670,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-16,text,true,,474,268,69,69,http://127.0.0.1:8080/api/auth/login,670,0,0
+1792576504333,1015,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-53,text,true,,475,268,69,69,http://127.0.0.1:8080/api/auth/login,1015,0,1
+1792576504886,509,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-25,text,true,,4365,266,70,70,http://127.0.0.1:8080/api/refuges?limit=20,509,0,0
+1792576504330,1067,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-11,text,true,,475,268,70,70,http://127.0.0.1:8080/api/auth/login,1067,0,0
+1792576504793,605,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-23,text,true,,4365,266,70,70,http://127.0.0.1:8080/api/refuges?limit=20,605,0,0
+1792576504346,1085,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-52,text,true,,475,268,70,70,http://127.0.0.1:8080/api/auth/login,1085,0,2
+1792576505175,264,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-29,text,true,,4365,266,70,70,http://127.0.0.1:8080/api/refuges?limit=20,264,0,0
+1792576504439,1032,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-32,text,true,,475,268,70,70,http://127.0.0.1:8080/api/auth/login,1032,0,0
+1792576504840,633,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-9,text,true,,4365,266,70,70,http://127.0.0.1:8080/api/refuges?limit=20,633,0,0
+1792576504976,509,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-21,text,true,,4365,266,70,70,http://127.0.0.1:8080/api/refuges?limit=20,509,0,0
+1792576505468,52,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-48,text,true,,4365,266,71,71,http://127.0.0.1:8080/api/refuges?limit=20,52,0,0
+1792576505067,462,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-42,text,true,,4365,266,71,71,http://127.0.0.1:8080/api/refuges?limit=20,462,0,0
+1792576504471,1082,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-55,text,true,,474,268,71,71,http://127.0.0.1:8080/api/auth/login,1082,0,3
+1792576504580,994,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-54,text,true,,474,268,71,71,http://127.0.0.1:8080/api/auth/login,994,0,2
+1792576505067,511,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-41,text,true,,4365,266,71,71,http://127.0.0.1:8080/api/refuges?limit=20,511,0,0
+1792576505144,475,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-45,text,true,,4365,266,72,72,http://127.0.0.1:8080/api/refuges?limit=20,475,0,0
+1792576504330,1313,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-33,text,true,,474,268,72,72,http://127.0.0.1:8080/api/auth/login,1313,0,0
+1792576504946,709,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-24,text,true,,4365,266,72,72,http://127.0.0.1:8080/api/refuges?limit=20,709,0,0
+1792576504642,1031,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-57,text,true,,475,268,72,72,http://127.0.0.1:8080/api/auth/login,1031,0,2
+1792576504762,1007,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-3,text,true,,475,268,73,73,http://127.0.0.1:8080/api/auth/login,1007,0,0
+1792576505144,675,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-19,text,true,,475,268,74,74,http://127.0.0.1:8080/api/auth/login,675,0,0
+1792576505267,591,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-7,text,true,,475,268,74,74,http://127.0.0.1:8080/api/auth/login,591,0,0
+1792576505221,638,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-30,text,true,,4365,266,74,74,http://127.0.0.1:8080/api/refuges?limit=20,638,0,0
+1792576505175,687,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-20,text,true,,475,268,74,74,http://127.0.0.1:8080/api/auth/login,687,0,0
+1792576504946,960,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-59,text,true,,475,268,75,75,http://127.0.0.1:8080/api/auth/login,960,0,2
+1792576504961,948,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-10,text,true,,4365,266,75,75,http://127.0.0.1:8080/api/refuges?limit=20,948,0,0
+1792576505298,756,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-4,text,true,,4365,266,76,76,http://127.0.0.1:8080/api/refuges?limit=20,756,0,0
+1792576505345,726,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-44,text,true,,4365,266,76,76,http://127.0.0.1:8080/api/refuges?limit=20,726,0,0
+1792576504961,1138,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-37,text,true,,475,268,76,76,http://127.0.0.1:8080/api/auth/login,1138,0,0
+1792576505392,743,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-63,text,true,,475,268,77,77,http://127.0.0.1:8080/api/auth/login,743,0,2
+1792576505883,264,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-27,text,true,,4365,266,77,77,http://127.0.0.1:8080/api/refuges?limit=20,263,0,0
+1792576505083,1081,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-36,text,true,,475,268,77,77,http://127.0.0.1:8080/api/auth/login,1081,0,0
+1792576504810,1393,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-56,text,true,,475,268,78,78,http://127.0.0.1:8080/api/auth/login,1393,0,2
+1792576505022,1183,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-5,text,true,,475,268,78,78,http://127.0.0.1:8080/api/auth/login,1183,0,0
+1792576505052,1180,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-13,text,true,,4365,266,78,78,http://127.0.0.1:8080/api/refuges?limit=20,1180,0,0
+1792576505114,1118,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-14,text,true,,475,268,78,78,http://127.0.0.1:8080/api/auth/login,1118,0,0
+1792576505191,1066,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-35,text,true,,475,268,78,78,http://127.0.0.1:8080/api/auth/login,1065,0,0
+1792576504826,1435,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-58,text,true,,475,268,78,78,http://127.0.0.1:8080/api/auth/login,1435,0,4
+1792576506083,193,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-16,text,true,,4365,266,78,78,http://127.0.0.1:8080/api/refuges?limit=20,193,0,0
+1792576505037,1303,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-17,text,true,,475,268,79,79,http://127.0.0.1:8080/api/auth/login,1303,0,0
+1792576505669,782,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-47,text,true,,4365,266,80,80,http://127.0.0.1:8080/api/refuges?limit=20,782,0,0
+1792576505222,1247,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-60,text,true,,475,268,80,80,http://127.0.0.1:8080/api/auth/login,1247,0,2
+1792576505669,805,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-28,text,true,,4365,266,80,80,http://127.0.0.1:8080/api/refuges?limit=20,805,0,0
+1792576505653,821,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-46,text,true,,4365,266,80,80,http://127.0.0.1:8080/api/refuges?limit=20,821,0,0
+1792576505206,1274,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-62,text,true,,475,268,80,80,http://127.0.0.1:8080/api/auth/login,1274,0,2
+1792576505761,1000,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-12,text,true,,4365,266,83,83,http://127.0.0.1:8080/api/refuges?limit=20,1000,0,0
+1792576505314,1487,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-22,text,true,,475,268,84,84,http://127.0.0.1:8080/api/auth/login,1487,0,0
+1792576505315,1499,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-61,text,true,,475,268,84,84,http://127.0.0.1:8080/api/auth/login,1499,0,1
+1792576505500,1316,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-66,text,true,,475,268,84,84,http://127.0.0.1:8080/api/auth/login,1316,0,1
+1792576505561,1259,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-26,text,true,,474,268,84,84,http://127.0.0.1:8080/api/auth/login,1259,0,0
+1792576505623,1207,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-8,text,true,,475,268,84,84,http://127.0.0.1:8080/api/auth/login,1207,0,0
+1792576505037,1814,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-34,text,true,,475,268,84,84,http://127.0.0.1:8080/api/auth/login,1814,0,0
+1792576505391,1467,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-2,text,true,,475,268,84,84,http://127.0.0.1:8080/api/auth/login,1467,0,0
+1792576506145,913,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-42,text,true,,475,268,86,86,http://127.0.0.1:8080/api/auth/login,913,0,0
+1792576505806,1270,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-50,text,true,,4365,266,86,86,http://127.0.0.1:8080/api/refuges?limit=20,1270,0,0
+1792576505715,1400,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-67,text,true,,475,268,87,87,http://127.0.0.1:8080/api/auth/login,1400,0,1
+1792576505329,1791,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-43,text,true,,4365,266,87,87,http://127.0.0.1:8080/api/refuges?limit=20,1791,0,0
+1792576505777,1363,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-64,text,true,,474,268,87,87,http://127.0.0.1:8080/api/auth/login,1363,0,1
+1792576505914,1237,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,87,87,http://127.0.0.1:8080/api/refuges?limit=20,1237,0,0
+1792576505776,1375,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-38,text,true,,474,268,87,87,http://127.0.0.1:8080/api/auth/login,1375,0,0
+1792576506315,863,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-9,text,true,,475,268,87,87,http://127.0.0.1:8080/api/auth/login,863,0,0
+1792576505761,1421,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-65,text,true,,474,268,87,87,http://127.0.0.1:8080/api/auth/login,1421,0,2
+1792576505931,1281,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-31,text,true,,4365,266,88,88,http://127.0.0.1:8080/api/refuges?limit=20,1281,0,0
+1792576505976,1270,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-53,text,true,,4365,266,88,88,http://127.0.0.1:8080/api/refuges?limit=20,1270,0,0
+1792576506330,921,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-41,text,true,,475,268,88,88,http://127.0.0.1:8080/api/auth/login,921,0,0
+1792576505870,1385,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-69,text,true,,475,268,88,88,http://127.0.0.1:8080/api/auth/login,1385,0,2
+1792576505916,1342,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-68,text,true,,475,268,88,88,http://127.0.0.1:8080/api/auth/login,1342,0,2
+1792576505976,1416,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-23,text,true,,475,268,89,89,http://127.0.0.1:8080/api/auth/login,1415,0,0
+1792576506023,1491,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-29,text,true,,475,268,91,91,http://127.0.0.1:8080/api/auth/login,1491,0,0
+1792576506114,1401,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-51,text,true,,4365,266,91,91,http://127.0.0.1:8080/api/refuges?limit=20,1401,0,0
+1792576506114,1440,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-32,text,true,,4365,266,91,91,http://127.0.0.1:8080/api/refuges?limit=20,1440,0,0
+1792576506053,1509,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-70,text,true,,475,268,91,91,http://127.0.0.1:8080/api/auth/login,1509,0,1
+1792576506099,1466,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-39,text,true,,475,268,91,91,http://127.0.0.1:8080/api/auth/login,1466,0,0
+1792576505653,1926,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-18,text,true,,4365,266,91,91,http://127.0.0.1:8080/api/refuges?limit=20,1925,0,0
+1792576506160,1421,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-52,text,true,,4365,266,91,91,http://127.0.0.1:8080/api/refuges?limit=20,1421,0,0
+1792576506206,1379,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-33,text,true,,4365,266,91,91,http://127.0.0.1:8080/api/refuges?limit=20,1379,0,0
+1792576506178,1422,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-55,text,true,,4365,266,92,92,http://127.0.0.1:8080/api/refuges?limit=20,1422,0,0
+1792576506223,1381,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-40,text,true,,475,268,92,92,http://127.0.0.1:8080/api/auth/login,1381,0,0
+1792576506193,1424,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-21,text,true,,475,268,92,92,http://127.0.0.1:8080/api/auth/login,1424,0,0
+1792576506223,1398,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-11,text,true,,4365,266,92,92,http://127.0.0.1:8080/api/refuges?limit=20,1398,0,0
+1792576506979,676,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-36,text,true,,4365,266,92,92,http://127.0.0.1:8080/api/refuges?limit=20,676,0,0
+1792576506330,1327,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-45,text,true,,475,268,92,92,http://127.0.0.1:8080/api/auth/login,1327,0,0
+1792576506270,1640,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-25,text,true,,475,268,95,95,http://127.0.0.1:8080/api/auth/login,1640,0,0
+1792576506995,921,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-16,text,true,,475,268,95,95,http://127.0.0.1:8080/api/auth/login,921,0,0
+1792576505836,2137,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-49,text,true,,4365,266,95,95,http://127.0.0.1:8080/api/refuges?limit=20,2137,0,0
+1792576506315,1667,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-3,text,true,,4365,266,95,95,http://127.0.0.1:8080/api/refuges?limit=20,1667,0,0
+1792576506392,1607,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-30,text,true,,474,268,96,96,http://127.0.0.1:8080/api/auth/login,1607,0,0
+1792576505852,2172,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-6,text,true,,475,268,96,96,http://127.0.0.1:8080/api/auth/login,2172,0,0
+1792576506408,1637,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-54,text,true,,4365,266,96,96,http://127.0.0.1:8080/api/refuges?limit=20,1637,0,0
+1792576506345,1714,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-24,text,true,,475,268,96,96,http://127.0.0.1:8080/api/auth/login,1713,0,0
+1792576507285,793,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-28,text,true,,475,268,96,96,http://127.0.0.1:8080/api/auth/login,793,0,0
+1792576506469,1715,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-20,text,true,,4365,266,97,97,http://127.0.0.1:8080/api/refuges?limit=20,1715,0,0
+1792576506377,1827,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-74,text,true,,474,268,98,98,http://127.0.0.1:8080/api/auth/login,1827,0,1
+1792576506410,1806,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-48,text,true,,475,268,98,98,http://127.0.0.1:8080/api/auth/login,1806,0,0
+1792576506546,1693,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-59,text,true,,4365,266,98,98,http://127.0.0.1:8080/api/refuges?limit=20,1693,0,0
+1792576507318,935,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-22,text,true,,4365,266,98,98,http://127.0.0.1:8080/api/refuges?limit=20,935,0,0
+1792576506425,1848,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-71,text,true,,475,268,98,98,http://127.0.0.1:8080/api/auth/login,1848,0,1
+1792576506685,1593,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-7,text,true,,4365,266,98,98,http://127.0.0.1:8080/api/refuges?limit=20,1593,0,0
+1792576506625,1658,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-73,text,true,,474,268,98,98,http://127.0.0.1:8080/api/auth/login,1658,0,2
+1792576506747,1562,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-10,text,true,,475,268,99,99,http://127.0.0.1:8080/api/auth/login,1562,0,0
+1792576506777,1535,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-27,text,true,,475,268,99,99,http://127.0.0.1:8080/api/auth/login,1535,0,0
+1792576507597,724,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-82,text,true,,475,268,99,99,http://127.0.0.1:8080/api/auth/login,724,0,2
+1792576506841,1490,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-75,text,true,,474,268,99,99,http://127.0.0.1:8080/api/auth/login,1490,0,0
+1792576506839,1601,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-63,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1601,0,0
+1792576506916,1602,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-44,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1602,0,0
+1792576506839,1822,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-56,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1822,0,0
+1792576506932,1737,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-17,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1737,0,0
+1792576506931,1754,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-37,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1754,0,0
+1792576507055,1644,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-4,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1644,0,0
+1792576506964,1737,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-58,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1737,0,0
+1792576507809,896,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-9,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,896,0,0
+1792576507073,1641,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-13,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1641,0,0
+1792576506257,2458,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-72,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,2458,0,2
+1792576507088,1636,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-77,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1635,0,2
+1792576507148,1579,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-78,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1579,0,2
+1792576507936,801,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-42,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,801,0,0
+1792576507178,1562,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-81,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1562,0,2
+1792576506995,1754,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-14,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1754,0,0
+1792576507331,1418,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-47,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1418,0,0
+1792576507269,1480,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-12,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1480,0,0
+1792576507287,1469,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-79,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1468,0,2
+1792576507101,1700,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-35,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1700,0,0
+1792576507103,1919,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-5,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1919,0,0
+1792576507434,1599,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-83,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1599,0,2
+1792576507162,1940,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-62,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1940,0,0
+1792576507439,1669,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-46,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1669,0,0
+1792576506840,2292,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-76,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,2292,0,3
+1792576507579,1559,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-84,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1559,0,1
+1792576506531,2610,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-19,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,2609,0,0
+1792576507749,1401,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-86,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1401,0,1
+1792576507625,1525,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-85,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1525,0,1
+1792576508346,821,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-18,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,821,0,0
+1792576506562,2610,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-57,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,2610,0,0
+1792576507532,1640,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-61,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1640,0,0
+1792576507472,1723,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-60,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1723,0,0
+1792576507470,1750,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-8,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1750,0,0
+1792576507825,1789,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-31,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1789,0,0
+1792576507609,2014,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-66,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,2014,0,0
+1792576506996,2630,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-80,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,2630,0,2
+1792576507669,2019,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-26,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,2019,0,0
+1792576507871,1841,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,474,268,100,100,http://127.0.0.1:8080/api/auth/login,1841,0,0
+1792576507902,1820,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-89,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1820,0,2
+1792576508009,1717,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-43,text,true,,474,268,100,100,http://127.0.0.1:8080/api/auth/login,1717,0,0
+1792576507779,1951,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-34,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1951,0,0
+1792576508027,1703,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-91,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1703,0,1
+1792576508042,1689,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-87,text,true,,474,268,100,100,http://127.0.0.1:8080/api/auth/login,1689,0,2
+1792576508790,943,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-22,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,943,0,0
+1792576507840,1900,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-38,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1900,0,0
+1792576508071,1669,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-32,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1669,0,0
+1792576507824,1927,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-69,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1927,0,0
+1792576508087,1668,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-50,text,true,,474,268,100,100,http://127.0.0.1:8080/api/auth/login,1668,0,0
+1792576508133,1633,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-88,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1633,0,2
+1792576508133,1642,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-90,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1642,0,2
+1792576506255,3526,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-15,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,3526,0,0
+1792576508178,1773,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-53,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,1773,0,0
+1792576507670,30014,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-2,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576507948,30011,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-64,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508055,30012,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-67,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508055,30012,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-23,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508103,30011,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-52,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576508117,30012,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-41,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508148,30012,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-65,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508224,30011,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-51,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576508238,30013,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-68,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508254,30012,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-21,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508285,30013,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-45,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508330,30015,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-29,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508346,30014,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-55,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576508361,30014,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-36,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576508376,30015,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-70,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508392,30014,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-95,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576508407,30015,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-11,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576508437,30000,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-33,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576508453,30014,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-92,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576508853,29621,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-71,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29621,0,0
+1792576508837,29653,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-6,text,true,,4365,266,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29653,0,0
+1792576508514,29978,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-93,text,true,,475,268,100,100,http://127.0.0.1:8080/api/auth/login,29978,0,1
+1792576508499,30015,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-39,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508514,30000,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-40,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508514,30016,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-25,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508576,30014,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-16,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508669,30014,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-28,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508669,30014,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-54,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576508731,30014,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-94,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576508761,30013,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-96,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576508807,30013,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-73,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508823,30012,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-98,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576508837,30015,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-82,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508898,30015,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-3,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576508929,30016,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-74,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508945,30015,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-27,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508945,30015,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-49,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576508975,30015,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-30,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576508976,30014,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-24,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509022,30014,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-100,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,2
+1792576509068,30014,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-59,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576509086,30011,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-75,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509085,30012,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-44,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509085,30012,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-97,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,2
+1792576509115,30013,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-7,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576509146,30012,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-48,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509178,30011,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-99,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576509177,30012,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-20,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576509208,30013,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-17,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576509240,30011,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-72,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509254,30012,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-9,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576509254,30012,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-77,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509254,30013,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-10,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509286,30010,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-37,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576509304,30008,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-13,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509317,30010,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-63,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576509332,30010,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-56,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576509347,30011,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-81,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509377,30012,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-47,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509393,30012,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-58,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576509423,30014,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-14,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576509485,30014,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-42,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576509515,30016,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-4,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509592,30001,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-78,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509577,30016,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-5,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576509685,30001,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-86,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509699,30003,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-12,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509762,30001,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-79,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509765,30013,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-76,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509776,30002,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-85,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576509791,30003,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-8,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576509791,30003,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-57,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576509791,30003,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-35,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576509883,30004,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-62,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576509960,30006,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-46,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576510007,30006,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-83,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576510022,30006,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-18,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576510052,30007,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-60,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576510114,30007,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-61,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576510130,30007,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-19,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576510130,30007,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-84,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576510255,30005,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-34,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576510255,30005,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-91,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576538698,1570,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-52,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1570,0,2
+1792576538897,1376,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-51,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1376,0,3
+1792576539020,1268,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-55,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1268,0,1
+1792576539036,1256,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-95,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,1256,0,1
+1792576510301,30005,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-26,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576510317,30004,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-31,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576510332,30005,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-43,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576510362,30006,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-88,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576510409,30007,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-38,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576510409,30007,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-87,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576510409,30007,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-66,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576510424,30006,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-1,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576510440,30006,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-89,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576510456,30005,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-22,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576510533,30007,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-80,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576510549,30006,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-69,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576510596,30005,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-32,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576510627,30006,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-50,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576510627,30006,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-15,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576510752,30004,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-90,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576510907,30003,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-53,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576538220,30011,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-2,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576538545,30014,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-64,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,2
+1792576538774,30002,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-23,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,2
+1792576538882,30004,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-67,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576538960,30004,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-29,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539005,30004,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-70,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,2
+1792576539236,29815,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-11,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29815,0,1
+1792576539251,29801,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-36,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29801,0,1
+1792576539251,29803,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-33,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29803,0,1
+1792576539252,29803,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-54,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29803,0,0
+1792576539097,30005,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-16,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,4
+1792576539100,30002,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-68,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539113,30005,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-41,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,2
+1792576539113,30005,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-65,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539189,30006,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-71,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576539189,30006,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-21,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539205,30005,02 - Consultation Refuges,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-93,text,false,Erreur lors de la consultation des refuges,2601,0,100,100,http://127.0.0.1:8080/api/refuges?limit=20,0,0,0
+1792576539342,29868,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-92,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29868,0,2
+1792576539515,29703,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-3,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29703,0,1
+1792576539515,29705,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-96,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29705,0,1
+1792576539221,30005,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-25,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539281,30007,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-45,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539531,29773,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-49,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29773,0,1
+1792576539437,29873,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-98,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29873,0,2
+1792576539311,30008,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-39,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539358,30009,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-6,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576539593,29800,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-94,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29800,0,1
+1792576539390,30007,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-40,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539390,30007,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-73,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539809,29617,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-37,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29617,0,1
+1792576539841,29587,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-99,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29587,0,1
+1792576539856,29620,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-20,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29620,0,1
+1792576539935,29543,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-58,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29543,0,1
+1792576539872,29607,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-7,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29607,0,1
+1792576539515,30006,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-27,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539531,30005,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-28,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539997,29553,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-100,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29553,0,1
+1792576539887,29664,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-59,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29664,0,1
+1792576540059,29493,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-97,text,false,Erreur lors de la consultation des refuges,246,197,100,100,http://127.0.0.1:8080/api/refuges?limit=20,29493,0,1
+1792576539686,30004,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-74,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,2
+1792576539733,30003,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-82,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539733,30003,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-24,text,false,Erreur lors de la connexion utilisateur,2601,0,100,100,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539748,30004,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-75,text,false,Erreur lors de la connexion utilisateur,2601,0,99,99,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539778,30005,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-44,text,false,Erreur lors de la connexion utilisateur,2601,0,99,99,http://127.0.0.1:8080/api/auth/login,0,0,2
+1792576539795,30003,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-30,text,false,Erreur lors de la connexion utilisateur,2601,0,98,98,http://127.0.0.1:8080/api/auth/login,0,0,2
+1792576539856,30006,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-48,text,false,Erreur lors de la connexion utilisateur,2601,0,97,97,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539856,30006,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-13,text,false,Erreur lors de la connexion utilisateur,2601,0,97,97,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539903,30006,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-72,text,false,Erreur lors de la connexion utilisateur,2601,0,96,96,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576539935,30005,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-10,text,false,Erreur lors de la connexion utilisateur,2601,0,95,95,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576540121,29851,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-9,text,false,Erreur lors de la consultation des refuges,246,197,94,94,http://127.0.0.1:8080/api/refuges?limit=20,29851,0,1
+1792576540152,29823,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-17,text,false,Erreur lors de la consultation des refuges,246,197,93,93,http://127.0.0.1:8080/api/refuges?limit=20,29823,0,1
+1792576540028,29948,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-42,text,false,Erreur lors de la consultation des refuges,246,197,93,93,http://127.0.0.1:8080/api/refuges?limit=20,29948,0,1
+1792576540167,29812,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-56,text,false,Erreur lors de la consultation des refuges,246,197,93,93,http://127.0.0.1:8080/api/refuges?limit=20,29812,0,1
+1792576540275,29809,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-14,text,false,Erreur lors de la consultation des refuges,246,197,93,93,http://127.0.0.1:8080/api/refuges?limit=20,29809,0,1
+1792576540090,30007,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-81,text,false,Erreur lors de la connexion utilisateur,2601,0,92,92,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576540321,29781,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-57,text,false,Erreur lors de la consultation des refuges,246,197,91,91,http://127.0.0.1:8080/api/refuges?limit=20,29781,0,1
+1792576540290,29812,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-63,text,false,Erreur lors de la consultation des refuges,246,197,91,91,http://127.0.0.1:8080/api/refuges?limit=20,29811,0,1
+1792576540383,29735,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-5,text,false,Erreur lors de la consultation des refuges,246,197,89,89,http://127.0.0.1:8080/api/refuges?limit=20,29735,0,2
+1792576540182,30007,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-77,text,false,Erreur lors de la connexion utilisateur,2601,0,88,88,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576540306,30006,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-47,text,false,Erreur lors de la connexion utilisateur,2601,0,87,87,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576540368,30005,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-85,text,false,Erreur lors de la connexion utilisateur,2601,0,86,86,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576540383,30005,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-4,text,false,Erreur lors de la connexion utilisateur,2601,0,85,85,http://127.0.0.1:8080/api/auth/login,0,0,2
+1792576540399,30004,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-78,text,false,Erreur lors de la connexion utilisateur,2601,0,84,84,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576540555,29863,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-62,text,false,Erreur lors de la consultation des refuges,246,197,83,83,http://127.0.0.1:8080/api/refuges?limit=20,29863,0,1
+1792576540586,29866,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-8,text,false,Erreur lors de la consultation des refuges,246,197,82,82,http://127.0.0.1:8080/api/refuges?limit=20,29866,0,1
+1792576540756,29700,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-35,text,false,Erreur lors de la consultation des refuges,246,197,81,81,http://127.0.0.1:8080/api/refuges?limit=20,29700,0,1
+1792576540772,29684,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-34,text,false,Erreur lors de la consultation des refuges,246,197,81,81,http://127.0.0.1:8080/api/refuges?limit=20,29684,0,1
+1792576540461,30004,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-79,text,false,Erreur lors de la connexion utilisateur,2601,0,79,79,http://127.0.0.1:8080/api/auth/login,0,0,2
+1792576540817,29665,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-60,text,false,Erreur lors de la consultation des refuges,246,197,78,78,http://127.0.0.1:8080/api/refuges?limit=20,29665,0,1
+1792576540524,30003,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-46,text,false,Erreur lors de la connexion utilisateur,2601,0,77,77,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576540540,30002,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-76,text,false,Erreur lors de la connexion utilisateur,2601,0,76,76,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576540570,30003,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-86,text,false,Erreur lors de la connexion utilisateur,2601,0,75,75,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576540570,30003,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-83,text,false,Erreur lors de la connexion utilisateur,2601,0,75,75,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576540663,30001,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-12,text,false,Erreur lors de la connexion utilisateur,2601,0,73,73,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576540648,30016,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-18,text,false,Erreur lors de la connexion utilisateur,2601,0,73,73,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576541095,29732,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-66,text,false,Erreur lors de la consultation des refuges,246,197,71,71,http://127.0.0.1:8080/api/refuges?limit=20,29732,0,1
+1792576540910,29921,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-19,text,false,Erreur lors de la consultation des refuges,246,197,70,70,http://127.0.0.1:8080/api/refuges?limit=20,29921,0,1
+1792576540848,30004,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-91,text,false,Erreur lors de la connexion utilisateur,2601,0,69,69,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576540848,30004,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-55,text,false,Erreur lors de la connexion utilisateur,2601,0,69,69,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576541049,29804,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-38,text,false,Erreur lors de la consultation des refuges,246,197,67,67,http://127.0.0.1:8080/api/refuges?limit=20,29804,0,1
+1792576541126,29743,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-61,text,false,Erreur lors de la consultation des refuges,246,197,66,66,http://127.0.0.1:8080/api/refuges?limit=20,29743,0,7
+1792576541172,29697,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-26,text,false,Erreur lors de la consultation des refuges,246,197,65,65,http://127.0.0.1:8080/api/refuges?limit=20,29697,0,1
+1792576540879,30003,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-52,text,false,Erreur lors de la connexion utilisateur,2601,0,64,64,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576540910,30003,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-51,text,false,Erreur lors de la connexion utilisateur,2601,0,63,63,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576540910,30003,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-88,text,false,Erreur lors de la connexion utilisateur,2601,0,63,63,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576541063,30006,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-84,text,false,Erreur lors de la connexion utilisateur,2601,0,61,61,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576541404,29667,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-15,text,false,Erreur lors de la consultation des refuges,246,197,60,60,http://127.0.0.1:8080/api/refuges?limit=20,29667,0,6
+1792576541451,29623,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-69,text,false,Erreur lors de la consultation des refuges,246,197,59,59,http://127.0.0.1:8080/api/refuges?limit=20,29623,0,1
+1792576541079,30005,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-43,text,false,Erreur lors de la connexion utilisateur,2601,0,58,58,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576541111,30005,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-1,text,false,Erreur lors de la connexion utilisateur,2601,0,57,57,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576541126,30007,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-80,text,false,Erreur lors de la connexion utilisateur,2601,0,56,56,http://127.0.0.1:8080/api/auth/login,0,0,3
+1792576541172,30007,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-89,text,false,Erreur lors de la connexion utilisateur,2601,0,55,55,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576541172,30007,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-22,text,false,Erreur lors de la connexion utilisateur,2601,0,55,55,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576541234,30006,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-95,text,false,Erreur lors de la connexion utilisateur,2601,0,53,53,http://127.0.0.1:8080/api/auth/login,0,0,0
+1792576541295,30008,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-31,text,false,Erreur lors de la connexion utilisateur,2601,0,52,52,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576541295,30008,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-87,text,false,Erreur lors de la connexion utilisateur,2601,0,52,52,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576568825,2526,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-2,text,false,Erreur lors de la consultation des refuges,246,197,50,50,http://127.0.0.1:8080/api/refuges?limit=20,2526,0,1
+1792576569460,1969,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-67,text,false,Erreur lors de la consultation des refuges,246,197,49,49,http://127.0.0.1:8080/api/refuges?limit=20,1969,0,1
+1792576569492,1940,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-64,text,false,Erreur lors de la consultation des refuges,246,197,48,48,http://127.0.0.1:8080/api/refuges?limit=20,1940,0,1
+1792576569522,1927,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-23,text,false,Erreur lors de la consultation des refuges,246,197,47,47,http://127.0.0.1:8080/api/refuges?limit=20,1927,0,1
+1792576569676,1779,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-16,text,false,Erreur lors de la consultation des refuges,246,197,46,46,http://127.0.0.1:8080/api/refuges?limit=20,1779,0,1
+1792576569676,1784,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-29,text,false,Erreur lors de la consultation des refuges,246,197,45,45,http://127.0.0.1:8080/api/refuges?limit=20,1784,0,1
+1792576569768,1763,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-70,text,false,Erreur lors de la consultation des refuges,246,197,44,44,http://127.0.0.1:8080/api/refuges?limit=20,1763,0,1
+1792576569768,1763,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-71,text,false,Erreur lors de la consultation des refuges,246,197,44,44,http://127.0.0.1:8080/api/refuges?limit=20,1763,0,1
+1792576541559,30021,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-50,text,false,Erreur lors de la connexion utilisateur,2601,0,42,42,http://127.0.0.1:8080/api/auth/login,0,0,7
+1792576541558,30022,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-53,text,false,Erreur lors de la connexion utilisateur,2601,0,42,42,http://127.0.0.1:8080/api/auth/login,0,0,8
+1792576541590,30005,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-32,text,false,Erreur lors de la connexion utilisateur,2601,0,40,40,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576541714,30003,01 - Connexion,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,Groupe d'utilisateurs virtuels 1-90,text,false,Erreur lors de la connexion utilisateur,2601,0,39,39,http://127.0.0.1:8080/api/auth/login,0,0,1
+1792576569941,1820,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-41,text,false,Erreur lors de la consultation des refuges,246,197,38,38,http://127.0.0.1:8080/api/refuges?limit=20,1820,0,1
+1792576569941,1825,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-6,text,false,Erreur lors de la consultation des refuges,246,197,37,37,http://127.0.0.1:8080/api/refuges?limit=20,1825,0,2
+1792576570051,1810,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-39,text,false,Erreur lors de la consultation des refuges,246,197,36,36,http://127.0.0.1:8080/api/refuges?limit=20,1810,0,1
+1792576570051,1810,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-65,text,false,Erreur lors de la consultation des refuges,246,197,36,36,http://127.0.0.1:8080/api/refuges?limit=20,1810,0,1
+1792576570098,1771,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-68,text,false,Erreur lors de la consultation des refuges,246,197,34,34,http://127.0.0.1:8080/api/refuges?limit=20,1771,0,1
+1792576570190,1999,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-21,text,false,Erreur lors de la consultation des refuges,246,197,33,33,http://127.0.0.1:8080/api/refuges?limit=20,1999,0,1
+1792576570174,2031,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-45,text,false,Erreur lors de la consultation des refuges,246,197,32,32,http://127.0.0.1:8080/api/refuges?limit=20,2031,0,1
+1792576570206,2064,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-25,text,false,Erreur lors de la consultation des refuges,246,197,31,31,http://127.0.0.1:8080/api/refuges?limit=20,2064,0,1
+1792576570267,2038,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-27,text,false,Erreur lors de la consultation des refuges,246,197,30,30,http://127.0.0.1:8080/api/refuges?limit=20,2038,0,1
+1792576570268,2038,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-28,text,false,Erreur lors de la consultation des refuges,246,197,29,29,http://127.0.0.1:8080/api/refuges?limit=20,2038,0,1
+1792576570267,2044,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-73,text,false,Erreur lors de la consultation des refuges,246,197,28,28,http://127.0.0.1:8080/api/refuges?limit=20,2043,0,1
+1792576570359,2008,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-40,text,false,Erreur lors de la consultation des refuges,246,197,27,27,http://127.0.0.1:8080/api/refuges?limit=20,2008,0,1
+1792576570404,1973,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-48,text,false,Erreur lors de la consultation des refuges,246,197,26,26,http://127.0.0.1:8080/api/refuges?limit=20,1973,0,1
+1792576570435,1942,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-75,text,false,Erreur lors de la consultation des refuges,246,197,26,26,http://127.0.0.1:8080/api/refuges?limit=20,1942,0,1
+1792576570359,2018,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-74,text,false,Erreur lors de la consultation des refuges,246,197,26,26,http://127.0.0.1:8080/api/refuges?limit=20,2018,0,1
+1792576570512,1937,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-24,text,false,Erreur lors de la consultation des refuges,246,197,23,23,http://127.0.0.1:8080/api/refuges?limit=20,1937,0,1
+1792576569831,2646,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-3,text,true,,475,268,22,22,http://127.0.0.1:8080/api/auth/login,2646,0,0
+1792576569941,2538,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-98,text,true,,474,268,21,21,http://127.0.0.1:8080/api/auth/login,2538,0,0
+1792576570143,2542,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-99,text,true,,475,268,20,20,http://127.0.0.1:8080/api/auth/login,2542,0,0
+1792576570481,2407,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-58,text,true,,475,268,19,19,http://127.0.0.1:8080/api/auth/login,2407,0,0
+1792576570344,2690,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-37,text,true,,474,268,18,18,http://127.0.0.1:8080/api/auth/login,2690,0,0
+1792576569925,3240,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-54,text,true,,475,268,17,17,http://127.0.0.1:8080/api/auth/login,3240,0,0
+1792576569768,3445,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-93,text,true,,475,268,16,16,http://127.0.0.1:8080/api/auth/login,3444,0,1
+1792576569568,3675,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-11,text,true,,475,268,15,15,http://127.0.0.1:8080/api/auth/login,3675,0,0
+1792576569941,3336,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-92,text,true,,475,268,14,14,http://127.0.0.1:8080/api/auth/login,3336,0,0
+1792576569816,3486,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-33,text,true,,475,268,13,13,http://127.0.0.1:8080/api/auth/login,3486,0,0
+1792576570113,3324,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-94,text,true,,474,268,12,12,http://127.0.0.1:8080/api/auth/login,3324,0,0
+1792576570003,3441,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-36,text,true,,475,268,11,11,http://127.0.0.1:8080/api/auth/login,3441,0,0
+1792576570128,3360,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-100,text,true,,475,268,10,10,http://127.0.0.1:8080/api/auth/login,3360,0,0
+1792576570083,3485,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-97,text,true,,475,268,9,9,http://127.0.0.1:8080/api/auth/login,3485,0,0
+1792576570113,3498,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-20,text,true,,475,268,8,8,http://127.0.0.1:8080/api/auth/login,3498,0,0
+1792576570190,3430,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-59,text,true,,475,268,7,7,http://127.0.0.1:8080/api/auth/login,3430,0,0
+1792576570143,3538,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-7,text,true,,475,268,6,6,http://127.0.0.1:8080/api/auth/login,3538,0,0
+1792576570496,3202,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-17,text,true,,475,268,5,5,http://127.0.0.1:8080/api/auth/login,3202,0,0
+1792576570221,3491,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-96,text,true,,475,268,4,4,http://127.0.0.1:8080/api/auth/login,3491,0,0
+1792576570528,3201,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-56,text,true,,475,268,3,3,http://127.0.0.1:8080/api/auth/login,3201,0,0
+1792576570512,3227,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-42,text,true,,475,268,2,2,http://127.0.0.1:8080/api/auth/login,3227,0,0
+1792576570298,3455,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-49,text,true,,474,268,1,1,http://127.0.0.1:8080/api/auth/login,3455,0,0

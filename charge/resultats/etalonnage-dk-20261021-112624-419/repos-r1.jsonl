@@ -1,0 +1,3 @@
+﻿{"BlockIO":"0B / 1.35MB","CPUPerc":"0.24%","Container":"b1b685c79bbc5d3086bbbaf36000417e04a040d2490c5a8103ea8a76cce7bd3f","ID":"b1b685c79bbc","MemPerc":"1.29%","MemUsage":"98.04MiB / 7.413GiB","Name":"refuges-backend-1","NetIO":"173MB / 75.8MB","PIDs":"6"}
+{"BlockIO":"70.6MB / 542MB","CPUPerc":"8.94%","Container":"71b82e53b6ed0e0dc16c1eb3f2310bfd68e34cda21f4c5c6c014b64945db7313","ID":"71b82e53b6ed","MemPerc":"6.05%","MemUsage":"459MiB / 7.413GiB","Name":"refuges-db-1","NetIO":"33.2MB / 158MB","PIDs":"44"}
+{"BlockIO":"0B / 8.19kB","CPUPerc":"0.00%","Container":"7d5a7aed9fcba626fd0439f2aefb895bf31cd2b9b149823ee2c7c2e01b4500ef","ID":"7d5a7aed9fcb","MemPerc":"0.16%","MemUsage":"12.29MiB / 7.413GiB","Name":"refuges-frontend-1","NetIO":"61.9MB / 71.3MB","PIDs":"13"}

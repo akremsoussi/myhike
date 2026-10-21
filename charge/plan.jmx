@@ -30,7 +30,7 @@
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">${__P(utilisateurs,1)}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">${__P(montee,1)}</stringProp>
-        <boolProp name="ThreadGroup.scheduler">${__groovy(props.get('duree') != null &amp;&amp; !props.get('duree').equals('0'))}</boolProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.duration">${__P(duree,60)}</stringProp>
         <stringProp name="ThreadGroup.delay">0</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>

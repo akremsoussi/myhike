@@ -32,3 +32,13 @@ dist/
 # Archives OVA (trop volumineuses pour GitHub)
 *.ova
 ova/
+
+.env.docker
+
+.charge-backups/
+
+# Bruts etalonnage volumineux : versionner leur copie .csv.gz
+charge/resultats/etalonnage-dk-*.csv
+
+# Fenetres de mesure derivees des bruts conserves
+charge/resultats/**/*-plateau.csv

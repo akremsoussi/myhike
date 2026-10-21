@@ -1,0 +1,27 @@
+﻿{
+    "started_utc":  "2026-10-21T09:57:23.6121918Z",
+    "mode":  "Campaign",
+    "deployment":  "docker",
+    "target":  "http://127.0.0.1:8080",
+    "git_commit":  "07a0baa812be57c05519d5924cb5835699ed467b",
+    "users":  [
+                  50
+              ],
+    "ramp_seconds":  10,
+    "steady_seconds":  60,
+    "run_seconds":  72,
+    "repetitions":  2,
+    "logical_processors":  12,
+    "db_reset":  true,
+    "other_deployment_stopped_declared":  true,
+    "hashes":  {
+                   "plan.jmx":  "C928A6D37F4B0F62A8F51E6BBE6CD03A021082EFC4792B460F5F5294D54DF216",
+                   "schema.sql":  "1C14CA91E93FFA592156947980ADB3D91260BE0C727B2413B9A60A3B76B51D21",
+                   "comptes.csv":  "FF283447F21F37271B870826F23662EBA0FEAFBD9E6B0E9CD1D2946DCB2751D4",
+                   "plan-execute.jmx":  "160B5B402300E06C78569B28D3A046A310391DD189E171A1FC5F3AA0506EBA0C",
+                   "plan_etalonnage.jmx":  "80911A95C2042D6CD29A03320C6FAD6B121E63FCF43A7988F5151FE0D834E52F",
+                   "peuplement.sql":  "6F4E5FCF5B959B5A8CAAAF1B78CCB2D6B500A11B4733D3799A5A2FFB7E6264CC"
+               },
+    "completion":  "complete",
+    "finished_utc":  "2026-10-21T10:02:34.8917073Z"
+}

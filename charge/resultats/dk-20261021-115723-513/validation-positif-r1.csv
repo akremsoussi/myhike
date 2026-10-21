@@ -1,0 +1,4 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1792576692067,776,__measurement_origin,200,"Measurement origin, excluded from statistics",Origine de mesure 1-1,text,true,,0,0,1,1,null,0,0,0
+1792576693912,314,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,474,268,1,1,http://127.0.0.1:8080/api/auth/login,314,0,38
+1792576694763,86,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,86,0,0

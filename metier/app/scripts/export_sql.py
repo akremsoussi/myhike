@@ -15,7 +15,7 @@ def dump_db():
 
     # Dump schema
     with open("schema.sql", "w", encoding="utf-8") as f_schema:
-        f_schema.write("SET FOREIGN_KEY_CHECKS = 0;\n\n")
+        f_schema.write("SET NAMES utf8mb4;\nSET FOREIGN_KEY_CHECKS = 0;\n\n")
         for table in tables:
             cur.execute(f"SHOW CREATE TABLE `{table}`")
             create_stmt = cur.fetchone()[1]
@@ -25,7 +25,7 @@ def dump_db():
 
     # Dump data
     with open("data.sql", "w", encoding="utf-8") as f_data:
-        f_data.write("SET FOREIGN_KEY_CHECKS = 0;\n\n")
+        f_data.write("SET NAMES utf8mb4;\nSET FOREIGN_KEY_CHECKS = 0;\n\n")
         for table in tables:
             cur.execute(f"SELECT * FROM `{table}`")
             rows = cur.fetchall()

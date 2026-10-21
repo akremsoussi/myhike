@@ -1,0 +1,3 @@
+users,label,samples,errors,error_pct,mean_ms,median_ms,p90_ms,p95_ms,p99_ms,throughput_rps,max_active_threads,measurement_start_ms,measurement_end_ms
+20,Total,652450,0,0.0,1.798,2.0,3.0,3.0,4.0,10874.1667,20,1792574805066,1792574865066
+20,Ressource Statique - Plafond Injecteur,652450,0,0.0,1.798,2.0,3.0,3.0,4.0,10874.1667,20,1792574805066,1792574865066
