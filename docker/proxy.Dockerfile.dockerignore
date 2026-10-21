@@ -1,0 +1,12 @@
+**
+!client/
+!client/**
+!docker/
+!docker/nginx.conf
+**/node_modules/
+**/dist/
+**/.git/
+**/.env
+**/.env.*
+**/jar.txt
+**/*.log
