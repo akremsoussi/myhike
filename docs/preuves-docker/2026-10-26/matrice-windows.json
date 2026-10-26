@@ -1,0 +1,29 @@
+[
+  {
+    "ip": "127.0.0.1",
+    "source": "hote_Windows",
+    "port": 8080,
+    "reachable": true,
+    "date_utc": "2026-10-26T14:22:31.5544471Z",
+    "target": "frontend",
+    "expected_reachable": true
+  },
+  {
+    "ip": "172.18.0.2",
+    "source": "hote_Windows",
+    "port": 8000,
+    "reachable": false,
+    "date_utc": "2026-10-26T14:22:33.5747352Z",
+    "target": "backend",
+    "expected_reachable": false
+  },
+  {
+    "ip": "172.19.0.2",
+    "source": "hote_Windows",
+    "port": 3306,
+    "reachable": false,
+    "date_utc": "2026-10-26T14:22:35.5878419Z",
+    "target": "db",
+    "expected_reachable": false
+  }
+]

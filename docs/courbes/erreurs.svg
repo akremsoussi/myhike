@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="490" height="164" preserveAspectRatio="xMinYMin meet" viewBox="0 0 490 164" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="490" height="164"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-164)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="4" y="151" style="font-family: Arial-Bold; font-size: 10px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,302) scale(1,-1)">Taux d'erreur selon la charge</text>
+			<g transform="">
+				<g transform="">
+					<g transform="">
+						<path d="M 45,40 L 467,40 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<path d="M 49.22,40 L 49.22,35 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 87.2,40 L 87.2,35 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 150.5,40 L 150.5,35 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 256,40 L 256,35 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 467,40 L 467,35 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,49.22,35)">
+							<text x="-1.946533203125" y="-7.000000000000001" style="font-family: Arial; font-size: 7px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-14) scale(1,-1)">1</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,87.2,35)">
+							<text x="-3.89306640625" y="-7.000000000000001" style="font-family: Arial; font-size: 7px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-14) scale(1,-1)">10</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,150.5,35)">
+							<text x="-3.89306640625" y="-7.000000000000001" style="font-family: Arial; font-size: 7px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-14) scale(1,-1)">25</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,256,35)">
+							<text x="-3.89306640625" y="-7.000000000000001" style="font-family: Arial; font-size: 7px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-14) scale(1,-1)">50</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,467,35)">
+							<text x="-5.839599609375" y="-7.000000000000001" style="font-family: Arial; font-size: 7px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-14) scale(1,-1)">100</text>
+						</g>
+					</g>
+				</g>
+				<g transform="">
+					<g transform="">
+						<path d="M 45,40 L 45,136 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<path d="M 45,40 L 40,40 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 45,88 L 40,88 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+						<path d="M 45,136 L 40,136 Z" style="stroke: rgb(0%,0%,0%); stroke-linecap: butt; stroke-width: 1;"/>
+					</g>
+					<g transform="">
+						<g transform=" matrix(1,0,0,1,40,40)">
+							<text x="-3.89306640625" y="-2.8000000000000007" style="font-family: Arial; font-size: 7px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-5) scale(1,-1)">0</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,40,88)">
+							<text x="-7.7861328125" y="-2.8000000000000007" style="font-family: Arial; font-size: 7px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-5) scale(1,-1)">50</text>
+						</g>
+						<g transform=" matrix(1,0,0,1,40,136)">
+							<text x="-11.67919921875" y="-2.8000000000000007" style="font-family: Arial; font-size: 7px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,-5) scale(1,-1)">100</text>
+						</g>
+					</g>
+				</g>
+				<path d="M 45,88 L 467,88 Z" style="stroke: rgb(86%,90%,91%); stroke-linecap: butt; stroke-width: 0.25;"/>
+				<path d="M 45,136 L 467,136 Z" style="stroke: rgb(86%,90%,91%); stroke-linecap: butt; stroke-width: 0.25;"/>
+				<g transform="">
+					<polyline points="49.22 40, 66.1 40, 87.2 40, 150.5 40, 256 40, 467 72.75294" style="stroke: rgb(20%,38%,69%); stroke-linecap: round; stroke-width: 1.7; fill: None; fill-rule: evenodd; stroke-dasharray: 4, 2;"/>
+					<polyline points="49.22 40, 66.1 40, 87.2 40, 150.5 40, 256 40, 467 134.6939" style="stroke: rgb(6%,48%,51%); stroke-linecap: round; stroke-width: 1.7; fill: None; fill-rule: evenodd;"/>
+					<polyline points="49.22 40, 66.1 40, 87.2 40, 150.5 40, 256 40, 467 136" style="stroke: rgb(76%,40%,13%); stroke-linecap: round; stroke-width: 1.7; fill: None; fill-rule: evenodd;"/>
+				</g>
+			</g>
+			<text x="4" y="25" style="font-family: Arial; font-size: 7px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,50) scale(1,-1)">Requêtes échouées (%)</text>
+			<text x="350" y="25" style="font-family: Arial; font-size: 7px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,50) scale(1,-1)">Utilisateurs simultanés</text>
+			<text x="45" y="8" style="font-family: Arial; font-size: 8px;fill: rgb(20%,38%,69%); stroke:none;" transform="translate(0,16) scale(1,-1)">VM : fichier complet</text>
+			<text x="205" y="8" style="font-family: Arial; font-size: 8px;fill: rgb(6%,48%,51%); stroke:none;" transform="translate(0,16) scale(1,-1)">Docker R1 : plateau</text>
+			<text x="345" y="8" style="font-family: Arial; font-size: 8px;fill: rgb(76%,40%,13%); stroke:none;" transform="translate(0,16) scale(1,-1)">Docker R2 : plateau</text>
+			<text x="45" y="139" style="font-family: Arial; font-size: 7px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,278) scale(1,-1)">VM : inflexion 10-25 ; Docker : inflexion vers 50 ; écroulement à 100</text>
+		</g>
+	</g>
+</svg>

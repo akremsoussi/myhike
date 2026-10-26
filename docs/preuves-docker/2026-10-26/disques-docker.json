@@ -1,0 +1,47 @@
+[
+  {
+    "sample": 1,
+    "image_reported_bytes_sum": 348341191,
+    "volumes": [
+      {
+        "name": "refuges-validation_mysql_data",
+        "apparent_bytes": 238783818
+      },
+      {
+        "name": "refuges-validation_uploads",
+        "apparent_bytes": 0
+      }
+    ],
+    "total_reported_bytes": 587125009
+  },
+  {
+    "sample": 2,
+    "image_reported_bytes_sum": 348341191,
+    "volumes": [
+      {
+        "name": "refuges-validation_mysql_data",
+        "apparent_bytes": 238783818
+      },
+      {
+        "name": "refuges-validation_uploads",
+        "apparent_bytes": 0
+      }
+    ],
+    "total_reported_bytes": 587125009
+  },
+  {
+    "sample": 3,
+    "image_reported_bytes_sum": 348341191,
+    "volumes": [
+      {
+        "name": "refuges-validation_mysql_data",
+        "apparent_bytes": 238783818
+      },
+      {
+        "name": "refuges-validation_uploads",
+        "apparent_bytes": 0
+      }
+    ],
+    "total_reported_bytes": 587125009
+  }
+]

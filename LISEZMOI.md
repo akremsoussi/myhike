@@ -1,9 +1,9 @@
 # Refuges — Application Web Trois-Tiers
 
-**Binôme :** Akrem SOUSSI & Rémi CORTIAL  
-**Établissement :** Aix-Marseille Université — École d'ingénieurs (Polytech Marseille)  
-**Année universitaire :** 2025 – 2026  
-**Module :** DEV 1 — Application Trois-Tiers (Enseignant : Mohamed Quafafou)  
+**Binôme :** Akrem SOUSSI & Rémi CORTIAL
+**Établissement :** Aix-Marseille Université — École d'ingénieurs (Polytech Marseille)
+**Année universitaire :** 2025 – 2026
+**Module :** DEV 1 — Application Trois-Tiers (Enseignant : Mohamed Quafafou)
 **Prototype Figma :** [Consulter la maquette Figma en ligne](https://www.figma.com/design/KrPHETSktcZgtTbB9uxVyB/Refuges-%E2%80%93-Web-App?node-id=10-2&t=JR58gAGYpNzeFWH1-1)
 
 ---
@@ -74,7 +74,7 @@ Ce script unique :
 4. Lance le client **React / Vite** sur **`http://localhost:5173`**.
 5. Arrête proprement tous les processus enfants lorsque vous appuyez sur `Ctrl+C`.
 
-> **Confirmation d'email et mot de passe oublié en local :**  
+> **Confirmation d'email et mot de passe oublié en local :**
 > Par défaut en développement (`EMAIL_BACKEND=console`), lors d'une nouvelle inscription (`/inscription`) ou d'une demande de réinitialisation de mot de passe (`/mot-de-passe-oublie`), l'email contenant le lien cliquable (`/confirmation-email?token=...` ou `/mot-de-passe/nouveau?token=...`) est affiché directement dans le terminal où tourne `./start.sh`. Pour utiliser un serveur SMTP réel, renseignez `EMAIL_BACKEND=smtp` et `SMTP_HOST` dans `metier/.env`.
 
 ### Installation initiale (si l'environnement n'est pas encore initialisé)
@@ -107,7 +107,23 @@ Pour le déploiement sur trois machines virtuelles isolées avec réseau interne
 
 ---
 
+## 5 bis. Déploiement Docker (Partie 3)
+
+- [Procédure complète et démarrage en une commande](docker/PROCEDURE.md).
+- [Comparaison VM / Docker au format Markdown](docs/comparaison.md).
+- [Preuves de validation, d'isolation, de persistance et mesures brutes](docs/preuves-docker/2026-10-26/README.md).
+
+Dans Ubuntu WSL, une fois `.env.docker` configuré :
+
+```bash
+sudo bash docker/demarrer.sh refuges-validation
+```
+
+Ce projet possède ses propres volumes. Les preuves du 26 octobre 2026 n'ont pas réinitialisé les bases de travail ni modifié les anciens résultats JMeter.
+
 ## 6. Mesure et Injection de charge JMeter (Partie 4)
+
+Consulter [l’index des livrables](charge/README.md), le [rapport comparatif Markdown](docs/rapport-charge.md) ou sa [version PDF de quatre pages](docs/rapport-charge.pdf). Les courbes et tableaux réunissent les campagnes VM et Docker disponibles ; les différences de protocole et les preuves encore manquantes y sont explicitées.
 
 L'injection de charge et la comparaison de performances entre VMs et conteneurs sont configurées dans le dossier **[`charge/`](charge/)** :
 - **[`charge/plan.jmx`](charge/plan.jmx)** — Plan de test JMeter paramétrable (`-Jutilisateurs`, `-Jmontee`, `-Jduree`, `-Jhost`, `-Jport`)
@@ -115,8 +131,6 @@ L'injection de charge et la comparaison de performances entre VMs et conteneurs 
 - **[`charge/etalonnage.md`](charge/etalonnage.md)** — Rapport d'étalonnage de l'injecteur et vérification de reproductibilité
 - **[`docs/rapport-charge.md`](docs/rapport-charge.md)** — Rapport d'analyse comparative, tableau de synthèse et analyse technique des goulots d'étranglement
 
-### Lancement d'une campagne de test (mode CLI non graphique) :
-```bash
-# Exemple pour un palier à 10 utilisateurs sur le déploiement VMs (port 8080)
-jmeter -n -t charge/plan.jmx -l charge/resultats/vm-10.csv -Jutilisateurs=10 -Jmontee=10 -Jduree=60 -Jhost=localhost -Jport=8080
-```
+### Reproduction des campagnes
+
+Voir [charge/AUTOMATISATION.md](charge/AUTOMATISATION.md) pour la préparation du plan et les commandes CLI. Une nouvelle campagne doit utiliser des noms uniques, le même plan exécuté sur les deux déploiements et une fenêtre de 60 s hors montée. Les options de réinitialisation de base sont décrites dans ce guide.

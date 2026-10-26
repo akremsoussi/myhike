@@ -1,0 +1,56 @@
+Images space usage:
+
+REPOSITORY                    TAG       IMAGE ID       CREATED          SIZE      SHARED SIZE   UNIQUE SIZE   CONTAINERS
+refuges-validation-backend    latest    47ceeaef8c87   7 minutes ago    341MB     0B            340.8MB       1
+refuges-validation-frontend   latest    2206a5e374ce   12 minutes ago   104MB     0B            104.2MB       1
+<none>                        <none>    24989179f588   13 days ago      1.12GB    0B            1.119GB       1
+
+Containers space usage:
+
+CONTAINER ID   IMAGE                         COMMAND                  LOCAL VOLUMES   SIZE      CREATED         STATUS                    NAMES
+08d243b0a518   refuges-validation-frontend   "/docker-entrypoint.…"   0               81.9kB    3 minutes ago   Up 15 seconds (healthy)   refuges-validation-frontend-1
+697f3e32b368   refuges-validation-backend    "uvicorn app.main:ap…"   1               12.3kB    4 minutes ago   Up 22 seconds (healthy)   refuges-validation-backend-1
+d06627f8bdcf   mysql:8.4                     "docker-entrypoint.s…"   1               36.9kB    4 minutes ago   Up 28 seconds (healthy)   refuges-validation-db-1
+
+Local Volumes space usage:
+
+VOLUME NAME                     LINKS     SIZE
+refuges-validation_mysql_data   1         238.8MB
+refuges-validation_uploads      1         0B
+
+Build cache usage: 1.045GB
+
+CACHE ID       CACHE TYPE     SIZE      CREATED          LAST USED        USAGE     SHARED
+1th4dyupt5uk   regular        118MB     13 minutes ago   13 minutes ago   1         false
+5mpx2613rpcv   regular        12.9MB    13 minutes ago   13 minutes ago   1         true
+chgg3xk22llv   regular        6.23MB    13 minutes ago   13 minutes ago   1         false
+jjhx1x2hsfey   regular        16.1MB    13 minutes ago   13 minutes ago   1         true
+0v6mk6xz5dwa   regular        224MB     13 minutes ago   13 minutes ago   1         false
+c2j5mzpc98sd   regular        54.4MB    13 minutes ago   13 minutes ago   1         false
+01p2095mwrcy   regular        8.82kB    13 minutes ago   13 minutes ago   1         true
+xj3oieyfvd2l   regular        6.75MB    13 minutes ago   13 minutes ago   1         false
+3yffam7ru2i2   regular        13.3kB    13 minutes ago   13 minutes ago   1         true
+sce9bh91gv2i   regular        12.7kB    13 minutes ago   13 minutes ago   1         true
+xknmjpi351wn   regular        13.5kB    13 minutes ago   13 minutes ago   1         true
+8m72f96ofnnu   regular        17.8kB    13 minutes ago   13 minutes ago   1         true
+feb5zu7c89gv   regular        20.9kB    13 minutes ago   12 minutes ago   1         false
+iresl1u8b64m   regular        4.65MB    13 minutes ago   12 minutes ago   1         false
+n5vlnfy737r0   regular        2.96MB    12 minutes ago   12 minutes ago   1         true
+mq1674aw9b4m   regular        72.1MB    13 minutes ago   12 minutes ago   1         true
+w0h4xee058dc   regular        61.4kB    13 minutes ago   12 minutes ago   1         false
+xfhc924vkn96   regular        200MB     13 minutes ago   12 minutes ago   1         false
+4udvdztpxil6   regular        1.06MB    13 minutes ago   12 minutes ago   1         false
+b4p7syww7bmc   source.local   1.06MB    13 minutes ago   12 minutes ago   1         false
+lsiq5luf3icp   regular        8.19kB    13 minutes ago   12 minutes ago   1         false
+79l1o8th9uos   regular        29.1kB    12 minutes ago   12 minutes ago   1         true
+5i8293gi5o3f   regular        162MB     12 minutes ago   12 minutes ago   1         false
+wqld3urdmlr1   source.local   12.3kB    13 minutes ago   12 minutes ago   1         false
+9tgrq5h57c0v   regular        12.7kB    13 minutes ago   12 minutes ago   1         false
+jobaw4w1mqgm   regular        381kB     12 minutes ago   12 minutes ago   1         false
+gtoad08z4r4v   regular        16.6kB    13 minutes ago   12 minutes ago   1         false
+ujajvf0ucq6c   regular        8.29kB    13 minutes ago   7 minutes ago    2         false
+hua2eorbwno9   source.local   336kB     13 minutes ago   7 minutes ago    2         false
+wrmzfzcn4jj3   regular        17.1kB    7 minutes ago    7 minutes ago    1         false
+d4leqsnlend4   regular        381kB     7 minutes ago    7 minutes ago    1         false
+lvt34d4xr0gg   regular        162MB     7 minutes ago    7 minutes ago    1         false
+lg1klr1ui36d   source.local   12.3kB    13 minutes ago   7 minutes ago    2         false

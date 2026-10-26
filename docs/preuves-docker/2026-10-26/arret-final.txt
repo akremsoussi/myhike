@@ -1,0 +1,10 @@
+ Container refuges-validation-frontend-1  Stopping
+ Container refuges-validation-frontend-1  Stopped
+ Container refuges-validation-backend-1  Stopping
+ Container refuges-validation-backend-1  Stopped
+ Container refuges-validation-db-1  Stopping
+ Container refuges-validation-db-1  Stopped
+NAME                            IMAGE                                                                               COMMAND                  SERVICE    CREATED          STATUS                              PORTS
+refuges-validation-backend-1    refuges-validation-backend                                                          "uvicorn app.main:ap…"   backend    20 minutes ago   Exited (0) 2 seconds ago            
+refuges-validation-db-1         mysql:8.4@sha256:24989179f58856db763f418010c1169fecc944e3ec1ea7e921572d83eb070f70   "docker-entrypoint.s…"   db         37 minutes ago   Exited (0) Less than a second ago   
+refuges-validation-frontend-1   refuges-validation-frontend                                                         "/docker-entrypoint.…"   frontend   20 minutes ago   Exited (0) 2 seconds ago            

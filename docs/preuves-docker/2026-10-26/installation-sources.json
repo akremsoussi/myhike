@@ -1,0 +1,9 @@
+{
+  "started_utc": "2026-10-26T14:00:36.096728+00:00",
+  "project": "refuges-installation-20261026",
+  "build_no_cache_seconds": 41.26137855400066,
+  "initialization_seconds": 52.49515881099978,
+  "total_seconds": 93.75653736500044,
+  "scope": "Depuis sources, moteur et images de base d\u00e9j\u00e0 install\u00e9s ; volume MySQL initialement absent",
+  "volumes_preserved": true
+}

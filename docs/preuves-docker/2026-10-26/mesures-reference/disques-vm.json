@@ -1,0 +1,200 @@
+[
+  {
+    "sample": 1,
+    "files": [
+      {
+        "bytes": 7612661760,
+        "vm": "vm-donnees",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-donnees\\Ubuntu-DB.vdi"
+      },
+      {
+        "bytes": 745537536,
+        "vm": "vm-donnees",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-donnees\\Snapshots\\{45fe880d-6b2b-4aca-8b25-a48e5983fdcc}.vdi"
+      },
+      {
+        "bytes": 79691776,
+        "vm": "vm-donnees",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-donnees\\Snapshots\\{647866f9-ba99-4389-9ce6-ca02e6e403f0}.vdi"
+      },
+      {
+        "bytes": 375390208,
+        "vm": "vm-donnees",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-donnees\\Snapshots\\{be0e09f4-7fe2-4eeb-bb44-87a0e2d0f872}.vdi"
+      },
+      {
+        "bytes": 7609516032,
+        "vm": "vm-metier",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-metier\\Ubuntu-API.vdi"
+      },
+      {
+        "bytes": 1578106880,
+        "vm": "vm-metier",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-metier\\Snapshots\\{5bc37c3d-eff8-4db6-85b5-78cdd882cc8e}.vdi"
+      },
+      {
+        "bytes": 142606336,
+        "vm": "vm-metier",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-metier\\Snapshots\\{6438e082-1481-4e12-a825-a9afc60ef2c4}.vdi"
+      },
+      {
+        "bytes": 71303168,
+        "vm": "vm-metier",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-metier\\Snapshots\\{9db64b2c-d7e3-4e9f-a434-95612f0bc36b}.vdi"
+      },
+      {
+        "bytes": 7609516032,
+        "vm": "vm-proxy",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-proxy\\Ubuntu-Web.vdi"
+      },
+      {
+        "bytes": 88080384,
+        "vm": "vm-proxy",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-proxy\\Snapshots\\{24f9d793-9865-46cd-b480-56552c220968}.vdi"
+      },
+      {
+        "bytes": 793772032,
+        "vm": "vm-proxy",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-proxy\\Snapshots\\{51049a42-66d7-45d8-8c24-8083b97f4165}.vdi"
+      },
+      {
+        "bytes": 524288000,
+        "vm": "vm-proxy",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-proxy\\Snapshots\\{fc0fc00b-690c-4b0b-ae1b-964260eaefb0}.vdi"
+      }
+    ],
+    "total_bytes": 27230470144.0
+  },
+  {
+    "sample": 2,
+    "files": [
+      {
+        "bytes": 7612661760,
+        "vm": "vm-donnees",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-donnees\\Ubuntu-DB.vdi"
+      },
+      {
+        "bytes": 745537536,
+        "vm": "vm-donnees",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-donnees\\Snapshots\\{45fe880d-6b2b-4aca-8b25-a48e5983fdcc}.vdi"
+      },
+      {
+        "bytes": 79691776,
+        "vm": "vm-donnees",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-donnees\\Snapshots\\{647866f9-ba99-4389-9ce6-ca02e6e403f0}.vdi"
+      },
+      {
+        "bytes": 375390208,
+        "vm": "vm-donnees",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-donnees\\Snapshots\\{be0e09f4-7fe2-4eeb-bb44-87a0e2d0f872}.vdi"
+      },
+      {
+        "bytes": 7609516032,
+        "vm": "vm-metier",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-metier\\Ubuntu-API.vdi"
+      },
+      {
+        "bytes": 1578106880,
+        "vm": "vm-metier",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-metier\\Snapshots\\{5bc37c3d-eff8-4db6-85b5-78cdd882cc8e}.vdi"
+      },
+      {
+        "bytes": 142606336,
+        "vm": "vm-metier",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-metier\\Snapshots\\{6438e082-1481-4e12-a825-a9afc60ef2c4}.vdi"
+      },
+      {
+        "bytes": 71303168,
+        "vm": "vm-metier",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-metier\\Snapshots\\{9db64b2c-d7e3-4e9f-a434-95612f0bc36b}.vdi"
+      },
+      {
+        "bytes": 7609516032,
+        "vm": "vm-proxy",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-proxy\\Ubuntu-Web.vdi"
+      },
+      {
+        "bytes": 88080384,
+        "vm": "vm-proxy",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-proxy\\Snapshots\\{24f9d793-9865-46cd-b480-56552c220968}.vdi"
+      },
+      {
+        "bytes": 793772032,
+        "vm": "vm-proxy",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-proxy\\Snapshots\\{51049a42-66d7-45d8-8c24-8083b97f4165}.vdi"
+      },
+      {
+        "bytes": 524288000,
+        "vm": "vm-proxy",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-proxy\\Snapshots\\{fc0fc00b-690c-4b0b-ae1b-964260eaefb0}.vdi"
+      }
+    ],
+    "total_bytes": 27230470144.0
+  },
+  {
+    "sample": 3,
+    "files": [
+      {
+        "bytes": 7612661760,
+        "vm": "vm-donnees",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-donnees\\Ubuntu-DB.vdi"
+      },
+      {
+        "bytes": 745537536,
+        "vm": "vm-donnees",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-donnees\\Snapshots\\{45fe880d-6b2b-4aca-8b25-a48e5983fdcc}.vdi"
+      },
+      {
+        "bytes": 79691776,
+        "vm": "vm-donnees",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-donnees\\Snapshots\\{647866f9-ba99-4389-9ce6-ca02e6e403f0}.vdi"
+      },
+      {
+        "bytes": 375390208,
+        "vm": "vm-donnees",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-donnees\\Snapshots\\{be0e09f4-7fe2-4eeb-bb44-87a0e2d0f872}.vdi"
+      },
+      {
+        "bytes": 7609516032,
+        "vm": "vm-metier",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-metier\\Ubuntu-API.vdi"
+      },
+      {
+        "bytes": 1578106880,
+        "vm": "vm-metier",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-metier\\Snapshots\\{5bc37c3d-eff8-4db6-85b5-78cdd882cc8e}.vdi"
+      },
+      {
+        "bytes": 142606336,
+        "vm": "vm-metier",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-metier\\Snapshots\\{6438e082-1481-4e12-a825-a9afc60ef2c4}.vdi"
+      },
+      {
+        "bytes": 71303168,
+        "vm": "vm-metier",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-metier\\Snapshots\\{9db64b2c-d7e3-4e9f-a434-95612f0bc36b}.vdi"
+      },
+      {
+        "bytes": 7609516032,
+        "vm": "vm-proxy",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-proxy\\Ubuntu-Web.vdi"
+      },
+      {
+        "bytes": 88080384,
+        "vm": "vm-proxy",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-proxy\\Snapshots\\{24f9d793-9865-46cd-b480-56552c220968}.vdi"
+      },
+      {
+        "bytes": 793772032,
+        "vm": "vm-proxy",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-proxy\\Snapshots\\{51049a42-66d7-45d8-8c24-8083b97f4165}.vdi"
+      },
+      {
+        "bytes": 524288000,
+        "vm": "vm-proxy",
+        "file": "C:\\Users\\remic\\VirtualBox VMs\\vm-proxy\\Snapshots\\{fc0fc00b-690c-4b0b-ae1b-964260eaefb0}.vdi"
+      }
+    ],
+    "total_bytes": 27230470144.0
+  }
+]

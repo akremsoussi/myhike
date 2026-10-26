@@ -1,0 +1,13 @@
+{
+  "date_utc": "2026-10-26T14:04:24.548634+00:00",
+  "project": "refuges-validation",
+  "source_commit": "f6e764bc741c0c180b37175b67b9517a98927378",
+  "files": {
+    "docker/compose.yaml": "b6c451736333694d18a85a366f3b118182be602a9eadbcd9933c341b264b963f",
+    "docker/metier.Dockerfile": "428778f55672ee9477bbdb5aa3faf9425ff5fd8c38a1af9a6efac33d2deb9daf",
+    "docker/proxy.Dockerfile": "31298b220a6c34f42a041f4f443adb6f8273e97e085182bc1e94d5adf7e9a210",
+    "metier/requirements.lock": "e57a24a91c20ea0971c57d6823ca264488a56234ad74fb7ecc978360a6480f8d",
+    "donnees/schema.sql": "fb40e39f8e43bb627a70bdfa709911f5b9e59a218f1dc6ec79a4e0c92c659159",
+    "donnees/peuplement.sql": "6078e26b9b220026bed8c51f8568cf9d94acd9b632729dcb4b010cb32d61f585"
+  }
+}

@@ -1,0 +1,3 @@
+-N REFUGES_08DA0F40B3
+-A REFUGES_08DA0F40B3 -d 172.18.0.0/16 -p tcp -m multiport --dports 8000,3306,33060 -j REJECT --reject-with tcp-reset
+-A REFUGES_08DA0F40B3 -d 172.19.0.0/16 -p tcp -m multiport --dports 8000,3306,33060 -j REJECT --reject-with tcp-reset

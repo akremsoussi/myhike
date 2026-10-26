@@ -1,0 +1,54 @@
+{
+  "before": {
+    "backend": {
+      "id": "acb976f136cbcbc28a96071d8a977517135ffe9967ab2f176c7bfadf7ede8dbd",
+      "mounts": [
+        {
+          "Name": "refuges-validation_uploads",
+          "Destination": "/app/uploads"
+        }
+      ]
+    },
+    "db": {
+      "id": "855a5d6acb91749264da1ea050885c9505ea2781b6c07a1736d45393baa47c1e",
+      "mounts": [
+        {
+          "Name": "refuges-validation_mysql_data",
+          "Destination": "/var/lib/mysql"
+        }
+      ]
+    },
+    "frontend": {
+      "id": "f87824e30dd2bb972ea41db69d36ff6ea03bfc8c4b4993762c0e9f580f10d668",
+      "mounts": []
+    }
+  },
+  "after": {
+    "backend": {
+      "id": "697f3e32b368def61edd17666a9449a07150e4d3793a460c1c0a1febe1e00b94",
+      "mounts": [
+        {
+          "Name": "refuges-validation_uploads",
+          "Destination": "/app/uploads"
+        }
+      ]
+    },
+    "db": {
+      "id": "d06627f8bdcf43573439fa2409108a3d01ffc78c47da5f3e05f9cad39fff0b13",
+      "mounts": [
+        {
+          "Name": "refuges-validation_mysql_data",
+          "Destination": "/var/lib/mysql"
+        }
+      ]
+    },
+    "frontend": {
+      "id": "08d243b0a5187e57a496a1f05ebca055269ef7aad95b9cdbbb3e34433c3b872f",
+      "mounts": []
+    }
+  },
+  "marker_retained": true,
+  "business_counts_unchanged": true,
+  "test_table_removed": true,
+  "volumes_deleted": false
+}

@@ -1,0 +1,10 @@
+table_name	nombre
+refuges	4652
+massifs	156
+communities	6
+users	30
+comptes_charge
+25
+name
+Queyras et Escreins
+Écrins
