@@ -1,0 +1,86 @@
+[
+  {
+    "source": "frontend",
+    "target": "backend",
+    "ip": "172.18.0.2",
+    "port": 8000,
+    "expected_reachable": true,
+    "reachable": true,
+    "exit_code": 0,
+    "stderr": ""
+  },
+  {
+    "source": "frontend",
+    "target": "db",
+    "ip": "172.19.0.2",
+    "port": 3306,
+    "expected_reachable": false,
+    "reachable": false,
+    "exit_code": 1,
+    "stderr": ""
+  },
+  {
+    "source": "backend",
+    "target": "frontend",
+    "ip": "172.18.0.3",
+    "port": 80,
+    "expected_reachable": true,
+    "reachable": true,
+    "exit_code": 0,
+    "stderr": ""
+  },
+  {
+    "source": "backend",
+    "target": "db",
+    "ip": "172.19.0.2",
+    "port": 3306,
+    "expected_reachable": true,
+    "reachable": true,
+    "exit_code": 0,
+    "stderr": ""
+  },
+  {
+    "source": "db",
+    "target": "frontend",
+    "ip": "172.18.0.3",
+    "port": 80,
+    "expected_reachable": false,
+    "reachable": false,
+    "exit_code": 1,
+    "stderr": "bash: connect: Network is unreachable\nbash: line 1: /dev/tcp/172.18.0.3/80: Network is unreachable"
+  },
+  {
+    "source": "db",
+    "target": "backend",
+    "ip": "172.19.0.3",
+    "port": 8000,
+    "expected_reachable": true,
+    "reachable": true,
+    "exit_code": 0,
+    "stderr": ""
+  },
+  {
+    "source": "hote_moteur_WSL",
+    "target": "frontend",
+    "ip": "127.0.0.1",
+    "port": 8080,
+    "expected_reachable": true,
+    "reachable": true
+  },
+  {
+    "source": "hote_moteur_WSL",
+    "target": "backend",
+    "ip": "172.18.0.2",
+    "port": 8000,
+    "expected_reachable": false,
+    "reachable": false
+  },
+  {
+    "source": "hote_moteur_WSL",
+    "target": "db",
+    "ip": "172.19.0.2",
+    "port": 3306,
+    "expected_reachable": false,
+    "reachable": false
+  }
+]

@@ -1,0 +1,2 @@
+238782617	/var/lib/docker/volumes/refuges-validation_mysql_data/_data
+0	/var/lib/docker/volumes/refuges-validation_uploads/_data

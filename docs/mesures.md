@@ -1,13 +1,13 @@
 # Compte-Rendu : Étape 10 — Vérifier et Mesurer
 
-Ce document consigne l'ensemble des livrables de la Partie 1 : la matrice de joignabilité, les captures d'écran de validation réseau, les snapshots VirtualBox, et les mesures de référence.  
+Ce document consigne l'ensemble des livrables de la Partie 1 : la matrice de joignabilité, les captures d'écran de validation réseau, les snapshots VirtualBox, et les mesures de référence.
 Ces relevés serviront de point de comparaison direct pour la Partie 2 (conteneurs Docker) et la Partie 3 (tests sous charge JMeter).
 
 ---
 
 ## 1. Matrice de joignabilité
 
-Le tableau ci-dessous établit la topologie réseau effective du système 3 tiers déployé sur machines virtuelles.  
+Le tableau ci-dessous établit la topologie réseau effective du système 3 tiers déployé sur machines virtuelles.
 Les trois cases **« Doit échouer »** valident le respect strict du cloisonnement réseau.
 
 | Depuis | Vers proxy (:80) | Vers métier (:8000) | Vers base (:3306) |
@@ -89,3 +89,9 @@ Les trois machines virtuelles exportées au format standard OVA sont stockées d
 - `ova/vm-metier.ova` (~3,9 Go)
 - `ova/vm-donnees.ova` (~3,8 Go)
 *(Les fichiers OVA sont exclus du versionnement Git via `.gitignore` en raison de leur taille supérieure à la limite de 100 Mo de GitHub).*
+
+## 6. Nouveaux relevés du 26 octobre 2026
+
+Les mesures historiques ci-dessus sont conservées. Une nouvelle campagne de référence, avec trois répétitions par déploiement et consultations authentifiées HTTP 200, est documentée dans [la comparaison Docker](comparaison.md) et [ses preuves](preuves-docker/2026-10-26/README.md).
+
+La configuration VirtualBox vérifiée le 26 octobre est de **1 vCPU et 2 048 Mo pour chacune des trois VM**. Elle diffère de l'allocation indiquée dans le tableau historique ; ce tableau ne permet pas d'établir si les allocations ont changé entre les deux dates. Les nouvelles valeurs ne doivent pas être substituées rétroactivement aux anciens relevés.

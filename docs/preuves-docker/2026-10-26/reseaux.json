@@ -1,0 +1,33 @@
+[
+  {
+    "service": "backend",
+    "networks": {
+      "refuges-validation_data": {
+        "IPAddress": "172.19.0.3",
+        "Gateway": ""
+      },
+      "refuges-validation_web": {
+        "IPAddress": "172.18.0.2",
+        "Gateway": "172.18.0.1"
+      }
+    }
+  },
+  {
+    "service": "db",
+    "networks": {
+      "refuges-validation_data": {
+        "IPAddress": "172.19.0.2",
+        "Gateway": ""
+      }
+    }
+  },
+  {
+    "service": "frontend",
+    "networks": {
+      "refuges-validation_web": {
+        "IPAddress": "172.18.0.3",
+        "Gateway": "172.18.0.1"
+      }
+    }
+  }
+]

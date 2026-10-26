@@ -1,105 +1,50 @@
-# Rapport d'étalonnage du banc de mesure JMeter
+# Étalonnage du protocole - étape 16
 
-> **Conforme à l'Étape 16 du sujet DEV 1 — Quatrième partie : Mesure et comparaison.**  
-> **Auteurs :** Rémi CORTIAL & Akrem SOUSSI  
-> **Application :** *Refuges* (Architecture 3-tiers)  
-> **Date :** Octobre 2026  
+**Akrem SOUSSI et Rémi CORTIAL - Refuges - 21 octobre 2026**
 
----
+## 1. Instrument et paramètres
 
-## 1. Objectif de l'étalonnage
+JMeter 5.6.3 s’exécute en CLI sur l’hôte Windows. La cible statique est `/index.html` servie par Nginx, sans temporisation ni traitement métier. La campagne applicative utilise 25 comptes, une montée de 10 s puis une fenêtre de 60 s à partir de l’origine + 11 s (1 s de stabilisation). La durée programmée est de 72 s. Paliers : 1, 5, 10, 25, 50, 100.
 
-L'objectif de l'étalonnage est de s'assurer que **l'instrument mesure le système sous test et non lui-même**. 
-Si l'injecteur JMeter saturait le processeur de la machine hôte avant que le serveur web ou applicatif n'atteigne ses limites, les courbes de débit et de latence mesureraient la fatigue de l'injecteur et non la capacité des architectures déployées.
+La réutilisation TCP est activée dans le plan préparé ; les cookies sont remis à zéro entre itérations. Les paramètres effectivement utilisés et leurs empreintes sont archivés dans chaque dossier de session.
 
----
+## 2. Débit statique observé
 
-## 2. Mesure du plafond de l'injecteur
+| Utilisateurs | Débit observé (req/s) | p95 (ms) | Erreurs |
+|---:|---:|---:|---:|
+| 100 | 17 115,22 | 11,0 | 0,00 % |
+| 100 | 12 023,33 | 16,0 | 0,00 % |
+| 20 | 10 874,17 | 3,0 | 0,00 % |
+| 20 | 7 588,92 | 5,0 | 0,00 % |
 
-### Protocole de test
-- **Cible :** Ressource statique / point de contrôle d'intégrité léger (`GET /api/health` ou page statique Nginx `/index.html`), sans traitement métier lourd ni verrouillage base de données.
-- **Outil :** Apache JMeter 5.6.3 en ligne de commande (`-n -t plan_etalonnage.jmx`).
-- **Configuration :** 20 threads simultanés, montée en 5 secondes, durée de 30 secondes.
+Source : [synthèse statique](resultats/etalonnage-dk-20261021-112624-419/synthese.csv). Les deux répétitions sont détaillées dans les statistiques du même dossier. Le minimum est 7 588,92 req/s, largement au-dessus du maximum applicatif observé de 42,47 req/s (environ 179 fois). Cela donne une marge observée ; le plafond exact n’est pas établi. La variabilité statique dépasse 10 % et ne valide pas la répétabilité. Le premier essai invalidé par épuisement des ports TCP reste exclu.
 
-### Résultats obtenus
-| Grandeur | Valeur mesurée |
-| :--- | :--- |
-| **Débit maximal soutenu de l'injecteur** | **> 205 requêtes / seconde** |
-| **Latence moyenne** | **43 ms** |
-| **Taux d'erreur** | **0.00 %** |
-| **Charge processeur hôte (JMeter)** | **< 12 % CPU** |
+## 3. Répétabilité applicative
 
-### Conclusion sur le plafond
-L'injecteur est capable de débiter plus de 200 requêtes par seconde avec une consommation CPU modérée. Ce plafond est très largement supérieur au débit attendu sur le parcours applicatif complet (authentification Argon2id + requêtes SQL), garantissant que **l'injecteur ne sera pas le goulot d'étranglement**.
+Écart retenu dans les scripts Docker : (maximum − minimum) / moyenne × 100. Le seuil de 10 % est évalué séparément sur débit et p95.
 
----
+| Utilisateurs | Écart de débit (%) | Écart de p95 (%) | Lecture |
+|---:|---:|---:|---|
+| 1 | 1,33 | 4,90 | Sous 10 % |
+| 5 | 0,55 | 0,56 | Sous 10 % |
+| 10 | 1,37 | 7,30 | Sous 10 % |
+| 25 | 0,11 | 1,97 | Sous 10 % |
+| 50 | 14,43 | 33,52 | Au-dessus de 10 % |
+| 100 | 1,37 | 0,01 | Sous 10 % |
 
-## 3. Paramètres gelés pour les campagnes de charge
+À 100, des chiffres proches ne valident pas un service nominal : les erreurs atteignent 98,64 à 100 %. À 50, les contrôles supplémentaires donnent 41,80 et 34,00 req/s ; leurs écarts de débit (20,58 %) et p95 (55,69 %) confirment l’instabilité. Conserver toutes les mesures sans sélectionner la meilleure.
 
-Conformément aux contraintes techniques imposées (section 1.3 et 2.2) :
+## 4. Charge de l’injecteur et réserves
 
-1. **Durée de montée (*ramp-up*) :** **10 secondes**
-2. **Durée de plateau mesurée :** **60 secondes** (hors phase de montée)
-3. **Suite des paliers retenus :**
-   $$\text{Paliers} = \{1, 5, 10, 25, 50, 100\} \text{ utilisateurs simultanés}$$
-4. **Jeu de données (`comptes.csv`) :**
-   - 25 comptes distincts pré-générés et insérés en base (`user01@refuges.local` à `user25@refuges.local`).
-   - Maintien d'un pool d'utilisateurs évitant les effets de cache mémoire artificiels.
-5. **Comportement utilisateur :**
-   - *Think time* aléatoire uniforme entre 500 ms et 1 000 ms entre les deux requêtes du parcours.
+Pendant la campagne applicative, la moyenne CPU Java relevée reste inférieure à 1 % de l’hôte (12 processeurs logiques déclarés). Les JSON de synthèse et les JSONL horodatés sont archivés avec la campagne. Ce constat et la marge statique ne suggèrent pas un injecteur limitant sur ces essais ; ils ne remplacent pas un étalonnage répété dans les conditions de la future campagne VM.
 
----
+L’ancien document mentionnait > 205 req/s et deux essais à 14,8 / 14,3 req/s sans bruts dédiés identifiés. Ces valeurs historiques ne servent pas à certifier l’étalonnage actuel. La série VM n’a qu’une répétition conservée et sa fenêtre de plateau n’est pas tracée.
 
-## 4. Validation unitaire du plan de test (Étape 15)
+## 5. Reproduction et preuves
 
-Le plan de test (`plan.jmx`) a été validé selon les deux critères d'intégrité :
+- [Guide d’automatisation](AUTOMATISATION.md) : préparation du plan, étalonnage et campagne.
+- [Configuration principale](resultats/dk-20261021-113529-649/configuration.json) : versions, durées et empreintes.
+- [Répétabilité principale](resultats/dk-20261021-113529-649/repetabilite.csv).
+- [Index des résultats et validations 200/401](resultats/README.md).
 
-### 4.1 Test nominal (Succès)
-- **Compte :** `user01@refuges.local` / `refuges123`
-- **Requête 1 (`POST /api/auth/login`) :** Code HTTP `200 OK`, cookie de session `refuges_session` extrait et enregistré dans le *HTTP Cookie Manager*.
-- **Requête 2 (`GET /api/refuges?limit=20`) :** Code HTTP `200 OK`, assertion validée sur le champ `"total"`.
-- **Résultat :** **0 % d'erreur, succès 2/2**.
-
-### 4.2 Test négatif (Détection d'échec)
-- **Compte :** `user01@refuges.local` / `MAUVAIS_MOT_DE_PASSE`
-- **Requête 1 (`POST /api/auth/login`) :** Code HTTP `401 Unauthorized`, assertion déclenchée (`Erreur lors de la connexion utilisateur`).
-- **Requête 2 (`GET /api/refuges?limit=20`) :** Sans cookie de session valide, le serveur refuse la consultation (`401 Unauthorized`), assertion déclenchée.
-- **Résultat :** **100 % d'échec détecté**. Le plan de test signale immédiatement toute anomalie de service et ne produit pas de faux positifs.
-
----
-
-## 5. Contrôle de répétabilité (Règle d'or de la mesure)
-
-Pour vérifier la stabilité de l'environnement de test et la reproductibilité des mesures :
-- Deux campagnes successives de 60 secondes sont exécutées avec le palier à 10 utilisateurs dans des conditions identiques (applications d'arrière-plan fermées).
-- L'écart relatif sur le débit et la latence doit être strictement inférieur à 10 %.
-
-$$\Delta = \frac{|M_2 - M_1|}{M_1} < 10\%$$
-
-| Grandeur | Exécution 1 | Exécution 2 | Écart relatif | Conforme |
-| :--- | :--- | :--- | :--- | :--- |
-| **Débit moyen (req/s)** | 14.8 req/s | 14.3 req/s | 3.4 % | **OUI (< 10%)** |
-| **Latence médiane (50e centile)** | 62 ms | 65 ms | 4.8 % | **OUI (< 10%)** |
-| **Latence 95e centile** | 115 ms | 121 ms | 5.2 % | **OUI (< 10%)** |
-| **Taux d'erreur** | 0.00 % | 0.00 % | 0.0 % | **OUI** |
-
----
-
-## 6. Commandes d'exécution standardisées
-
-Pour reproduire les campagnes sans interface graphique sur chaque environnement :
-
-```bash
-# Sur Machines Virtuelles (Port 8080)
-jmeter -n -t plan.jmx -l resultats/vm-1.csv -Jutilisateurs=1 -Jmontee=10 -Jduree=60 -Jhost=localhost -Jport=8080
-jmeter -n -t plan.jmx -l resultats/vm-5.csv -Jutilisateurs=5 -Jmontee=10 -Jduree=60 -Jhost=localhost -Jport=8080
-jmeter -n -t plan.jmx -l resultats/vm-10.csv -Jutilisateurs=10 -Jmontee=10 -Jduree=60 -Jhost=localhost -Jport=8080
-jmeter -n -t plan.jmx -l resultats/vm-25.csv -Jutilisateurs=25 -Jmontee=10 -Jduree=60 -Jhost=localhost -Jport=8080
-jmeter -n -t plan.jmx -l resultats/vm-50.csv -Jutilisateurs=50 -Jmontee=10 -Jduree=60 -Jhost=localhost -Jport=8080
-jmeter -n -t plan.jmx -l resultats/vm-100.csv -Jutilisateurs=100 -Jmontee=10 -Jduree=60 -Jhost=localhost -Jport=8080
-
-# Sur Conteneurs Docker (Port 80 ou selon configuration)
-jmeter -n -t plan.jmx -l resultats/dk-1.csv -Jutilisateurs=1 -Jmontee=10 -Jduree=60 -Jhost=localhost -Jport=80
-# ...
-```
-
+Avant une comparaison définitive, utiliser le même plan préparé et les mêmes timeouts pour VM et Docker, le même poste et les mêmes budgets de ressources, puis deux séries dans un ordre inversé.

@@ -1,0 +1,13 @@
+2026-10-26T14:50:04.3908670+01:00 Docker répétition 1 : démarrage
+2026-10-26T14:50:37.5735029+01:00 Docker répétition 1 terminée
+2026-10-26T14:50:37.5806324+01:00 Docker répétition 2 : démarrage
+2026-10-26T14:51:10.5094958+01:00 Docker répétition 2 terminée
+2026-10-26T14:51:10.5142842+01:00 Docker répétition 3 : démarrage
+2026-10-26T14:51:43.5822242+01:00 Docker répétition 3 terminée
+2026-10-26T14:51:43.5877848+01:00 VM répétition 1 : démarrage
+2026-10-26T14:54:16.5104069+01:00 VM répétition 1 terminée
+2026-10-26T14:54:16.5123772+01:00 VM répétition 2 : démarrage
+2026-10-26T14:56:47.3215509+01:00 VM répétition 2 terminée
+2026-10-26T14:56:47.3243933+01:00 VM répétition 3 : démarrage
+2026-10-26T14:59:13.8477161+01:00 VM répétition 3 terminée
+2026-10-26T14:59:15.3754545+01:00 Mesures terminées ; tous les déploiements sont arrêtés.

@@ -1,5 +1,8 @@
 # Résultats Docker — 21 octobre 2026
 
+> Mise à jour de présentation du 26 octobre : les bruts VM sont désormais réunis dans le [rapport consolidé](../../docs/rapport-charge.md). Le présent document conserve le bilan Docker de la session d’origine ; les mentions de comparaison VM à compléter décrivent son état à cette date.
+
+
 La campagne principale couvre **1, 5, 10, 25, 50 et 100 utilisateurs**, avec
 **deux séries complètes**. Deux contrôles isolés supplémentaires ont été faits à 50.
 Chaque série commence par une sauvegarde et une réinitialisation SQL, puis par

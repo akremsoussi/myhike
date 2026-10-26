@@ -1,0 +1,440 @@
+[
+  {
+    "deployment": "Docker",
+    "memory_scope": "vmmemWSL complet, moteur Linux et autres processus WSL inclus",
+    "consultation": [
+      {
+        "elapsed_ms": 152.7088,
+        "http_status": 200,
+        "request": 1,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 27.5947,
+        "http_status": 200,
+        "request": 2,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 22.4495,
+        "http_status": 200,
+        "request": 3,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 23.1863,
+        "http_status": 200,
+        "request": 4,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 22.8753,
+        "http_status": 200,
+        "request": 5,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 23.7644,
+        "http_status": 200,
+        "request": 6,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 23.3275,
+        "http_status": 200,
+        "request": 7,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 23.6266,
+        "http_status": 200,
+        "request": 8,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 25.1192,
+        "http_status": 200,
+        "request": 9,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 28.6042,
+        "http_status": 200,
+        "request": 10,
+        "total": 4652
+      }
+    ],
+    "boot_seconds": 14.7604453,
+    "memory_host_samples_bytes": [
+      4897529856.0,
+      4897529856.0,
+      4900417536.0
+    ],
+    "repetition": 1
+  },
+  {
+    "deployment": "Docker",
+    "memory_scope": "vmmemWSL complet, moteur Linux et autres processus WSL inclus",
+    "consultation": [
+      {
+        "elapsed_ms": 129.8393,
+        "http_status": 200,
+        "request": 1,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 50.671,
+        "http_status": 200,
+        "request": 2,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 29.7105,
+        "http_status": 200,
+        "request": 3,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 25.9837,
+        "http_status": 200,
+        "request": 4,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 25.8575,
+        "http_status": 200,
+        "request": 5,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 31.2215,
+        "http_status": 200,
+        "request": 6,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 34.5668,
+        "http_status": 200,
+        "request": 7,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 39.7107,
+        "http_status": 200,
+        "request": 8,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 37.0663,
+        "http_status": 200,
+        "request": 9,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 37.6952,
+        "http_status": 200,
+        "request": 10,
+        "total": 4652
+      }
+    ],
+    "boot_seconds": 14.1196176,
+    "memory_host_samples_bytes": [
+      4898664448.0,
+      4898779136.0,
+      4898783232.0
+    ],
+    "repetition": 2
+  },
+  {
+    "deployment": "Docker",
+    "memory_scope": "vmmemWSL complet, moteur Linux et autres processus WSL inclus",
+    "consultation": [
+      {
+        "elapsed_ms": 112.9223,
+        "http_status": 200,
+        "request": 1,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 27.7409,
+        "http_status": 200,
+        "request": 2,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 24.0048,
+        "http_status": 200,
+        "request": 3,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 23.3772,
+        "http_status": 200,
+        "request": 4,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 23.7275,
+        "http_status": 200,
+        "request": 5,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 23.5965,
+        "http_status": 200,
+        "request": 6,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 23.66,
+        "http_status": 200,
+        "request": 7,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 23.2721,
+        "http_status": 200,
+        "request": 8,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 23.4743,
+        "http_status": 200,
+        "request": 9,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 22.931,
+        "http_status": 200,
+        "request": 10,
+        "total": 4652
+      }
+    ],
+    "boot_seconds": 14.5863104,
+    "memory_host_samples_bytes": [
+      4904349696.0,
+      4904361984.0,
+      4907200512.0
+    ],
+    "repetition": 3
+  },
+  {
+    "deployment": "VM",
+    "memory_scope": "Somme WorkingSet64 des processus VBoxHeadless / VirtualBoxVM",
+    "consultation": [
+      {
+        "elapsed_ms": 711.1033,
+        "http_status": 200,
+        "request": 1,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 51.6546,
+        "http_status": 200,
+        "request": 2,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 137.8535,
+        "http_status": 200,
+        "request": 3,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 58.5027,
+        "http_status": 200,
+        "request": 4,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 60.0391,
+        "http_status": 200,
+        "request": 5,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 47.0957,
+        "http_status": 200,
+        "request": 6,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 58.5644,
+        "http_status": 200,
+        "request": 7,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 76.1208,
+        "http_status": 200,
+        "request": 8,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 79.2973,
+        "http_status": 200,
+        "request": 9,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 62.8624,
+        "http_status": 200,
+        "request": 10,
+        "total": 4652
+      }
+    ],
+    "boot_seconds": 122.8031451,
+    "memory_host_samples_bytes": [
+      3102019584.0,
+      3100807168.0,
+      3092357120.0
+    ],
+    "repetition": 1
+  },
+  {
+    "deployment": "VM",
+    "memory_scope": "Somme WorkingSet64 des processus VBoxHeadless / VirtualBoxVM",
+    "consultation": [
+      {
+        "elapsed_ms": 237.7678,
+        "http_status": 200,
+        "request": 1,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 205.6219,
+        "http_status": 200,
+        "request": 2,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 64.8965,
+        "http_status": 200,
+        "request": 3,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 58.7895,
+        "http_status": 200,
+        "request": 4,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 53.6639,
+        "http_status": 200,
+        "request": 5,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 61.4695,
+        "http_status": 200,
+        "request": 6,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 58.9529,
+        "http_status": 200,
+        "request": 7,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 91.2804,
+        "http_status": 200,
+        "request": 8,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 126.4031,
+        "http_status": 200,
+        "request": 9,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 64.7103,
+        "http_status": 200,
+        "request": 10,
+        "total": 4652
+      }
+    ],
+    "boot_seconds": 123.3348253,
+    "memory_host_samples_bytes": [
+      3223068672.0,
+      3222818816.0,
+      3222560768.0
+    ],
+    "repetition": 2
+  },
+  {
+    "deployment": "VM",
+    "memory_scope": "Somme WorkingSet64 des processus VBoxHeadless / VirtualBoxVM",
+    "consultation": [
+      {
+        "elapsed_ms": 329.6451,
+        "http_status": 200,
+        "request": 1,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 111.5072,
+        "http_status": 200,
+        "request": 2,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 84.4647,
+        "http_status": 200,
+        "request": 3,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 87.4085,
+        "http_status": 200,
+        "request": 4,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 134.1761,
+        "http_status": 200,
+        "request": 5,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 66.5188,
+        "http_status": 200,
+        "request": 6,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 93.0072,
+        "http_status": 200,
+        "request": 7,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 118.0997,
+        "http_status": 200,
+        "request": 8,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 90.2706,
+        "http_status": 200,
+        "request": 9,
+        "total": 4652
+      },
+      {
+        "elapsed_ms": 64.8578,
+        "http_status": 200,
+        "request": 10,
+        "total": 4652
+      }
+    ],
+    "boot_seconds": 117.7525034,
+    "memory_host_samples_bytes": [
+      3281330176.0,
+      3281145856.0,
+      3280773120.0
+    ],
+    "repetition": 3
+  }
+]

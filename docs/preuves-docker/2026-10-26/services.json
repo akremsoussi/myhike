@@ -1,0 +1,88 @@
+[
+  {
+    "Command": "\"uvicorn app.main:ap…\"",
+    "CreatedAt": "2026-10-26 15:03:50 +0100 CET",
+    "ExitCode": 0,
+    "Health": "healthy",
+    "ID": "29b737f0362a",
+    "Image": "refuges-validation-backend",
+    "Labels": "com.docker.compose.config-hash=bc26f64da9f139736a83af09a3597964151f0ec4b9622bdd7ccc3492fca7c5e5,com.docker.compose.image=sha256:8f7d4b4ef782e443f0f6a95ebc93481aa99e5b71002b0e2347762d800d523276,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/home/remi/POLYTECH_INFO/4A/HIKING_APP/myhike/docker/compose.yaml,com.docker.compose.replace=backend-1,com.docker.compose.service=backend,com.docker.compose.container-number=1,com.docker.compose.depends_on=db:service_healthy:false,com.docker.compose.project=refuges-validation,com.docker.compose.project.environment_file=/home/remi/POLYTECH_INFO/4A/HIKING_APP/myhike/.env.docker,com.docker.compose.project.working_dir=/home/remi/POLYTECH_INFO/4A/HIKING_APP/myhike/docker,com.docker.compose.version=2.40.3",
+    "LocalVolumes": "1",
+    "Mounts": "refuges-valida…",
+    "Name": "refuges-validation-backend-1",
+    "Names": "refuges-validation-backend-1",
+    "Networks": "refuges-validation_data,refuges-validation_web",
+    "Ports": "",
+    "Project": "refuges-validation",
+    "Publishers": [],
+    "RunningFor": "21 seconds ago",
+    "Service": "backend",
+    "Size": "0B",
+    "State": "running",
+    "Status": "Up 13 seconds (healthy)"
+  },
+  {
+    "Command": "\"docker-entrypoint.s…\"",
+    "CreatedAt": "2026-10-26 14:47:03 +0100 CET",
+    "ExitCode": 0,
+    "Health": "healthy",
+    "ID": "d06627f8bdcf",
+    "Image": "mysql:8.4@sha256:24989179f58856db763f418010c1169fecc944e3ec1ea7e921572d83eb070f70",
+    "Labels": "com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=/home/remi/POLYTECH_INFO/4A/HIKING_APP/myhike/docker/compose.yaml,com.docker.compose.project.environment_file=/home/remi/POLYTECH_INFO/4A/HIKING_APP/myhike/.env.docker,com.docker.compose.config-hash=10470c965b308503905ba3e1df2f6b5343768131181aa00282acab4b3c811352,com.docker.compose.image=sha256:24989179f58856db763f418010c1169fecc944e3ec1ea7e921572d83eb070f70,com.docker.compose.project=refuges-validation,com.docker.compose.project.working_dir=/home/remi/POLYTECH_INFO/4A/HIKING_APP/myhike/docker,com.docker.compose.replace=db-1,com.docker.compose.service=db,com.docker.compose.version=2.40.3",
+    "LocalVolumes": "1",
+    "Mounts": "/home/remi/POL…,refuges-valida…,/home/remi/POL…",
+    "Name": "refuges-validation-db-1",
+    "Names": "refuges-validation-db-1",
+    "Networks": "refuges-validation_data",
+    "Ports": "3306/tcp, 33060/tcp",
+    "Project": "refuges-validation",
+    "Publishers": [
+      {
+        "URL": "",
+        "TargetPort": 3306,
+        "PublishedPort": 0,
+        "Protocol": "tcp"
+      },
+      {
+        "URL": "",
+        "TargetPort": 33060,
+        "PublishedPort": 0,
+        "Protocol": "tcp"
+      }
+    ],
+    "RunningFor": "17 minutes ago",
+    "Service": "db",
+    "Size": "0B",
+    "State": "running",
+    "Status": "Up 19 seconds (healthy)"
+  },
+  {
+    "Command": "\"/docker-entrypoint.…\"",
+    "CreatedAt": "2026-10-26 15:03:50 +0100 CET",
+    "ExitCode": 0,
+    "Health": "healthy",
+    "ID": "dc2ff1781c1d",
+    "Image": "refuges-validation-frontend",
+    "Labels": "com.docker.compose.project.config_files=/home/remi/POLYTECH_INFO/4A/HIKING_APP/myhike/docker/compose.yaml,com.docker.compose.project.environment_file=/home/remi/POLYTECH_INFO/4A/HIKING_APP/myhike/.env.docker,com.docker.compose.project.working_dir=/home/remi/POLYTECH_INFO/4A/HIKING_APP/myhike/docker,com.docker.compose.service=frontend,com.docker.compose.config-hash=a5647dd8922f2a75023af1ed0fe697edeec1e26d46e1e9a1624876039cf95fe7,com.docker.compose.depends_on=backend:service_healthy:false,com.docker.compose.replace=frontend-1,com.docker.compose.version=2.40.3,maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>,com.docker.compose.container-number=1,com.docker.compose.image=sha256:b4aa06008075521ec347257db94f11b366164dee778df7ff905a4bc3ead2f3d5,com.docker.compose.oneoff=False,com.docker.compose.project=refuges-validation",
+    "LocalVolumes": "0",
+    "Mounts": "",
+    "Name": "refuges-validation-frontend-1",
+    "Names": "refuges-validation-frontend-1",
+    "Networks": "refuges-validation_web",
+    "Ports": "127.0.0.1:8080->80/tcp",
+    "Project": "refuges-validation",
+    "Publishers": [
+      {
+        "URL": "127.0.0.1",
+        "TargetPort": 80,
+        "PublishedPort": 8080,
+        "Protocol": "tcp"
+      }
+    ],
+    "RunningFor": "21 seconds ago",
+    "Service": "frontend",
+    "Size": "0B",
+    "State": "running",
+    "Status": "Up 7 seconds (healthy)"
+  }
+]

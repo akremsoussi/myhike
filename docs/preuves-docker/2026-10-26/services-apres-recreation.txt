@@ -1,0 +1,4 @@
+NAME                            IMAGE                                                                               COMMAND                  SERVICE    CREATED          STATUS                    PORTS
+refuges-validation-backend-1    refuges-validation-backend                                                          "uvicorn app.main:ap…"   backend    25 seconds ago   Up 17 seconds (healthy)   
+refuges-validation-db-1         mysql:8.4@sha256:24989179f58856db763f418010c1169fecc944e3ec1ea7e921572d83eb070f70   "docker-entrypoint.s…"   db         29 seconds ago   Up 22 seconds (healthy)   3306/tcp, 33060/tcp
+refuges-validation-frontend-1   refuges-validation-frontend                                                         "/docker-entrypoint.…"   frontend   24 seconds ago   Up 10 seconds (healthy)   127.0.0.1:8080->80/tcp

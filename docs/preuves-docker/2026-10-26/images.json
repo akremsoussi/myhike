@@ -1,0 +1,32 @@
+[
+  {
+    "id": "sha256:24989179f58856db763f418010c1169fecc944e3ec1ea7e921572d83eb070f70",
+    "tags": [
+      "mysql@sha256:24989179f58856db763f418010c1169fecc944e3ec1ea7e921572d83eb070f70"
+    ],
+    "digests": [
+      "mysql@sha256:24989179f58856db763f418010c1169fecc944e3ec1ea7e921572d83eb070f70"
+    ],
+    "size_bytes": 238283573
+  },
+  {
+    "id": "sha256:8f7d4b4ef782e443f0f6a95ebc93481aa99e5b71002b0e2347762d800d523276",
+    "tags": [
+      "refuges-validation-backend:latest"
+    ],
+    "digests": [
+      "refuges-validation-backend@sha256:8f7d4b4ef782e443f0f6a95ebc93481aa99e5b71002b0e2347762d800d523276"
+    ],
+    "size_bytes": 80418275
+  },
+  {
+    "id": "sha256:b4aa06008075521ec347257db94f11b366164dee778df7ff905a4bc3ead2f3d5",
+    "tags": [
+      "refuges-validation-frontend:latest"
+    ],
+    "digests": [
+      "refuges-validation-frontend@sha256:b4aa06008075521ec347257db94f11b366164dee778df7ff905a4bc3ead2f3d5"
+    ],
+    "size_bytes": 29639343
+  }
+]
