@@ -18,7 +18,7 @@ Le schéma et le peuplement SQL sont dans [donnees/](../donnees/). Le lien Figma
 - Les 24 essais de charge et les six mesures de démarrage/repos sont réalisés. Les CSV, statistiques, métriques serveur et courbes sont conservés.
 - Les six relevés de référence fournis par Rémi ont été recalculés depuis leurs données brutes ; 60 consultations réussies sont vérifiées.
 - Cinq paliers de charge dépassent le seuil de répétabilité de 10 % : VM 5, 10, 50 ; Docker 1, 5. Le rapport les signale ; le critère n'est pas déclaré satisfait partout.
-- **Les deux captures de validation dans l'interface JMeter restent à ajouter.** Les contrôles CLI sont faits. Le contrôle Windows a refusé l'accès à Java ; [les plans et la marche à suivre](../charge/resultats/comparaison-20261026-152151/VALIDATION-GUI.md) sont fournis.
+- **Validation GUI JMeter réalisée :** connexion et consultation en HTTP 200, puis refus HTTP 401 avec mot de passe incorrect. [Captures et relevés](../charge/resultats/comparaison-20261026-152151/captures/README.md).
 - Les archives OVA ne sont pas versionnées (taille). Leur remise éventuelle doit passer par le support de transfert prévu pour le cours.
 
 ## Historique et reproductibilité

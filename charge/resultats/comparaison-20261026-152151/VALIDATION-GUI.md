@@ -1,4 +1,6 @@
-# Captures JMeter restant à faire
+> Validation réalisée le 26 octobre 2026. Voir les [captures et résultats](captures/README.md). Les instructions ci-dessous permettent de la reproduire.
+
+# Reproduire la validation graphique JMeter
 
 Les contrôles positifs et négatifs en ligne de commande sont enregistrés dans `etapes/`. Ils ne remplacent pas les deux captures de l'interface demandées dans le sujet. L'accès de l'outil de contrôle Windows à Java a été refusé ; aucune capture artificielle n'a été produite.
 

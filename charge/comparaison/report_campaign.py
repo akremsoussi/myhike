@@ -98,7 +98,9 @@ for d in ['vm','dk']:
 q3=' '.join(evidence)+" Le pool est une limite applicative : cela ne prouve pas la saturation du moteur MySQL. Les courbes et les métriques par palier permettent de distinguer le ralentissement préalable de l'échec à forte charge."
 if list((F/'etapes').glob('dk-recovery-*.json')):q3+=' Après la première surcharge Docker, le backend était unhealthy sans OOM ; un redémarrage hors mesure a précédé la réinitialisation de la série suivante.'
 q4="Deux répétitions de 60 s ne couvrent ni l'endurance ni la disponibilité, les pannes ou une distribution multi-hôtes. Le poste héberge aussi l'injecteur ; les tâches de fond, caches et températures ne sont pas parfaitement contrôlés. Les temporisations client plafonnent les latences d'échec autour de 30 s. Les versions et les modalités de quotas/swap diffèrent. Les anciennes mesures sur le PC de Rémi restent historiques et sont exclues de cette comparaison."
-status="Mesures et contrôles CLI archivés. Les captures de validation dans l'interface JMeter restent à réaliser : l'outil de contrôle Windows a refusé l'accès à Java, même après l'accord utilisateur. Les plans GUI positif/négatif sont fournis ; aucun succès graphique n'est affirmé."
+gui_complete=all((F/'captures'/n).exists() for n in ['validation-positive.png','validation-negative.png','gui-positif.xml','gui-negatif.xml'])
+status=("Validation GUI réalisée manuellement par l'utilisateur le 26 octobre 2026. Les captures et relevés montrent HTTP 200 pour la connexion et la consultation nominales, puis HTTP 401 et des assertions échouées avec le mot de passe incorrect. Les preuves sont conservées dans captures/." if gui_complete else "Les captures GUI positif et négatif restent à fournir ; les contrôles CLI ne les remplacent pas.")
+
 source="Traçabilité : configuration.json (empreintes), PROTOCOLE.md, etapes/*-resultat.json, *-serveur.jsonl et *-backend.txt, calibration/, baseline-vm.json et baseline-dk.json. Les CSV bruts vm/dk portant l'identifiant "+ID+" sont dans bruts/charge ; l'étalonnage est dans bruts/etalonnage. Les données anciennes restent inchangées."
 
 styles=getSampleStyleSheet();styles.add(ParagraphStyle(name='BodyFR',fontName='Helvetica',fontSize=9,leading=12,spaceAfter=8));styles.add(ParagraphStyle(name='SmallFR',fontSize=7.5,leading=10,spaceAfter=5))
@@ -118,7 +120,7 @@ story.append(PageBreak());title('Résultats et répétabilité');table(detail,[6
 p(status);p(source,'SmallFR')
 story.append(PageBreak());title('Interprétation et limites')
 for heading,text in [('1. De combien les déploiements diffèrent-ils ?',q1),('2. Quelles propriétés peuvent expliquer l\'écart ?',q2),('3. Quel composant limite le service ?',q3),('4. Que ne démontrent pas ces mesures ?',q4)]:story.append(Paragraph(escape(heading),styles['Heading2']));p(text)
-p("Conclusion méthodologique : les paliers instables sont explicitement signalés. Les captures GUI manquantes restent un point ouvert du livrable ; les résultats ne sont pas présentés comme une validation complète de toutes les exigences.",'SmallFR')
+p("Conclusion méthodologique : les paliers instables sont explicitement signalés. Le critère de répétabilité n'est pas satisfait à tous les paliers ; les résultats ne sont pas présentés comme une validation complète de toutes les exigences.",'SmallFR')
 def footer(c,doc):c.setFont('Helvetica',8);c.setFillColor(colors.grey);c.drawString(42,24,'MyHike | Mesures du '+DATE);c.drawRightString(A4[0]-42,24,str(doc.page))
 pdf=OUT/'rapport-comparaison.pdf'
 SimpleDocTemplate(str(pdf),pagesize=A4,leftMargin=42,rightMargin=42,topMargin=36,bottomMargin=38).build(story,onFirstPage=footer,onLaterPages=footer)
@@ -127,6 +129,6 @@ md='# MyHike - Rapport de comparaison VM / Docker\n\n'+DATE+' - mesures réelles
 for name in ['debit','latence','erreurs']:md+=f'\n\n![{name}](../graphiques/{name}.png)'
 for heading,text in [('Écarts chiffrés',q1),('Explications',q2),('Composant limitant',q3),('Limites',q4),('Validation et traçabilité',status+' '+source)]:md+='\n\n## '+heading+'\n\n'+text
 (OUT/'rapport-comparaison.md').write_text(md+'\n',encoding='utf-8')
-config=load(F/'configuration.json');config.update(completion='measurements_complete_gui_captures_pending',completed_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),unstable_loads=unstable,repeatability_all_loads_under_10_percent=not unstable,gui_captures_complete=False,measured_load_runs=24)
+config=load(F/'configuration.json');config.update(completion='measurements_and_gui_complete' if gui_complete else 'measurements_complete_gui_captures_pending',completed_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),unstable_loads=unstable,repeatability_all_loads_under_10_percent=not unstable,gui_captures_complete=gui_complete,measured_load_runs=24)
 (F/'configuration.json').write_text(json.dumps(config,ensure_ascii=False,indent=2),encoding='utf-8')
 print(pdf);print('Unstable:',unstable)

@@ -30,7 +30,7 @@ Les 24 essais de charge ont été exécutés et vérifiés : 1, 5, 10, 25, 50 et
 
 Cinq paliers dépassent 10 % de variation sur le débit ou le p95 : VM 5, 10 et 50 utilisateurs ; Docker 1 et 5 utilisateurs. Les deux résultats restent publiés. Les versions logicielles diffèrent entre les déploiements.
 
-Les captures GUI de validation restent à faire : le contrôle Windows a refusé l’accès à Java. Voir [les instructions](VALIDATION-GUI.md). Les contrôles CLI sont réalisés, mais ne remplacent pas ces captures.
+La validation GUI a été réalisée manuellement par l’utilisateur : [captures originales et relevés](captures/README.md). Connexion et consultation réussissent en HTTP 200 ; le mot de passe incorrect entraîne HTTP 401 et les échecs attendus.
 
 Les sauvegardes SQL restent dans `D:\Myhike\.charge-backups`, hors du dossier de résultats. Les trois VM sont remises en service à la fin ; Docker Desktop est arrêté.
 
