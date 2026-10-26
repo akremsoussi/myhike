@@ -1,5 +1,8 @@
 # Intégration des mesures de Rémi
 
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
+
 Les apports du commit `311bd31`, intégrés sur `main` par `3ea8466`, sont conservés. Ils complètent les parties déploiement et méthode Figma ; ils n'apportent pas une deuxième série des anciens CSV JMeter VM.
 
 ## Vérification des mesures de référence

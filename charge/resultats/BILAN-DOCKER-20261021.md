@@ -1,7 +1,9 @@
 # Résultats Docker — 21 octobre 2026
 
-> Mise à jour de présentation du 26 octobre : les bruts VM sont désormais réunis dans le [rapport consolidé](../../docs/rapport-charge.md). Le présent document conserve le bilan Docker de la session d’origine ; les mentions de comparaison VM à compléter décrivent son état à cette date.
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
+> Mise à jour de présentation du 26 octobre : les bruts VM sont désormais réunis dans le [rapport consolidé](../../docs/rapport-charge.md). Le présent document conserve le bilan Docker de la session d’origine ; les mentions de comparaison VM à compléter décrivent son état à cette date.
 
 La campagne principale couvre **1, 5, 10, 25, 50 et 100 utilisateurs**, avec
 **deux séries complètes**. Deux contrôles isolés supplémentaires ont été faits à 50.
@@ -93,7 +95,7 @@ Tous les chemins ci-dessous sont relatifs à `charge/resultats/` :
 
 Dans chaque dossier de campagne : configuration et empreintes SHA-256, plan
 exécuté, CSV de plateau, statistiques, métriques serveur JSONL et synthèses JSON,
-rapports HTML `rapport-<utilisateurs>-r<répétition>/index.html`.
+rapports HTML régénérables depuis les CSV JMeter (non inclus dans le rendu).
 Les copies de plateau volumineuses sont dérivées et exclues de Git ; les bruts
 d'étalonnage sont conservés sans perte en `.csv.gz`.
 

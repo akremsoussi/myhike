@@ -3,8 +3,7 @@
 # Refuges - Mesure et comparaison VM / Docker
 
 **DEV 1 - Partie 4, étape 18**
-**Akrem SOUSSI et Rémi CORTIAL - Polytech Marseille**
-Mise en forme : 26 octobre 2026. Mesures : 21 octobre 2026.
+Les résultats historiques ci-dessous proviennent des mesures du 21 octobre 2026.
 
 ## 1. Objet, protocole et validité
 
@@ -60,5 +59,3 @@ VM : charge/resultats/vm-*.csv ; six paliers, une série. Docker : charge/result
 Pour valider la comparaison : rejouer les deux déploiements sur le même poste avec le même plan exécuté et les mêmes timeouts, limiter CPU/RAM de façon équivalente, réinitialiser la base depuis les mêmes scripts et relever les empreintes du code et des données. Mesurer 60 s hors montée, conserver les métriques serveur par service, puis répéter avec ordre inversé. Stabiliser le palier 50 et ajouter les captures GUI du parcours nominal et du mot de passe erroné. Ces opérations produisent de nouvelles preuves ; une mise en forme ne peut pas les remplacer.
 
 Voir [l’index des livrables](../charge/README.md), [l’étalonnage](../charge/etalonnage.md), [les mesures client détaillées](../charge/resultats/synthese/mesures-client.csv) et [les relevés serveur Docker](../charge/resultats/synthese/mesures-serveur-docker.csv).
-
-[Version PDF paginée en quatre pages](rapport-charge-historique-remi.pdf).

@@ -1,4 +1,7 @@
-# Étalonnage du 26 octobre 2026
+# Étalonnage
+
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 Deux répétitions sur `/index.html`, 20 puis 100 utilisateurs, sans temporisation. Même poste et mêmes plafonds par couche que les campagnes applicatives.
 
@@ -18,6 +21,5 @@ Les deux répétitions sont sans erreur et sous 10 % de variation sur le débit 
 Les calibrations VM utilisent le premier collecteur par interrogation, plus coûteux que le collecteur persistant utilisé pendant les campagnes applicatives. Les calibrations Docker utilisent Docker stats. Les métriques de l’injecteur sont conservées.
 
 [Données et preuves](resultats/comparaison-20261026-152151/README.md). Les anciens essais restent disponibles et ne sont pas mélangés à cette campagne.
-
 
 [Étalonnages historiques documentés par Rémi](etalonnage-historique.md).

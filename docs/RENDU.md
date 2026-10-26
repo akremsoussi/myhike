@@ -1,28 +1,34 @@
-# Dossier de rendu - MyHike / Refuges
+# Dossier de rendu — MyHike / Refuges
 
-**Akrem SOUSSI et Rémi CORTIAL - 26 octobre 2026**
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 ## Parcours de lecture
 
-| Partie | Livrables et preuves |
+| Partie | Documents et preuves |
 |---|---|
-| 1 - Analyse et application trois tiers | [Analyse](analyse.md), [démarche Figma](demarche-maquette-figma.md), [diagrammes](diagrams/README.md), [requêtes API](requetes.md), [recette](tests.md), [code et démarrage](../LISEZMOI.md) |
-| 2 - Machines virtuelles | [Procédure VM](../deploiement/PROCEDURE.md), [références et réseau](mesures.md), [captures](captures/) |
-| 3 - Conteneurs et comparaison | [Procédure Docker](../docker/PROCEDURE.md), [comparaison de Rémi](comparaison.md), [preuves Docker](preuves-docker/2026-10-26/README.md), [analyse des mesures intégrées](synthese-mesures-remi.md) |
-| 4 - Charge JMeter | [Rapport PDF de 4 pages](rapport-charge.pdf), [rapport texte](rapport-charge.md), [dossier complet des 24 essais](../charge/resultats/comparaison-20261026-152151/README.md), [étalonnage](../charge/etalonnage.md), [automatisation](../charge/comparaison/README.md) |
+| 1 — Analyse et application | [Analyse](analyse.md), [annexe détaillée](analyse-detaillee.md), [démarche Figma](demarche-maquette-figma.md), [diagrammes](diagrams/README.md), [requêtes API](requetes.md), [tests](tests.md), [parcours illustrés](captures/parcours-application/README.md) |
+| 2 — Machines virtuelles | [Procédure VM](../deploiement/PROCEDURE.md), [mesures et réseau](mesures.md), [archives OVA](../deploiement/OVA.md) |
+| 3 — Docker | [Procédure Docker](../docker/PROCEDURE.md), [comparaison VM / Docker](comparaison.md), [preuves](preuves-docker/2026-10-26/README.md), [mesures de référence](synthese-mesures-remi.md) |
+| 4 — JMeter | [Rapport de charge](rapport-charge.md), [24 essais et preuves](../charge/resultats/comparaison-20261026-152151/README.md), [étalonnage](../charge/etalonnage.md), [automatisation](../charge/comparaison/README.md) |
 
-Le schéma et le peuplement SQL sont dans [donnees/](../donnees/). Le lien Figma est dans [LISEZMOI.md](../LISEZMOI.md). Les diagrammes comprennent la base, les cas d'utilisation, les classes, la séquence de requêtes et l'architecture.
+Le [guide principal](../LISEZMOI.md) présente le démarrage du projet. Le schéma et le peuplement SQL sont dans [donnees/](../donnees/). Le rapport final sera préparé séparément à partir de ces documents Markdown.
 
-## Statut honnête du rendu
+## Organisation
 
-- Les 24 essais de charge et les six mesures de démarrage/repos sont réalisés. Les CSV, statistiques, métriques serveur et courbes sont conservés.
-- Les six relevés de référence fournis par Rémi ont été recalculés depuis leurs données brutes ; 60 consultations réussies sont vérifiées.
-- Cinq paliers de charge dépassent le seuil de répétabilité de 10 % : VM 5, 10, 50 ; Docker 1, 5. Le rapport les signale ; le critère n'est pas déclaré satisfait partout.
-- **Validation GUI JMeter réalisée :** connexion et consultation en HTTP 200, puis refus HTTP 401 avec mot de passe incorrect. [Captures et relevés](../charge/resultats/comparaison-20261026-152151/captures/README.md).
-- Les archives OVA ne sont pas versionnées (taille). Leur remise éventuelle doit passer par le support de transfert prévu pour le cours.
+- `docs/` : analyses, comparaisons, diagrammes et captures.
+- `deploiement/` : configuration et procédure des machines virtuelles.
+- `docker/` : configuration et procédure des conteneurs.
+- `charge/` : plans JMeter, scripts, protocoles et résultats bruts.
+- `client/`, `metier/`, `donnees/` : code des trois couches de l’application.
+- `ova/` : archives VM et médias de démonstration conservés localement, hors historique Git.
 
-## Historique et reproductibilité
+Les trois OVA et leurs empreintes sont téléchargeables dans la [release GitHub du rendu](https://github.com/akremsoussi/myhike/releases/tag/rendu-2026-10-26). L’archive locale des médias de démonstration n’est pas jointe à cette release ; son utilisation est décrite dans la [procédure Docker](../docker/PROCEDURE.md).
 
-Les nouvelles mesures ne remplacent aucun ancien CSV de Rémi ou Docker. Le [rapport historique](rapport-charge-historique-remi.md) et les [synthèses historiques](../charge/resultats/synthese/) restent disponibles. Les différences de poste, versions, budgets et périmètres sont explicites.
+## Résultats et limites
 
-Les sauvegardes privées, clés SSH et fichiers d'environnement locaux ne sont pas publiés. Les gros bruts d'étalonnage sont disponibles en `.csv.gz` sans perte ; les CSV de plateau sont dérivables et ne sont pas versionnés.
+Le fonctionnement du prototype Figma a été confirmé par Rémi. Les 24 essais de charge, les six mesures de démarrage/repos et la [validation graphique JMeter](../charge/resultats/comparaison-20261026-152151/captures/README.md) sont réalisés. Les mesures de référence de Rémi comprennent également 60 consultations réussies.
+
+Cinq paliers dépassent le seuil de répétabilité de 10 % : VM 5, 10 et 50 utilisateurs ; Docker 1 et 5 utilisateurs. Les différences de versions et de périmètre sont explicitées dans les rapports.
+
+Les [résultats historiques](rapport-charge-historique-remi.md) restent disponibles pour la traçabilité. Les CSV, journaux techniques, configurations et empreintes sont conservés dans leur format d’origine ; les documents explicatifs sont en Markdown.

@@ -1,5 +1,8 @@
 # Procédure de déploiement pas à pas (3 Tiers sur Machines Virtuelles)
 
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
+
 Ce document décrit l'ensemble des étapes, dans l'ordre chronologique exact, pour passer de trois machines virtuelles nues à une architecture 3-tiers complètement fonctionnelle et isolée.
 
 ---
@@ -139,4 +142,3 @@ sudo netplan apply
 ## 5. Validation globale
 L'application est accessible depuis le navigateur de la machine hôte à l'adresse :
 **`http://localhost:8080/`**
-

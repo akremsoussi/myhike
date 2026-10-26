@@ -1,10 +1,15 @@
-# Captures JMeter restant à faire
+# Validation graphique JMeter
 
-Les contrôles positifs et négatifs en ligne de commande sont enregistrés dans `etapes/`. Ils ne remplacent pas les deux captures de l'interface demandées dans le sujet. L'accès de l'outil de contrôle Windows à Java a été refusé ; aucune capture artificielle n'a été produite.
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
-À effectuer après les campagnes, avec un seul déploiement démarré :
+La validation est réalisée : connexion et consultation en HTTP 200, puis refus HTTP 401 avec un mot de passe incorrect. Voir les [captures et résultats](../resultats/comparaison-20261026-152151/captures/README.md).
 
-1. Depuis PowerShell, lancer le script `validation-gui.ps1 -Cas positif` de ce dossier.
+## Reproduire la validation
+
+Démarrer un seul déploiement, hors campagne de charge.
+
+1. Depuis PowerShell, lancer le script `validation-gui.ps1 -Cas positif` du dossier `charge/comparaison/`.
 2. Dans JMeter, sélectionner `Validation GUI positif`, puis cliquer sur le triangle vert. Le plan fait une seule itération avec un utilisateur.
 3. Vérifier les deux requêtes en vert (connexion et consultation), puis enregistrer une capture lisible dans `captures/validation-positive.png`.
 4. Fermer JMeter, relancer le script avec `-Cas negatif`, sélectionner le résultat de connexion et afficher l'échec de l'assertion. Le mot de passe est volontairement incorrect.

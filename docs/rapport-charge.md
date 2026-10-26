@@ -1,6 +1,7 @@
 # MyHike - Rapport de comparaison VM / Docker
 
-26/10/2026 - mesures réelles
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 ## Protocole
 
@@ -54,7 +55,7 @@ VM : 470 à 736 req/s sur /index.html. DK : 5887 à 6318 req/s sur /index.html. 
 
 ## Écarts chiffrés
 
-Le meilleur débit sans erreur observé vaut 3,77 req/s en VM et 5,48 req/s sous Docker, aux charges indiquées page 1. À 10 utilisateurs, le p95 moyen est respectivement 3,79 s et 2,50 s. Ces moyennes décrivent deux essais ; ce ne sont pas des garanties de capacité durable.
+Le meilleur débit sans erreur observé vaut 3,77 req/s en VM et 5,48 req/s sous Docker, aux charges indiquées dans la synthèse. À 10 utilisateurs, le p95 moyen est respectivement 3,79 s et 2,50 s. Ces moyennes décrivent deux essais ; ce ne sont pas des garanties de capacité durable.
 
 ## Explications
 
@@ -72,10 +73,8 @@ Deux répétitions de 60 s ne couvrent ni l'endurance ni la disponibilité, les 
 
 Validation GUI réalisée manuellement par l'utilisateur le 26 octobre 2026. Les captures et relevés montrent HTTP 200 pour la connexion et la consultation nominales, puis HTTP 401 et des assertions échouées avec le mot de passe incorrect. Les preuves sont conservées dans captures/. Traçabilité : configuration.json (empreintes), PROTOCOLE.md, etapes/*-resultat.json, *-serveur.jsonl et *-backend.txt, calibration/, baseline-vm.json et baseline-dk.json. Les CSV bruts vm/dk portant l'identifiant 20261026-152151 sont dans bruts/charge ; l'étalonnage est dans bruts/etalonnage. Les données anciennes restent inchangées.
 
-
 ## Autres mesures du rendu
 
-Les [mesures de référence de Rémi](synthese-mesures-remi.md) complètent la partie déploiement : démarrage, mémoire, disque, latence, isolation et persistance. Elles restent distinctes de cette campagne de charge. Voir aussi le [rapport historique conservé](rapport-charge-historique-remi.md) et le [PDF principal](rapport-charge.pdf).
-
+Les [mesures de référence de Rémi](synthese-mesures-remi.md) complètent la partie déploiement : démarrage, mémoire, disque, latence, isolation et persistance. Elles restent distinctes de cette campagne de charge. Voir aussi le [rapport historique conservé](rapport-charge-historique-remi.md).
 
 [Captures de validation JMeter](../charge/resultats/comparaison-20261026-152151/captures/README.md).

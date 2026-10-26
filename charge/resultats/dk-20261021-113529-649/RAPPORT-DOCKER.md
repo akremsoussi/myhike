@@ -1,7 +1,9 @@
 # Campagne Docker : résultats mesurés
 
-> Mise à jour de présentation du 26 octobre : les bruts VM sont désormais réunis dans le [rapport consolidé](../../../docs/rapport-charge.md). Le présent document conserve le bilan Docker de la session d’origine ; les mentions de comparaison VM à compléter décrivent son état à cette date.
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
+> Mise à jour de présentation du 26 octobre : les bruts VM sont désormais réunis dans le [rapport consolidé](../../../docs/rapport-charge.md). Le présent document conserve le bilan Docker de la session d’origine ; les mentions de comparaison VM à compléter décrivent son état à cette date.
 
 Début UTC : 2026-10-21T09:35:29.7417920Z. Commit de référence : `07a0baa812be57c05519d5924cb5835699ed467b`.
 Les empreintes des plans, comptes et fichiers SQL sont conservées dans `configuration.json`.
@@ -111,5 +113,5 @@ et les courbes comparatives finales restent des livrables distincts.
 - Bruts : `../dk-*-r*-*.csv` ; toutes les requêtes, montée comprise.
 - Statistiques : `synthese.csv` ; plateau uniquement.
 - Relevés serveur : `*-serveur.jsonl` et `*-serveur-synthese.json`.
-- Rapports JMeter : `rapport-<utilisateurs>-r<répétition>/index.html`.
+- Les tableaux de bord HTML sont régénérables depuis les CSV JMeter ; ils ne sont pas inclus dans le rendu.
 - Sauvegardes privées : `.charge-backups/` à la racine du projet, exclues de Git.

@@ -1,8 +1,10 @@
 # Refuges — Application Web Trois-Tiers
 
-**Rendu :** [index de toutes les parties](docs/RENDU.md), [rapport de charge principal](docs/rapport-charge.pdf) et [mesures de Rémi intégrées](docs/synthese-mesures-remi.md).
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
-**Binôme :** Akrem SOUSSI & Rémi CORTIAL
+**Rendu :** [index de toutes les parties](docs/RENDU.md), [rapport de charge principal](docs/rapport-charge.md) et [mesures de Rémi intégrées](docs/synthese-mesures-remi.md).
+
 **Établissement :** Aix-Marseille Université — École d'ingénieurs (Polytech Marseille)
 **Année universitaire :** 2025 – 2026
 **Module :** DEV 1 — Application Trois-Tiers (Enseignant : Mohamed Quafafou)
@@ -13,7 +15,7 @@
 ## 1. Présentation du Projet
 
 **Refuges** est une application web communautaire conçue selon une **architecture 3 tiers stricte** (Présentation, Métier, Données), dédiée aux randonneurs et alpinistes :
-- **Cartographie interactive des refuges :** Exploration de **4 652 refuges et cabanes réels** (importés depuis `refuges.info`) par emprise géographique, filtres (*Gardés*, *Non gardés*, *Avec sortie*) et synchronisation automatique des photographies.
+- **Cartographie interactive des refuges :** Exploration de **4 652 refuges et cabanes réels** (importés depuis `refuges.info`) par emprise géographique, filtres (*Gardés*, *Non gardés*, *Avec sortie*) et photographies importées par les scripts du projet.
 - **Communautés par massif et publications :** Partage de récits, de photos (converties en WebP et purgées de leurs métadonnées EXIF/GPS) et de traces GPX avec calcul automatique de la distance et du dénivelé positif.
 - **Organisation de sorties en montagne :** Planification de sorties publiques ou sur invitation jalonnées d'étapes (refuges ou points libres) avec tracé sur la carte.
 - **Réseau social et confidentialité :** Demandes d'amis, suggestions par communautés communes, contrôle fin de l'audience du profil et recherche transversale.
@@ -21,7 +23,7 @@
 
 ---
 
-## 2. Organisation du Dépôt (Conforme au Cahier des Charges)
+## 2. Organisation du Dépôt
 
 ```text
 myhike/
@@ -35,6 +37,8 @@ myhike/
 │   ├── metier/               # Service systemd et .env externalisé
 │   ├── proxy/                # Configuration Nginx (reverse proxy /api/ et SPA)
 │   └── PROCEDURE.md          # Procédure complète chronologique pas à pas
+├── docker/                   # Configuration Compose et procédure Docker
+├── charge/                   # Plans JMeter, scripts et mesures
 ├── docs/                     # Documentation et livrables d'évaluation
 │   ├── analyse.md            # Dossier d'analyse (Étape 1 : acteurs, cas d'usage, RG, Figma)
 │   ├── requetes.md           # Exemples de requêtes cURL de la couche métier (Étape 4)
@@ -98,7 +102,7 @@ cd client && npm install && cd ..
 
 ---
 
-## 5. Déploiement Réparti sur 3 Machines Virtuelles (Partie 1)
+## 5. Déploiement Réparti sur 3 Machines Virtuelles (Partie 2)
 
 Pour le déploiement sur trois machines virtuelles isolées avec réseau interne (`intnet-app`, `10.10.10.0/24`), consultez la procédure détaillée :
 - **[`deploiement/PROCEDURE.md`](deploiement/PROCEDURE.md)** — Guide chronologique d'installation des 3 VMs
@@ -109,7 +113,7 @@ Pour le déploiement sur trois machines virtuelles isolées avec réseau interne
 
 ---
 
-## 5 bis. Déploiement Docker (Partie 3)
+## 6. Déploiement Docker (Partie 3)
 
 - [Procédure complète et démarrage en une commande](docker/PROCEDURE.md).
 - [Comparaison VM / Docker au format Markdown](docs/comparaison.md).
@@ -123,9 +127,9 @@ sudo bash docker/demarrer.sh refuges-validation
 
 Ce projet possède ses propres volumes. Les preuves du 26 octobre 2026 n'ont pas réinitialisé les bases de travail ni modifié les anciens résultats JMeter.
 
-## 6. Mesure et Injection de charge JMeter (Partie 4)
+## 7. Mesure et Injection de charge JMeter (Partie 4)
 
-Consulter [l’index des livrables](charge/README.md), le [rapport comparatif Markdown](docs/rapport-charge.md) ou sa [version PDF de quatre pages](docs/rapport-charge.pdf). Les courbes et tableaux réunissent les campagnes VM et Docker disponibles ; les différences de protocole et les preuves encore manquantes y sont explicitées.
+Consulter [l’index des livrables](charge/README.md), le [rapport comparatif Markdown](docs/rapport-charge.md) et les [preuves de la campagne](charge/resultats/comparaison-20261026-152151/README.md). Les courbes et tableaux réunissent les campagnes VM et Docker disponibles ; les conditions de mesure et les limites de répétabilité y sont explicitées.
 
 L'injection de charge et la comparaison de performances entre VMs et conteneurs sont configurées dans le dossier **[`charge/`](charge/)** :
 - **[`charge/plan.jmx`](charge/plan.jmx)** — Plan de test JMeter paramétrable (`-Jutilisateurs`, `-Jmontee`, `-Jduree`, `-Jhost`, `-Jport`)

@@ -1,6 +1,7 @@
 # Étalonnage du protocole - étape 16
 
-**Akrem SOUSSI et Rémi CORTIAL - Refuges - 21 octobre 2026**
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 ## 1. Instrument et paramètres
 
