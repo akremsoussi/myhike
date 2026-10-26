@@ -1,6 +1,6 @@
 # Campagne Docker : résultats mesurés
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 Début UTC : 2026-10-21T09:57:23.6121918Z. Commit de référence : `07a0baa812be57c05519d5924cb5835699ed467b`.

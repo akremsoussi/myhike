@@ -1,6 +1,6 @@
 # Tests de charge JMeter
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 ## Campagne principale

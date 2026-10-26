@@ -1,6 +1,6 @@
 # Analyse de l’application Refuges
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 ## 1. Objectif et architecture

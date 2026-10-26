@@ -1,6 +1,6 @@
 # Deux parcours dans l’application Refuges
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 Ces captures proviennent de l’application exécutée sur le poste de Rémi, avec les trois services Docker du projet `refuges-validation`, sur `http://localhost:8080`. La version du code est `ccd5108`. La session du compte de démonstration **Lucas Randonneur** (`randonneur`) était déjà ouverte. Les images montrent l’interface réelle, sans reconstitution graphique. Les marges vides extérieures ont été recadrées ; le contenu de l’interface n’a pas été retouché.

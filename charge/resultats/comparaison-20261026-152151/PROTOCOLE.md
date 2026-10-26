@@ -1,6 +1,6 @@
 # Campagne VM / Docker
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 Scénario : connexion avec cookie de session, puis consultation authentifiée de 20 refuges. Les assertions vérifient HTTP 200, contenu attendu et cookie. Un contrôle avec mot de passe volontairement incorrect doit échouer.

@@ -1,6 +1,6 @@
 # Refuges — Application Web Trois-Tiers
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 **Rendu :** [index de toutes les parties](docs/RENDU.md), [rapport de charge principal](docs/rapport-charge.md) et [mesures de Rémi intégrées](docs/synthese-mesures-remi.md).

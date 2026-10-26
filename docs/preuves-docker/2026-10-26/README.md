@@ -1,6 +1,6 @@
 # Preuves - Partie 3 Docker
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 Les fichiers de ce dossier attestent les opérations réellement exécutées ; ils ne sont pas des exemples. Le projet Compose de validation est séparé des données de travail et des campagnes JMeter.

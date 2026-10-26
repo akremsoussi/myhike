@@ -1,6 +1,6 @@
 # Partie 3 - Déploiement Docker de Refuges
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 Cette procédure part d'un clone du dépôt contenant `client/`, `metier/`, `donnees/` et `docker/`. Trois services sont construits : Nginx (frontend), FastAPI (backend) et MySQL (db). Les résultats de validation du 26 octobre 2026 et le tableau comparatif sont dans [docs/comparaison.md](../docs/comparaison.md).

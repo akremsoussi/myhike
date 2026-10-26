@@ -1,6 +1,6 @@
 # Partie 3 - Vérification et comparaison VM / Docker
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 **Provenance :** mesures de référence de Rémi, conservées pour la partie 3. Voir [leur intégration et les différences avec la charge JMeter](synthese-mesures-remi.md).

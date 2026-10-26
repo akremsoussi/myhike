@@ -1,6 +1,6 @@
 # Résultats JMeter - index et traçabilité
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 **Nouveaux résultats :** [comparaison appariée du 26 octobre](comparaison-20261026-152151/README.md). Les séries listées ci-dessous sont historiques.

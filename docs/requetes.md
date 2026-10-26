@@ -1,6 +1,6 @@
 # Exemples de Requêtes HTTP — Couche Métier (Étape 4)
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 **Module :** DEV 1 — Application Trois-Tiers  

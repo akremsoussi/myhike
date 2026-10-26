@@ -1,6 +1,6 @@
-# MyHike / Refuges — Diagrammes du projet
+# Refuges — Diagrammes du projet
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 Diagrammes établis à partir du code et du schéma SQL du projet. Les figures sont consultables ci-dessous ; les sources sont réunies dans [DIAGRAMS.md](DIAGRAMS.md).

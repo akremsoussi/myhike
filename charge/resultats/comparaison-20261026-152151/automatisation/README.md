@@ -1,6 +1,6 @@
 # Comparaison locale VirtualBox / Docker
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 Cette automatisation est configurée pour ce PC : projet `D:\Myhike`, VM `D:\Myhike-VM`, VirtualBox `D:\virtualBox`, JMeter 5.6.3 dans les téléchargements. Les chemins sont déclarés au début de `campaign.py` et `control.py`.

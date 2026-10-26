@@ -1,6 +1,6 @@
 # Campagne Docker : résultats mesurés
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 > Mise à jour de présentation du 26 octobre : les bruts VM sont désormais réunis dans le [rapport consolidé](../../../docs/rapport-charge.md). Le présent document conserve le bilan Docker de la session d’origine ; les mentions de comparaison VM à compléter décrivent son état à cette date.

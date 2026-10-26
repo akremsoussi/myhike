@@ -1,7 +1,9 @@
-# Dossier de rendu — MyHike / Refuges
+# Dossier de rendu — Refuges
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
+
+**Rapport final :** [ouvrir le PDF de synthèse (22 pages)](rapport-final.pdf).
 
 ## Parcours de lecture
 
@@ -12,7 +14,7 @@
 | 3 — Docker | [Procédure Docker](../docker/PROCEDURE.md), [comparaison VM / Docker](comparaison.md), [preuves](preuves-docker/2026-10-26/README.md), [mesures de référence](synthese-mesures-remi.md) |
 | 4 — JMeter | [Rapport de charge](rapport-charge.md), [24 essais et preuves](../charge/resultats/comparaison-20261026-152151/README.md), [étalonnage](../charge/etalonnage.md), [automatisation](../charge/comparaison/README.md) |
 
-Le [guide principal](../LISEZMOI.md) présente le démarrage du projet. Le schéma et le peuplement SQL sont dans [donnees/](../donnees/). Le rapport final sera préparé séparément à partir de ces documents Markdown.
+Le [guide principal](../LISEZMOI.md) présente le démarrage du projet. Le schéma et le peuplement SQL sont dans [donnees/](../donnees/). Le rapport final rassemble la démarche et les résultats ; les documents Markdown conservent les détails et les procédures.
 
 ## Organisation
 
