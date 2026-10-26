@@ -1,6 +1,6 @@
 # Validation graphique JMeter
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 Captures originales fournies par l’utilisateur le 26 octobre 2026, après exécution manuelle dans JMeter 5.6.3. Elles ne sont ni retouchées ni reconstituées.

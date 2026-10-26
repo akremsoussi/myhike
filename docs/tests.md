@@ -1,6 +1,6 @@
 # Cahier de Recette et Tableau de Tests (Étape 6)
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 **Module :** DEV 1 — Application Trois-Tiers  

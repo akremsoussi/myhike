@@ -1,6 +1,6 @@
 # Étalonnage
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 Deux répétitions sur `/index.html`, 20 puis 100 utilisateurs, sans temporisation. Même poste et mêmes plafonds par couche que les campagnes applicatives.

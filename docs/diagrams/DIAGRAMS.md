@@ -1,6 +1,6 @@
-# MyHike / Refuges — Code Mermaid de tous les diagrammes
+# Refuges — Code Mermaid de tous les diagrammes
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 Chaque bloc est autonome : copier un seul bloc à la fois dans un éditeur Mermaid.
@@ -167,7 +167,7 @@ flowchart LR
     S["Acteur : Super-administrateur"]
     M -. "hérite des droits" .-> U
     S -. "hérite des droits" .-> M
-    subgraph APP["MyHike / Refuges"]
+    subgraph APP["Refuges"]
         direction TB
         UC0(["Créer un compte"])
         UC1(["Se connecter"])

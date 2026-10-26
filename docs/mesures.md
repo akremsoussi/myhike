@@ -1,6 +1,6 @@
 # Compte-Rendu : Étape 10 — Vérifier et Mesurer
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 Ce document consigne l'ensemble des livrables de la Partie 2 : la matrice de joignabilité, les captures d'écran de validation réseau, les snapshots VirtualBox, et les mesures de référence.

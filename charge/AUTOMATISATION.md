@@ -1,6 +1,6 @@
 # Campagnes JMeter Docker sous Windows
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 Le point d'entree est `charge/campagne.ps1`. Il execute les paliers

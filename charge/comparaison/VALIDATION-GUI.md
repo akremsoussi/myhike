@@ -1,6 +1,6 @@
 # Validation graphique JMeter
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 La validation est réalisée : connexion et consultation en HTTP 200, puis refus HTTP 401 avec un mot de passe incorrect. Voir les [captures et résultats](../resultats/comparaison-20261026-152151/captures/README.md).

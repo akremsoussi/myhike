@@ -1,6 +1,6 @@
 # Étalonnage du protocole - étape 16
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 ## 1. Instrument et paramètres

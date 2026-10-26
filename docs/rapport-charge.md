@@ -1,6 +1,6 @@
-# MyHike - Rapport de comparaison VM / Docker
+# Refuges - Rapport de comparaison VM / Docker
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 ## Protocole

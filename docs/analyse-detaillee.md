@@ -1,6 +1,6 @@
 # Dossier d'Analyse : Application Refuges (Architecture 3-Tiers)
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 **Établissement :** Aix-Marseille Université — École d'ingénieurs (Polytech Marseille)  

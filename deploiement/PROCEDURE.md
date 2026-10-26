@@ -1,6 +1,6 @@
 # Procédure de déploiement pas à pas (3 Tiers sur Machines Virtuelles)
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 Ce document décrit l'ensemble des étapes, dans l'ordre chronologique exact, pour passer de trois machines virtuelles nues à une architecture 3-tiers complètement fonctionnelle et isolée.

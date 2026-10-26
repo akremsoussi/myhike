@@ -1,6 +1,6 @@
 # Nouvelles mesures VM / Docker
 
-**Projet :** MyHike / Refuges  
+**Projet :** Refuges  
 **Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 Les 24 essais de charge ont été exécutés et vérifiés : 1, 5, 10, 25, 50 et 100 utilisateurs, deux répétitions pour chaque déploiement. Les résultats historiques restent hors de ce dossier et ne sont pas modifiés. Dossier préparé pour publication GitHub avec les preuves de Rémi, qui restent dans leur dossier d’origine.
