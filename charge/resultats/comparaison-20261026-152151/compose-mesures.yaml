@@ -1,0 +1,10 @@
+services:
+  db:
+    cpus: 1.0
+    mem_limit: 2g
+  backend:
+    cpus: 1.0
+    mem_limit: 2g
+  frontend:
+    cpus: 1.0
+    mem_limit: 2g

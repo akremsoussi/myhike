@@ -42,3 +42,20 @@ charge/resultats/etalonnage-dk-*.csv
 
 # Fenetres de mesure derivees des bruts conserves
 charge/resultats/**/*-plateau.csv
+
+# Campagne appariée : conserver les bruts volumineux sous forme gzip sans perte
+charge/resultats/comparaison-*/bruts/etalonnage/*.csv
+# Préparations locales et copies de travail, hors rendu
+charge/resultats/comparaison-*/interrompu-sur-demande/
+charge/resultats/comparaison-*/archives-documents/
+charge/resultats/charge-20261021-*.jtl
+charge/resultats/rapport-20261021-095701/
+charge/resultats/rapport-20261021-101726/
+charge/resultats/etalonnage-dk-20261021-112331-513/
+charge/resultats/etalonnage-dk-20261021-112350-854/
+charge/resultats/validation-automatisation.jmx
+charge/resultats/validation-positive-20261021-112159.csv
+charge/resultats/verification-20261021-095553.jtl
+# Archives de commodité : les sources de diagrammes sont versionnées
+docs/myhike-diagrams-2026-10-26.zip
+docs/myhike-mermaid-fr.zip

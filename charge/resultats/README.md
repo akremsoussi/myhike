@@ -1,5 +1,7 @@
 # Résultats JMeter - index et traçabilité
 
+**Nouveaux résultats :** [comparaison appariée du 26 octobre](comparaison-20261026-152151/README.md). Les séries listées ci-dessous sont historiques.
+
 Les fichiers bruts et les dossiers de session d’origine sont conservés. Les tableaux ajoutés sous `synthese/` sont des dérivés de présentation.
 
 | Ensemble | Contenu | Fenêtre / répétitions |

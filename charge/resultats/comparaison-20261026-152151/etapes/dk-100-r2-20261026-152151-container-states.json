@@ -1,0 +1,158 @@
+[
+  {
+    "Name": "/refuges-backend-1",
+    "State": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 62489,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-26T15:18:27.694390733Z",
+      "FinishedAt": "2026-10-26T15:18:15.18914275Z",
+      "Health": {
+        "Status": "unhealthy",
+        "FailingStreak": 11,
+        "Log": [
+          {
+            "Start": "2026-10-26T15:27:46.859541099Z",
+            "End": "2026-10-26T15:27:50.257241252Z",
+            "ExitCode": 1,
+            "Output": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3)\n                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 187, in urlopen\n    return opener.open(url, data, timeout)\n           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 487, in open\n    response = self._open(req, data)\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 504, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n                              '_open', req)\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 464, in _call_chain\n    result = func(*args)\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 1362, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 1337, in do_open\n    r = h.getresponse()\n  File \"/usr/local/lib/python3.14/http/client.py\", line 1478, in getresponse\n    response.begin()\n    ~~~~~~~~~~~~~~^^\n  File \"/usr/local/lib/python3.14/http/client.py\", line 343, in begin\n    version, status, reason = self._read_status()\n                              ~~~~~~~~~~~~~~~~~^^\n  File \"/usr/local/lib/python3.14/http/client.py\", line 304, in _read_status\n    line = str(self.fp.readline(_MAXLINE + 1), \"iso-8859-1\")\n               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/socket.py\", line 729, in readinto\n    return self._sock.recv_into(b)\n           ~~~~~~~~~~~~~~~~~~~~^^^\nTimeoutError: timed out\n"
+          },
+          {
+            "Start": "2026-10-26T15:27:55.258728977Z",
+            "End": "2026-10-26T15:27:58.729738968Z",
+            "ExitCode": 1,
+            "Output": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3)\n                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 187, in urlopen\n    return opener.open(url, data, timeout)\n           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 487, in open\n    response = self._open(req, data)\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 504, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n                              '_open', req)\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 464, in _call_chain\n    result = func(*args)\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 1362, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 1337, in do_open\n    r = h.getresponse()\n  File \"/usr/local/lib/python3.14/http/client.py\", line 1478, in getresponse\n    response.begin()\n    ~~~~~~~~~~~~~~^^\n  File \"/usr/local/lib/python3.14/http/client.py\", line 343, in begin\n    version, status, reason = self._read_status()\n                              ~~~~~~~~~~~~~~~~~^^\n  File \"/usr/local/lib/python3.14/http/client.py\", line 304, in _read_status\n    line = str(self.fp.readline(_MAXLINE + 1), \"iso-8859-1\")\n               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/socket.py\", line 729, in readinto\n    return self._sock.recv_into(b)\n           ~~~~~~~~~~~~~~~~~~~~^^^\nTimeoutError: timed out\n"
+          },
+          {
+            "Start": "2026-10-26T15:28:03.728109441Z",
+            "End": "2026-10-26T15:28:07.258526469Z",
+            "ExitCode": 1,
+            "Output": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3)\n                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 187, in urlopen\n    return opener.open(url, data, timeout)\n           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 487, in open\n    response = self._open(req, data)\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 504, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n                              '_open', req)\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 464, in _call_chain\n    result = func(*args)\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 1362, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 1337, in do_open\n    r = h.getresponse()\n  File \"/usr/local/lib/python3.14/http/client.py\", line 1478, in getresponse\n    response.begin()\n    ~~~~~~~~~~~~~~^^\n  File \"/usr/local/lib/python3.14/http/client.py\", line 343, in begin\n    version, status, reason = self._read_status()\n                              ~~~~~~~~~~~~~~~~~^^\n  File \"/usr/local/lib/python3.14/http/client.py\", line 304, in _read_status\n    line = str(self.fp.readline(_MAXLINE + 1), \"iso-8859-1\")\n               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/socket.py\", line 729, in readinto\n    return self._sock.recv_into(b)\n           ~~~~~~~~~~~~~~~~~~~~^^^\nTimeoutError: timed out\n"
+          },
+          {
+            "Start": "2026-10-26T15:28:12.260617892Z",
+            "End": "2026-10-26T15:28:15.767500844Z",
+            "ExitCode": 1,
+            "Output": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3)\n                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 187, in urlopen\n    return opener.open(url, data, timeout)\n           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 487, in open\n    response = self._open(req, data)\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 504, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n                              '_open', req)\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 464, in _call_chain\n    result = func(*args)\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 1362, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 1337, in do_open\n    r = h.getresponse()\n  File \"/usr/local/lib/python3.14/http/client.py\", line 1478, in getresponse\n    response.begin()\n    ~~~~~~~~~~~~~~^^\n  File \"/usr/local/lib/python3.14/http/client.py\", line 343, in begin\n    version, status, reason = self._read_status()\n                              ~~~~~~~~~~~~~~~~~^^\n  File \"/usr/local/lib/python3.14/http/client.py\", line 304, in _read_status\n    line = str(self.fp.readline(_MAXLINE + 1), \"iso-8859-1\")\n               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/socket.py\", line 729, in readinto\n    return self._sock.recv_into(b)\n           ~~~~~~~~~~~~~~~~~~~~^^^\nTimeoutError: timed out\n"
+          },
+          {
+            "Start": "2026-10-26T15:28:20.769764147Z",
+            "End": "2026-10-26T15:28:24.247485243Z",
+            "ExitCode": 1,
+            "Output": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=3)\n                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 187, in urlopen\n    return opener.open(url, data, timeout)\n           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 487, in open\n    response = self._open(req, data)\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 504, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n                              '_open', req)\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 464, in _call_chain\n    result = func(*args)\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 1362, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/urllib/request.py\", line 1337, in do_open\n    r = h.getresponse()\n  File \"/usr/local/lib/python3.14/http/client.py\", line 1478, in getresponse\n    response.begin()\n    ~~~~~~~~~~~~~~^^\n  File \"/usr/local/lib/python3.14/http/client.py\", line 343, in begin\n    version, status, reason = self._read_status()\n                              ~~~~~~~~~~~~~~~~~^^\n  File \"/usr/local/lib/python3.14/http/client.py\", line 304, in _read_status\n    line = str(self.fp.readline(_MAXLINE + 1), \"iso-8859-1\")\n               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/socket.py\", line 729, in readinto\n    return self._sock.recv_into(b)\n           ~~~~~~~~~~~~~~~~~~~~^^^\nTimeoutError: timed out\n"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Name": "/refuges-db-1",
+    "State": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 62293,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-26T15:18:22.366040292Z",
+      "FinishedAt": "2026-10-26T15:18:22.194065136Z",
+      "Health": {
+        "Status": "healthy",
+        "FailingStreak": 0,
+        "Log": [
+          {
+            "Start": "2026-10-26T15:28:06.05564546Z",
+            "End": "2026-10-26T15:28:06.129313388Z",
+            "ExitCode": 0,
+            "Output": "1\n1\n"
+          },
+          {
+            "Start": "2026-10-26T15:28:11.131540257Z",
+            "End": "2026-10-26T15:28:11.219458101Z",
+            "ExitCode": 0,
+            "Output": "1\n1\n"
+          },
+          {
+            "Start": "2026-10-26T15:28:16.221728518Z",
+            "End": "2026-10-26T15:28:16.289530846Z",
+            "ExitCode": 0,
+            "Output": "1\n1\n"
+          },
+          {
+            "Start": "2026-10-26T15:28:21.290958424Z",
+            "End": "2026-10-26T15:28:21.369624614Z",
+            "ExitCode": 0,
+            "Output": "1\n1\n"
+          },
+          {
+            "Start": "2026-10-26T15:28:26.371015979Z",
+            "End": "2026-10-26T15:28:26.449374313Z",
+            "ExitCode": 0,
+            "Output": "1\n1\n"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Name": "/refuges-frontend-1",
+    "State": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 62632,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-26T15:18:33.457573257Z",
+      "FinishedAt": "2026-10-26T15:18:14.460597615Z",
+      "Health": {
+        "Status": "unhealthy",
+        "FailingStreak": 10,
+        "Log": [
+          {
+            "Start": "2026-10-26T15:27:40.71785315Z",
+            "End": "2026-10-26T15:27:45.767418301Z",
+            "ExitCode": -1,
+            "Output": "Health check exceeded timeout (5s)"
+          },
+          {
+            "Start": "2026-10-26T15:27:50.769083254Z",
+            "End": "2026-10-26T15:27:55.850132649Z",
+            "ExitCode": -1,
+            "Output": "Health check exceeded timeout (5s)"
+          },
+          {
+            "Start": "2026-10-26T15:28:00.848327597Z",
+            "End": "2026-10-26T15:28:05.914588834Z",
+            "ExitCode": -1,
+            "Output": "Health check exceeded timeout (5s)"
+          },
+          {
+            "Start": "2026-10-26T15:28:10.916526164Z",
+            "End": "2026-10-26T15:28:15.976437002Z",
+            "ExitCode": -1,
+            "Output": "Health check exceeded timeout (5s)"
+          },
+          {
+            "Start": "2026-10-26T15:28:20.978243768Z",
+            "End": "2026-10-26T15:28:26.031094245Z",
+            "ExitCode": -1,
+            "Output": "Health check exceeded timeout (5s)"
+          }
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "users": 20,
+  "samples": 9,
+  "collection_errors": 0,
+  "measurement_start_ms": 1793027035856,
+  "measurement_end_ms": 1793027095856,
+  "services": {
+    "db": {
+      "cpu_percent_mean": 2.3644444444444446,
+      "cpu_percent_max": 12.95,
+      "memory_bytes_mean": 481412892.4444444,
+      "memory_bytes_max": 485385830.4,
+      "block_read_bytes_delta": 0.0,
+      "block_written_bytes_delta": 0.0,
+      "unavailable_samples": 0
+    },
+    "backend": {
+      "cpu_percent_mean": 0.3466666666666667,
+      "cpu_percent_max": 0.76,
+      "memory_bytes_mean": 113083096.17777778,
+      "memory_bytes_max": 113455923.2,
+      "block_read_bytes_delta": 0.0,
+      "block_written_bytes_delta": 0.0,
+      "unavailable_samples": 0
+    },
+    "frontend": {
+      "cpu_percent_mean": 97.34222222222222,
+      "cpu_percent_max": 100.84,
+      "memory_bytes_mean": 16790031.928888887,
+      "memory_bytes_max": 17395875.84,
+      "block_read_bytes_delta": 0.0,
+      "block_written_bytes_delta": 0.0,
+      "unavailable_samples": 0
+    }
+  },
+  "java_cpu_percent_host_mean": 6.1434599792963,
+  "java_cpu_percent_host_max": 6.802122915289708,
+  "java_working_set_bytes_max": 832802816,
+  "host_available_memory_bytes_min": 1710710784,
+  "host_cpu_percent_max": 58.8,
+  "Threads_connected_mean": 2,
+  "Threads_connected_max": 2,
+  "Threads_running_mean": 2,
+  "Threads_running_max": 2,
+  "Innodb_data_read_delta": 0,
+  "Innodb_data_written_delta": 0
+}

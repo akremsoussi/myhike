@@ -1,62 +1,78 @@
-# Refuges - Mesure et comparaison VM / Docker
+# MyHike - Rapport de comparaison VM / Docker
 
-**DEV 1 - Partie 4, étape 18**
-**Akrem SOUSSI et Rémi CORTIAL - Polytech Marseille**
-Mise en forme : 26 octobre 2026. Mesures : 21 octobre 2026.
+26/10/2026 - mesures réelles
 
-## 1. Objet, protocole et validité
+## Protocole
 
-Les mesures disponibles décrivent deux campagnes Refuges (React, FastAPI, MySQL) réalisées le 21 octobre 2026. Le parcours traverse les trois tiers : POST /api/auth/login, conservation du cookie refuges_session, puis GET /api/refuges?limit=20. Le fichier comporte 25 comptes ; la temporisation de 500 à 1 000 ms s'applique avant chaque requête. Les paliers sont 1, 5, 10, 25, 50 et 100 utilisateurs.
+Même poste Windows, même code applicatif, mêmes fichiers SQL et comptes figés, même plan JMeter 5.6.3 / Java 8u511. Chaque couche dispose de 1 CPU et 2 Gio de RAM (système invité compris pour les VM). Un seul déploiement fonctionne à la fois ; Docker Desktop est arrêté pendant les mesures VM. L'ordre des campagnes est VM r1, Docker r1, Docker r2, VM r2. Une sauvegarde privée et une réinitialisation SQL précèdent chaque série.
 
-> **Comparaison provisoire.** La présentation réunit les livrables de l'étape 18. La comparaison expérimentale reste provisoire : les VM sont analysées sur le fichier complet, Docker sur un plateau de 60 s ; le plan exécuté Docker ajoute un timeout client de 30 s et un repère temporel. La même machine physique, le même budget CPU/RAM et la même version applicative ne sont pas attestés pour les deux campagnes. Les ratios ci-dessous décrivent les essais archivés, sans isoler l'effet du mode de déploiement.
+Une itération ouvre une session puis consulte 20 refuges authentifiés ; assertions HTTP, contenu et session, attente de 500 à 1 000 ms avant chaque requête. Paliers : 1, 5, 10, 25, 50 et 100 utilisateurs. Montée 10 s, fenêtre mesurée 60 s après le marqueur + 11 s, pause 10 s entre paliers. Les requêtes sont retenues par leur heure de départ ; leur durée complète est conservée. Les contrôles positif et mot de passe incorrect sont archivés pour chaque série.
 
-## 2. Tableau de synthèse (sujet, p. 56)
+## Synthèse
 
-| Grandeur | Trois machines virtuelles | Trois conteneurs |
-|---|---|---|
-| Débit maximal observé sans erreur | 5,17 req/s (10 utilisateurs) | 36,75 et 42,47 req/s (50 utilisateurs ; instable) |
-| Charge au point de saturation | Inflexion entre 10 et 25 ; écroulement à 100 | Inflexion vers 50 ; écroulement à 100 |
-| p95 à charge égale : 10 utilisateurs | 2 585 ms (fichier complet) | 142 et 132 ms (plateau) |
-| Goulot d'étranglement | Couche métier suspectée ; cause non prouvée par des logs VM conservés | Pool SQLAlchemy épuisé à 100 ; logs disponibles |
-| Temps de démarrage complet | 45 s (étape 10) | 34,03 et 34,31 s (Compose up --wait) |
-| Mémoire au repos | 2 710 Mo (processus VirtualBox hôte) | 523,45 et 519,28 MiB (somme docker stats) |
+| Grandeur | VM | Docker |
+| --- | --- | --- |
+| Meilleur débit observé sans erreur | 3,77 req/s (10 u.) | 5,48 req/s (10 u.) |
+| p95 moyen à 10 utilisateurs | 3,79 s | 2,50 s |
+| Erreurs moyennes à 100 utilisateurs | 100,00 % | 99,50 % |
+| Premier palier proche du plateau (1) | 10 utilisateurs | 5 utilisateurs |
+| Composant limitant observé | Backend : CPU / pool | Backend : CPU / pool |
+| Démarrage complet, médiane de 3 | 63,53 s | 26,86 s |
+| Somme RSS hôte au repos, médiane | 2229 Mio | 3472 Mio |
+| Pic mémoire backend observé | 972 Mio | 869 Mio |
 
-Le maximum Docker à 50 n'est pas une capacité soutenable validée : l'écart entre répétitions dépasse 10 %. Les démarrages ne suivent pas exactement le même critère de disponibilité. La RAM Docker exclut le coût du moteur et de son environnement Linux ; la RAM VM est mesurée sur l'hôte. Aucun gain mémoire global n'est déduit de ces deux périmètres.
+La somme RSS mesure les processus hôtes identifiés, avec possibles pages partagées ; elle ne représente pas la RAM allouée. Le démarrage VM va de trois VM éteintes à l'API saine ; Docker inclut le démarrage de son moteur Linux puis des trois conteneurs. Ces durées comprennent l'orchestration et la résolution des contrôles de santé. Le repos est relevé après campagne et redémarrage. (1) Premier palier atteignant 90 % du meilleur débit moyen réussi : repère descriptif, pas un seuil de service acceptable.
 
-## 3. Courbes (étape 18)
+## Étalonnage
 
-Les trois séries sont conservées séparément : VM historique, Docker R1 et Docker R2. Les débits Docker correspondent aux départs de requêtes du plateau divisés par 60 s ; les débits VM au nombre de requêtes divisé par la durée complète. Les points ne sont donc pas strictement comparables. Les zones de saturation sont annotées comme observations.
+VM : 470 à 736 req/s sur /index.html. DK : 5887 à 6318 req/s sur /index.html. Ce sont des bornes de capacité du couple injecteur/proxy, pas une mesure isolée du plafond de Java. Les métriques de Java et les erreurs sont conservées.
 
-![Débit total](courbes/debit.svg)
+## Résultats
 
-![Latence au 95e centile](courbes/p95.svg)
+| Déploiement | u. | Débit r1 / r2 | p95 r1 / r2 (s) | Erreurs r1 / r2 (%) |
+| --- | --- | --- | --- | --- |
+| VM | 1 | 0,93 / 0,98 | 0,54 / 0,50 | 0,0 / 0,0 |
+| VM | 5 | 3,03 / 3,70 | 2,13 / 1,37 | 0,0 / 0,0 |
+| VM | 10 | 4,08 / 3,47 | 3,43 / 4,15 | 0,0 / 0,0 |
+| VM | 25 | 3,53 / 3,40 | 8,90 / 9,73 | 0,0 / 0,0 |
+| VM | 50 | 3,95 / 3,50 | 18,19 / 20,16 | 0,0 / 0,0 |
+| VM | 100 | 3,33 / 3,32 | 30,00 / 30,00 | 100,0 / 100,0 |
+| DK | 1 | 1,12 / 1,08 | 0,29 / 0,34 | 0,0 / 0,0 |
+| DK | 5 | 4,88 / 5,08 | 0,93 / 0,65 | 0,0 / 0,0 |
+| DK | 10 | 5,37 / 5,60 | 2,47 / 2,53 | 0,0 / 0,0 |
+| DK | 25 | 5,17 / 5,13 | 7,43 / 7,86 | 0,0 / 0,0 |
+| DK | 50 | 5,25 / 5,60 | 13,14 / 14,08 | 0,0 / 0,0 |
+| DK | 100 | 3,35 / 3,27 | 30,01 / 30,02 | 99,0 / 100,0 |
 
-![Taux d'erreur](courbes/erreurs.svg)
+Écart relatif = |r1 - r2| / moyenne × 100, calculé séparément sur le débit et le p95. Dépassement du seuil de 10 % : VM 5 u., VM 10 u., VM 50 u., DK 1 u., DK 5 u.. Ces paliers restent publiés ; aucun meilleur essai n'est sélectionné pour masquer la variation.
 
-## 4. Analyse : les quatre questions (sujet, p. 57)
+![debit](../charge/resultats/comparaison-20261026-152151/graphiques/debit.png)
 
-### 4.1 De combien les deux déploiements diffèrent-ils ?
+![latence](../charge/resultats/comparaison-20261026-152151/graphiques/latence.png)
 
-À 10 utilisateurs, le débit VM est de 5,17 req/s contre 12,28 et 12,12 req/s sur Docker, soit des rapports observés de 2,38 et 2,35. Le p95 passe de 2 585 ms à 142 et 132 ms (réduction apparente de 94,5 à 94,9 %). Le maximum sans erreur relevé est de 5,17 req/s sur VM contre 36,75 à 42,47 req/s sur Docker. Ce dernier intervalle varie trop pour retenir une valeur unique. À 100, Docker n'assure presque plus de service : 98,64 et 100 % d'erreurs ; le débit réussi est de 0,03 et 0,00 req/s. Les VM présentent 34,12 % d'erreurs et environ 1,20 req/s réussie sur l'ensemble du fichier. Ces ratios utilisent des fenêtres distinctes et ne constituent pas un gain causal de Docker.
+![erreurs](../charge/resultats/comparaison-20261026-152151/graphiques/erreurs.png)
 
-### 4.2 Quelle propriété technique explique cet écart ?
+## Écarts chiffrés
 
-Les VM exécutent des systèmes invités séparés avec leurs ressources allouées ; les conteneurs partagent le noyau de leur environnement Linux. Sous Windows, Docker dépend lui-même d'un environnement Linux : son coût ne disparaît pas. Le Compose archivé ne fixe pas de quotas CPU/RAM par service, alors que les VM ont des budgets alloués. Le backend Docker atteint environ 919 à 949 % CPU à 50 utilisateurs, soit plus de neuf cœurs logiques occupés en moyenne selon docker stats. Cet accès aux ressources est une explication possible d'une partie de l'écart. Le coût propre de VirtualBox ne peut pas être isolé sans aligner les budgets, versions, données et outils d'injection.
+Le meilleur débit sans erreur observé vaut 3,77 req/s en VM et 5,48 req/s sous Docker, aux charges indiquées page 1. À 10 utilisateurs, le p95 moyen est respectivement 3,79 s et 2,50 s. Ces moyennes décrivent deux essais ; ce ne sont pas des garanties de capacité durable.
 
-### 4.3 Quel composant cède en premier, dans chaque cas ?
+## Explications
 
-Sur VM, le débit plafonne vers 5 req/s entre 10 et 50 utilisateurs tandis que le p95 augmente de 2,59 à 12,83 s. Les relevés manuels CPU du métier vont de 2,5 % à 13,2 % en moyenne, avec un maximum observé de 26,6 % à 100 ; leur périmètre ne prouve pas une saturation CPU. À 100, les CSV contiennent 37 réponses 500, 17 réponses 504 et 4 réponses 401. Les causes Argon2 et pool DB restent des hypothèses faute de journaux VM archivés. Sur Docker, la hausse du CPU métier et de la mémoire précède le décrochage. À 100, les journaux prouvent l'épuisement du pool SQLAlchemy (5 connexions + 10 de débordement, attente 30 s). Les 16 connexions MySQL relevées incluent la connexion de surveillance. Cela ne démontre pas une saturation du moteur MySQL. Les p95 proches de 30 s reflètent surtout le timeout client.
+Les VM exécutent trois systèmes invités, tandis que les conteneurs partagent le noyau de la VM Linux de Docker Desktop. Le coût de l'ordonnancement et du réseau diffère. Les versions de Python (VM 3.12 / Docker 3.14), MySQL (8.0 / 8.4) et Nginx diffèrent également : les résultats comparent ces installations concrètes, sans isoler l'effet de la virtualisation.
 
-### 4.4 Que ne dit pas cette mesure ?
+## Composant limitant
 
-Les essais ne mesurent ni la capacité de production, ni la tolérance aux pannes, ni un déploiement sur plusieurs hôtes physiques. Ils portent sur un parcours à deux requêtes, avec 25 comptes réutilisés au-delà de 25 utilisateurs, et ne couvrent pas les photos, les imports GPX ou les écritures sociales. Les centiles agrègent connexion et consultation ; les résultats par type sont fournis en annexe CSV. Les courbes incluent les échecs : leur latence représente parfois un délai d'abandon. La répétabilité Docker est acceptable sur débit et p95 de 1 à 25, mais échoue à 50. Une seule série VM est disponible. L'ordre inversé VM/Docker dans une même session n'est pas établi. Les données ne permettent donc pas une conclusion générale sur la supériorité d'une architecture.
+VM : CPU moyen backend jusqu'à 95,1 % d'un cœur, contre 13,6 % pour MySQL ; maximum 16 connexions, surveillance comprise. Les journaux confirment un pool SQLAlchemy de 5 + 10 connexions épuisé. DK : CPU moyen backend jusqu'à 102,3 % d'un cœur, contre 8,3 % pour MySQL ; maximum 16 connexions, surveillance comprise. Les journaux confirment un pool SQLAlchemy de 5 + 10 connexions épuisé. Le pool est une limite applicative : cela ne prouve pas la saturation du moteur MySQL. Les courbes et les métriques par palier permettent de distinguer le ralentissement préalable de l'échec à forte charge. Après la première surcharge Docker, le backend était unhealthy sans OOM ; un redémarrage hors mesure a précédé la réinitialisation de la série suivante.
 
-## 5. Traçabilité et compléments nécessaires
+## Limites
 
-VM : charge/resultats/vm-*.csv ; six paliers, une série. Docker : charge/resultats/dk-*-r*-20261021-113529-649.csv ; six paliers, deux séries. Les deux contrôles supplémentaires à 50 sont conservés sous le suffixe 115723-513 et ne remplacent pas la campagne principale. Les statistiques, plans exécutés, configurations, journaux et métriques serveur Docker sont dans les dossiers de session correspondants. L'étalonnage statique du 21 octobre est conservé, avec ses bruts compressés sans perte. Les fichiers de synthèse ajoutés sont dérivés ; les données sources sont inchangées.
+Deux répétitions de 60 s ne couvrent ni l'endurance ni la disponibilité, les pannes ou une distribution multi-hôtes. Le poste héberge aussi l'injecteur ; les tâches de fond, caches et températures ne sont pas parfaitement contrôlés. Les temporisations client plafonnent les latences d'échec autour de 30 s. Les versions et les modalités de quotas/swap diffèrent. Les anciennes mesures sur le PC de Rémi restent historiques et sont exclues de cette comparaison.
 
-Pour valider la comparaison : rejouer les deux déploiements sur le même poste avec le même plan exécuté et les mêmes timeouts, limiter CPU/RAM de façon équivalente, réinitialiser la base depuis les mêmes scripts et relever les empreintes du code et des données. Mesurer 60 s hors montée, conserver les métriques serveur par service, puis répéter avec ordre inversé. Stabiliser le palier 50 et ajouter les captures GUI du parcours nominal et du mot de passe erroné. Ces opérations produisent de nouvelles preuves ; une mise en forme ne peut pas les remplacer.
+## Validation et traçabilité
 
-Voir [l’index des livrables](../charge/README.md), [l’étalonnage](../charge/etalonnage.md), [les mesures client détaillées](../charge/resultats/synthese/mesures-client.csv) et [les relevés serveur Docker](../charge/resultats/synthese/mesures-serveur-docker.csv).
+Mesures et contrôles CLI archivés. Les captures de validation dans l'interface JMeter restent à réaliser : l'outil de contrôle Windows a refusé l'accès à Java, même après l'accord utilisateur. Les plans GUI positif/négatif sont fournis ; aucun succès graphique n'est affirmé. Traçabilité : configuration.json (empreintes), PROTOCOLE.md, etapes/*-resultat.json, *-serveur.jsonl et *-backend.txt, calibration/, baseline-vm.json et baseline-dk.json. Les CSV bruts vm/dk portant l'identifiant 20261026-152151 sont dans bruts/charge ; l'étalonnage est dans bruts/etalonnage. Les données anciennes restent inchangées.
 
-[Version PDF paginée en quatre pages](rapport-charge.pdf).
+
+## Autres mesures du rendu
+
+Les [mesures de référence de Rémi](synthese-mesures-remi.md) complètent la partie déploiement : démarrage, mémoire, disque, latence, isolation et persistance. Elles restent distinctes de cette campagne de charge. Voir aussi le [rapport historique conservé](rapport-charge-historique-remi.md) et le [PDF principal](rapport-charge.pdf).

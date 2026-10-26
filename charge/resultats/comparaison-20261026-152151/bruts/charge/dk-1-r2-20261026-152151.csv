@@ -1,0 +1,81 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1793027946055,504,__measurement_origin,200,"Measurement origin, excluded from statistics",Origine de mesure 1-1,text,true,,0,0,1,1,null,0,0,0
+1793027947493,217,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,474,268,1,1,http://127.0.0.1:8080/api/auth/login,216,0,26
+1793027948693,34,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,34,0,0
+1793027949450,263,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,474,268,1,1,http://127.0.0.1:8080/api/auth/login,263,0,0
+1793027950623,26,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,26,0,0
+1793027951383,215,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,474,268,1,1,http://127.0.0.1:8080/api/auth/login,215,0,0
+1793027952197,25,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,25,0,0
+1793027952970,238,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,474,268,1,1,http://127.0.0.1:8080/api/auth/login,238,0,0
+1793027953906,23,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,23,0,0
+1793027954452,249,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,249,0,0
+1793027955403,25,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,25,0,0
+1793027956102,297,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,297,0,0
+1793027957387,26,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,25,0,0
+1793027957979,225,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,225,0,0
+1793027959032,28,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,28,0,0
+1793027959735,245,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,245,0,0
+1793027960936,28,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,28,0,0
+1793027961850,346,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,346,0,0
+1793027963011,32,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,32,0,0
+1793027963858,326,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,325,0,0
+1793027964994,30,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,30,0,0
+1793027965798,211,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,211,0,0
+1793027966981,23,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,23,0,0
+1793027967698,383,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,383,0,0
+1793027968633,27,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,27,0,0
+1793027969300,198,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,198,0,0
+1793027970472,26,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,26,0,0
+1793027971179,230,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,230,0,0
+1793027972348,21,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,21,0,0
+1793027973075,323,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,322,0,0
+1793027973936,25,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,25,0,0
+1793027974737,169,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,168,0,0
+1793027975793,23,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,23,0,0
+1793027976781,231,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,231,0,0
+1793027977897,23,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,23,0,0
+1793027978545,242,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,242,0,0
+1793027979434,18,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,18,0,0
+1793027980133,170,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,170,0,0
+1793027980887,22,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,22,0,0
+1793027981797,217,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,217,0,0
+1793027982612,20,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,19,0,0
+1793027983620,196,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,196,0,0
+1793027984783,21,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,21,0,0
+1793027985440,260,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,259,0,0
+1793027986616,24,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,24,0,0
+1793027987220,189,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,189,0,0
+1793027988342,25,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,25,0,0
+1793027989272,229,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,229,0,0
+1793027990472,23,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,23,0,0
+1793027991465,247,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,247,0,0
+1793027992662,26,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,26,0,0
+1793027993352,156,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,474,268,1,1,http://127.0.0.1:8080/api/auth/login,155,0,0
+1793027994057,22,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,22,0,0
+1793027994890,391,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,474,268,1,1,http://127.0.0.1:8080/api/auth/login,391,0,0
+1793027996056,26,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,26,0,0
+1793027996913,264,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,474,268,1,1,http://127.0.0.1:8080/api/auth/login,264,0,0
+1793027998122,23,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,23,0,0
+1793027998706,198,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,474,268,1,1,http://127.0.0.1:8080/api/auth/login,198,0,0
+1793027999649,23,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,23,0,0
+1793028000242,151,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,151,0,0
+1793028001268,29,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,29,0,0
+1793028002278,222,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,222,0,0
+1793028003330,27,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,27,0,0
+1793028003911,279,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,279,0,0
+1793028005155,29,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,29,0,0
+1793028006117,381,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,381,0,0
+1793028007190,25,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,25,0,0
+1793028007944,161,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,161,0,1
+1793028008742,24,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,24,0,0
+1793028009446,256,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,256,0,0
+1793028010565,23,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,23,0,0
+1793028011455,242,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,242,0,0
+1793028012635,25,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,25,0,0
+1793028013281,217,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,216,0,0
+1793028014178,33,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,33,0,0
+1793028014751,250,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,250,0,0
+1793028015772,21,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,21,0,0
+1793028016731,262,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,262,0,0
+1793028017613,22,02 - Consultation Refuges,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,4365,266,1,1,http://127.0.0.1:8080/api/refuges?limit=20,22,0,0
+1793028018287,217,01 - Connexion,200,OK,Groupe d'utilisateurs virtuels 1-1,text,true,,475,268,1,1,http://127.0.0.1:8080/api/auth/login,217,0,0

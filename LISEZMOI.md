@@ -1,5 +1,7 @@
 # Refuges — Application Web Trois-Tiers
 
+**Rendu :** [index de toutes les parties](docs/RENDU.md), [rapport de charge principal](docs/rapport-charge.pdf) et [mesures de Rémi intégrées](docs/synthese-mesures-remi.md).
+
 **Binôme :** Akrem SOUSSI & Rémi CORTIAL
 **Établissement :** Aix-Marseille Université — École d'ingénieurs (Polytech Marseille)
 **Année universitaire :** 2025 – 2026

@@ -1,0 +1,56 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Visiteur as V
+actor "Utilisateur actif" as U
+actor Modérateur as M
+actor "Super-administrateur" as S
+M --|> U
+S --|> M
+rectangle "MyHike / Refuges" {
+  usecase "Créer un compte" as UC0
+  usecase "Se connecter" as UC1
+  usecase "Confirmer l’adresse e-mail" as UC2
+  usecase "Réinitialiser un mot de passe oublié" as UC3
+  usecase "Explorer la carte et les fiches des refuges" as UC4
+  usecase "Rechercher des refuges, communautés et utilisateurs" as UC5
+  usecase "Rejoindre ou quitter une communauté" as UC6
+  usecase "Publier avec des photos ou une trace GPX" as UC7
+  usecase "Aimer des publications et gérer ses propres publications" as UC8
+  usecase "Gérer son profil, sa confidentialité et ses amis" as UC9
+  usecase "Organiser des sorties et inviter des participants" as UC10
+  usecase "Rejoindre ou quitter une sortie" as UC11
+  usecase "Signaler un compte ou une publication" as UC12
+  usecase "Se déconnecter" as UC13
+  usecase "Examiner et traiter les signalements" as UC14
+  usecase "Supprimer des publications inappropriées" as UC15
+  usecase "Créer, modifier ou supprimer des communautés" as UC16
+  usecase "Gérer les comptes utilisateurs classiques" as UC17
+  usecase "Promouvoir ou rétrograder des modérateurs" as UC18
+  usecase "Gérer les comptes des modérateurs" as UC19
+}
+V -- UC0
+V -- UC1
+V -- UC2
+V -- UC3
+U -- UC4
+U -- UC5
+U -- UC6
+U -- UC7
+U -- UC8
+U -- UC9
+U -- UC10
+U -- UC11
+U -- UC12
+U -- UC13
+M -- UC14
+M -- UC15
+M -- UC16
+M -- UC17
+S -- UC18
+S -- UC19
+note bottom of U : Un compte actif et une adresse confirmée sont nécessaires.
+note bottom of S : Impossible de modifier ou sanctionner un super-administrateur.
+Impossible de se sanctionner soi-même.
+note top of V : Les conditions et le statut du service sont accessibles à tous.
+@enduml

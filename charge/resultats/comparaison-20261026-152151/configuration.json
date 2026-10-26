@@ -1,0 +1,48 @@
+{
+  "id": "20261026-152151",
+  "started_utc": "2026-10-26T14:21:51.829166+00:00",
+  "completion": "measurements_complete_gui_captures_pending",
+  "users": [
+    1,
+    5,
+    10,
+    25,
+    50,
+    100
+  ],
+  "ramp_seconds": 10,
+  "plateau_seconds": 60,
+  "duration_seconds": 72,
+  "order": [
+    "vm-r1",
+    "dk-r1",
+    "dk-r2",
+    "vm-r2"
+  ],
+  "resources_per_tier": {
+    "cpus": 1,
+    "memory_mb": 2048
+  },
+  "hashes": {
+    "comptes.csv": "ff283447f21f37271b870826f23662eba0feafbd9e6b0e9cd1d2946dcb2751d4",
+    "peuplement.sql": "6f4e5fcf5b959b5a8caaaf1b78ccb2d6b500a11b4733d3799a5a2ffb7e6264cc",
+    "plan-etalonnage-execute.jmx": "353fd27deb8d96508371789b1b469e4b69798d75e897fff2e94289dfee34d1f3",
+    "plan-execute.jmx": "160b5b402300e06c78569b28d3a046a310391dd189e171a1fc5f3aa0506eba0c",
+    "schema.sql": "1c14ca91e93ffa592156947980adb3d91260be0c727b2413b9a60a3b76b51d21"
+  },
+  "historical_results_preserved": true,
+  "limitations": [
+    "Versions OS, Python et MySQL differentes entre les deploiements existants; details dans les configurations."
+  ],
+  "completed_utc": "2026-10-26T15:52:24.381760+00:00",
+  "unstable_loads": [
+    "VM 5 u.",
+    "VM 10 u.",
+    "VM 50 u.",
+    "DK 1 u.",
+    "DK 5 u."
+  ],
+  "repeatability_all_loads_under_10_percent": false,
+  "gui_captures_complete": false,
+  "measured_load_runs": 24
+}

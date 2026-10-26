@@ -1,0 +1,4 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1793025032626,505,__measurement_origin,200,"Measurement origin, excluded from statistics",Origine de mesure 1-1,text,true,,0,0,1,1,null,0,0,0
+1793025034121,558,01 - Connexion,401,Unauthorized,Groupe d'utilisateurs virtuels 1-1,text,false,Erreur lors de la connexion utilisateur,259,279,1,1,http://127.0.0.1:8080/api/auth/login,558,0,34
+1793025035360,18,02 - Consultation Refuges,401,Unauthorized,Groupe d'utilisateurs virtuels 1-1,text,false,Erreur lors de la consultation des refuges,255,197,1,1,http://127.0.0.1:8080/api/refuges?limit=20,18,0,0

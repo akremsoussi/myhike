@@ -1,0 +1,60 @@
+sequenceDiagram
+    autonumber
+    actor U as Utilisateur
+    participant B as Navigateur / React
+    participant N as Proxy Nginx
+    participant A as Routes FastAPI et dépendances
+    participant S as Modules accounts et security
+    participant D as MySQL / SQLAlchemy
+    U->>B: Saisir l’e-mail et le mot de passe
+    B->>N: POST /api/auth/login (JSON)
+    N->>A: Transmettre au serveur métier :8000
+    A->>S: authenticate(db, email, password)
+    S->>D: SELECT utilisateur par e-mail
+    D-->>S: Utilisateur et empreinte Argon2id, ou absence de résultat
+    S->>S: Vérifier le mot de passe avec Argon2id
+    alt Identifiants incorrects
+        S-->>A: ApiError 401 invalid_credentials
+        A-->>N: 401 erreur JSON
+        N-->>B: Afficher l’erreur de connexion
+    else Compte suspendu
+        S-->>A: ApiError 403 account_suspended
+        A-->>N: 403 erreur JSON
+        N-->>B: Afficher le refus d’accès
+    else Identifiants valides et compte non suspendu
+        S-->>A: Utilisateur
+        A->>S: create_session(db, user)
+        S->>S: Générer un jeton aléatoire et son empreinte SHA-256
+        S->>D: INSERT sessions(token_hash, user_id, expires_at) et COMMIT
+        D-->>S: Session enregistrée
+        S-->>A: Jeton brut destiné au cookie
+        A-->>N: 200 MeOut + Set-Cookie: refuges_session
+        N-->>B: Enregistrer le cookie HttpOnly / SameSite=Lax
+    end
+    Note over B,D: La requête protégée suppose une connexion réussie. Un compte non confirmé ne peut pas accéder à la carte.
+    U->>B: Ouvrir la carte des refuges
+    B->>N: GET /api/refuges?limit=20 + cookie de session
+    N->>A: Transmettre la requête
+    A->>S: session_user(db, jeton du cookie)
+    S->>S: Calculer le SHA-256 du jeton reçu dans le cookie
+    S->>D: SELECT session non révoquée, non expirée et utilisateur associé
+    D-->>S: Session et utilisateur, ou absence de résultat
+    S-->>A: Utilisateur ou None
+    A->>A: get_current_user + require_active
+    alt Session absente, expirée ou révoquée
+        A-->>N: 401 not_authenticated
+        N-->>B: Erreur JSON / connexion nécessaire
+    else Compte suspendu ou adresse e-mail non confirmée
+        A-->>N: 403 account_suspended / account_pending
+        N-->>B: Accès refusé / confirmation nécessaire
+    else Utilisateur actif
+        A->>D: COUNT des refuges correspondant aux filtres
+        D-->>A: Nombre total
+        A->>D: SELECT refuges LEFT JOIN massifs ORDER BY name, id LIMIT 20
+        D-->>A: Objets ORM
+        A->>A: Construire les schémas RefugeList / RefugeSummary
+        A-->>N: 200 JSON (total, items)
+        N-->>B: Réponse JSON
+        B-->>U: Afficher la carte et la liste des refuges
+    end
+    Note over A,D: Une Session SQLAlchemy est créée par requête puis fermée. Les requêtes internes de rafraîchissement ORM sont simplifiées.

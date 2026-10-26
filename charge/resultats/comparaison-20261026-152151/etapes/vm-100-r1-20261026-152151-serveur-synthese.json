@@ -1,0 +1,56 @@
+{
+  "users": 100,
+  "samples": 15,
+  "collection_errors": 0,
+  "measurement_start_ms": 1793026187782,
+  "measurement_end_ms": 1793026247782,
+  "services": {
+    "db": {
+      "cpu_percent_mean": 6.709015992274523,
+      "cpu_percent_max": 17.516715133200748,
+      "memory_bytes_mean": 445270698.6666667,
+      "memory_bytes_max": 445284352,
+      "guest_cpu_percent_mean": 22.950188292584507,
+      "guest_cpu_percent_max": 33.599999999999994,
+      "guest_memory_used_bytes_mean": 772859767.4666667,
+      "guest_memory_used_bytes_max": 774164480,
+      "block_read_bytes_delta": 0,
+      "block_written_bytes_delta": 4399104
+    },
+    "backend": {
+      "cpu_percent_mean": 74.85633961110318,
+      "cpu_percent_max": 97.27335183478822,
+      "memory_bytes_mean": 511388876.8,
+      "memory_bytes_max": 781963264,
+      "guest_cpu_percent_mean": 81.58023797699965,
+      "guest_cpu_percent_max": 100.0,
+      "guest_memory_used_bytes_mean": 918859229.8666667,
+      "guest_memory_used_bytes_max": 1249906688,
+      "block_read_bytes_delta": 1126400,
+      "block_written_bytes_delta": 0
+    },
+    "frontend": {
+      "cpu_percent_mean": 1.6649170545203908,
+      "cpu_percent_max": 7.427727589505196,
+      "memory_bytes_mean": 5435665.066666666,
+      "memory_bytes_max": 5476352,
+      "guest_cpu_percent_mean": 18.16342942404652,
+      "guest_cpu_percent_max": 28.26855123674912,
+      "guest_memory_used_bytes_mean": 337750698.6666667,
+      "guest_memory_used_bytes_max": 337780736,
+      "block_read_bytes_delta": 0,
+      "block_written_bytes_delta": 36864
+    }
+  },
+  "java_cpu_percent_host_mean": 0.16155423463009536,
+  "java_cpu_percent_host_max": 0.6362850840718567,
+  "java_working_set_bytes_max": 295628800,
+  "host_available_memory_bytes_min": 3194032128,
+  "host_cpu_percent_max": 32.4,
+  "Threads_connected_mean": 16,
+  "Threads_connected_max": 16,
+  "Threads_running_mean": 2.066666666666667,
+  "Threads_running_max": 3,
+  "Innodb_data_read_delta": 0,
+  "Innodb_data_written_delta": 3065856
+}

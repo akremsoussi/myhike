@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1956" viewBox="0 0 1200 1956">
+<title>MyHike — diagramme de cas d’utilisation</title>
+<defs><marker id="generalization" markerWidth="18" markerHeight="18" refX="16" refY="9" orient="auto"><path d="M1,1 L17,9 L1,17 Z" fill="white" stroke="#526475" stroke-width="1.5" /></marker></defs>
+<rect width="1200" height="1956" fill="#ffffff" />
+<rect x="315" y="30" width="840" height="1846" rx="15" fill="#f6faf9" stroke="#94b4aa" stroke-width="2" />
+<text x="735" y="65" text-anchor="middle" font-family="Arial" font-size="25" font-weight="bold" fill="#153c33">MyHike / Refuges</text>
+<path d="M170,224.0 L420,110" fill="none" stroke="#577387" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="110" rx="350" ry="29" fill="white" stroke="#577387" stroke-width="1.7" />
+<text x="770" y="116" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Créer un compte</text>
+<path d="M170,224.0 L420,186" fill="none" stroke="#577387" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="186" rx="350" ry="29" fill="white" stroke="#577387" stroke-width="1.7" />
+<text x="770" y="192" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Se connecter</text>
+<path d="M170,224.0 L420,262" fill="none" stroke="#577387" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="262" rx="350" ry="29" fill="white" stroke="#577387" stroke-width="1.7" />
+<text x="770" y="268" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Confirmer l’adresse e-mail</text>
+<path d="M170,224.0 L420,338" fill="none" stroke="#577387" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="338" rx="350" ry="29" fill="white" stroke="#577387" stroke-width="1.7" />
+<text x="770" y="344" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Réinitialiser un mot de passe oublié</text>
+<circle cx="155" cy="176.0" r="17" fill="white" stroke="#577387" stroke-width="2.5" />
+<path d="M155,193.0 V240.0 M126,214.0 H184 M155,240.0 L132,269.0 M155,240.0 L178,269.0" stroke="#577387" stroke-width="2.5" fill="none" />
+<text x="155" y="296.0" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#577387">Visiteur</text>
+<path d="M170,815.0 L420,473" fill="none" stroke="#18745d" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="473" rx="350" ry="29" fill="white" stroke="#18745d" stroke-width="1.7" />
+<text x="770" y="479" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Explorer la carte et les fiches des refuges</text>
+<path d="M170,815.0 L420,549" fill="none" stroke="#18745d" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="549" rx="350" ry="29" fill="white" stroke="#18745d" stroke-width="1.7" />
+<text x="770" y="555" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Rechercher des refuges, communautés et utilisateurs</text>
+<path d="M170,815.0 L420,625" fill="none" stroke="#18745d" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="625" rx="350" ry="29" fill="white" stroke="#18745d" stroke-width="1.7" />
+<text x="770" y="631" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Rejoindre ou quitter une communauté</text>
+<path d="M170,815.0 L420,701" fill="none" stroke="#18745d" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="701" rx="350" ry="29" fill="white" stroke="#18745d" stroke-width="1.7" />
+<text x="770" y="707" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Publier avec des photos ou une trace GPX</text>
+<path d="M170,815.0 L420,777" fill="none" stroke="#18745d" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="777" rx="350" ry="29" fill="white" stroke="#18745d" stroke-width="1.7" />
+<text x="770" y="783" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Aimer des publications et gérer ses propres publications</text>
+<path d="M170,815.0 L420,853" fill="none" stroke="#18745d" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="853" rx="350" ry="29" fill="white" stroke="#18745d" stroke-width="1.7" />
+<text x="770" y="859" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Gérer son profil, sa confidentialité et ses amis</text>
+<path d="M170,815.0 L420,929" fill="none" stroke="#18745d" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="929" rx="350" ry="29" fill="white" stroke="#18745d" stroke-width="1.7" />
+<text x="770" y="935" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Organiser des sorties et inviter des participants</text>
+<path d="M170,815.0 L420,1005" fill="none" stroke="#18745d" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="1005" rx="350" ry="29" fill="white" stroke="#18745d" stroke-width="1.7" />
+<text x="770" y="1011" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Rejoindre ou quitter une sortie</text>
+<path d="M170,815.0 L420,1081" fill="none" stroke="#18745d" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="1081" rx="350" ry="29" fill="white" stroke="#18745d" stroke-width="1.7" />
+<text x="770" y="1087" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Signaler un compte ou une publication</text>
+<path d="M170,815.0 L420,1157" fill="none" stroke="#18745d" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="1157" rx="350" ry="29" fill="white" stroke="#18745d" stroke-width="1.7" />
+<text x="770" y="1163" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Se déconnecter</text>
+<circle cx="155" cy="767.0" r="17" fill="white" stroke="#18745d" stroke-width="2.5" />
+<path d="M155,784.0 V831.0 M126,805.0 H184 M155,831.0 L132,860.0 M155,831.0 L178,860.0" stroke="#18745d" stroke-width="2.5" fill="none" />
+<text x="155" y="887.0" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#18745d">Utilisateur actif</text>
+<path d="M170,1406.0 L420,1292" fill="none" stroke="#87652c" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="1292" rx="350" ry="29" fill="white" stroke="#87652c" stroke-width="1.7" />
+<text x="770" y="1298" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Examiner et traiter les signalements</text>
+<path d="M170,1406.0 L420,1368" fill="none" stroke="#87652c" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="1368" rx="350" ry="29" fill="white" stroke="#87652c" stroke-width="1.7" />
+<text x="770" y="1374" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Supprimer des publications inappropriées</text>
+<path d="M170,1406.0 L420,1444" fill="none" stroke="#87652c" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="1444" rx="350" ry="29" fill="white" stroke="#87652c" stroke-width="1.7" />
+<text x="770" y="1450" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Créer, modifier ou supprimer des communautés</text>
+<path d="M170,1406.0 L420,1520" fill="none" stroke="#87652c" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="1520" rx="350" ry="29" fill="white" stroke="#87652c" stroke-width="1.7" />
+<text x="770" y="1526" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Gérer les comptes utilisateurs classiques</text>
+<circle cx="155" cy="1358.0" r="17" fill="white" stroke="#87652c" stroke-width="2.5" />
+<path d="M155,1375.0 V1422.0 M126,1396.0 H184 M155,1422.0 L132,1451.0 M155,1422.0 L178,1451.0" stroke="#87652c" stroke-width="2.5" fill="none" />
+<text x="155" y="1478.0" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#87652c">Modérateur</text>
+<path d="M170,1693.0 L420,1655" fill="none" stroke="#74549a" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="1655" rx="350" ry="29" fill="white" stroke="#74549a" stroke-width="1.7" />
+<text x="770" y="1661" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Promouvoir ou rétrograder des modérateurs</text>
+<path d="M170,1693.0 L420,1731" fill="none" stroke="#74549a" stroke-width="1.5" opacity="0.68" />
+<ellipse cx="770" cy="1731" rx="350" ry="29" fill="white" stroke="#74549a" stroke-width="1.7" />
+<text x="770" y="1737" text-anchor="middle" font-family="Arial" font-size="18" fill="#172e29">Gérer les comptes des modérateurs</text>
+<circle cx="155" cy="1645.0" r="17" fill="white" stroke="#74549a" stroke-width="2.5" />
+<path d="M155,1662.0 V1709.0 M126,1683.0 H184 M155,1709.0 L132,1738.0 M155,1709.0 L178,1738.0" stroke="#74549a" stroke-width="2.5" fill="none" />
+<text x="155" y="1765.0" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#74549a">Super-administrateur</text>
+<path d="M138,1363.0 H60 V910.0 H155 V897.0" fill="none" stroke="#526475" stroke-width="1.5" marker-end="url(#generalization)" />
+<path d="M138,1650.0 H60 V1501.0 H155 V1488.0" fill="none" stroke="#526475" stroke-width="1.5" marker-end="url(#generalization)" />
+<text x="35" y="1901" font-family="Arial" font-size="14" fill="#536960">Le modérateur hérite des droits utilisateur ; le super-administrateur hérite des droits du modérateur.</text>
+<text x="35" y="1922" font-family="Arial" font-size="14" fill="#536960">Les fonctions utilisateur exigent un compte actif et confirmé. Conditions et statut sont publics.</text>
+<text x="35" y="1943" font-family="Arial" font-size="14" fill="#536960">Les super-administrateurs sont protégés ; les auto-sanctions sont interdites. Certains objectifs sont regroupés.</text>
+</svg>

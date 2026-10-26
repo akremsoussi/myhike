@@ -1,0 +1,1252 @@
+{
+  "cpu_count": 12,
+  "memory": {
+    "total": 16440479744,
+    "available": 3319390208,
+    "percent": 79.8,
+    "used": 13121089536,
+    "free": 3319390208
+  },
+  "processes": [
+    {
+      "name": "System Idle Process",
+      "rss": 8192
+    },
+    {
+      "name": "System",
+      "rss": 12288
+    },
+    {
+      "name": "",
+      "rss": 72794112
+    },
+    {
+      "name": "Registry",
+      "rss": 34406400
+    },
+    {
+      "name": "smss.exe",
+      "rss": 270336
+    },
+    {
+      "name": "Docker Desktop.exe",
+      "rss": 152350720
+    },
+    {
+      "name": "csrss.exe",
+      "rss": 2592768
+    },
+    {
+      "name": "wininit.exe",
+      "rss": 1282048
+    },
+    {
+      "name": "amdpmfservice.exe",
+      "rss": 3559424
+    },
+    {
+      "name": "services.exe",
+      "rss": 8482816
+    },
+    {
+      "name": "LsaIso.exe",
+      "rss": 4096
+    },
+    {
+      "name": "lsass.exe",
+      "rss": 17981440
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 2449408
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 28704768
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 2109440
+    },
+    {
+      "name": "fontdrvhost.exe",
+      "rss": 151552
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 15802368
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 872448
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 4304896
+    },
+    {
+      "name": "node_repl.exe",
+      "rss": 15294464
+    },
+    {
+      "name": "taskhostw.exe",
+      "rss": 8646656
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 3461120
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 7593984
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 4808704
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 5419008
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 6828032
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 4227072
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 1470464
+    },
+    {
+      "name": "winlogon.exe",
+      "rss": 2191360
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 14045184
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 4714496
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 12783616
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 2281472
+    },
+    {
+      "name": "ChatGPT.exe",
+      "rss": 279789568
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 4407296
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 7458816
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 1671168
+    },
+    {
+      "name": "Docker Desktop.exe",
+      "rss": 59068416
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 8949760
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 8589312
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 3997696
+    },
+    {
+      "name": "WmiPrvSE.exe",
+      "rss": 7548928
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 11337728
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 3084288
+    },
+    {
+      "name": "OmenCap.exe",
+      "rss": 4096
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 5476352
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 6565888
+    },
+    {
+      "name": "helperservice.exe",
+      "rss": 8192
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 2359296
+    },
+    {
+      "name": "unsecapp.exe",
+      "rss": 2768896
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 1507328
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 7647232
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 237568
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 421888
+    },
+    {
+      "name": "spoolsv.exe",
+      "rss": 2584576
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 14954496
+    },
+    {
+      "name": "SynTPEnhService.exe",
+      "rss": 278528
+    },
+    {
+      "name": "NVDisplay.Container.exe",
+      "rss": 13238272
+    },
+    {
+      "name": "amdfendrsr.exe",
+      "rss": 4096
+    },
+    {
+      "name": "atiesrxx.exe",
+      "rss": 1777664
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 13582336
+    },
+    {
+      "name": "codex.exe",
+      "rss": 89309184
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 7204864
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 1388544
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 1470464
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 12812288
+    },
+    {
+      "name": "dllhost.exe",
+      "rss": 12357632
+    },
+    {
+      "name": "Discord.exe",
+      "rss": 2371584
+    },
+    {
+      "name": "DiagsCap.exe",
+      "rss": 1798144
+    },
+    {
+      "name": "AppHelperCap.exe",
+      "rss": 2183168
+    },
+    {
+      "name": "NetworkCap.exe",
+      "rss": 2199552
+    },
+    {
+      "name": "SysInfoCap.exe",
+      "rss": 2535424
+    },
+    {
+      "name": "TouchpointAnalyticsClientService.exe",
+      "rss": 19255296
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 2244608
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 3989504
+    },
+    {
+      "name": "MemCompression",
+      "rss": 1145028608
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 17428480
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 10092544
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 10063872
+    },
+    {
+      "name": "codex.exe",
+      "rss": 73666560
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 4108288
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 2437120
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 3194880
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 10366976
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 3026944
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 204800
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 2830336
+    },
+    {
+      "name": "AmdPpkgSvc.exe",
+      "rss": 4096
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 3559424
+    },
+    {
+      "name": "DtsApo4Service.exe",
+      "rss": 1875968
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 33333248
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 2744320
+    },
+    {
+      "name": "RtkAudUService64.exe",
+      "rss": 2654208
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 29196288
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 712704
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 8466432
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 1777664
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 1806336
+    },
+    {
+      "name": "wslservice.exe",
+      "rss": 15077376
+    },
+    {
+      "name": "MBAMService.exe",
+      "rss": 62193664
+    },
+    {
+      "name": "IpOverUsbSvc.exe",
+      "rss": 3194880
+    },
+    {
+      "name": "MsMpEng.exe",
+      "rss": 273313792
+    },
+    {
+      "name": "MpDefenderCoreService.exe",
+      "rss": 12095488
+    },
+    {
+      "name": "cowork-svc.exe",
+      "rss": 2347008
+    },
+    {
+      "name": "MuseAuthService.exe",
+      "rss": 2248704
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 10530816
+    },
+    {
+      "name": "vmwp.exe",
+      "rss": 23863296
+    },
+    {
+      "name": "vmcompute.exe",
+      "rss": 9383936
+    },
+    {
+      "name": "AggregatorHost.exe",
+      "rss": 7704576
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 1880064
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 5799936
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 14192640
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 2646016
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 9981952
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 16392192
+    },
+    {
+      "name": "NgcIso.exe",
+      "rss": 1105920
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 13520896
+    },
+    {
+      "name": "ChatGPT.exe",
+      "rss": 367939584
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "rss": 13234176
+    },
+    {
+      "name": "Docker Desktop.exe",
+      "rss": 13910016
+    },
+    {
+      "name": "cmd.exe",
+      "rss": 212992
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "rss": 1282048
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 12251136
+    },
+    {
+      "name": "node.exe",
+      "rss": 46473216
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 21991424
+    },
+    {
+      "name": "codex-computer-use-swift.exe",
+      "rss": 16216064
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 184320
+    },
+    {
+      "name": "com.docker.backend.exe",
+      "rss": 170397696
+    },
+    {
+      "name": "sihost.exe",
+      "rss": 24981504
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 8531968
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 4706304
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 204800
+    },
+    {
+      "name": "PhoneExperienceHost.exe",
+      "rss": 36687872
+    },
+    {
+      "name": "node_repl.exe",
+      "rss": 14614528
+    },
+    {
+      "name": "WidgetBoard.exe",
+      "rss": 7704576
+    },
+    {
+      "name": "ApplicationFrameHost.exe",
+      "rss": 4435968
+    },
+    {
+      "name": "DefenderAiPlatformHost.exe",
+      "rss": 8192
+    },
+    {
+      "name": "node.exe",
+      "rss": 51617792
+    },
+    {
+      "name": "RuntimeBroker.exe",
+      "rss": 20516864
+    },
+    {
+      "name": "jusched.exe",
+      "rss": 13697024
+    },
+    {
+      "name": "node_repl.exe",
+      "rss": 12685312
+    },
+    {
+      "name": "codex.exe",
+      "rss": 79118336
+    },
+    {
+      "name": "codex.exe",
+      "rss": 74440704
+    },
+    {
+      "name": "python.exe",
+      "rss": 47747072
+    },
+    {
+      "name": "RtkAudUService64.exe",
+      "rss": 6377472
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 17047552
+    },
+    {
+      "name": "WmiPrvSE.exe",
+      "rss": 15245312
+    },
+    {
+      "name": "Discord.exe",
+      "rss": 26386432
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 1273856
+    },
+    {
+      "name": "SearchIndexer.exe",
+      "rss": 25038848
+    },
+    {
+      "name": "NisSrv.exe",
+      "rss": 6631424
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 2453504
+    },
+    {
+      "name": "SecurityHealthService.exe",
+      "rss": 8531968
+    },
+    {
+      "name": "pwsh.exe",
+      "rss": 4526080
+    },
+    {
+      "name": "ChatGPT.exe",
+      "rss": 1499136
+    },
+    {
+      "name": "ChatGPT.exe",
+      "rss": 49451008
+    },
+    {
+      "name": "node.exe",
+      "rss": 73728
+    },
+    {
+      "name": "codex.exe",
+      "rss": 78794752
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 3706880
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 7409664
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 8773632
+    },
+    {
+      "name": "Docker Desktop.exe",
+      "rss": 135872512
+    },
+    {
+      "name": "MicrosoftStartFeedProvider.exe",
+      "rss": 22065152
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 8065024
+    },
+    {
+      "name": "wsl.exe",
+      "rss": 13340672
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 8372224
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 2572288
+    },
+    {
+      "name": "dwm.exe",
+      "rss": 69910528
+    },
+    {
+      "name": "wsl.exe",
+      "rss": 9146368
+    },
+    {
+      "name": "ChatGPT.exe",
+      "rss": 32411648
+    },
+    {
+      "name": "codex.exe",
+      "rss": 78680064
+    },
+    {
+      "name": "RuntimeBroker.exe",
+      "rss": 14946304
+    },
+    {
+      "name": "pwsh.exe",
+      "rss": 79618048
+    },
+    {
+      "name": "jucheck.exe",
+      "rss": 9912320
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 237568
+    },
+    {
+      "name": "com.docker.build.exe",
+      "rss": 35106816
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 18665472
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 4059136
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 23310336
+    },
+    {
+      "name": "SecurityHealthSystray.exe",
+      "rss": 2908160
+    },
+    {
+      "name": "vgc.exe",
+      "rss": 105078784
+    },
+    {
+      "name": "vmmemWSL",
+      "rss": 2653720576
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "rss": 31158272
+    },
+    {
+      "name": "SystemSettings.exe",
+      "rss": 356352
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 983040
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 45056
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 1527808
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 7331840
+    },
+    {
+      "name": "mega-desktop-app-gfxworker.exe",
+      "rss": 1032192
+    },
+    {
+      "name": "XboxPcAppFT.exe",
+      "rss": 5464064
+    },
+    {
+      "name": "node_repl.exe",
+      "rss": 14725120
+    },
+    {
+      "name": "ChatGPT.exe",
+      "rss": 4788224
+    },
+    {
+      "name": "GameInputSvc.exe",
+      "rss": 6119424
+    },
+    {
+      "name": "CrossDeviceResume.exe",
+      "rss": 4263936
+    },
+    {
+      "name": "node.exe",
+      "rss": 47812608
+    },
+    {
+      "name": "PrintDialog.exe",
+      "rss": 131072
+    },
+    {
+      "name": "codex.exe",
+      "rss": 5582848
+    },
+    {
+      "name": "ShellHost.exe",
+      "rss": 13144064
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 1626112
+    },
+    {
+      "name": "node.exe",
+      "rss": 3657728
+    },
+    {
+      "name": "WidgetService.exe",
+      "rss": 7073792
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 4526080
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 8044544
+    },
+    {
+      "name": "node_repl.exe",
+      "rss": 98304
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 21905408
+    },
+    {
+      "name": "node.exe",
+      "rss": 44199936
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 1777664
+    },
+    {
+      "name": "node_repl.exe",
+      "rss": 7135232
+    },
+    {
+      "name": "taskhostw.exe",
+      "rss": 18509824
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 3907584
+    },
+    {
+      "name": "com.docker.backend.exe",
+      "rss": 72544256
+    },
+    {
+      "name": "UserOOBEBroker.exe",
+      "rss": 1376256
+    },
+    {
+      "name": "ChatGPT.exe",
+      "rss": 47439872
+    },
+    {
+      "name": "gamingservicesnet.exe",
+      "rss": 1675264
+    },
+    {
+      "name": "ShellExperienceHost.exe",
+      "rss": 53620736
+    },
+    {
+      "name": "DiscordSystemHelper.exe",
+      "rss": 1994752
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 1765376
+    },
+    {
+      "name": "codex-code-mode-host.exe",
+      "rss": 21311488
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 18657280
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 7548928
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 7761920
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 11055104
+    },
+    {
+      "name": "wlanext.exe",
+      "rss": 1667072
+    },
+    {
+      "name": "node.exe",
+      "rss": 3010560
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 49152
+    },
+    {
+      "name": "wslhost.exe",
+      "rss": 12349440
+    },
+    {
+      "name": "ChatGPT.exe",
+      "rss": 74973184
+    },
+    {
+      "name": "SynTPEnh.exe",
+      "rss": 6619136
+    },
+    {
+      "name": "RuntimeBroker.exe",
+      "rss": 22749184
+    },
+    {
+      "name": "ChatGPT.exe",
+      "rss": 515039232
+    },
+    {
+      "name": "msrdc.exe",
+      "rss": 46792704
+    },
+    {
+      "name": "wslhost.exe",
+      "rss": 12226560
+    },
+    {
+      "name": "StartMenuExperienceHost.exe",
+      "rss": 42295296
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "rss": 7946240
+    },
+    {
+      "name": "GameInputRedistService.exe",
+      "rss": 2301952
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 2850816
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 991232
+    },
+    {
+      "name": "Discord.exe",
+      "rss": 101023744
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 77824
+    },
+    {
+      "name": "OneDrive.Sync.Service.exe",
+      "rss": 43315200
+    },
+    {
+      "name": "dasHost.exe",
+      "rss": 12288
+    },
+    {
+      "name": "RtkAudUService64.exe",
+      "rss": 2592768
+    },
+    {
+      "name": "node.exe",
+      "rss": 35045376
+    },
+    {
+      "name": "codex.exe",
+      "rss": 73670656
+    },
+    {
+      "name": "audiodg.exe",
+      "rss": 29200384
+    },
+    {
+      "name": "wsl.exe",
+      "rss": 9105408
+    },
+    {
+      "name": "NVDisplay.Container.exe",
+      "rss": 12496896
+    },
+    {
+      "name": "ChatGPT.exe",
+      "rss": 6717440
+    },
+    {
+      "name": "ChatGPT.exe",
+      "rss": 13393920
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 10428416
+    },
+    {
+      "name": "SearchProtocolHost.exe",
+      "rss": 21688320
+    },
+    {
+      "name": "dasHost.exe",
+      "rss": 2220032
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 3186688
+    },
+    {
+      "name": "docker-agent.exe",
+      "rss": 54857728
+    },
+    {
+      "name": "ctfmon.exe",
+      "rss": 15642624
+    },
+    {
+      "name": "codex.exe",
+      "rss": 74432512
+    },
+    {
+      "name": "MEGAsync.exe",
+      "rss": 25305088
+    },
+    {
+      "name": "GameInputSvc.exe",
+      "rss": 12288
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 7745536
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 2023424
+    },
+    {
+      "name": "TextInputHost.exe",
+      "rss": 32108544
+    },
+    {
+      "name": "MidiSrv.exe",
+      "rss": 2367488
+    },
+    {
+      "name": "CrossDeviceService.exe",
+      "rss": 22315008
+    },
+    {
+      "name": "Malwarebytes.exe",
+      "rss": 170024960
+    },
+    {
+      "name": "Discord.exe",
+      "rss": 10108928
+    },
+    {
+      "name": "wslrelay.exe",
+      "rss": 10973184
+    },
+    {
+      "name": "python.exe",
+      "rss": 995328
+    },
+    {
+      "name": "wslhost.exe",
+      "rss": 12664832
+    },
+    {
+      "name": "codex.exe",
+      "rss": 79060992
+    },
+    {
+      "name": "gamingservices.exe",
+      "rss": 20262912
+    },
+    {
+      "name": "codex.exe",
+      "rss": 200912896
+    },
+    {
+      "name": "explorer.exe",
+      "rss": 189726720
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 757760
+    },
+    {
+      "name": "Discord.exe",
+      "rss": 507498496
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 10350592
+    },
+    {
+      "name": "amdpmfserviceuser.exe",
+      "rss": 585728
+    },
+    {
+      "name": "SearchHost.exe",
+      "rss": 24854528
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 7675904
+    },
+    {
+      "name": "codex-windows-sandbox-service.exe",
+      "rss": 466944
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 10313728
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 5152768
+    },
+    {
+      "name": "RuntimeBroker.exe",
+      "rss": 1974272
+    },
+    {
+      "name": "codex-computer-use.exe",
+      "rss": 33304576
+    },
+    {
+      "name": "RiotClientCrashHandler.exe",
+      "rss": 851968
+    },
+    {
+      "name": "ChatGPT.exe",
+      "rss": 30244864
+    },
+    {
+      "name": "vgtray.exe",
+      "rss": 4100096
+    },
+    {
+      "name": "Docker Desktop.exe",
+      "rss": 148480000
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 7663616
+    },
+    {
+      "name": "ChatGPT.exe",
+      "rss": 3325952
+    },
+    {
+      "name": "cmd.exe",
+      "rss": 7348224
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "rss": 3186688
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 2396160
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "rss": 8699904
+    },
+    {
+      "name": "DefenderSessionHelper.exe",
+      "rss": 888832
+    },
+    {
+      "name": "Taskmgr.exe",
+      "rss": 160014336
+    },
+    {
+      "name": "RiotClientServices.exe",
+      "rss": 13684736
+    },
+    {
+      "name": "csrss.exe",
+      "rss": 3633152
+    },
+    {
+      "name": "dllhost.exe",
+      "rss": 12451840
+    },
+    {
+      "name": "node.exe",
+      "rss": 42299392
+    },
+    {
+      "name": "wslhost.exe",
+      "rss": 12271616
+    },
+    {
+      "name": "Discord.exe",
+      "rss": 91172864
+    },
+    {
+      "name": "wsl.exe",
+      "rss": 13139968
+    },
+    {
+      "name": "fontdrvhost.exe",
+      "rss": 4128768
+    },
+    {
+      "name": "DiscordSystemHelper.exe",
+      "rss": 1490944
+    },
+    {
+      "name": "atieclxx.exe",
+      "rss": 4763648
+    },
+    {
+      "name": "ChatGPT.exe",
+      "rss": 6586368
+    },
+    {
+      "name": "OneDrive.exe",
+      "rss": 13299712
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 253952
+    },
+    {
+      "name": "svchost.exe",
+      "rss": 4247552
+    },
+    {
+      "name": "conhost.exe",
+      "rss": 1077248
+    }
+  ]
+}

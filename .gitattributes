@@ -1,0 +1,7 @@
+# Préserver les octets des preuves et des empreintes SHA-256
+charge/resultats/comparaison-*/** -text -whitespace
+*.pdf binary
+*.png binary
+*.jpg binary
+*.gz binary
+*.zip binary

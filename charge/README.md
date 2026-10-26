@@ -1,5 +1,7 @@
 # Partie 4 - Injection de charge JMeter
 
+**Campagne principale :** [24 essais du 26 octobre](resultats/comparaison-20261026-152151/README.md). [Index du rendu](../docs/RENDU.md). Les campagnes décrites ci-dessous sont conservées comme historique.
+
 Point d'entrée des livrables, organisé selon les étapes 15 à 18 du sujet (pages 54 à 59).
 
 | Étape | Livrable | Emplacement et état |

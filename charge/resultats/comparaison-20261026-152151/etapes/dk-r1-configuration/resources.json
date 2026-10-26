@@ -1,0 +1,29 @@
+[
+  {
+    "Name": "/refuges-backend-1",
+    "Image": "sha256:9fccb295d717ab6d3f7bf0daaf4fa815a5d68c7c4d54fc6e5b1a879b9bbd22dd",
+    "HostConfig": {
+      "NanoCpus": 1000000000,
+      "Memory": 2147483648,
+      "MemorySwap": 4294967296
+    }
+  },
+  {
+    "Name": "/refuges-db-1",
+    "Image": "sha256:24989179f58856db763f418010c1169fecc944e3ec1ea7e921572d83eb070f70",
+    "HostConfig": {
+      "NanoCpus": 1000000000,
+      "Memory": 2147483648,
+      "MemorySwap": 4294967296
+    }
+  },
+  {
+    "Name": "/refuges-frontend-1",
+    "Image": "sha256:21018461f65a8325698e96def4c64e1e5a0438939909d7e312448e3627a2e64c",
+    "HostConfig": {
+      "NanoCpus": 1000000000,
+      "Memory": 2147483648,
+      "MemorySwap": 4294967296
+    }
+  }
+]

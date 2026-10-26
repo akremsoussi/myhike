@@ -1,0 +1,59 @@
+{
+  "users": 1,
+  "samples": 15,
+  "collection_errors": 0,
+  "measurement_start_ms": 1793028680898,
+  "measurement_end_ms": 1793028740898,
+  "services": {
+    "db": {
+      "cpu_percent_mean": 4.436819297705292,
+      "cpu_percent_max": 6.044396834943808,
+      "memory_bytes_mean": 392974609.06666666,
+      "memory_bytes_max": 393019392,
+      "guest_cpu_percent_mean": 18.411216056312043,
+      "guest_cpu_percent_max": 25.806451612903224,
+      "guest_memory_used_bytes_mean": 704444552.5333333,
+      "guest_memory_used_bytes_max": 704897024,
+      "block_read_bytes_delta": 0,
+      "block_written_bytes_delta": 602112,
+      "unavailable_samples": 0
+    },
+    "backend": {
+      "cpu_percent_mean": 21.506794221112035,
+      "cpu_percent_max": 27.94160778577603,
+      "memory_bytes_mean": 75923729.06666666,
+      "memory_bytes_max": 134590464,
+      "guest_cpu_percent_mean": 25.736409001732106,
+      "guest_cpu_percent_max": 29.959514170040492,
+      "guest_memory_used_bytes_mean": 435195904,
+      "guest_memory_used_bytes_max": 447885312,
+      "block_read_bytes_delta": 0,
+      "block_written_bytes_delta": 0,
+      "unavailable_samples": 0
+    },
+    "frontend": {
+      "cpu_percent_mean": 0.5192555642009099,
+      "cpu_percent_max": 0.642202708584278,
+      "memory_bytes_mean": 3205802.6666666665,
+      "memory_bytes_max": 3211264,
+      "guest_cpu_percent_mean": 16.17594755544958,
+      "guest_cpu_percent_max": 20.99644128113879,
+      "guest_memory_used_bytes_mean": 332171673.6,
+      "guest_memory_used_bytes_max": 332464128,
+      "block_read_bytes_delta": 0,
+      "block_written_bytes_delta": 45056,
+      "unavailable_samples": 0
+    }
+  },
+  "java_cpu_percent_host_mean": 0.06630898489794242,
+  "java_cpu_percent_host_max": 0.2034648761989373,
+  "java_working_set_bytes_max": 287526912,
+  "host_available_memory_bytes_min": 3940208640,
+  "host_cpu_percent_max": 32.8,
+  "Threads_connected_mean": 2,
+  "Threads_connected_max": 2,
+  "Threads_running_mean": 2,
+  "Threads_running_max": 2,
+  "Innodb_data_read_delta": 0,
+  "Innodb_data_written_delta": 1406464
+}

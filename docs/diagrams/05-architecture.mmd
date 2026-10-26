@@ -1,0 +1,33 @@
+flowchart TB
+    U["Utilisateur / navigateur"]
+    subgraph PRESENTATION["Couche présentation"]
+        R["React 19 + TypeScript + Leaflet<br/>Interface, navigation, carte et formulaires"]
+        N["Nginx :80 dans le conteneur<br/>hôte localhost:8080<br/>Fichiers SPA et proxy inverse /api"]
+    end
+    subgraph BUSINESS["Couche métier"]
+        A["FastAPI / Uvicorn :8000<br/>Routes, schémas de validation et dépendances"]
+        S["Modules de services<br/>accounts, visibility, outings, posts, media…"]
+        O["Modèles SQLAlchemy et Session par requête<br/>PyMySQL / utf8mb4"]
+        I["Scripts d’import en ligne de commande<br/>import_refuges / import_refuge_photos"]
+    end
+    subgraph DATA["Données et stockage des fichiers"]
+        D[("MySQL 8.4 :3306<br/>users, sessions, refuges, posts…")]
+        F[("Volume uploads<br/>Images au format WebP")]
+    end
+    E["API refuges.info<br/>Source externe de données et de photos"]
+    M["Envoi des e-mails<br/>Console par défaut / SMTP si configuré"]
+    U --> R
+    R -->|"HTTP /api et cookie de session"| N
+    N -->|"Transmettre les requêtes /api"| A
+    A --> S
+    A --> O
+    S --> O
+    O -->|"SQL"| D
+    S -->|"Lire et écrire les fichiers image"| F
+    S --> M
+    I -->|"Importer les données via l’ORM"| O
+    I -->|"Récupérer les données et copier les photos"| E
+    I -->|"Stocker les images converties en WebP"| F
+    N -.->|"Servir l’interface compilée"| R
+    NOTE["Le navigateur ne charge pas les photos directement depuis refuges.info.<br/>Il utilise /api/media/key.webp sur le serveur métier.<br/>En développement, Vite :5173 et son proxy /api remplacent Nginx."]
+    A -.-> NOTE

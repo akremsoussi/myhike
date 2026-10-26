@@ -1,0 +1,4 @@
+users,label,samples,errors,error_pct,mean_ms,median_ms,p90_ms,p95_ms,p99_ms,throughput_rps,max_active_threads,measurement_start_ms,measurement_end_ms
+1,Total,56,0,0.0,305.375,254.5,536.0,540.5,1019.85,0.9333,1,1793025720084,1793025780084
+1,01 - Connexion,28,0,0.0,547.286,520.0,540.8,569.05,1292.29,0.4667,1,1793025720084,1793025780084
+1,02 - Consultation Refuges,28,0,0.0,63.464,63.5,71.0,71.65,74.92,0.4667,1,1793025720084,1793025780084

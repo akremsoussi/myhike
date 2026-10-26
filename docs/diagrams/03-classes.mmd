@@ -1,0 +1,172 @@
+classDiagram
+direction LR
+    class Upload {
+        +int id
+        +str key
+        +int owner_id
+        +int width
+        +int height
+        +int post_id
+        +url : propriété calculée
+    }
+    class Report {
+        +int id
+        +int reporter_id
+        +int target_id
+        +int post_id
+        +ReportReason reason
+        +int resolved_by_id
+    }
+    class ModerationLog {
+        +int id
+        +int actor_id
+        +str message
+        +datetime created_at
+    }
+    class Outing {
+        +int id
+        +str title
+        +int organizer_id
+        +datetime starts_at
+        +int max_participants
+        +OutingVisibility visibility
+        +JSON path
+    }
+    class OutingStop {
+        +int id
+        +int outing_id
+        +int position
+        +int refuge_id
+        +str name
+    }
+    class OutingParticipant {
+        +int outing_id
+        +int user_id
+        +datetime joined_at
+    }
+    class OutingInvitation {
+        +int outing_id
+        +int user_id
+        +int invited_by_id
+        +datetime created_at
+    }
+    class Massif {
+        +int id
+        +int external_id
+        +str name
+    }
+    class Refuge {
+        +int id
+        +int external_id
+        +str name
+        +RefugeKind kind
+        +Decimal latitude
+        +Decimal longitude
+        +int altitude
+        +int capacity
+        +int massif_id
+        +is_guarded : propriété calculée
+        +phone : propriété calculée
+    }
+    class RefugePhoto {
+        +int id
+        +int refuge_id
+        +int upload_id
+        +int external_id
+        +str author
+        +url : propriété calculée
+        +width : propriété calculée
+        +height : propriété calculée
+    }
+    class Community {
+        +int id
+        +str slug
+        +str name
+        +str region
+        +int massif_id
+        +int banner_id
+        +int icon_id
+    }
+    class CommunityMember {
+        +int community_id
+        +int user_id
+        +datetime joined_at
+    }
+    class Friendship {
+        +int id
+        +int requester_id
+        +int addressee_id
+        +FriendshipStatus status
+        +datetime created_at
+    }
+    class Post {
+        +int id
+        +int author_id
+        +int community_id
+        +str body
+        +Visibility visibility
+        +int refuge_id
+        +JSON path
+        +int distance_m
+        +int elevation_gain_m
+    }
+    class PostLike {
+        +int post_id
+        +int user_id
+        +datetime created_at
+    }
+    class User {
+        +int id
+        +str username
+        +str email
+        +str bio
+        +Role role
+        +AccountStatus status
+    }
+    class EmailToken {
+        +int id
+        +int user_id
+        +TokenPurpose purpose
+        +str token_hash
+        +str email
+    }
+    class UserSession {
+        +int id
+        +int user_id
+        +str token_hash
+        +datetime created_at
+        +datetime expires_at
+    }
+    Upload "0..1" -- "0..*" Community : banner_id
+    Upload "0..1" -- "0..*" Community : icon_id
+    Massif "0..1" -- "0..*" Community : massif_id
+    Community "1" -- "0..*" CommunityMember : community_id
+    User "1" -- "0..*" CommunityMember : user_id
+    User "1" -- "0..*" EmailToken : user_id
+    User "1" -- "0..*" Friendship : addressee_id
+    User "1" -- "0..*" Friendship : requester_id
+    User "0..1" -- "0..*" ModerationLog : actor_id
+    User "1" -- "0..*" OutingInvitation : invited_by_id
+    Outing "1" -- "0..*" OutingInvitation : outing_id
+    User "1" -- "0..*" OutingInvitation : user_id
+    Outing "1" -- "0..*" OutingParticipant : outing_id
+    User "1" -- "0..*" OutingParticipant : user_id
+    Outing "1" -- "0..*" OutingStop : outing_id
+    Refuge "0..1" -- "0..*" OutingStop : refuge_id
+    User "1" -- "0..*" Outing : organizer_id
+    Post "1" -- "0..*" PostLike : post_id
+    User "1" -- "0..*" PostLike : user_id
+    User "1" -- "0..*" Post : author_id
+    Community "0..1" -- "0..*" Post : community_id
+    Refuge "0..1" -- "0..*" Post : refuge_id
+    Refuge "1" -- "0..*" RefugePhoto : refuge_id
+    Upload "1" -- "0..1" RefugePhoto : upload_id
+    Massif "0..1" -- "0..*" Refuge : massif_id
+    Post "0..1" -- "0..*" Report : post_id
+    User "1" -- "0..*" Report : reporter_id
+    User "0..1" -- "0..*" Report : resolved_by_id
+    User "1" -- "0..*" Report : target_id
+    User "1" -- "0..*" UserSession : user_id
+    User "0..1" -- "0..*" Upload : owner_id
+    Post "0..1" -- "0..*" Upload : post_id
+    Community "0..*" -- "0..*" Refuge : refuges via community_refuges

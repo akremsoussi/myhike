@@ -1,0 +1,104 @@
+{
+  "deployment": "dk",
+  "repetition": 2,
+  "calibration": false,
+  "monitoring_method": "persistent-stream-v2",
+  "raw": "D:\\Myhike\\charge\\resultats\\comparaison-20261026-152151\\bruts\\charge\\dk-10-r2-20261026-152151.csv",
+  "statistics": [
+    {
+      "users": 10,
+      "label": "Total",
+      "samples": 336,
+      "errors": 0,
+      "error_pct": 0.0,
+      "mean_ms": 1052.533,
+      "median_ms": 785.0,
+      "p90_ms": 2240.5,
+      "p95_ms": 2528.0,
+      "p99_ms": 3752.05,
+      "throughput_rps": 5.6,
+      "max_active_threads": 10,
+      "measurement_start_ms": 1793028133743,
+      "measurement_end_ms": 1793028193743
+    },
+    {
+      "users": 10,
+      "label": "01 - Connexion",
+      "samples": 168,
+      "errors": 0,
+      "error_pct": 0.0,
+      "mean_ms": 1725.756,
+      "median_ms": 1670.0,
+      "p90_ms": 2528.0,
+      "p95_ms": 2799.6,
+      "p99_ms": 4044.2,
+      "throughput_rps": 2.8,
+      "max_active_threads": 10,
+      "measurement_start_ms": 1793028133743,
+      "measurement_end_ms": 1793028193743
+    },
+    {
+      "users": 10,
+      "label": "02 - Consultation Refuges",
+      "samples": 168,
+      "errors": 0,
+      "error_pct": 0.0,
+      "mean_ms": 379.31,
+      "median_ms": 318.0,
+      "p90_ms": 730.6,
+      "p95_ms": 921.25,
+      "p99_ms": 1259.13,
+      "throughput_rps": 2.8,
+      "max_active_threads": 10,
+      "measurement_start_ms": 1793028133743,
+      "measurement_end_ms": 1793028193743
+    }
+  ],
+  "server": {
+    "users": 10,
+    "samples": 9,
+    "collection_errors": 0,
+    "measurement_start_ms": 1793028133743,
+    "measurement_end_ms": 1793028193743,
+    "services": {
+      "db": {
+        "cpu_percent_mean": 7.9688888888888885,
+        "cpu_percent_max": 12.19,
+        "memory_bytes_mean": 484861542.4,
+        "memory_bytes_max": 489265561.6,
+        "block_read_bytes_delta": 0.0,
+        "block_written_bytes_delta": 3500000.0000000037,
+        "unavailable_samples": 0
+      },
+      "backend": {
+        "cpu_percent_mean": 101.12777777777778,
+        "cpu_percent_max": 108.7,
+        "memory_bytes_mean": 352053566.5777778,
+        "memory_bytes_max": 582169395.2,
+        "block_read_bytes_delta": 0.0,
+        "block_written_bytes_delta": 0.0,
+        "unavailable_samples": 0
+      },
+      "frontend": {
+        "cpu_percent_mean": 1.1055555555555556,
+        "cpu_percent_max": 3.68,
+        "memory_bytes_mean": 13030304.426666666,
+        "memory_bytes_max": 13369344.0,
+        "block_read_bytes_delta": 0.0,
+        "block_written_bytes_delta": 0.0,
+        "unavailable_samples": 0
+      }
+    },
+    "java_cpu_percent_host_mean": 0.25107251862650565,
+    "java_cpu_percent_host_max": 0.5002288169603405,
+    "java_working_set_bytes_max": 293642240,
+    "host_available_memory_bytes_min": 2395631616,
+    "host_cpu_percent_max": 32.8,
+    "Threads_connected_mean": 9,
+    "Threads_connected_max": 11,
+    "Threads_running_mean": 2.2222222222222223,
+    "Threads_running_max": 4,
+    "Innodb_data_read_delta": 0,
+    "Innodb_data_written_delta": 686592
+  }
+}

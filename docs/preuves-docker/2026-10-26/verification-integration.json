@@ -1,0 +1,17 @@
+{
+  "source_commit": "311bd31",
+  "verified_60_consultations_http_200": true,
+  "published_summary_matches_raw": true,
+  "medians": {
+    "VM": {
+      "boot_seconds": 122.8031451,
+      "memory_host_mib": 3073.51953125,
+      "latency_median_ms": 64.80340000000001
+    },
+    "Docker": {
+      "boot_seconds": 14.5863104,
+      "memory_host_mib": 4671.83984375,
+      "latency_median_ms": 23.6955
+    }
+  }
+}

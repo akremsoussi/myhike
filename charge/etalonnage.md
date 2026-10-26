@@ -1,50 +1,23 @@
-# Étalonnage du protocole - étape 16
+# Étalonnage du 26 octobre 2026
 
-**Akrem SOUSSI et Rémi CORTIAL - Refuges - 21 octobre 2026**
+Deux répétitions sur `/index.html`, 20 puis 100 utilisateurs, sans temporisation. Même poste et mêmes plafonds par couche que les campagnes applicatives.
 
-## 1. Instrument et paramètres
+| Déploiement | Utilisateurs | Série | Débit (req/s) | p95 (ms) | Erreurs (%) |
+|---|---:|---:|---:|---:|---:|
+| vm | 20 | 1 | 723.6667 | 33.0 | 0.0 |
+| vm | 20 | 2 | 735.6 | 32.0 | 0.0 |
+| vm | 100 | 1 | 473.6667 | 299.0 | 0.0 |
+| vm | 100 | 2 | 470.0333 | 306.0 | 0.0 |
+| dk | 20 | 1 | 5887.4333 | 6.0 | 0.0 |
+| dk | 20 | 2 | 5970.7333 | 6.0 | 0.0 |
+| dk | 100 | 1 | 6199.9167 | 73.0 | 0.0 |
+| dk | 100 | 2 | 6318.4167 | 72.0 | 0.0 |
 
-JMeter 5.6.3 s’exécute en CLI sur l’hôte Windows. La cible statique est `/index.html` servie par Nginx, sans temporisation ni traitement métier. La campagne applicative utilise 25 comptes, une montée de 10 s puis une fenêtre de 60 s à partir de l’origine + 11 s (1 s de stabilisation). La durée programmée est de 72 s. Paliers : 1, 5, 10, 25, 50, 100.
+Les deux répétitions sont sans erreur et sous 10 % de variation sur le débit et le p95 à chaque charge. La capacité constatée dépasse largement le débit applicatif. Il s’agit d’une borne basse de capacité du couple injecteur/proxy, pas d’un plafond isolé de Java. Le proxy VM peut limiter cette mesure.
 
-La réutilisation TCP est activée dans le plan préparé ; les cookies sont remis à zéro entre itérations. Les paramètres effectivement utilisés et leurs empreintes sont archivés dans chaque dossier de session.
+Les calibrations VM utilisent le premier collecteur par interrogation, plus coûteux que le collecteur persistant utilisé pendant les campagnes applicatives. Les calibrations Docker utilisent Docker stats. Les métriques de l’injecteur sont conservées.
 
-## 2. Débit statique observé
+[Données et preuves](resultats/comparaison-20261026-152151/README.md). Les anciens essais restent disponibles et ne sont pas mélangés à cette campagne.
 
-| Utilisateurs | Débit observé (req/s) | p95 (ms) | Erreurs |
-|---:|---:|---:|---:|
-| 100 | 17 115,22 | 11,0 | 0,00 % |
-| 100 | 12 023,33 | 16,0 | 0,00 % |
-| 20 | 10 874,17 | 3,0 | 0,00 % |
-| 20 | 7 588,92 | 5,0 | 0,00 % |
 
-Source : [synthèse statique](resultats/etalonnage-dk-20261021-112624-419/synthese.csv). Les deux répétitions sont détaillées dans les statistiques du même dossier. Le minimum est 7 588,92 req/s, largement au-dessus du maximum applicatif observé de 42,47 req/s (environ 179 fois). Cela donne une marge observée ; le plafond exact n’est pas établi. La variabilité statique dépasse 10 % et ne valide pas la répétabilité. Le premier essai invalidé par épuisement des ports TCP reste exclu.
-
-## 3. Répétabilité applicative
-
-Écart retenu dans les scripts Docker : (maximum − minimum) / moyenne × 100. Le seuil de 10 % est évalué séparément sur débit et p95.
-
-| Utilisateurs | Écart de débit (%) | Écart de p95 (%) | Lecture |
-|---:|---:|---:|---|
-| 1 | 1,33 | 4,90 | Sous 10 % |
-| 5 | 0,55 | 0,56 | Sous 10 % |
-| 10 | 1,37 | 7,30 | Sous 10 % |
-| 25 | 0,11 | 1,97 | Sous 10 % |
-| 50 | 14,43 | 33,52 | Au-dessus de 10 % |
-| 100 | 1,37 | 0,01 | Sous 10 % |
-
-À 100, des chiffres proches ne valident pas un service nominal : les erreurs atteignent 98,64 à 100 %. À 50, les contrôles supplémentaires donnent 41,80 et 34,00 req/s ; leurs écarts de débit (20,58 %) et p95 (55,69 %) confirment l’instabilité. Conserver toutes les mesures sans sélectionner la meilleure.
-
-## 4. Charge de l’injecteur et réserves
-
-Pendant la campagne applicative, la moyenne CPU Java relevée reste inférieure à 1 % de l’hôte (12 processeurs logiques déclarés). Les JSON de synthèse et les JSONL horodatés sont archivés avec la campagne. Ce constat et la marge statique ne suggèrent pas un injecteur limitant sur ces essais ; ils ne remplacent pas un étalonnage répété dans les conditions de la future campagne VM.
-
-L’ancien document mentionnait > 205 req/s et deux essais à 14,8 / 14,3 req/s sans bruts dédiés identifiés. Ces valeurs historiques ne servent pas à certifier l’étalonnage actuel. La série VM n’a qu’une répétition conservée et sa fenêtre de plateau n’est pas tracée.
-
-## 5. Reproduction et preuves
-
-- [Guide d’automatisation](AUTOMATISATION.md) : préparation du plan, étalonnage et campagne.
-- [Configuration principale](resultats/dk-20261021-113529-649/configuration.json) : versions, durées et empreintes.
-- [Répétabilité principale](resultats/dk-20261021-113529-649/repetabilite.csv).
-- [Index des résultats et validations 200/401](resultats/README.md).
-
-Avant une comparaison définitive, utiliser le même plan préparé et les mêmes timeouts pour VM et Docker, le même poste et les mêmes budgets de ressources, puis deux séries dans un ordre inversé.
+[Étalonnages historiques documentés par Rémi](etalonnage-historique.md).

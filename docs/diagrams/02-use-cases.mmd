@@ -1,0 +1,62 @@
+flowchart LR
+    %% Représentation des cas d’utilisation avec la syntaxe flowchart.
+    %% Les flèches pointillées expriment l’héritage des droits, pas une séquence.
+    V["Acteur : Visiteur"]
+    U["Acteur : Utilisateur actif"]
+    M["Acteur : Modérateur"]
+    S["Acteur : Super-administrateur"]
+    M -. "hérite des droits" .-> U
+    S -. "hérite des droits" .-> M
+    subgraph APP["MyHike / Refuges"]
+        direction TB
+        UC0(["Créer un compte"])
+        UC1(["Se connecter"])
+        UC2(["Confirmer l’adresse e-mail"])
+        UC3(["Réinitialiser un mot de passe oublié"])
+        UC4(["Explorer la carte et les fiches des refuges"])
+        UC5(["Rechercher des refuges, communautés et utilisateurs"])
+        UC6(["Rejoindre ou quitter une communauté"])
+        UC7(["Publier avec des photos ou une trace GPX"])
+        UC8(["Aimer des publications et gérer ses propres publications"])
+        UC9(["Gérer son profil, sa confidentialité et ses amis"])
+        UC10(["Organiser des sorties et inviter des participants"])
+        UC11(["Rejoindre ou quitter une sortie"])
+        UC12(["Signaler un compte ou une publication"])
+        UC13(["Se déconnecter"])
+        UC14(["Examiner et traiter les signalements"])
+        UC15(["Supprimer des publications inappropriées"])
+        UC16(["Créer, modifier ou supprimer des communautés"])
+        UC17(["Gérer les comptes utilisateurs classiques"])
+        UC18(["Promouvoir ou rétrograder des modérateurs"])
+        UC19(["Gérer les comptes des modérateurs"])
+    end
+    V --- UC0
+    V --- UC1
+    V --- UC2
+    V --- UC3
+    U --- UC4
+    U --- UC5
+    U --- UC6
+    U --- UC7
+    U --- UC8
+    U --- UC9
+    U --- UC10
+    U --- UC11
+    U --- UC12
+    U --- UC13
+    M --- UC14
+    M --- UC15
+    M --- UC16
+    M --- UC17
+    S --- UC18
+    S --- UC19
+    N1["Compte actif et adresse confirmée requis pour les fonctions utilisateur."]
+    N2["Les super-administrateurs sont protégés ; les auto-sanctions sont interdites."]
+    N3["Les conditions et le statut du service sont accessibles à tous."]
+    U -.-> N1
+    S -.-> N2
+    V -.-> N3
+    classDef acteur fill:#edf7f2,stroke:#28765a,color:#153f31,stroke-width:2px;
+    classDef note fill:#fff8e7,stroke:#cfad58,color:#5a4920;
+    class V,U,M,S acteur;
+    class N1,N2,N3 note;

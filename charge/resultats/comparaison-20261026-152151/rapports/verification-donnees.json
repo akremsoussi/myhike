@@ -1,0 +1,275 @@
+{
+  "all_24_load_runs_verified": true,
+  "frozen_inputs_unchanged": true,
+  "checks": [
+    {
+      "file": "vm-1-r1-20261026-152151.csv",
+      "valid_rows": 68,
+      "measured_rows": 56,
+      "errors": 0,
+      "response_codes": {
+        "200": 56
+      },
+      "sha256": "9c33d2b9a0ea21dc6f8dd7afb617fe8526ff236a5e4afc5e1d6d57b64d6d8de7",
+      "verified": true
+    },
+    {
+      "file": "vm-5-r1-20261026-152151.csv",
+      "valid_rows": 204,
+      "measured_rows": 182,
+      "errors": 0,
+      "response_codes": {
+        "200": 182
+      },
+      "sha256": "46c3169dcdebfd88f359a731569fc91f9656942cf44b9b6338b915cc0c3539bb",
+      "verified": true
+    },
+    {
+      "file": "vm-10-r1-20261026-152151.csv",
+      "valid_rows": 283,
+      "measured_rows": 245,
+      "errors": 0,
+      "response_codes": {
+        "200": 245
+      },
+      "sha256": "3e7f2d0911416e9f90eaace468141229f1e1b269ce567bdd86047fc342b4528d",
+      "verified": true
+    },
+    {
+      "file": "vm-25-r1-20261026-152151.csv",
+      "valid_rows": 261,
+      "measured_rows": 212,
+      "errors": 0,
+      "response_codes": {
+        "200": 212
+      },
+      "sha256": "0f32436d9001702e12beabc6c66ffa822b4e680c59f2e29649cb6e790800c046",
+      "verified": true
+    },
+    {
+      "file": "vm-50-r1-20261026-152151.csv",
+      "valid_rows": 299,
+      "measured_rows": 237,
+      "errors": 0,
+      "response_codes": {
+        "200": 237
+      },
+      "sha256": "9eaf9531e5cec5f1276fe5a7b889b8021e9b594e47afe027a2885703b24200bb",
+      "verified": true
+    },
+    {
+      "file": "vm-100-r1-20261026-152151.csv",
+      "valid_rows": 306,
+      "measured_rows": 200,
+      "errors": 200,
+      "response_codes": {
+        "Non HTTP response code: java.net.SocketTimeoutException": 133,
+        "401": 67
+      },
+      "sha256": "4344f0ab78b248defe5efa551b910f0cc9e4a24c71caeb9f250c75e29375ab44",
+      "verified": true
+    },
+    {
+      "file": "vm-1-r2-20261026-152151.csv",
+      "valid_rows": 71,
+      "measured_rows": 59,
+      "errors": 0,
+      "response_codes": {
+        "200": 59
+      },
+      "sha256": "5bb8ec86a91d6425ae97ef376e2fb11ffaa62b76f17a4bfef03f1471c729640c",
+      "verified": true
+    },
+    {
+      "file": "vm-5-r2-20261026-152151.csv",
+      "valid_rows": 256,
+      "measured_rows": 222,
+      "errors": 0,
+      "response_codes": {
+        "200": 222
+      },
+      "sha256": "ad85edacf548548196a674154e172a2e7b5020c65fd373c572f0ce78012f1442",
+      "verified": true
+    },
+    {
+      "file": "vm-10-r2-20261026-152151.csv",
+      "valid_rows": 250,
+      "measured_rows": 208,
+      "errors": 0,
+      "response_codes": {
+        "200": 208
+      },
+      "sha256": "5717b31a8610f3afdd41a4367cef5ee1e6068b095fc4e018604fb8173b67c63f",
+      "verified": true
+    },
+    {
+      "file": "vm-25-r2-20261026-152151.csv",
+      "valid_rows": 244,
+      "measured_rows": 204,
+      "errors": 0,
+      "response_codes": {
+        "200": 204
+      },
+      "sha256": "5ba25e098975f38d656e5b2b4e3c37aec7fff8db64bcd799f06147692e093ace",
+      "verified": true
+    },
+    {
+      "file": "vm-50-r2-20261026-152151.csv",
+      "valid_rows": 270,
+      "measured_rows": 210,
+      "errors": 0,
+      "response_codes": {
+        "200": 210
+      },
+      "sha256": "881b388cf3cfcc04029414fae8912c4c31f86402984710cde4f943511e7fea04",
+      "verified": true
+    },
+    {
+      "file": "vm-100-r2-20261026-152151.csv",
+      "valid_rows": 303,
+      "measured_rows": 199,
+      "errors": 199,
+      "response_codes": {
+        "Non HTTP response code: java.net.SocketTimeoutException": 131,
+        "401": 68
+      },
+      "sha256": "cc749f9a8cfad0b88bd9fec57c79d95c27ce96421df8280541fe5eca27504d76",
+      "verified": true
+    },
+    {
+      "file": "dk-1-r1-20261026-152151.csv",
+      "valid_rows": 82,
+      "measured_rows": 67,
+      "errors": 0,
+      "response_codes": {
+        "200": 67
+      },
+      "sha256": "1ed10df630845b43439989a5de7fd62e6f27a9918441d48546297d6a1c7a70f4",
+      "verified": true
+    },
+    {
+      "file": "dk-5-r1-20261026-152151.csv",
+      "valid_rows": 325,
+      "measured_rows": 293,
+      "errors": 0,
+      "response_codes": {
+        "200": 293
+      },
+      "sha256": "310cfd1c2d5cb36f77e6b2ce6d9c00aab0d4bc148f40a1c27e1de0ecce12d17b",
+      "verified": true
+    },
+    {
+      "file": "dk-10-r1-20261026-152151.csv",
+      "valid_rows": 375,
+      "measured_rows": 322,
+      "errors": 0,
+      "response_codes": {
+        "200": 322
+      },
+      "sha256": "dc35e589a992d9eec4a272c42d3c2414dd1e7f11cc4a6634c8901c8261ba9532",
+      "verified": true
+    },
+    {
+      "file": "dk-25-r1-20261026-152151.csv",
+      "valid_rows": 375,
+      "measured_rows": 310,
+      "errors": 0,
+      "response_codes": {
+        "200": 310
+      },
+      "sha256": "7380902a75ee961c86287b8f87e2022b30d084493fc7e983d1dcc6d1054cb3b6",
+      "verified": true
+    },
+    {
+      "file": "dk-50-r1-20261026-152151.csv",
+      "valid_rows": 394,
+      "measured_rows": 315,
+      "errors": 0,
+      "response_codes": {
+        "200": 315
+      },
+      "sha256": "d66fd6360a5008db0b3af9f456f0cef1608fd074f83b0679c844ea9be8bdae9a",
+      "verified": true
+    },
+    {
+      "file": "dk-100-r1-20261026-152151.csv",
+      "valid_rows": 314,
+      "measured_rows": 201,
+      "errors": 199,
+      "response_codes": {
+        "200": 2,
+        "Non HTTP response code: java.net.SocketTimeoutException": 187,
+        "401": 12
+      },
+      "sha256": "b4a812f900b1d9f730d4e8d63626f305fbe00c33a18827ed8218852c3604656e",
+      "verified": true
+    },
+    {
+      "file": "dk-1-r2-20261026-152151.csv",
+      "valid_rows": 80,
+      "measured_rows": 65,
+      "errors": 0,
+      "response_codes": {
+        "200": 65
+      },
+      "sha256": "753b6028d2408ffe059bde505c5c56b0898af09ce8eef131eadbc43dc7b8444a",
+      "verified": true
+    },
+    {
+      "file": "dk-5-r2-20261026-152151.csv",
+      "valid_rows": 344,
+      "measured_rows": 305,
+      "errors": 0,
+      "response_codes": {
+        "200": 305
+      },
+      "sha256": "f57706234e868c48475b52ba2aece573a555f7be0254b0b2e7bb9c67a980fe06",
+      "verified": true
+    },
+    {
+      "file": "dk-10-r2-20261026-152151.csv",
+      "valid_rows": 392,
+      "measured_rows": 336,
+      "errors": 0,
+      "response_codes": {
+        "200": 336
+      },
+      "sha256": "61a1a082000166fba8969d6a6cac7648e8cfdf7b83d828d7f818ddfed025d1f9",
+      "verified": true
+    },
+    {
+      "file": "dk-25-r2-20261026-152151.csv",
+      "valid_rows": 372,
+      "measured_rows": 308,
+      "errors": 0,
+      "response_codes": {
+        "200": 308
+      },
+      "sha256": "5b2bebf439e428f49ee40e57883f45f52b614ab63e9b3a51b2e4af837e8715ce",
+      "verified": true
+    },
+    {
+      "file": "dk-50-r2-20261026-152151.csv",
+      "valid_rows": 416,
+      "measured_rows": 336,
+      "errors": 0,
+      "response_codes": {
+        "200": 336
+      },
+      "sha256": "0fabb046fd9678d659d1eddf71f94231543fcd4a1974368f6df95e2e4922b59e",
+      "verified": true
+    },
+    {
+      "file": "dk-100-r2-20261026-152151.csv",
+      "valid_rows": 311,
+      "measured_rows": 196,
+      "errors": 196,
+      "response_codes": {
+        "Non HTTP response code: java.net.SocketTimeoutException": 173,
+        "401": 23
+      },
+      "sha256": "de8978642cfe6325465a6b23fff28c7271b9ba951f4be1de9fb0f342386d983b",
+      "verified": true
+    }
+  ]
+}

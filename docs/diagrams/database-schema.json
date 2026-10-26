@@ -1,0 +1,1431 @@
+{
+  "alembic_version": {
+    "columns": [
+      {
+        "name": "version_num",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(32) NOT NULL"
+      }
+    ],
+    "pk": [
+      "version_num"
+    ],
+    "unique": [],
+    "fks": []
+  },
+  "communities": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL AUTO_INCREMENT"
+      },
+      {
+        "name": "slug",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(80) NOT NULL"
+      },
+      {
+        "name": "name",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(80) NOT NULL"
+      },
+      {
+        "name": "description",
+        "type": "text",
+        "nullable": false,
+        "sql": "text NOT NULL"
+      },
+      {
+        "name": "region",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(40) NOT NULL"
+      },
+      {
+        "name": "massif_id",
+        "type": "bigint",
+        "nullable": true,
+        "sql": "bigint DEFAULT NULL"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      },
+      {
+        "name": "banner_id",
+        "type": "bigint",
+        "nullable": true,
+        "sql": "bigint DEFAULT NULL"
+      },
+      {
+        "name": "icon_id",
+        "type": "bigint",
+        "nullable": true,
+        "sql": "bigint DEFAULT NULL"
+      }
+    ],
+    "pk": [
+      "id"
+    ],
+    "unique": [
+      [
+        "slug"
+      ]
+    ],
+    "fks": [
+      {
+        "name": "fk_communities_banner_id_uploads",
+        "columns": [
+          "banner_id"
+        ],
+        "target": "uploads",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE SET NULL"
+      },
+      {
+        "name": "fk_communities_icon_id_uploads",
+        "columns": [
+          "icon_id"
+        ],
+        "target": "uploads",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE SET NULL"
+      },
+      {
+        "name": "fk_communities_massif_id_massifs",
+        "columns": [
+          "massif_id"
+        ],
+        "target": "massifs",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE SET NULL"
+      }
+    ]
+  },
+  "community_members": {
+    "columns": [
+      {
+        "name": "community_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "user_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "joined_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      }
+    ],
+    "pk": [
+      "community_id",
+      "user_id"
+    ],
+    "unique": [],
+    "fks": [
+      {
+        "name": "fk_community_members_community_id_communities",
+        "columns": [
+          "community_id"
+        ],
+        "target": "communities",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      },
+      {
+        "name": "fk_community_members_user_id_users",
+        "columns": [
+          "user_id"
+        ],
+        "target": "users",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      }
+    ]
+  },
+  "community_refuges": {
+    "columns": [
+      {
+        "name": "community_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "refuge_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      }
+    ],
+    "pk": [
+      "community_id",
+      "refuge_id"
+    ],
+    "unique": [],
+    "fks": [
+      {
+        "name": "fk_community_refuges_community_id_communities",
+        "columns": [
+          "community_id"
+        ],
+        "target": "communities",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      },
+      {
+        "name": "fk_community_refuges_refuge_id_refuges",
+        "columns": [
+          "refuge_id"
+        ],
+        "target": "refuges",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      }
+    ]
+  },
+  "email_tokens": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL AUTO_INCREMENT"
+      },
+      {
+        "name": "user_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "purpose",
+        "type": "enum",
+        "nullable": false,
+        "sql": "enum('verify','reset') NOT NULL"
+      },
+      {
+        "name": "token_hash",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(64) NOT NULL"
+      },
+      {
+        "name": "email",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(255) NOT NULL"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      },
+      {
+        "name": "expires_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      },
+      {
+        "name": "used_at",
+        "type": "datetime",
+        "nullable": true,
+        "sql": "datetime DEFAULT NULL"
+      }
+    ],
+    "pk": [
+      "id"
+    ],
+    "unique": [
+      [
+        "token_hash"
+      ]
+    ],
+    "fks": [
+      {
+        "name": "fk_email_tokens_user_id_users",
+        "columns": [
+          "user_id"
+        ],
+        "target": "users",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      }
+    ]
+  },
+  "friendships": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL AUTO_INCREMENT"
+      },
+      {
+        "name": "requester_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "addressee_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "status",
+        "type": "enum",
+        "nullable": false,
+        "sql": "enum('pending','accepted','declined') NOT NULL"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      },
+      {
+        "name": "responded_at",
+        "type": "datetime",
+        "nullable": true,
+        "sql": "datetime DEFAULT NULL"
+      }
+    ],
+    "pk": [
+      "id"
+    ],
+    "unique": [
+      [
+        "requester_id",
+        "addressee_id"
+      ]
+    ],
+    "fks": [
+      {
+        "name": "fk_friendships_addressee_id_users",
+        "columns": [
+          "addressee_id"
+        ],
+        "target": "users",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      },
+      {
+        "name": "fk_friendships_requester_id_users",
+        "columns": [
+          "requester_id"
+        ],
+        "target": "users",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      }
+    ]
+  },
+  "massifs": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL AUTO_INCREMENT"
+      },
+      {
+        "name": "external_id",
+        "type": "int",
+        "nullable": false,
+        "sql": "int NOT NULL"
+      },
+      {
+        "name": "name",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(120) NOT NULL"
+      }
+    ],
+    "pk": [
+      "id"
+    ],
+    "unique": [
+      [
+        "external_id"
+      ]
+    ],
+    "fks": []
+  },
+  "moderation_log": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL AUTO_INCREMENT"
+      },
+      {
+        "name": "actor_id",
+        "type": "bigint",
+        "nullable": true,
+        "sql": "bigint DEFAULT NULL"
+      },
+      {
+        "name": "message",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(255) NOT NULL"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      }
+    ],
+    "pk": [
+      "id"
+    ],
+    "unique": [],
+    "fks": [
+      {
+        "name": "fk_moderation_log_actor_id_users",
+        "columns": [
+          "actor_id"
+        ],
+        "target": "users",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE SET NULL"
+      }
+    ]
+  },
+  "outing_invitations": {
+    "columns": [
+      {
+        "name": "outing_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "user_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "invited_by_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      }
+    ],
+    "pk": [
+      "outing_id",
+      "user_id"
+    ],
+    "unique": [],
+    "fks": [
+      {
+        "name": "fk_outing_invitations_invited_by_id_users",
+        "columns": [
+          "invited_by_id"
+        ],
+        "target": "users",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      },
+      {
+        "name": "fk_outing_invitations_outing_id_outings",
+        "columns": [
+          "outing_id"
+        ],
+        "target": "outings",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      },
+      {
+        "name": "fk_outing_invitations_user_id_users",
+        "columns": [
+          "user_id"
+        ],
+        "target": "users",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      }
+    ]
+  },
+  "outing_participants": {
+    "columns": [
+      {
+        "name": "outing_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "user_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "joined_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      }
+    ],
+    "pk": [
+      "outing_id",
+      "user_id"
+    ],
+    "unique": [],
+    "fks": [
+      {
+        "name": "fk_outing_participants_outing_id_outings",
+        "columns": [
+          "outing_id"
+        ],
+        "target": "outings",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      },
+      {
+        "name": "fk_outing_participants_user_id_users",
+        "columns": [
+          "user_id"
+        ],
+        "target": "users",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      }
+    ]
+  },
+  "outing_stops": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL AUTO_INCREMENT"
+      },
+      {
+        "name": "outing_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "position",
+        "type": "int",
+        "nullable": false,
+        "sql": "int NOT NULL"
+      },
+      {
+        "name": "refuge_id",
+        "type": "bigint",
+        "nullable": true,
+        "sql": "bigint DEFAULT NULL"
+      },
+      {
+        "name": "name",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(200) NOT NULL"
+      },
+      {
+        "name": "latitude",
+        "type": "decimal",
+        "nullable": false,
+        "sql": "decimal(9,6) NOT NULL"
+      },
+      {
+        "name": "longitude",
+        "type": "decimal",
+        "nullable": false,
+        "sql": "decimal(9,6) NOT NULL"
+      }
+    ],
+    "pk": [
+      "id"
+    ],
+    "unique": [],
+    "fks": [
+      {
+        "name": "fk_outing_stops_outing_id_outings",
+        "columns": [
+          "outing_id"
+        ],
+        "target": "outings",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      },
+      {
+        "name": "fk_outing_stops_refuge_id_refuges",
+        "columns": [
+          "refuge_id"
+        ],
+        "target": "refuges",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE SET NULL"
+      }
+    ]
+  },
+  "outings": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL AUTO_INCREMENT"
+      },
+      {
+        "name": "title",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(80) NOT NULL"
+      },
+      {
+        "name": "organizer_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "starts_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      },
+      {
+        "name": "max_participants",
+        "type": "int",
+        "nullable": false,
+        "sql": "int NOT NULL"
+      },
+      {
+        "name": "visibility",
+        "type": "enum",
+        "nullable": false,
+        "sql": "enum('public','invitation') NOT NULL"
+      },
+      {
+        "name": "path",
+        "type": "json",
+        "nullable": false,
+        "sql": "json NOT NULL"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      }
+    ],
+    "pk": [
+      "id"
+    ],
+    "unique": [],
+    "fks": [
+      {
+        "name": "fk_outings_organizer_id_users",
+        "columns": [
+          "organizer_id"
+        ],
+        "target": "users",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      }
+    ]
+  },
+  "post_likes": {
+    "columns": [
+      {
+        "name": "post_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "user_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      }
+    ],
+    "pk": [
+      "post_id",
+      "user_id"
+    ],
+    "unique": [],
+    "fks": [
+      {
+        "name": "fk_post_likes_post_id_posts",
+        "columns": [
+          "post_id"
+        ],
+        "target": "posts",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      },
+      {
+        "name": "fk_post_likes_user_id_users",
+        "columns": [
+          "user_id"
+        ],
+        "target": "users",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      }
+    ]
+  },
+  "posts": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL AUTO_INCREMENT"
+      },
+      {
+        "name": "author_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "community_id",
+        "type": "bigint",
+        "nullable": true,
+        "sql": "bigint DEFAULT NULL"
+      },
+      {
+        "name": "body",
+        "type": "text",
+        "nullable": false,
+        "sql": "text NOT NULL"
+      },
+      {
+        "name": "visibility",
+        "type": "enum",
+        "nullable": false,
+        "sql": "enum('public','friends') NOT NULL"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      },
+      {
+        "name": "refuge_id",
+        "type": "bigint",
+        "nullable": true,
+        "sql": "bigint DEFAULT NULL"
+      },
+      {
+        "name": "path",
+        "type": "json",
+        "nullable": true,
+        "sql": "json DEFAULT NULL"
+      },
+      {
+        "name": "distance_m",
+        "type": "int",
+        "nullable": true,
+        "sql": "int DEFAULT NULL"
+      },
+      {
+        "name": "elevation_gain_m",
+        "type": "int",
+        "nullable": true,
+        "sql": "int DEFAULT NULL"
+      }
+    ],
+    "pk": [
+      "id"
+    ],
+    "unique": [],
+    "fks": [
+      {
+        "name": "fk_posts_author_id_users",
+        "columns": [
+          "author_id"
+        ],
+        "target": "users",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      },
+      {
+        "name": "fk_posts_community_id_communities",
+        "columns": [
+          "community_id"
+        ],
+        "target": "communities",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      },
+      {
+        "name": "fk_posts_refuge_id_refuges",
+        "columns": [
+          "refuge_id"
+        ],
+        "target": "refuges",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE SET NULL"
+      }
+    ]
+  },
+  "refuge_photos": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL AUTO_INCREMENT"
+      },
+      {
+        "name": "refuge_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "upload_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "external_id",
+        "type": "int",
+        "nullable": false,
+        "sql": "int NOT NULL"
+      },
+      {
+        "name": "author",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(120) NOT NULL"
+      },
+      {
+        "name": "caption",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(300) NOT NULL"
+      },
+      {
+        "name": "taken_at",
+        "type": "datetime",
+        "nullable": true,
+        "sql": "datetime DEFAULT NULL"
+      },
+      {
+        "name": "position",
+        "type": "int",
+        "nullable": false,
+        "sql": "int NOT NULL"
+      }
+    ],
+    "pk": [
+      "id"
+    ],
+    "unique": [
+      [
+        "external_id"
+      ],
+      [
+        "upload_id"
+      ]
+    ],
+    "fks": [
+      {
+        "name": "fk_refuge_photos_refuge_id_refuges",
+        "columns": [
+          "refuge_id"
+        ],
+        "target": "refuges",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      },
+      {
+        "name": "fk_refuge_photos_upload_id_uploads",
+        "columns": [
+          "upload_id"
+        ],
+        "target": "uploads",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      }
+    ]
+  },
+  "refuges": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL AUTO_INCREMENT"
+      },
+      {
+        "name": "external_id",
+        "type": "int",
+        "nullable": false,
+        "sql": "int NOT NULL"
+      },
+      {
+        "name": "name",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(200) NOT NULL"
+      },
+      {
+        "name": "kind",
+        "type": "enum",
+        "nullable": false,
+        "sql": "enum('unguarded_hut','gite','guarded_hut') NOT NULL"
+      },
+      {
+        "name": "latitude",
+        "type": "decimal",
+        "nullable": false,
+        "sql": "decimal(9,6) NOT NULL"
+      },
+      {
+        "name": "longitude",
+        "type": "decimal",
+        "nullable": false,
+        "sql": "decimal(9,6) NOT NULL"
+      },
+      {
+        "name": "altitude",
+        "type": "int",
+        "nullable": true,
+        "sql": "int DEFAULT NULL"
+      },
+      {
+        "name": "capacity",
+        "type": "int",
+        "nullable": true,
+        "sql": "int DEFAULT NULL"
+      },
+      {
+        "name": "massif_id",
+        "type": "bigint",
+        "nullable": true,
+        "sql": "bigint DEFAULT NULL"
+      },
+      {
+        "name": "state",
+        "type": "varchar",
+        "nullable": true,
+        "sql": "varchar(80) DEFAULT NULL"
+      },
+      {
+        "name": "access",
+        "type": "text",
+        "nullable": true,
+        "sql": "text"
+      },
+      {
+        "name": "remarks",
+        "type": "text",
+        "nullable": true,
+        "sql": "text"
+      },
+      {
+        "name": "owner_info",
+        "type": "text",
+        "nullable": true,
+        "sql": "text"
+      },
+      {
+        "name": "source_url",
+        "type": "varchar",
+        "nullable": true,
+        "sql": "varchar(255) DEFAULT NULL"
+      },
+      {
+        "name": "source_updated_at",
+        "type": "datetime",
+        "nullable": true,
+        "sql": "datetime DEFAULT NULL"
+      },
+      {
+        "name": "imported_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      },
+      {
+        "name": "photos_checked_at",
+        "type": "datetime",
+        "nullable": true,
+        "sql": "datetime DEFAULT NULL"
+      }
+    ],
+    "pk": [
+      "id"
+    ],
+    "unique": [
+      [
+        "external_id"
+      ]
+    ],
+    "fks": [
+      {
+        "name": "fk_refuges_massif_id_massifs",
+        "columns": [
+          "massif_id"
+        ],
+        "target": "massifs",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE SET NULL"
+      }
+    ]
+  },
+  "reports": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL AUTO_INCREMENT"
+      },
+      {
+        "name": "reporter_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "target_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "post_id",
+        "type": "bigint",
+        "nullable": true,
+        "sql": "bigint DEFAULT NULL"
+      },
+      {
+        "name": "reason",
+        "type": "enum",
+        "nullable": false,
+        "sql": "enum('insulting','spam','fake_profile','other') NOT NULL"
+      },
+      {
+        "name": "comment",
+        "type": "text",
+        "nullable": false,
+        "sql": "text NOT NULL"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      },
+      {
+        "name": "resolved_at",
+        "type": "datetime",
+        "nullable": true,
+        "sql": "datetime DEFAULT NULL"
+      },
+      {
+        "name": "resolved_by_id",
+        "type": "bigint",
+        "nullable": true,
+        "sql": "bigint DEFAULT NULL"
+      }
+    ],
+    "pk": [
+      "id"
+    ],
+    "unique": [],
+    "fks": [
+      {
+        "name": "fk_reports_post_id_posts",
+        "columns": [
+          "post_id"
+        ],
+        "target": "posts",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE SET NULL"
+      },
+      {
+        "name": "fk_reports_reporter_id_users",
+        "columns": [
+          "reporter_id"
+        ],
+        "target": "users",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      },
+      {
+        "name": "fk_reports_resolved_by_id_users",
+        "columns": [
+          "resolved_by_id"
+        ],
+        "target": "users",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE SET NULL"
+      },
+      {
+        "name": "fk_reports_target_id_users",
+        "columns": [
+          "target_id"
+        ],
+        "target": "users",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      }
+    ]
+  },
+  "sessions": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL AUTO_INCREMENT"
+      },
+      {
+        "name": "user_id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL"
+      },
+      {
+        "name": "token_hash",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(64) NOT NULL"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      },
+      {
+        "name": "expires_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      },
+      {
+        "name": "revoked_at",
+        "type": "datetime",
+        "nullable": true,
+        "sql": "datetime DEFAULT NULL"
+      }
+    ],
+    "pk": [
+      "id"
+    ],
+    "unique": [
+      [
+        "token_hash"
+      ]
+    ],
+    "fks": [
+      {
+        "name": "fk_sessions_user_id_users",
+        "columns": [
+          "user_id"
+        ],
+        "target": "users",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      }
+    ]
+  },
+  "uploads": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL AUTO_INCREMENT"
+      },
+      {
+        "name": "key",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(32) NOT NULL"
+      },
+      {
+        "name": "owner_id",
+        "type": "bigint",
+        "nullable": true,
+        "sql": "bigint DEFAULT NULL"
+      },
+      {
+        "name": "width",
+        "type": "int",
+        "nullable": false,
+        "sql": "int NOT NULL"
+      },
+      {
+        "name": "height",
+        "type": "int",
+        "nullable": false,
+        "sql": "int NOT NULL"
+      },
+      {
+        "name": "post_id",
+        "type": "bigint",
+        "nullable": true,
+        "sql": "bigint DEFAULT NULL"
+      },
+      {
+        "name": "position",
+        "type": "smallint",
+        "nullable": false,
+        "sql": "smallint NOT NULL"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      }
+    ],
+    "pk": [
+      "id"
+    ],
+    "unique": [
+      [
+        "key"
+      ]
+    ],
+    "fks": [
+      {
+        "name": "fk_uploads_owner_id_users",
+        "columns": [
+          "owner_id"
+        ],
+        "target": "users",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE SET NULL"
+      },
+      {
+        "name": "fk_uploads_post_id_posts",
+        "columns": [
+          "post_id"
+        ],
+        "target": "posts",
+        "references": [
+          "id"
+        ],
+        "action": "ON DELETE CASCADE"
+      }
+    ]
+  },
+  "users": {
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint",
+        "nullable": false,
+        "sql": "bigint NOT NULL AUTO_INCREMENT"
+      },
+      {
+        "name": "username",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(30) NOT NULL"
+      },
+      {
+        "name": "email",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(255) NOT NULL"
+      },
+      {
+        "name": "password_hash",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(255) NOT NULL"
+      },
+      {
+        "name": "display_name",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(60) NOT NULL"
+      },
+      {
+        "name": "role",
+        "type": "enum",
+        "nullable": false,
+        "sql": "enum('user','moderator','super_admin') NOT NULL"
+      },
+      {
+        "name": "status",
+        "type": "enum",
+        "nullable": false,
+        "sql": "enum('pending_email','active','suspended') NOT NULL"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime",
+        "nullable": false,
+        "sql": "datetime NOT NULL"
+      },
+      {
+        "name": "email_verified_at",
+        "type": "datetime",
+        "nullable": true,
+        "sql": "datetime DEFAULT NULL"
+      },
+      {
+        "name": "suspended_at",
+        "type": "datetime",
+        "nullable": true,
+        "sql": "datetime DEFAULT NULL"
+      },
+      {
+        "name": "default_post_visibility",
+        "type": "enum",
+        "nullable": false,
+        "sql": "enum('public','friends') NOT NULL DEFAULT 'public'"
+      },
+      {
+        "name": "friends_list_audience",
+        "type": "enum",
+        "nullable": false,
+        "sql": "enum('everyone','friends','me') NOT NULL DEFAULT 'friends'"
+      },
+      {
+        "name": "outings_audience",
+        "type": "enum",
+        "nullable": false,
+        "sql": "enum('everyone','friends','me') NOT NULL DEFAULT 'everyone'"
+      },
+      {
+        "name": "friend_requests_from",
+        "type": "enum",
+        "nullable": false,
+        "sql": "enum('everyone','communities') NOT NULL DEFAULT 'everyone'"
+      },
+      {
+        "name": "show_in_suggestions",
+        "type": "tinyint",
+        "nullable": false,
+        "sql": "tinyint(1) NOT NULL DEFAULT '1'"
+      },
+      {
+        "name": "bio",
+        "type": "varchar",
+        "nullable": false,
+        "sql": "varchar(300) NOT NULL DEFAULT ''"
+      }
+    ],
+    "pk": [
+      "id"
+    ],
+    "unique": [
+      [
+        "email"
+      ],
+      [
+        "username"
+      ]
+    ],
+    "fks": []
+  }
+}

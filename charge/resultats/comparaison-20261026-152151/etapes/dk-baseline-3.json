@@ -1,0 +1,73 @@
+{
+  "repetition": 3,
+  "date": "2026-10-26T15:51:12.928960+00:00",
+  "boot_seconds": 26.86314100000891,
+  "memory_before": {
+    "processes": [
+      {
+        "pid": 9108,
+        "name": "vmmemWSL",
+        "rss_bytes": 1033142272
+      }
+    ],
+    "unreadable": [],
+    "rss_sum_bytes": 1033142272,
+    "host_used_memory_bytes": 13714980864,
+    "docker_linux_vm_visible": true
+  },
+  "memory_idle": {
+    "processes": [
+      {
+        "pid": 2760,
+        "name": "com.docker.backend.exe",
+        "rss_bytes": 153350144
+      },
+      {
+        "pid": 9108,
+        "name": "vmmemWSL",
+        "rss_bytes": 2758012928
+      },
+      {
+        "pid": 14108,
+        "name": "Docker Desktop.exe",
+        "rss_bytes": 128573440
+      },
+      {
+        "pid": 30676,
+        "name": "Docker Desktop.exe",
+        "rss_bytes": 57327616
+      },
+      {
+        "pid": 31260,
+        "name": "Docker Desktop.exe",
+        "rss_bytes": 163713024
+      },
+      {
+        "pid": 36520,
+        "name": "Docker Desktop.exe",
+        "rss_bytes": 134909952
+      },
+      {
+        "pid": 37944,
+        "name": "Docker Desktop.exe",
+        "rss_bytes": 15536128
+      },
+      {
+        "pid": 44224,
+        "name": "com.docker.backend.exe",
+        "rss_bytes": 73216000
+      }
+    ],
+    "unreadable": [],
+    "rss_sum_bytes": 3484639232,
+    "host_used_memory_bytes": 15910006784,
+    "docker_linux_vm_visible": true
+  },
+  "memory_host_delta_bytes": 2195025920,
+  "service_memory_bytes_mean": {
+    "db": 478919611.73333335,
+    "backend": 105242077.86666666,
+    "frontend": 14351510.186666666
+  },
+  "measurement_definition": "Docker Desktop engine stopped to engine+3 containers HTTP health=ok"
+}

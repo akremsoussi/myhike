@@ -1,0 +1,136 @@
+erDiagram
+    communities {
+        bigint id PK "obligatoire"
+        varchar name "obligatoire"
+        bigint massif_id FK "facultatif"
+        bigint banner_id FK "facultatif"
+        bigint icon_id FK "facultatif"
+    }
+    community_members {
+        bigint community_id PK, FK "obligatoire"
+        bigint user_id PK, FK "obligatoire"
+    }
+    community_refuges {
+        bigint community_id PK, FK "obligatoire"
+        bigint refuge_id PK, FK "obligatoire"
+    }
+    email_tokens {
+        bigint id PK "obligatoire"
+        bigint user_id FK "obligatoire"
+        varchar email "obligatoire"
+    }
+    friendships {
+        bigint id PK "obligatoire"
+        bigint requester_id FK "obligatoire"
+        bigint addressee_id FK "obligatoire"
+        enum status "obligatoire"
+    }
+    massifs {
+        bigint id PK "obligatoire"
+        varchar name "obligatoire"
+    }
+    moderation_log {
+        bigint id PK "obligatoire"
+        bigint actor_id FK "facultatif"
+    }
+    outing_invitations {
+        bigint outing_id PK, FK "obligatoire"
+        bigint user_id PK, FK "obligatoire"
+        bigint invited_by_id FK "obligatoire"
+    }
+    outing_participants {
+        bigint outing_id PK, FK "obligatoire"
+        bigint user_id PK, FK "obligatoire"
+    }
+    outing_stops {
+        bigint id PK "obligatoire"
+        bigint outing_id FK "obligatoire"
+        bigint refuge_id FK "facultatif"
+        varchar name "obligatoire"
+    }
+    outings {
+        bigint id PK "obligatoire"
+        varchar title "obligatoire"
+        bigint organizer_id FK "obligatoire"
+        enum visibility "obligatoire"
+    }
+    post_likes {
+        bigint post_id PK, FK "obligatoire"
+        bigint user_id PK, FK "obligatoire"
+    }
+    posts {
+        bigint id PK "obligatoire"
+        bigint author_id FK "obligatoire"
+        bigint community_id FK "facultatif"
+        enum visibility "obligatoire"
+        bigint refuge_id FK "facultatif"
+    }
+    refuge_photos {
+        bigint id PK "obligatoire"
+        bigint refuge_id FK "obligatoire"
+        bigint upload_id FK, UK "obligatoire"
+    }
+    refuges {
+        bigint id PK "obligatoire"
+        varchar name "obligatoire"
+        bigint massif_id FK "facultatif"
+    }
+    reports {
+        bigint id PK "obligatoire"
+        bigint reporter_id FK "obligatoire"
+        bigint target_id FK "obligatoire"
+        bigint post_id FK "facultatif"
+        enum reason "obligatoire"
+        bigint resolved_by_id FK "facultatif"
+    }
+    sessions {
+        bigint id PK "obligatoire"
+        bigint user_id FK "obligatoire"
+    }
+    uploads {
+        bigint id PK "obligatoire"
+        varchar key UK "obligatoire"
+        bigint owner_id FK "facultatif"
+        bigint post_id FK "facultatif"
+    }
+    users {
+        bigint id PK "obligatoire"
+        varchar username UK "obligatoire"
+        varchar email UK "obligatoire"
+        enum role "obligatoire"
+        enum status "obligatoire"
+    }
+    uploads |o..o{ communities : "banner_id"
+    uploads |o..o{ communities : "icon_id"
+    massifs |o..o{ communities : "massif_id"
+    communities ||--o{ community_members : "community_id"
+    users ||--o{ community_members : "user_id"
+    communities ||--o{ community_refuges : "community_id"
+    refuges ||--o{ community_refuges : "refuge_id"
+    users ||..o{ email_tokens : "user_id"
+    users ||..o{ friendships : "addressee_id"
+    users ||..o{ friendships : "requester_id"
+    users |o..o{ moderation_log : "actor_id"
+    users ||..o{ outing_invitations : "invited_by_id"
+    outings ||--o{ outing_invitations : "outing_id"
+    users ||--o{ outing_invitations : "user_id"
+    outings ||--o{ outing_participants : "outing_id"
+    users ||--o{ outing_participants : "user_id"
+    outings ||..o{ outing_stops : "outing_id"
+    refuges |o..o{ outing_stops : "refuge_id"
+    users ||..o{ outings : "organizer_id"
+    posts ||--o{ post_likes : "post_id"
+    users ||--o{ post_likes : "user_id"
+    users ||..o{ posts : "author_id"
+    communities |o..o{ posts : "community_id"
+    refuges |o..o{ posts : "refuge_id"
+    refuges ||..o{ refuge_photos : "refuge_id"
+    uploads ||..o| refuge_photos : "upload_id"
+    massifs |o..o{ refuges : "massif_id"
+    posts |o..o{ reports : "post_id"
+    users ||..o{ reports : "reporter_id"
+    users |o..o{ reports : "resolved_by_id"
+    users ||..o{ reports : "target_id"
+    users ||..o{ sessions : "user_id"
+    users |o..o{ uploads : "owner_id"
+    posts |o..o{ uploads : "post_id"

@@ -1,0 +1,8 @@
+{
+  "measurement_source_commit": "f6e764bc741c0c180b37175b67b9517a98927378",
+  "integrated_upstream_commit": "3ea8466",
+  "upstream_measurements_kept_separate": true,
+  "raw_load_files": 24,
+  "reference_runs_remi_verified": 6,
+  "reference_http_200_verified": 60
+}

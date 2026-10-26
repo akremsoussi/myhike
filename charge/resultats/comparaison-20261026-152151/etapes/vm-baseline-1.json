@@ -1,0 +1,77 @@
+{
+  "repetition": 1,
+  "date": "2026-10-26T15:43:12.405826+00:00",
+  "boot_seconds": 63.53084669998498,
+  "memory_before": {
+    "processes": [],
+    "unreadable": [],
+    "rss_sum_bytes": 0,
+    "host_used_memory_bytes": 9501122560,
+    "docker_linux_vm_visible": false
+  },
+  "memory_idle": {
+    "processes": [
+      {
+        "pid": 8160,
+        "name": "VBoxHeadless.exe",
+        "rss_bytes": 9936896
+      },
+      {
+        "pid": 10904,
+        "name": "VBoxHeadless.exe",
+        "rss_bytes": 684507136
+      },
+      {
+        "pid": 12200,
+        "name": "VBoxHeadless.exe",
+        "rss_bytes": 6287360
+      },
+      {
+        "pid": 16224,
+        "name": "VBoxHeadless.exe",
+        "rss_bytes": 9932800
+      },
+      {
+        "pid": 16764,
+        "name": "VBoxHeadless.exe",
+        "rss_bytes": 9936896
+      },
+      {
+        "pid": 30496,
+        "name": "VBoxHeadless.exe",
+        "rss_bytes": 1013772288
+      },
+      {
+        "pid": 33216,
+        "name": "VBoxSVC.exe",
+        "rss_bytes": 24207360
+      },
+      {
+        "pid": 36164,
+        "name": "VBoxHeadless.exe",
+        "rss_bytes": 6287360
+      },
+      {
+        "pid": 36356,
+        "name": "VBoxHeadless.exe",
+        "rss_bytes": 565805056
+      },
+      {
+        "pid": 37056,
+        "name": "VBoxHeadless.exe",
+        "rss_bytes": 6287360
+      }
+    ],
+    "unreadable": [],
+    "rss_sum_bytes": 2336960512,
+    "host_used_memory_bytes": 11746381824,
+    "docker_linux_vm_visible": false
+  },
+  "memory_host_delta_bytes": 2245259264,
+  "service_memory_bytes_mean": {
+    "db": 411438080,
+    "backend": 89477120,
+    "frontend": 3186688
+  },
+  "measurement_definition": "All three VM poweroff to HTTP health=ok"
+}

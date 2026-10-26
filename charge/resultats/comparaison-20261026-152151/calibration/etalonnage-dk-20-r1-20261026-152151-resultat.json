@@ -1,0 +1,88 @@
+{
+  "deployment": "dk",
+  "repetition": 1,
+  "calibration": true,
+  "monitoring_method": "persistent-stream-v2",
+  "raw": "D:\\Myhike\\charge\\resultats\\comparaison-20261026-152151\\bruts\\etalonnage\\etalonnage-dk-20-r1-20261026-152151.csv",
+  "statistics": [
+    {
+      "users": 20,
+      "label": "Total",
+      "samples": 353246,
+      "errors": 0,
+      "error_pct": 0.0,
+      "mean_ms": 3.349,
+      "median_ms": 2.0,
+      "p90_ms": 4.0,
+      "p95_ms": 6.0,
+      "p99_ms": 47.0,
+      "throughput_rps": 5887.4333,
+      "max_active_threads": 20,
+      "measurement_start_ms": 1793026831126,
+      "measurement_end_ms": 1793026891126
+    },
+    {
+      "users": 20,
+      "label": "Ressource Statique - Plafond Injecteur",
+      "samples": 353246,
+      "errors": 0,
+      "error_pct": 0.0,
+      "mean_ms": 3.349,
+      "median_ms": 2.0,
+      "p90_ms": 4.0,
+      "p95_ms": 6.0,
+      "p99_ms": 47.0,
+      "throughput_rps": 5887.4333,
+      "max_active_threads": 20,
+      "measurement_start_ms": 1793026831126,
+      "measurement_end_ms": 1793026891126
+    }
+  ],
+  "server": {
+    "users": 20,
+    "samples": 9,
+    "collection_errors": 0,
+    "measurement_start_ms": 1793026831126,
+    "measurement_end_ms": 1793026891126,
+    "services": {
+      "db": {
+        "cpu_percent_mean": 2.692222222222222,
+        "cpu_percent_max": 9.43,
+        "memory_bytes_mean": 480434221.51111114,
+        "memory_bytes_max": 480876953.6,
+        "block_read_bytes_delta": 0.0,
+        "block_written_bytes_delta": 0.0,
+        "unavailable_samples": 0
+      },
+      "backend": {
+        "cpu_percent_mean": 0.9422222222222222,
+        "cpu_percent_max": 5.88,
+        "memory_bytes_mean": 113770496.0,
+        "memory_bytes_max": 120691097.6,
+        "block_read_bytes_delta": 0.0,
+        "block_written_bytes_delta": 0.0,
+        "unavailable_samples": 0
+      },
+      "frontend": {
+        "cpu_percent_mean": 87.41333333333334,
+        "cpu_percent_max": 101.83,
+        "memory_bytes_mean": 16706145.848888889,
+        "memory_bytes_max": 17081303.04,
+        "block_read_bytes_delta": 0.0,
+        "block_written_bytes_delta": 0.0,
+        "unavailable_samples": 0
+      }
+    },
+    "java_cpu_percent_host_mean": 5.827399493774068,
+    "java_cpu_percent_host_max": 6.705700861094312,
+    "java_working_set_bytes_max": 848347136,
+    "host_available_memory_bytes_min": 1359032320,
+    "host_cpu_percent_max": 60.6,
+    "Threads_connected_mean": 2,
+    "Threads_connected_max": 2,
+    "Threads_running_mean": 2,
+    "Threads_running_max": 2,
+    "Innodb_data_read_delta": 0,
+    "Innodb_data_written_delta": 0
+  }
+}

@@ -1,0 +1,158 @@
+[
+  {
+    "Name": "/refuges-backend-1",
+    "State": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 62489,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-26T15:18:27.694390733Z",
+      "FinishedAt": "2026-10-26T15:18:15.18914275Z",
+      "Health": {
+        "Status": "healthy",
+        "FailingStreak": 0,
+        "Log": [
+          {
+            "Start": "2026-10-26T15:22:33.867754903Z",
+            "End": "2026-10-26T15:22:39.873220989Z",
+            "ExitCode": -1,
+            "Output": "Health check exceeded timeout (5s)"
+          },
+          {
+            "Start": "2026-10-26T15:22:44.873867543Z",
+            "End": "2026-10-26T15:22:50.067425038Z",
+            "ExitCode": 0,
+            "Output": ""
+          },
+          {
+            "Start": "2026-10-26T15:22:55.068441932Z",
+            "End": "2026-10-26T15:22:59.867194896Z",
+            "ExitCode": 0,
+            "Output": ""
+          },
+          {
+            "Start": "2026-10-26T15:23:04.865492148Z",
+            "End": "2026-10-26T15:23:07.68673379Z",
+            "ExitCode": 0,
+            "Output": ""
+          },
+          {
+            "Start": "2026-10-26T15:23:12.687251522Z",
+            "End": "2026-10-26T15:23:15.403789075Z",
+            "ExitCode": 0,
+            "Output": ""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Name": "/refuges-db-1",
+    "State": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 62293,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-26T15:18:22.366040292Z",
+      "FinishedAt": "2026-10-26T15:18:22.194065136Z",
+      "Health": {
+        "Status": "healthy",
+        "FailingStreak": 0,
+        "Log": [
+          {
+            "Start": "2026-10-26T15:22:56.626942967Z",
+            "End": "2026-10-26T15:22:56.696093351Z",
+            "ExitCode": 0,
+            "Output": "1\n1\n"
+          },
+          {
+            "Start": "2026-10-26T15:23:01.694208119Z",
+            "End": "2026-10-26T15:23:01.765258043Z",
+            "ExitCode": 0,
+            "Output": "1\n1\n"
+          },
+          {
+            "Start": "2026-10-26T15:23:06.76647834Z",
+            "End": "2026-10-26T15:23:06.822758641Z",
+            "ExitCode": 0,
+            "Output": "1\n1\n"
+          },
+          {
+            "Start": "2026-10-26T15:23:11.824060335Z",
+            "End": "2026-10-26T15:23:11.883946983Z",
+            "ExitCode": 0,
+            "Output": "1\n1\n"
+          },
+          {
+            "Start": "2026-10-26T15:23:16.885394309Z",
+            "End": "2026-10-26T15:23:16.952324409Z",
+            "ExitCode": 0,
+            "Output": "1\n1\n"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "Name": "/refuges-frontend-1",
+    "State": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 62632,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-26T15:18:33.457573257Z",
+      "FinishedAt": "2026-10-26T15:18:14.460597615Z",
+      "Health": {
+        "Status": "healthy",
+        "FailingStreak": 0,
+        "Log": [
+          {
+            "Start": "2026-10-26T15:22:57.668988333Z",
+            "End": "2026-10-26T15:22:57.86785341Z",
+            "ExitCode": 0,
+            "Output": ""
+          },
+          {
+            "Start": "2026-10-26T15:23:02.86685203Z",
+            "End": "2026-10-26T15:23:03.06416458Z",
+            "ExitCode": 0,
+            "Output": ""
+          },
+          {
+            "Start": "2026-10-26T15:23:08.066610669Z",
+            "End": "2026-10-26T15:23:08.366021877Z",
+            "ExitCode": 0,
+            "Output": ""
+          },
+          {
+            "Start": "2026-10-26T15:23:13.367992688Z",
+            "End": "2026-10-26T15:23:13.96554709Z",
+            "ExitCode": 0,
+            "Output": ""
+          },
+          {
+            "Start": "2026-10-26T15:23:18.966886776Z",
+            "End": "2026-10-26T15:23:19.039941818Z",
+            "ExitCode": 0,
+            "Output": ""
+          }
+        ]
+      }
+    }
+  }
+]
