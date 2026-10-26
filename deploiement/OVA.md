@@ -1,6 +1,9 @@
 # Archives VM à remettre
 
-Les trois exports récents sont regroupés localement dans `ova/`, à la racine du projet. Ce dossier est exclu de Git : les archives doivent accompagner le rendu par un transfert séparé (environ 2,88 Go au total).
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
+
+Les trois exports récents sont regroupés localement dans `ova/`, à la racine du projet. Ce dossier est exclu de l’historique Git. Les trois archives (environ 2,88 Go au total), le guide et leurs empreintes sont disponibles dans la [release GitHub du rendu](https://github.com/akremsoussi/myhike/releases/tag/rendu-2026-10-26).
 
 - `vm-donnees.ova` : 910 198 784 octets.
 - `vm-metier.ova` : 1 039 155 200 octets.

@@ -1,6 +1,7 @@
 # Analyse de l’application Refuges
 
-**Akrem SOUSSI et Rémi CORTIAL · Polytech Marseille · DEV 1**
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 ## 1. Objectif et architecture
 

@@ -1,7 +1,10 @@
 # Compte-Rendu : Étape 10 — Vérifier et Mesurer
 
-Ce document consigne l'ensemble des livrables de la Partie 1 : la matrice de joignabilité, les captures d'écran de validation réseau, les snapshots VirtualBox, et les mesures de référence.
-Ces relevés serviront de point de comparaison direct pour la Partie 2 (conteneurs Docker) et la Partie 3 (tests sous charge JMeter).
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
+
+Ce document consigne l'ensemble des livrables de la Partie 2 : la matrice de joignabilité, les captures d'écran de validation réseau, les snapshots VirtualBox, et les mesures de référence.
+Ces relevés serviront de point de comparaison direct pour la Partie 3 (conteneurs Docker) et la Partie 4 (tests sous charge JMeter).
 
 ---
 

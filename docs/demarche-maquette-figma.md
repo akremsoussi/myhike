@@ -1,6 +1,7 @@
 # De la maquette Figma au site Refuges : notre démarche
 
-**Akrem SOUSSI et Rémi CORTIAL — Projet Refuges**
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 [Voir notre maquette Figma](https://www.figma.com/design/KrPHETSktcZgtTbB9uxVyB/Refuges-%E2%80%93-Web-App?node-id=10-6)
 

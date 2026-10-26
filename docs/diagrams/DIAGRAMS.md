@@ -1,5 +1,8 @@
 # MyHike / Refuges — Code Mermaid de tous les diagrammes
 
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
+
 Chaque bloc est autonome : copier un seul bloc à la fois dans un éditeur Mermaid.
 Les libellés sont en français ; les identifiants techniques correspondent au projet.
 

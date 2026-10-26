@@ -1,6 +1,8 @@
 # Exemples de Requêtes HTTP — Couche Métier (Étape 4)
 
-**Binôme :** Akrem SOUSSI & Rémi CORTIAL  
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
+
 **Module :** DEV 1 — Application Trois-Tiers  
 
 Ce document présente les requêtes `curl` exécutables directement contre la couche métier FastAPI (`http://127.0.0.1:8000/api`) ou à travers le reverse proxy Nginx (`http://localhost:8080/api`). Elles démontrent le fonctionnement nominal et le traitement des erreurs pour chaque exigence de l'étape 4 du cahier des charges.

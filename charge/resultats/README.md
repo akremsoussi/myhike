@@ -1,5 +1,8 @@
 # Résultats JMeter - index et traçabilité
 
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
+
 **Nouveaux résultats :** [comparaison appariée du 26 octobre](comparaison-20261026-152151/README.md). Les séries listées ci-dessous sont historiques.
 
 Les fichiers bruts et les dossiers de session d’origine sont conservés. Les tableaux ajoutés sous `synthese/` sont des dérivés de présentation.
@@ -54,4 +57,4 @@ Source : relevés manuels communiqués par Rémi dans l’historique projet. Le 
 | [validation-positif-r1.csv](dk-20261021-113529-649/validation-positif-r1.csv) | 2 | 0 | 200 |
 | [validation-positif-r2.csv](dk-20261021-113529-649/validation-positif-r2.csv) | 2 | 0 | 200 |
 
-Les contrôles CSV ne remplacent pas les captures GUI demandées à l’étape 15. Les rapports de session restent des comptes rendus historiques ; le [rapport consolidé](../../docs/rapport-charge.md) réunit désormais VM et Docker.
+Les [captures GUI de la campagne principale](comparaison-20261026-152151/captures/README.md) complètent les contrôles CSV. Les rapports de session restent des comptes rendus historiques ; le [rapport consolidé](../../docs/rapport-charge.md) réunit désormais VM et Docker.

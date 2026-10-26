@@ -1,7 +1,9 @@
 # MyHike / Refuges — Diagrammes du projet
 
-Diagrammes établis le 26 octobre 2026 à partir du code et du schéma SQL locaux.
-Ouvrir **index.html** pour le visualiseur hors ligne, ou directement un fichier SVG/PNG.
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
+
+Diagrammes établis à partir du code et du schéma SQL du projet. Les figures sont consultables ci-dessous ; les sources sont réunies dans [DIAGRAMS.md](DIAGRAMS.md).
 
 ## Contenu
 
@@ -60,6 +62,31 @@ PlantUML du diagramme de cas d’utilisation. `DIAGRAMS.md` réunit les sources.
 
 Les colonnes des modèles ORM correspondent au schéma SQL analysé.
 `source-manifest.json` contient les chemins sources et leurs empreintes SHA-256.
-Les diagrammes ont été rendus puis inspectés ; les onglets et le zoom du visualiseur
-ont été vérifiés. Le schéma a été analysé sans modifier la base active.
+Les diagrammes ont été rendus puis inspectés. Le schéma a été analysé sans modifier la base active.
 Aucun mot de passe, contenu de base, fichier de sauvegarde ou photo n’est inclus.
+
+## Figures
+
+### 01-database
+
+![01-database](01-database.svg)
+
+### 02-use-cases
+
+![02-use-cases](02-use-cases.svg)
+
+### 03-classes
+
+![03-classes](03-classes.svg)
+
+### 04-sequence
+
+![04-sequence](04-sequence.svg)
+
+### 05-architecture
+
+![05-architecture](05-architecture.svg)
+
+### 06-database-full
+
+![06-database-full](06-database-full.svg)

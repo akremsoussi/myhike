@@ -1,5 +1,8 @@
 # Campagne Docker : résultats mesurés
 
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
+
 Début UTC : 2026-10-21T09:57:23.6121918Z. Commit de référence : `07a0baa812be57c05519d5924cb5835699ed467b`.
 Les empreintes des plans, comptes et fichiers SQL sont conservées dans `configuration.json`.
 
@@ -63,5 +66,5 @@ et les courbes comparatives finales restent des livrables distincts.
 - Bruts : `../dk-*-r*-*.csv` ; toutes les requêtes, montée comprise.
 - Statistiques : `synthese.csv` ; plateau uniquement.
 - Relevés serveur : `*-serveur.jsonl` et `*-serveur-synthese.json`.
-- Rapports JMeter : `rapport-<utilisateurs>-r<répétition>/index.html`.
+- Les tableaux de bord HTML sont régénérables depuis les CSV JMeter ; ils ne sont pas inclus dans le rendu.
 - Sauvegardes privées : `.charge-backups/` à la racine du projet, exclues de Git.

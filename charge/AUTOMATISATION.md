@@ -1,5 +1,8 @@
 # Campagnes JMeter Docker sous Windows
 
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
+
 Le point d'entree est `charge/campagne.ps1`. Il execute les paliers
 **1, 5, 10, 25, 50, 100** en CLI, deux fois par defaut. Les valeurs imposees
 par le sujet sont distinctes : **10 s de montee puis 60 s mesurees**.

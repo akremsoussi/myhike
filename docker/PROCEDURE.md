@@ -1,5 +1,8 @@
 # Partie 3 - Déploiement Docker de Refuges
 
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
+
 Cette procédure part d'un clone du dépôt contenant `client/`, `metier/`, `donnees/` et `docker/`. Trois services sont construits : Nginx (frontend), FastAPI (backend) et MySQL (db). Les résultats de validation du 26 octobre 2026 et le tableau comparatif sont dans [docs/comparaison.md](../docs/comparaison.md).
 
 ## 1. Prérequis et installation du moteur
@@ -125,7 +128,6 @@ Le script PowerShell `docker/mesurer_reference.ps1` exécute trois séries Docke
 Il mesure la disponibilité réelle de `/api/health`, le coût mémoire hôte et dix consultations authentifiées HTTP 200 par série. Les volumes et données sont conservés. Consulter les paramètres du script pour le chemin WSL du dépôt et le dossier de sortie. Ce script ne mesure pas la charge JMeter ; les campagnes de la partie 4 ne sont pas modifiées.
 
 Voir [les preuves](../docs/preuves-docker/2026-10-26/README.md), la [comparaison au format Markdown](../docs/comparaison.md). Les limites de périmètre mémoire, de disque et de versions applicatives y sont indiquées.
-
 
 ## Photos des publications de démonstration
 

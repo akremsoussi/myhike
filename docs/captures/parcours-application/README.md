@@ -1,6 +1,7 @@
 # Deux parcours dans l’application Refuges
 
-**Akrem SOUSSI et Rémi CORTIAL — Captures du 26 octobre 2026**
+**Projet :** MyHike / Refuges  
+**Binôme :** Akrem SOUSSI et Rémi CORTIAL
 
 Ces captures proviennent de l’application exécutée sur le poste de Rémi, avec les trois services Docker du projet `refuges-validation`, sur `http://localhost:8080`. La version du code est `ccd5108`. La session du compte de démonstration **Lucas Randonneur** (`randonneur`) était déjà ouverte. Les images montrent l’interface réelle, sans reconstitution graphique. Les marges vides extérieures ont été recadrées ; le contenu de l’interface n’a pas été retouché.
 
@@ -61,7 +62,6 @@ Après clic sur « Publier », l’application revient dans la communauté. Le m
 ## Portée de ces preuves
 
 Ces deux parcours ont été exécutés dans le navigateur. Ils complètent la recette historique sans constituer une nouvelle validation de tous ses tests. Les captures initiales montrent trois images manquantes sur un ancien post. Leurs fichiers ont ensuite été retrouvés dans la sauvegarde locale et restaurés dans le volume Docker : les trois URL renvoient désormais HTTP 200 et les fichiers servis sont identiques aux originaux. Aucun résultat JMeter n’a été modifié.
-
 
 ### Vérification après restauration des médias
 
