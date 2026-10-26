@@ -34,6 +34,8 @@ Les connexions entre conteneurs ont été testées aux adresses IP réellement a
 
 La mémoire Docker doit inclure le moteur : la valeur 4 671,84 MiB correspond au processus vmmemWSL complet, pas aux seuls conteneurs. WSL héberge déjà d’autres processus et conserve des caches de construction ; le relevé avant la campagne était de 4 700,02 MiB. Isoler exactement le coût propre du moteur n’est donc pas possible dans cet environnement partagé sans arrêter les autres usages WSL. La RAM des VM est la somme des processus VBoxHeadless/VirtualBoxVM. Aucun gain mémoire net entre architectures n’est déduit de ces deux périmètres.
 
+<!-- PAGEBREAK -->
+
 ## 4. Analyse : les trois questions
 
 ### De combien les chiffres diffèrent-ils ?
@@ -54,7 +56,7 @@ Le test de persistance a créé un marqueur dans une table dédiée, recréé le
 
 Le Dockerfile métier utilise maintenant `metier/requirements.lock`, avec les versions exactes de l’image testée. `pip check` ne signale aucune dépendance cassée. Les exclusions spécifiques des deux Dockerfile sont présentes ; le client utilise `npm ci`. Les images officielles de base sont fixées par digests.
 
-La reconstruction sans cache des images et l’initialisation d’un volume vide ont été chronométrées séparément : 41,26 s de build, puis 52,50 s jusqu’aux services sains, soit 93,76 s. Le moteur et les images de base existaient déjà ; cette mesure ne couvre pas leur installation. La préparation initiale des VM a été réalisée sur plusieurs séances avec l’aide de l’IA, sans chronométrage systématique. Elle comprend la création des machines, l’installation et la configuration des systèmes, du réseau et des services, puis les vérifications. Son temps total est donc indiqué comme non mesuré. Cette préparation nous a paru plus longue que la mise en place avec Docker, mais ce constat qualitatif ne permet pas de chiffrer un gain de temps. Les 93,76 s mesurées pour Docker couvrent uniquement la reconstruction des images et l’initialisation des services sur un environnement déjà équipé ; elles ne sont pas directement comparables à la préparation complète des VM. Les relevés du 26 octobre ne remplacent pas rétroactivement les 45 s et 2 710 Mo consignés lors de l’étape 10.
+La reconstruction sans cache des images et l’initialisation d’un volume vide prennent 41,26 s de build puis 52,50 s jusqu’aux services sains, soit 93,76 s. Le moteur et les images de base sont déjà présents : leur installation est exclue. La préparation initiale des VM (systèmes, réseau, services et vérifications) a été réalisée sur plusieurs séances avec l’aide de l’IA, sans chronométrage. Son temps reste non mesuré. Elle nous a paru plus longue, mais aucun gain chiffré n’en est déduit : les périmètres ne sont pas comparables. Ces mesures ne remplacent pas rétroactivement les 45 s et 2 710 Mo historiques de l’étape 10.
 
 ## 6. Preuves
 

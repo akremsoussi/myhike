@@ -125,3 +125,12 @@ Le script PowerShell `docker/mesurer_reference.ps1` exécute trois séries Docke
 Il mesure la disponibilité réelle de `/api/health`, le coût mémoire hôte et dix consultations authentifiées HTTP 200 par série. Les volumes et données sont conservés. Consulter les paramètres du script pour le chemin WSL du dépôt et le dossier de sortie. Ce script ne mesure pas la charge JMeter ; les campagnes de la partie 4 ne sont pas modifiées.
 
 Voir [les preuves](../docs/preuves-docker/2026-10-26/README.md), la [comparaison au format Markdown](../docs/comparaison.md). Les limites de périmètre mémoire, de disque et de versions applicatives y sont indiquées.
+
+
+## Photos des publications de démonstration
+
+Le SQL contient les références des images, pas leurs fichiers. Les trois médias historiques ont été restaurés depuis la sauvegarde du projet dans le volume `uploads` sur le poste de Rémi et vérifiés par HTTP authentifié. Le code n’a pas été modifié.
+
+Pour reproduire ce contenu sur un autre poste, joindre l’archive locale `ova/medias-demo.tar.gz` au transfert séparé des livrables. Elle est hors Git, comme les fichiers téléversés. L’extraire dans un dossier temporaire puis copier son contenu dans `/app/uploads` du conteneur backend (avec `docker cp`). Conserver les sous-dossiers à deux caractères et les noms d’origine ; ne pas écraser d’autres médias. La base doit contenir les références correspondantes du peuplement fourni. Une sauvegarde complète doit conserver à la fois MySQL et le volume des médias.
+
+Cette restauration concerne le déploiement Docker local. Elle ne modifie pas les archives OVA déjà exportées.

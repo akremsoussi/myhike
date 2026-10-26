@@ -42,3 +42,8 @@ Pour relancer toute la suite de tests localement :
 cd metier && .venv/bin/pytest && .venv/bin/ruff check .
 cd ../client && npm run build && npm run lint
 ```
+
+
+## 3. Deux parcours illustrés — 26 octobre 2026
+
+Les [captures commentées](captures/parcours-application/README.md) présentent la recherche et la consultation du refuge du Pelvoux, puis une publication textuelle dans la communauté des Écrins, vérifiée après rechargement. Elles ne constituent pas une réexécution de toute la recette ci-dessus ; les photos et traces GPX ne sont pas testées dans ces deux parcours.
