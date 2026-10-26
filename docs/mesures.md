@@ -87,11 +87,15 @@ Relevés bruts :
 
 ## 5. Livrables OVA
 
-Les trois machines virtuelles exportées au format standard OVA sont stockées dans le dossier local `ova/` :
-- `ova/vm-proxy.ova` (~3,5 Go)
-- `ova/vm-metier.ova` (~3,9 Go)
-- `ova/vm-donnees.ova` (~3,8 Go)
-*(Les fichiers OVA sont exclus du versionnement Git via `.gitignore` en raison de leur taille supérieure à la limite de 100 Mo de GitHub).*
+Les trois exports actuels sont conservés localement dans `ova/` et téléchargeables depuis la [release du rendu](https://github.com/akremsoussi/myhike/releases/tag/rendu-2026-10-26).
+
+| Archive | Taille exacte |
+|---|---:|
+| `vm-proxy.ova` | 927 240 192 octets |
+| `vm-metier.ova` | 1 039 155 200 octets |
+| `vm-donnees.ova` | 910 198 784 octets |
+
+Le total est d’environ 2,88 Go. Ces tailles concernent les exports remis, et non les anciens exports ni les disques et snapshots des mesures historiques ci-dessus. Les OVA sont exclues de l’historique Git ; leurs empreintes et les instructions d’import figurent dans [le guide OVA](../deploiement/OVA.md).
 
 ## 6. Nouveaux relevés du 26 octobre 2026
 
