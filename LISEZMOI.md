@@ -139,4 +139,4 @@ L'injection de charge et la comparaison de performances entre VMs et conteneurs 
 
 ### Reproduction des campagnes
 
-Voir [charge/AUTOMATISATION.md](charge/AUTOMATISATION.md) pour la préparation du plan et les commandes CLI. Une nouvelle campagne doit utiliser des noms uniques, le même plan exécuté sur les deux déploiements et une fenêtre de 60 s hors montée. Les options de réinitialisation de base sont décrites dans ce guide.
+Voir [charge/comparaison/README.md](charge/comparaison/README.md) pour reproduire la campagne principale VM / Docker et [son protocole](charge/comparaison/PROTOCOLE-COMPARE.md). L’[ancienne automatisation Docker](charge/AUTOMATISATION.md) est conservée comme historique. Une nouvelle campagne doit utiliser des noms uniques, le même plan exécuté sur les deux déploiements et une fenêtre de 60 s hors montée. Les options de réinitialisation de base sont décrites dans ce guide.

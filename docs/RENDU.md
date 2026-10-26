@@ -25,7 +25,7 @@ Le [guide principal](../LISEZMOI.md) présente le démarrage du projet. Le sché
 - `client/`, `metier/`, `donnees/` : code des trois couches de l’application.
 - `ova/` : archives VM et médias de démonstration conservés localement, hors historique Git.
 
-Les trois OVA et leurs empreintes sont téléchargeables dans la [release GitHub du rendu](https://github.com/akremsoussi/myhike/releases/tag/rendu-2026-10-26). L’archive locale des médias de démonstration n’est pas jointe à cette release ; son utilisation est décrite dans la [procédure Docker](../docker/PROCEDURE.md).
+Les trois OVA et leurs empreintes sont téléchargeables dans la [release GitHub du rendu](https://github.com/akremsoussi/myhike/releases/tag/rendu-2026-10-26). Les [médias de démonstration](../donnees/medias-demo.tar.gz) sont inclus dans le dépôt et joints à la release ; leur utilisation est décrite dans la [procédure Docker](../docker/PROCEDURE.md).
 
 ## Résultats et limites
 
@@ -34,3 +34,11 @@ Le fonctionnement du prototype Figma a été confirmé par Rémi. Les 24 essais 
 Cinq paliers dépassent le seuil de répétabilité de 10 % : VM 5, 10 et 50 utilisateurs ; Docker 1 et 5 utilisateurs. Les différences de versions et de périmètre sont explicitées dans les rapports.
 
 Les [résultats historiques](rapport-charge-historique-remi.md) restent disponibles pour la traçabilité. Les CSV, journaux techniques, configurations et empreintes sont conservés dans leur format d’origine ; les documents explicatifs sont en Markdown.
+
+## Remise au professeur
+
+- [Rapport final PDF](rapport-final.pdf), également téléchargeable comme pièce jointe de la release.
+- [Dépôt à jour sur remi-dev](https://github.com/akremsoussi/myhike/tree/remi-dev) ou [archive ZIP de cette branche](https://github.com/akremsoussi/myhike/archive/refs/heads/remi-dev.zip), avec code, documentation et preuves.
+- [Release du rendu](https://github.com/akremsoussi/myhike/releases/tag/rendu-2026-10-26) : trois OVA, empreintes, guide, PDF et médias de démonstration.
+
+Les téléchargements automatiques « Source code » en bas de cette release correspondent à son ancien tag et ne contiennent pas le rapport final. Utiliser l’archive du dépôt indiquée ci-dessus ou le lien vers la révision finale indiqué dans la description de la release.
